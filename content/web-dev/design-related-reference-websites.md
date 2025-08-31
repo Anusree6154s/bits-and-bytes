@@ -26,6 +26,7 @@ permalink: web-dev
 ### Websites for inspiration
 
 1. [Dribble](https://dribbble.com/)
+2. [astro/showcase](https://astro.build/showcase/)
 
 ### Websites to practise
 
