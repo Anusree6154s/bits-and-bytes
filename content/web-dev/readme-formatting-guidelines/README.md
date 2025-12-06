@@ -11,4 +11,4 @@ permalink: readme-formatting-guidelines
 - [Majority guidelines](https://medium.com/analytics-vidhya/writing-github-readme-e593f278a796)
 - [Image alignment/resize guidelines](https://gist.github.com/kigiri/4b1d64eba2d465a2ffc1342a0e9e7d6f)
 
-### Github readme formatting styles put together by me - Read more in [wiki](https://github.com/Anusree6154s/documentation/wiki/Readme-formatting-guidelines)
+### Github readme formatting styles put together by me - Read more in [wiki](https://github.com/Anusree6154s/bits-and-bytes/wiki/Readme-formatting-guidelines)

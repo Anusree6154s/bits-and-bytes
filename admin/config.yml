@@ -1,10 +1,10 @@
 backend:
   name: github
-  repo: anusree6154s/documentation
+  repo: anusree6154s/bits-and-bytes
   branch: main
-  site_domain: anusree6154s.github.io/documentation
+  site_domain: anusree6154s.github.io/bits-and-bytes
   base_url: https://netlify-cms-github-oauth-bf5t.onrender.com
-  auth_endpoint: /auth?site=https://anusree6154s.github.io/documentation
+  auth_endpoint: /auth?site=https://anusree6154s.github.io/bits-and-bytes
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
