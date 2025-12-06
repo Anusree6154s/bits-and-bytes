@@ -10,17 +10,17 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="import express from &quot;express&quot;; import { google } from &quot;googleapis&quot;; import { OAuth2Client } from &quot;google-auth-library&quot;; import nodemailer from &quot;nodemailer&quot;; import Mail from &quot;nodemailer/lib/mailer&quot;; import SMTPTransport from &quot;nodemailer/lib/smtp-transport&quot;; import { google_client_id, google_client_secret, google_refresh_token, senders_gmail, } from &quot;../config/constants&quot;; const router = express.Router(); interface OTPRequest { email: string; } const createTransporter = async (): Promise&lt;nodemailer.Transporter&gt; =&gt; { try { const oauth2Client = new OAuth2Client( google_client_id, google_client_secret, &quot;https://developers.google.com/oauthplayground&quot; ); oauth2Client.setCredentials({ refresh_token: google_refresh_token, }); const accessToken = await oauth2Client.getAccessToken(); // Properly type the SMTP transport options const transportOptions: SMTPTransport.Options = { host: &#39;smtp.gmail.com&#39;, port: 465, secure: true, auth: { type: &quot;OAuth2&quot;, user: senders_gmail, clientId: google_client_id, clientSecret: google_client_secret, refreshToken: google_refresh_token, accessToken: accessToken.token || undefined, }, }; const transporter = nodemailer.createTransport(transportOptions); // Verify transporter configuration await transporter.verify(); return transporter; } catch (error) { console.error(&quot;Error creating transporter:&quot;, error); throw new Error(&quot;Failed to create email transporter&quot;); } } async function sendEmail(to: string, otp: string): Promise&lt;void&gt; { try { const transporter = await createTransporter(); const mailOptions: Mail.Options = { from: `&quot;Auth Service&quot; &lt;${senders_gmail}&gt;`, to, subject: &quot;Passwordless Authentication OTP&quot;, text: `Your OTP for authentication is: ${otp}`, html: ` &lt;h2&gt;Authentication OTP&lt;/h2&gt; &lt;p&gt;Use the following OTP to log in:&lt;/p&gt; &lt;h3 style=&quot;color: #4CAF50; font-size: 24px;&quot;&gt;${otp}&lt;/h3&gt; &lt;p&gt;This OTP will expire in 10 minutes.&lt;/p&gt; &lt;p&gt;If you didn&#39;t request this OTP, please ignore this email.&lt;/p&gt; `, }; await transporter.sendMail(mailOptions); } catch (error) { console.error(&quot;Error sending email:&quot;, error); throw new Error(&quot;Failed to send email&quot;); } } router.post(&quot;/sendOTP&quot;, async (req: express.Request&lt;{}, {}, OTPRequest&gt;, res: express.Response) =&gt; { try { const { email } = req.body; if (!email) { return res.status(400).json({ error: &quot;Email is required&quot; }); } // Validate email format const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; if (!emailRegex.test(email)) { return res.status(400).json({ error: &quot;Invalid email format&quot; }); } const otp = Math.floor(100000 + Math.random() * 900000).toString(); // Send email await sendEmail(email, otp); res.status(200).json({ success: true, message: &quot;OTP sent successfully&quot; }); } catch (error) { console.error(&quot;Error in /sendOTP:&quot;, error); res.status(500).json({ error: &quot;Failed to send OTP&quot; }); } }); export default router;" />
 <meta property="og:description" content="import express from &quot;express&quot;; import { google } from &quot;googleapis&quot;; import { OAuth2Client } from &quot;google-auth-library&quot;; import nodemailer from &quot;nodemailer&quot;; import Mail from &quot;nodemailer/lib/mailer&quot;; import SMTPTransport from &quot;nodemailer/lib/smtp-transport&quot;; import { google_client_id, google_client_secret, google_refresh_token, senders_gmail, } from &quot;../config/constants&quot;; const router = express.Router(); interface OTPRequest { email: string; } const createTransporter = async (): Promise&lt;nodemailer.Transporter&gt; =&gt; { try { const oauth2Client = new OAuth2Client( google_client_id, google_client_secret, &quot;https://developers.google.com/oauthplayground&quot; ); oauth2Client.setCredentials({ refresh_token: google_refresh_token, }); const accessToken = await oauth2Client.getAccessToken(); // Properly type the SMTP transport options const transportOptions: SMTPTransport.Options = { host: &#39;smtp.gmail.com&#39;, port: 465, secure: true, auth: { type: &quot;OAuth2&quot;, user: senders_gmail, clientId: google_client_id, clientSecret: google_client_secret, refreshToken: google_refresh_token, accessToken: accessToken.token || undefined, }, }; const transporter = nodemailer.createTransport(transportOptions); // Verify transporter configuration await transporter.verify(); return transporter; } catch (error) { console.error(&quot;Error creating transporter:&quot;, error); throw new Error(&quot;Failed to create email transporter&quot;); } } async function sendEmail(to: string, otp: string): Promise&lt;void&gt; { try { const transporter = await createTransporter(); const mailOptions: Mail.Options = { from: `&quot;Auth Service&quot; &lt;${senders_gmail}&gt;`, to, subject: &quot;Passwordless Authentication OTP&quot;, text: `Your OTP for authentication is: ${otp}`, html: ` &lt;h2&gt;Authentication OTP&lt;/h2&gt; &lt;p&gt;Use the following OTP to log in:&lt;/p&gt; &lt;h3 style=&quot;color: #4CAF50; font-size: 24px;&quot;&gt;${otp}&lt;/h3&gt; &lt;p&gt;This OTP will expire in 10 minutes.&lt;/p&gt; &lt;p&gt;If you didn&#39;t request this OTP, please ignore this email.&lt;/p&gt; `, }; await transporter.sendMail(mailOptions); } catch (error) { console.error(&quot;Error sending email:&quot;, error); throw new Error(&quot;Failed to send email&quot;); } } router.post(&quot;/sendOTP&quot;, async (req: express.Request&lt;{}, {}, OTPRequest&gt;, res: express.Response) =&gt; { try { const { email } = req.body; if (!email) { return res.status(400).json({ error: &quot;Email is required&quot; }); } // Validate email format const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; if (!emailRegex.test(email)) { return res.status(400).json({ error: &quot;Invalid email format&quot; }); } const otp = Math.floor(100000 + Math.random() * 900000).toString(); // Send email await sendEmail(email, otp); res.status(200).json({ success: true, message: &quot;OTP sent successfully&quot; }); } catch (error) { console.error(&quot;Error in /sendOTP:&quot;, error); res.status(500).json({ error: &quot;Failed to send OTP&quot; }); } }); export default router;" />
-<link rel="canonical" href="https://anusree6154s.github.io/documentation/claudeai-code" />
-<meta property="og:url" content="https://anusree6154s.github.io/documentation/claudeai-code" />
+<link rel="canonical" href="https://anusree6154s.github.io/bits-and-bytes/claudeai-code" />
+<meta property="og:url" content="https://anusree6154s.github.io/bits-and-bytes/claudeai-code" />
 <meta property="og:site_name" content="Bits &amp; Bytes" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-01-09T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Claude AI Code for Nodemailer" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Anusree Anilkumar"},"dateModified":"2025-01-09T00:00:00+00:00","datePublished":"2025-01-09T00:00:00+00:00","description":"import express from &quot;express&quot;; import { google } from &quot;googleapis&quot;; import { OAuth2Client } from &quot;google-auth-library&quot;; import nodemailer from &quot;nodemailer&quot;; import Mail from &quot;nodemailer/lib/mailer&quot;; import SMTPTransport from &quot;nodemailer/lib/smtp-transport&quot;; import { google_client_id, google_client_secret, google_refresh_token, senders_gmail, } from &quot;../config/constants&quot;; const router = express.Router(); interface OTPRequest { email: string; } const createTransporter = async (): Promise&lt;nodemailer.Transporter&gt; =&gt; { try { const oauth2Client = new OAuth2Client( google_client_id, google_client_secret, &quot;https://developers.google.com/oauthplayground&quot; ); oauth2Client.setCredentials({ refresh_token: google_refresh_token, }); const accessToken = await oauth2Client.getAccessToken(); // Properly type the SMTP transport options const transportOptions: SMTPTransport.Options = { host: &#39;smtp.gmail.com&#39;, port: 465, secure: true, auth: { type: &quot;OAuth2&quot;, user: senders_gmail, clientId: google_client_id, clientSecret: google_client_secret, refreshToken: google_refresh_token, accessToken: accessToken.token || undefined, }, }; const transporter = nodemailer.createTransport(transportOptions); // Verify transporter configuration await transporter.verify(); return transporter; } catch (error) { console.error(&quot;Error creating transporter:&quot;, error); throw new Error(&quot;Failed to create email transporter&quot;); } } async function sendEmail(to: string, otp: string): Promise&lt;void&gt; { try { const transporter = await createTransporter(); const mailOptions: Mail.Options = { from: `&quot;Auth Service&quot; &lt;${senders_gmail}&gt;`, to, subject: &quot;Passwordless Authentication OTP&quot;, text: `Your OTP for authentication is: ${otp}`, html: ` &lt;h2&gt;Authentication OTP&lt;/h2&gt; &lt;p&gt;Use the following OTP to log in:&lt;/p&gt; &lt;h3 style=&quot;color: #4CAF50; font-size: 24px;&quot;&gt;${otp}&lt;/h3&gt; &lt;p&gt;This OTP will expire in 10 minutes.&lt;/p&gt; &lt;p&gt;If you didn&#39;t request this OTP, please ignore this email.&lt;/p&gt; `, }; await transporter.sendMail(mailOptions); } catch (error) { console.error(&quot;Error sending email:&quot;, error); throw new Error(&quot;Failed to send email&quot;); } } router.post(&quot;/sendOTP&quot;, async (req: express.Request&lt;{}, {}, OTPRequest&gt;, res: express.Response) =&gt; { try { const { email } = req.body; if (!email) { return res.status(400).json({ error: &quot;Email is required&quot; }); } // Validate email format const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/; if (!emailRegex.test(email)) { return res.status(400).json({ error: &quot;Invalid email format&quot; }); } const otp = Math.floor(100000 + Math.random() * 900000).toString(); // Send email await sendEmail(email, otp); res.status(200).json({ success: true, message: &quot;OTP sent successfully&quot; }); } catch (error) { console.error(&quot;Error in /sendOTP:&quot;, error); res.status(500).json({ error: &quot;Failed to send OTP&quot; }); } }); export default router;","headline":"Claude AI Code for Nodemailer","mainEntityOfPage":{"@type":"WebPage","@id":"https://anusree6154s.github.io/documentation/claudeai-code"},"url":"https://anusree6154s.github.io/documentation/claudeai-code"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Anusree Anilkumar"},"dateModified":"2025-01-09T00:00:00+00:00","datePublished":"2025-01-09T00:00:00+00:00","description":"import express from &quot;express&quot;; import { google } from &quot;googleapis&quot;; import { OAuth2Client } from &quot;google-auth-library&quot;; import nodemailer from &quot;nodemailer&quot;; import Mail from &quot;nodemailer/lib/mailer&quot;; import SMTPTransport from &quot;nodemailer/lib/smtp-transport&quot;; import { google_client_id, google_client_secret, google_refresh_token, senders_gmail, } from &quot;../config/constants&quot;; const router = express.Router(); interface OTPRequest { email: string; } const createTransporter = async (): Promise&lt;nodemailer.Transporter&gt; =&gt; { try { const oauth2Client = new OAuth2Client( google_client_id, google_client_secret, &quot;https://developers.google.com/oauthplayground&quot; ); oauth2Client.setCredentials({ refresh_token: google_refresh_token, }); const accessToken = await oauth2Client.getAccessToken(); // Properly type the SMTP transport options const transportOptions: SMTPTransport.Options = { host: &#39;smtp.gmail.com&#39;, port: 465, secure: true, auth: { type: &quot;OAuth2&quot;, user: senders_gmail, clientId: google_client_id, clientSecret: google_client_secret, refreshToken: google_refresh_token, accessToken: accessToken.token || undefined, }, }; const transporter = nodemailer.createTransport(transportOptions); // Verify transporter configuration await transporter.verify(); return transporter; } catch (error) { console.error(&quot;Error creating transporter:&quot;, error); throw new Error(&quot;Failed to create email transporter&quot;); } } async function sendEmail(to: string, otp: string): Promise&lt;void&gt; { try { const transporter = await createTransporter(); const mailOptions: Mail.Options = { from: `&quot;Auth Service&quot; &lt;${senders_gmail}&gt;`, to, subject: &quot;Passwordless Authentication OTP&quot;, text: `Your OTP for authentication is: ${otp}`, html: ` &lt;h2&gt;Authentication OTP&lt;/h2&gt; &lt;p&gt;Use the following OTP to log in:&lt;/p&gt; &lt;h3 style=&quot;color: #4CAF50; font-size: 24px;&quot;&gt;${otp}&lt;/h3&gt; &lt;p&gt;This OTP will expire in 10 minutes.&lt;/p&gt; &lt;p&gt;If you didn&#39;t request this OTP, please ignore this email.&lt;/p&gt; `, }; await transporter.sendMail(mailOptions); } catch (error) { console.error(&quot;Error sending email:&quot;, error); throw new Error(&quot;Failed to send email&quot;); } } router.post(&quot;/sendOTP&quot;, async (req: express.Request&lt;{}, {}, OTPRequest&gt;, res: express.Response) =&gt; { try { const { email } = req.body; if (!email) { return res.status(400).json({ error: &quot;Email is required&quot; }); } // Validate email format const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/; if (!emailRegex.test(email)) { return res.status(400).json({ error: &quot;Invalid email format&quot; }); } const otp = Math.floor(100000 + Math.random() * 900000).toString(); // Send email await sendEmail(email, otp); res.status(200).json({ success: true, message: &quot;OTP sent successfully&quot; }); } catch (error) { console.error(&quot;Error in /sendOTP:&quot;, error); res.status(500).json({ error: &quot;Failed to send OTP&quot; }); } }); export default router;","headline":"Claude AI Code for Nodemailer","mainEntityOfPage":{"@type":"WebPage","@id":"https://anusree6154s.github.io/bits-and-bytes/claudeai-code"},"url":"https://anusree6154s.github.io/bits-and-bytes/claudeai-code"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/documentation/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://anusree6154s.github.io/documentation/feed.xml" title="Bits &amp; Bytes" /><!-- Google Analytics 4 -->
+<link rel="stylesheet" href="/bits-and-bytes/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://anusree6154s.github.io/bits-and-bytes/feed.xml" title="Bits &amp; Bytes" /><!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSNY1FXG3P"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -33,8 +33,8 @@
 <body><header class="site-header">
   <div class="loader"></div>
 
-    <div class="wrapper"><!-- <a class="site-title" rel="author" href="/documentation/">Bits &amp; Bytes</a> -->
-          <a class="site-title"  rel="author" href="/documentation/"><span>BITS</span><span> & </span><span>BYTES</span></a><nav class="site-nav">
+    <div class="wrapper"><!-- <a class="site-title" rel="author" href="/bits-and-bytes/">Bits &amp; Bytes</a> -->
+          <a class="site-title"  rel="author" href="/bits-and-bytes/"><span>BITS</span><span> & </span><span>BYTES</span></a><nav class="site-nav">
           <input type="checkbox" id="nav-trigger" class="nav-trigger" />
           <label for="nav-trigger">
             <span class="menu-icon">
@@ -45,13 +45,13 @@
           </label>
   
           <div class="trigger">
-            <!--<a class="page-link" href="/documentation/about">About Me</a>-->
+            <!--<a class="page-link" href="/bits-and-bytes/about">About Me</a>-->
 
-            <a class="page-link" href="/documentation/#latest-posts">LATEST POSTS</a>
-            <a class="page-link" href="/documentation/all-posts">ALL POSTS</a>
-            <a class="page-link" href="/documentation/#projects">PROJECTS</a>
-            <a class="page-link" href="/documentation/#profile">PROFILE</a>
-            <a class="page-link" href="/documentation/#contact">CONTACT</a>
+            <a class="page-link" href="/bits-and-bytes/#latest-posts">LATEST POSTS</a>
+            <a class="page-link" href="/bits-and-bytes/all-posts">ALL POSTS</a>
+            <a class="page-link" href="/bits-and-bytes/#projects">PROJECTS</a>
+            <a class="page-link" href="/bits-and-bytes/#profile">PROFILE</a>
+            <a class="page-link" href="/bits-and-bytes/#contact">CONTACT</a>
           </div>
         </nav></div>
     
@@ -66,7 +66,7 @@
      
     <div class="parent-link">
       This post is part of
-      <a href="/documentation/oauth-config-setup"
+      <a href="/bits-and-bytes/oauth-config-setup"
         >OAuth Config Setup in Different Apps</a
       >.
     </div>
@@ -217,8 +217,8 @@
   <div class="disqus-comments" width='500'><div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = 'https://anusree6154s.github.io/documentation/claudeai-code';
-      this.page.identifier = 'https://anusree6154s.github.io/documentation/claudeai-code';
+      this.page.url = 'https://anusree6154s.github.io/bits-and-bytes/claudeai-code';
+      this.page.identifier = 'https://anusree6154s.github.io/bits-and-bytes/claudeai-code';
     };
 
     (function() {
@@ -232,21 +232,21 @@
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div>
 
-  <a class="u-url" href="/documentation/claudeai-code" hidden></a>
+  <a class="u-url" href="/bits-and-bytes/claudeai-code" hidden></a>
 </article>
 
 
 
       </div>
     </main><!-- <footer class="site-footer h-card">
-    <data class="u-url" href="/documentation/"></data>
+    <data class="u-url" href="/bits-and-bytes/"></data>
   
     <div class="wrapper">
   
       <div class="footer-col-wrapper">
         <div class="footer-col">
           <p class="feed-subscribe">
-            <a href="https://anusree6154s.github.io/documentation/feed.xml">
+            <a href="https://anusree6154s.github.io/bits-and-bytes/feed.xml">
               <svg class="svg-icon orange">
                 <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
                   11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
@@ -265,7 +265,7 @@
         </div>
       </div>
   
-      <div class="social-links"><ul class="social-media-list"><li><a href="https://github.com/Anusree6154s"><svg class="svg-icon"><use xlink:href="/documentation/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Anusree6154s</span></a></li><li><a href="https://www.linkedin.com/in/anusreeanilkumar1"><svg class="svg-icon"><use xlink:href="/documentation/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">anusreeanilkumar1</span></a></li><li><a href="https://www.twitter.com/anu6154s"><svg class="svg-icon"><use xlink:href="/documentation/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anu6154s</span></a></li><li><a href="/documentation/feed.xml"><svg class="svg-icon"><use xlink:href="/documentation/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
+      <div class="social-links"><ul class="social-media-list"><li><a href="https://github.com/Anusree6154s"><svg class="svg-icon"><use xlink:href="/bits-and-bytes/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Anusree6154s</span></a></li><li><a href="https://www.linkedin.com/in/anusreeanilkumar1"><svg class="svg-icon"><use xlink:href="/bits-and-bytes/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">anusreeanilkumar1</span></a></li><li><a href="https://www.twitter.com/anu6154s"><svg class="svg-icon"><use xlink:href="/bits-and-bytes/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anu6154s</span></a></li><li><a href="/bits-and-bytes/feed.xml"><svg class="svg-icon"><use xlink:href="/bits-and-bytes/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
 </div>
   
     </div>
@@ -295,10 +295,10 @@
     <div class="list">
       <div class="sections">
         <p>SECTIONS</p>
-        <a href="/documentation/#latest-posts">Latest Posts</a>
-        <a href="/documentation/all-posts">All Posts</a>
-        <a href="/documentation/#projects">Projects</a>
-        <a href="/documentation/#profile">Profile</a>
+        <a href="/bits-and-bytes/#latest-posts">Latest Posts</a>
+        <a href="/bits-and-bytes/all-posts">All Posts</a>
+        <a href="/bits-and-bytes/#projects">Projects</a>
+        <a href="/bits-and-bytes/#profile">Profile</a>
       </div>
       <div class="links">
         <p>LINKS</p>
@@ -321,14 +321,14 @@
       SimpleJekyllSearch({
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('results-container'),
-        json: '/documentation/search.json',
+        json: '/bits-and-bytes/search.json',
         searchResultTemplate: '<li class="search-list"><a href="{url}">{title}</a></li>',
         noResultsText: '<li class="search-list">No results found</li>',
         limit: 5
       });
       
        document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'https://documentation-backend-pi.vercel.app';
+    const apiUrl = 'https://bits-and-bytes-backend-pi.vercel.app';
     const pageUrl = window.location.href;
 
     fetch(apiUrl, {
