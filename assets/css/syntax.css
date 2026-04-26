@@ -228,11 +228,11 @@
 code {
   color: #f8f8f2 !important ;
   background-color: #000000 !important ;
-  font-size: small !important;
+  font-size: large !important;
   border-radius: 3px !important;
   font-weight: lighter !important;
 }
 
 pre {
-  padding: 15px !important;
+  padding: 10px !important;
 }

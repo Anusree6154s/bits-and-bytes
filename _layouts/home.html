@@ -10,7 +10,7 @@ layout: default
       <p class="landing-content2">This is where curiosity meets creation.</p>
       <p class="landing-content3">
         I share the journey behind my latest projects, document lessons learned,
-        and explore exciting discoveries in tech and beyond.
+        and whatever has caught my eye lately.
       </p>
       <div class="socials">
         <a href="https://www.linkedin.com/in/anusreeanilkumar1/"
@@ -70,7 +70,9 @@ layout: default
               {%- endfor -%} {%- endif -%}
             </p>
 
-            {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+            <p class="post-excerpt">
+              {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+            </p>
           </div>
           <div class="post-read-more">
             <div class="arrow-container">
@@ -82,7 +84,7 @@ layout: default
             </div>
           </div>
         </li>
-      </a>  
+      </a>
 
       {% assign count = count | plus: 1 %} {% if count == 10 %} {% break %} {%
       endif %} {% endunless %} {%- endfor -%}
@@ -108,13 +110,6 @@ layout: default
       </p>
     </div>
 
-    <div class="projects-view-more">
-      <a href="https://anusreeanilkumar.vercel.app/projects">
-        <span>VIEW PROJECTS</span>
-        <span class="arrow-container"><span class="arrow"></span></span>
-      </a>
-    </div>
-
     <div class="carousel basic carousel-1">
       <div class="group">{% include group.html %} {% include group.html %}</div>
       <!-- {% include group.html %} -->
@@ -123,6 +118,13 @@ layout: default
       <div class="group">
         {% include group-2.html %} {% include group-2.html %}
       </div>
+    </div>
+
+    <div class="projects-view-more">
+      <a href="https://anusreeanilkumar.vercel.app/projects">
+        <span>VIEW PROJECTS</span>
+        <span class="arrow-container"><span class="arrow"></span></span>
+      </a>
     </div>
   </article>
 
@@ -141,8 +143,7 @@ layout: default
       <p>PROFILE</p>
       <p>Beyond the Code</p>
       <p>
-        From small beginnings to thoughtful creations — explore what defines me.
-        Discover more in my profile.
+        Get to know the person behind the terminal. <br/> Discover more in my profile.
       </p>
       <a href="https://anusreeanilkumar.vercel.app/resume">VIEW PROFILE</a>
     </div>

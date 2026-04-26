@@ -95,7 +95,7 @@
         position: unset;
         padding: 0%;
         margin: 0px;
-        font-size: 70%;
+        font-size: 60%;
         width: 90%;
         align-items: center;
         background: transparent;
@@ -258,7 +258,6 @@
         color: #ffffffba;
         border-left: 1px solid #e8e8e8bb;
         font-size: small;
-        letter-spacing: -1px;
         background: #ffffff0f;
         border-radius: 0px 5px 5px 0px;
         width: max-content;
