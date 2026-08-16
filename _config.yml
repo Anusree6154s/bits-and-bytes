@@ -1,10 +1,10 @@
-
 title: Bits & Bytes
+favicon_ico: "/assets/images/favicon.ico"
 author: Anusree Anilkumar
 email: anilkumaranusree113@gmail.com
 description: Tech Blog
-baseurl: "/bits-and-bytes" 
-url: "https://Anusree6154s.github.io" 
+baseurl: "/bits-and-bytes"
+url: "https://Anusree6154s.github.io"
 repository: Anusree6154s/bits-and-bytes
 twitter_username: anu6154s
 github_username: Anusree6154s
@@ -13,32 +13,47 @@ rss: rss
 google_analytics: G-TSNY1FXG3P
 
 show_excerpts: true
-theme: minima
+theme: just-the-docs
 
+permalink: /:title/
 
-plugins:
-  - jekyll-feed
+collections:
+  docs:
+    permalink: /:path/
+    output: true
+    sort_by: order
 
-minima:
-  date_format: "%d %b %Y"
-
-header_pages:
-  - _pages/home.md
-  - _pages/about.md
-  - _pages/table-of-contents.md
+just_the_docs:
+  collections:
+    - docs
+  nav_sort: case_insensitive
+  search:
+    enabled: true
+    heading_level: 2
+    preview_words: 10
+    button_text: Search
 
 exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
   - docs
+  - node_modules
+  - vendor
+  - .dist
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+  - _site
+  - content
 
 include:
   - _pages
   - _layouts
-  - content #https://chatgpt.com/share/6790bb9a-d5e4-8007-8bf7-790c1c43a7e4
+  - _docs
 
 disqus:
-    shortname: anusree-anilkumar-blog
+  shortname: anusree-anilkumar-blog
 
-permalink: /:title/
+sass:
+  style: compressed

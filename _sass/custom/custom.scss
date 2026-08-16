@@ -1,0 +1,11 @@
+.site-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.site-logo img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}

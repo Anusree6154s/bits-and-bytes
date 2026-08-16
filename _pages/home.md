@@ -1,6 +1,435 @@
 ---
+layout: default
+title: Home
+nav_order: 1
 permalink: /
-layout: home
 ---
-<script id="dsq-count-scr" src="//anusree-anilkumar-blog.disqus.com/count.js" async></script>
-<!-- <script src="../assets/js/base.js" async></script> -->
+
+<div style="position: relative; max-width: 580px; padding: 2rem 2.5rem; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(8px); border-radius: 16px; border: 1px solid rgba(226, 232, 240, 0.8); box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05); text-align: center;">
+  <!-- Decorative Background SVG Quote Mark -->
+  <div style="position: absolute; top: 10px; left: 20px; font-size: 4rem; color: #7c3aed; opacity: 0.08; font-family: Georgia, serif; line-height: 1; user-select: none;">“</div>
+  
+  <p id="quote-text" style="font-size: 1.15rem; font-style: italic; color: #334155; font-family: serif; line-height: 1.6; margin: 0; position: relative; z-index: 1;">
+    "Programming is not about typing, it's about thinking."
+  </p>
+  <p id="quote-author" style="font-size: 1rem; font-style: italic; color: #33415594; font-family: serif; line-height: 1.6; margin: 0; position: relative; z-index: 1; margin-top:5px;">
+     — Rich Hickey
+  </p>
+    <div style="position: absolute; top: 10px; right: 20px; font-size: 4rem; color: #7c3aed; opacity: 0.08; font-family: Georgia, serif; line-height: 1; user-select: none;">”</div>
+</div>
+
+<div style="text-align: center; margin-top: 1rem;">
+  <button id="quote-toggle-btn" onclick="toggleQuoteCategory()" style="background: #f1f5f9; color: #7c3aed; border: 1px solid #cbd5e1; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-family: monospace; cursor: pointer;">
+    ✨ Switch to Ghibli Quotes
+  </button>
+</div>
+
+<script>
+  const devQuotes = [
+  // Terminal Commands & Unix Culture
+  { quote: "`cat /dev/urandom` is just the digital equivalent of a kitten chasing a laser pointer.", author: "Unix Lore" },
+  { quote: "Unix named its primary file-concatenation tool `cat` because both are small, essential, and refuse to do what you actually want.", author: "Dev Proverb" },
+  { quote: "The most powerful terminal command is `cat`, but the most powerful desktop interrupter is an actual cat.", author: "Terminal Wisdom" },
+  { quote: "A developer's terminal log: 10% bash commands, 90% `cat file.txt` typed while a cat stands on `Shift`.", author: "Sysadmin Truth" },
+  { quote: "System administrators pipe output into `grep`; cats pipe themselves into tiny cardboard boxes.", author: "Dev Humor" },
+  { quote: "Unix philosophy: do one thing well. Cat philosophy: do nothing, but demand treats anyway.", author: "System Architecture" },
+  { quote: "Terminal output scrolling at high speed is cat television.", author: "Dev Observation" },
+  { quote: "`sudo` grants root privileges to developers, but nothing revokes them faster than a cat sitting on the Power button.", author: "Root Access" },
+  { quote: "`cat > file.txt` writes input to a file. A cat on your desk writes input directly into your git commit history.", author: "Git Proverb" },
+  { quote: "If you run `cat` without arguments, it echoes everything back at you—just like a vocal tabby at dinner time.", author: "Unix Facts" },
+  { quote: "Power users master `tmux`; power cats master sleeping directly across `Ctrl+C`.", author: "Power User Guide" },
+  { quote: "The terminal prompt waits for user input; the cat waits for you to place your coffee cup dangerously close to the edge.", author: "Desktop Dynamics" },
+  { quote: "Pipe stdout into `less` to read logs slowly; pipe a cat into your lap to code even slower.", author: "Performance Optimization" },
+  { quote: "Shell scripts automate boring tasks, but no script can automate taking a cat off your warm keyboard.", author: "Automation Limits" },
+  { quote: "`kill -9` forcefully terminates a process, yet no process signal can remove a 10-pound feline from a chair.", author: "Process Management" },
+  { quote: "Zsh themes show git status; cat behavior shows current house dominance.", author: "Shell Setup" },
+  { quote: "The best terminal color scheme is the one that hides shedding fur on your monitor base.", author: "Dev Environment" },
+  { quote: "Vim locks you in until you learn `:wq`; a purring cat locks you in until your legs lose sensation.", author: "Editor Traps" },
+  { quote: "Running `top` lets you monitor CPU load; keeping a cat on your desk lets you monitor laptop thermal output.", author: "Resource Monitor" },
+  { quote: "Scripting is writing instructions for a machine; cat ownership is receiving instructions from a fur ball.", author: "Control Theory" },
+
+  // Hardware, Keyboards & Laptops
+  { quote: "The optimal operating temperature of a modern CPU is whatever keeps the top case warm enough for a sleeping feline.", author: "Hardware Specs" },
+  { quote: "Mechanical keycaps click loud enough to awaken a sleeping kitten three rooms away.", author: "Switch Science" },
+  { quote: "A laptop cooling pad is just an under-utilized cat bed.", author: "Thermal Management" },
+  { quote: "Spacebars are wide enough to accommodate two human thumbs or one cat paw.", author: "Ergonomics" },
+  { quote: "Custom keycap profiles: Cherry, OEM, SA, and 'Paws-on-Keys'.", author: "Keyboard Aficionado" },
+  { quote: "Desk pads protect your table from scratches; cat scratching posts protect your desk pad from destruction.", author: "Workspace Care" },
+  { quote: "Dual-monitor setups exist so one screen can display code while the cat blocks the other.", author: "Multi-Monitor Life" },
+  { quote: "RGB lighting was invented to entertain human eyes, but static red LEDs attract feline hunting instincts.", author: "Battlestation Setup" },
+  { quote: "Cable management keeps your workspace tidy until a cat discovers a dangling braided USB cord.", author: "Cable Rigging" },
+  { quote: "Ergonomic split keyboards give your cat a cozy valley to rest its chin between the halves.", author: "Ergonomic Design" },
+  { quote: "A 75% keyboard layout leaves 25% more room for a cat to stretch out.", author: "Form Factors" },
+  { quote: "The heat dissipation fins on a high-end GPU are nature’s radiator for indoor cats.", author: "GPU Science" },
+  { quote: "Wireless mice are great until your cat mistakes the optic sensor light for a bug.", author: "Peripheral Testing" },
+  { quote: "Monitor arms adjust height so you can still read documentation over the top of a sleeping tabby.", author: "Desk Accessories" },
+  { quote: "Screen cleaners exist exclusively to remove nose prints left by curious felines.", author: "Display Maintenance" },
+  { quote: "Standing desks were engineered so developers can work upright while cats occupy the office chair.", author: "Ergonomic Trends" },
+  { quote: "A laptop lid closing sound is the universal signal for 'the workday is over, feed me'.", author: "Hardware Cues" },
+  { quote: "Trackballs remain unaffected when a cat walks across them; optical mice drift into the next screen monitor.", author: "Input Devices" },
+  { quote: "Desk cable sleeves are mandatory armor against kitten teeth.", author: "Cable Protection" },
+  { quote: "The most durable peripheral in your setup is whichever one your cat decides to headbutt daily.", author: "Hardware Stress Test" },
+
+  // IDEs, Code Editors & Syntax
+  { quote: "VS Code extensions can lint your JavaScript, but they can't lint keypresses like `asdfghjkl` made by a paw.", author: "Linter Limitations" },
+  { quote: "A syntax error highlights red in your editor; a cat's tail across the screen highlights everything in blue.", author: "Editor Aesthetics" },
+  { quote: "Dark themes save battery life; black cats sitting near your desk save sanity.", author: "UI Themes" },
+  { quote: "Auto-save features were created for power outages and cat steps on the power strip.", author: "IDE Features" },
+  { quote: "Brackets must always balance in code, just as a cat must always balance on the thin top edge of a monitor.", author: "Syntax Rules" },
+  { quote: "Code folding collapses long functions; a cat sitting on your lap collapses long work sessions.", author: "Code Organization" },
+  { quote: "Linter warnings complain about unused variables; cats complain about empty spots in the food bowl.", author: "Static Analysis" },
+  { quote: "Multi-cursor editing lets you type in ten places at once; a cat stepping on the arrow keys places cursors everywhere.", author: "Editor Shortcuts" },
+  { quote: "Indentation tabs vs. spaces: the debate ends when your cat hits `Backspace` and deletes both.", author: "Formatting Wars" },
+  { quote: "Inline code completion predicts your next line; your cat predicts when you are about to reach for the mouse.", author: "AI Autocomplete" },
+  { quote: "Git diffs highlight additions in green and deletions in red; cats highlight your screen with fur.", author: "Version Control UI" },
+  { quote: "Emmet shortcuts expand HTML tags instantly; cat paws expand single keypresses into full-page gibberish.", author: "Macro Shortcuts" },
+  { quote: "Font size 14px is great for reading code; font size 24px is necessary when a cat covers half the display.", author: "Accessibility" },
+  { quote: "Breakpoint debugging pauses code execution; a cat jumping onto your desk pauses all human activity.", author: "Debugging Secrets" },
+  { quote: "The compiler flags unused imports; your cat flags un-petted heads.", author: "Compiler Errors" },
+  { quote: "TypeScript types catch bugs at build time; cats catch moths at 2 AM.", author: "Type Safety" },
+  { quote: "Regex patterns look complex, but they look suspiciously like text generated by a cat walking on a keyboard.", author: "Regex Truths" },
+  { quote: "Tree-shaking removes dead code; cats tree-shake small items off your desk.", author: "Bundler Logic" },
+  { quote: "Sublime Text loads instantly, whereas convincing a cat to move off your mousepad takes ten minutes.", author: "Performance Metrics" },
+  { quote: "Format-on-save cleans up messy code; a cat walking by cleans off any pens left near the desk edge.", author: "Prettier Config" },
+
+  // Remote Work & Co-Working
+  { quote: "Video call etiquette: mute your mic when typing, unmute when your cat introduces itself to the client.", author: "Remote Etiquette" },
+  { quote: "The most frequent speaker in sprint planning is the senior dev; the loudest speaker is their hungry cat.", author: "Agile Ceremonies" },
+  { quote: "Home office dress code: sweatpants, slippers, and cat hair on every dark shirt.", author: "WFH Culture" },
+  { quote: "Daily stand-ups: human team members state their blockers; cats *are* the blockers.", author: "Scrum Master Rules" },
+  { quote: "A webcam frame consists of 80% developer face, 15% room background, and 5% cat tail.", author: "Video Framing" },
+  { quote: "Co-working spaces offer free coffee; home offices offer purr therapy.", author: "Office Perks" },
+  { quote: "Slack status: 'In a meeting'. Reality: 'Trapped under a sleeping cat'.", author: "Presence Status" },
+  { quote: "Zoom backgrounds hide messy rooms, but they fail to hide a cat jumping across the chair back.", author: "Virtual Meetings" },
+  { quote: "Pair programming remotely means screen sharing code while your co-worker's cat swats at the cursor.", author: "Pairing Dynamics" },
+  { quote: "Asynchronous communication allows flexibility; cat demands allow no delay.", author: "Async Work" },
+  { quote: "Virtual coffee breaks are better when everyone brings their feline manager to the camera.", author: "Team Bonding" },
+  { quote: "The best work-from-home perk is having a colleague who doesn't talk about politics, just purrs.", author: "Coworker Reviews" },
+  { quote: "Time zone differences matter for deployments, but cat meal times follow their own absolute clock.", author: "Distributed Teams" },
+  { quote: "Focus mode silences notifications, but it doesn't silence a meow right next to your ear.", author: "Deep Work" },
+  { quote: "A warm keyboard is a magnet, and a remote developer is the anchor.", author: "WFH Physics" },
+  { quote: "Noise-canceling headphones block out street traffic, but high-pitched meows bypass all ANC algorithms.", author: "Audio Tech" },
+  { quote: "The office watercooler is replaced by the kitchen food dish.", author: "Company Culture" },
+  { quote: "Meeting agendas keep calls structured; cats wandering onto the desk keep calls entertaining.", author: "Agenda Planning" },
+  { quote: "Screen sharing requires caution: close private tabs and move the cat away from the `End Call` button.", author: "Security Practices" },
+  { quote: "Working remotely proves that cats consider desks their primary territory and humans as secondary furniture.", author: "Territory Dynamics" },
+
+  // Open Source, Bugs & Dev Culture
+  { quote: "Open-source maintainers review pull requests; domestic cats review every object brought into the house.", author: "Review Process" },
+  { quote: "A memory leak drains RAM over time; a kitten drains your productivity over minutes.", author: "Resource Leaks" },
+  { quote: "Bug reports need reproduction steps; cat shenanigans happen once and are impossible to recreate on command.", author: "QA Testing" },
+  { quote: "Rubber duck debugging helps you explain logic out loud; cat debugging means explaining it to someone who visibly judges you.", author: "Debugging Tactics" },
+  { quote: "Pull request approved: LGTM (Looks Good To Meow).", author: "Code Review" },
+  { quote: "Stack Overflow answers solve complex errors; scratching behind the ears solves feline complaints.", author: "Problem Solving" },
+  { quote: "Dependencies require constant updates; cats require constant attention.", author: "Package Management" },
+  { quote: "A zero-day vulnerability takes down servers; an open door takes down a cat's desire to go outside.", author: "Cyber Security" },
+  { quote: "Branching strategies keep main clean; separate cat beds keep your lap clear (in theory).", author: "Git Workflows" },
+  { quote: "Refactoring old code uncovers technical debt; moving desk furniture uncovers lost cat toys.", author: "Maintenance Days" },
+  { quote: "Documentation explains how things work; cats demonstrate how things break.", author: "Technical Writing" },
+  { quote: "Patch updates fix stability issues; cat naps fix developer burnout.", author: "Dev Wellness" },
+  { quote: "Edge cases occur under rare conditions; cats find edge cases by jumping on places they shouldn't.", author: "Boundary Testing" },
+  { quote: "Infinite loops consume resources; a cat chasing a light beam consumes energy.", author: "Algorithmic Efficiency" },
+  { quote: "Release notes document new features; cat purrs document contentment.", author: "Release Management" },
+  { quote: "API rate limits prevent abuse; cat boundaries prevent uninvited belly rubs.", author: "API Architecture" },
+  { quote: "Version control tracks code changes; cat behavior tracks time until dinner.", author: "System Logs" },
+  { quote: "Open-source software thrives on community support; dev cats thrive on warm electronics.", author: "OSS Ecosystem" },
+  { quote: "CI/CD pipelines automate testing; cats test gravity by pushing pens off desks.", author: "Automation Testing" },
+  { quote: "Good code is clean, modular, and readable; a good cat is soft, warm, and sitting on your project notes.", author: "Dev Philosophy" }
+];
+
+const ghibliQuotes = [
+  { quote: "Always believe in yourself. Do this and no matter where you are, you may have nothing to fear.", movie: "The Cat Returns", character: "The Baron" },
+  { quote: "Once you've met someone you never really forget them. It just takes a while for your memories to return to you.", movie: "Spirited Away", character: "Zeniba" },
+  { quote: "We each need to find our own inspiration. Sometimes it's not easy.", movie: "Kiki's Delivery Service", character: "Ursula" },
+  { quote: "A heart's a heavy burden.", movie: "Howl's Moving Castle", character: "Sophie Hatter" },
+  { quote: "They say the best blaze burns brightest when circumstances are at their worst.", movie: "Howl's Moving Castle", character: "Sophie Hatter" },
+  { quote: "No matter how many weapons you have, no matter how great your technology might be, the world cannot live without love.", movie: "Castle in the Sky", character: "Sheeta" },
+  { quote: "You cannot change fate. However, you can rise to meet it, if you so choose.", movie: "Princess Mononoke", character: "Hii-sama" },
+  { quote: "To see with eyes unclouded by hate.", movie: "Princess Mononoke", character: "Ashitaka" },
+  { quote: "In ancient times, the country was covered in forest, where, of old, dwelt the spirits of the gods.", movie: "Princess Mononoke", character: "Narrator" },
+  { quote: "Trees and people used to be good friends.", movie: "My Neighbor Totoro", character: "Tatsuo Kusakabe" },
+  { quote: "Everybody, try laughing. Then whatever scares you will go away!", movie: "My Neighbor Totoro", character: "Tatsuo Kusakabe" },
+  { quote: "I love Totoro! I love him so much!", movie: "My Neighbor Totoro", character: "Mei Kusakabe" },
+  { quote: "Life is a wisp of light that blinks and goes out.", movie: "Nausicaä of the Valley of the Wind", character: "Nausicaä" },
+  { quote: "The wind is rising! We must try to live!", movie: "The Wind Rises", character: "Jiro Horikoshi" },
+  { quote: "Airplanes are beautiful dreams. Engineers turn the dream into reality.", movie: "The Wind Rises", character: "Caproni" },
+  { quote: "Inspiration unlocks the future.", movie: "The Wind Rises", character: "Caproni" },
+  { quote: "I'd rather be a pig than a fascist.", movie: "Porco Rosso", character: "Porco Rosso" },
+  { quote: "They say that pigs can't fly, but look at me.", movie: "Porco Rosso", character: "Porco Rosso" },
+  { quote: "Just follow your heart, and keep smiling.", movie: "Kiki's Delivery Service", character: "Kokiri" },
+  { quote: "Smile, so we can get out of here!", movie: "Kiki's Delivery Service", character: "Kiki" },
+  { quote: "We need to fly with our own wings and see what we can do.", movie: "Kiki's Delivery Service", character: "Kiki" },
+  { quote: "It's not that big a deal. Just smile!", movie: "Kiki's Delivery Service", character: "Kiki" },
+  { quote: "Welcome the miracle of being alive.", movie: "The Tale of the Princess Kaguya", character: "Princess Kaguya" },
+  { quote: "The joy of living is what brought me here.", movie: "The Tale of the Princess Kaguya", character: "Princess Kaguya" },
+  { quote: "Why do fireflies have to die so soon?", movie: "Grave of the Fireflies", character: "Setsuko" },
+  { quote: "She fell asleep, and never woke up.", movie: "Grave of the Fireflies", character: "Seita" },
+  { quote: "You're a real lady now, and yet you're still a little girl inside.", movie: "Only Yesterday", character: "Taeko Okajima" },
+  { quote: "If you take the caterpillar as it is, it's just an ugly bug. But it will become a butterfly.", movie: "Only Yesterday", character: "Toshio" },
+  { quote: "I want you to know Haku made me promise to help you.", movie: "Spirited Away", character: "Kamaji" },
+  { quote: "Nothing that happens is ever forgotten, even if you can't remember it.", movie: "Spirited Away", character: "Zeniba" },
+  { quote: "Welcome home, Chihiro.", movie: "Spirited Away", character: "Haku" },
+  { quote: "Whatever happens, don't look back until you're out of the tunnel.", movie: "Spirited Away", character: "Haku" },
+  { quote: "Here's a curse for you: May all your bacon burn.", movie: "Howl's Moving Castle", character: "Calcifer" },
+  { quote: "I'm not going to run away anymore. I've found someone I want to protect.", movie: "Howl's Moving Castle", character: "Howl" },
+  { quote: "It's not easy being pretty.", movie: "Howl's Moving Castle", character: "Howl" },
+  { quote: "Sorry, I've had enough of running away, Sophie. Now I've got something I want to protect. It's you.", movie: "Howl's Moving Castle", character: "Howl" },
+  { quote: "One day, out of nowhere, something will happen. And after that, everything will change.", movie: "Whisper of the Heart", character: "Shizuku Tsukishima" },
+  { quote: "You see, it's not easy to express oneself through art.", movie: "Whisper of the Heart", character: "Shiro Nishi" },
+  { quote: "You must cut your own path, Shizuku.", movie: "Whisper of the Heart", character: "Shiro Nishi" },
+  { quote: "I want to refine my rough gem into a polished jewel.", movie: "Whisper of the Heart", character: "Seiji Amasawa" },
+  { quote: "I'm not afraid to die. I'd do anything to keep you safe.", movie: "Princess Mononoke", character: "Ashitaka" },
+  { quote: "Life is suffering. It is hard. The world is cursed. But still you find reasons to keep living.", movie: "Princess Mononoke", character: "Osho" },
+  { quote: "Which is better? To die doing nothing or to die trying?", movie: "Nausicaä of the Valley of the Wind", character: "Nausicaä" },
+  { quote: "What important is to keep your heart pure.", movie: "Nausicaä of the Valley of the Wind", character: "Nausicaä" },
+  { quote: "Even if everything ends, life will still find a way to go on.", movie: "Nausicaä of the Valley of the Wind", character: "Nausicaä" },
+  { quote: "The roots of the earth are deep, and they hold the strength of the world.", movie: "Castle in the Sky", character: "Uncle Pom" },
+  { quote: "The earth speaks to us all, if we learn to listen.", movie: "Castle in the Sky", character: "Uncle Pom" },
+  { quote: "A boy who loses his way will find himself when he follows the stars.", movie: "Castle in the Sky", character: "Pazu" },
+  { quote: "You can't judge how beautiful a girl is by her cover.", movie: "Porco Rosso", character: "Porco Rosso" },
+  { quote: "Good luck, pig. May your skies be clear.", movie: "Porco Rosso", character: "Fio Piccolo" },
+  { quote: "When you do something without thinking, you learn what your true motives are.", movie: "The Cat Returns", character: "The Baron" },
+  { quote: "Always keep your pride and your kindness close to your heart.", movie: "The Cat Returns", character: "The Baron" },
+  { quote: "Time flies when you're having fun!", movie: "The Cat Returns", character: "Haru Yoshioka" },
+  { quote: "Your time has come. Don't waste it on regret.", movie: "The Tale of the Princess Kaguya", character: "Empress" },
+  { quote: "The earth is filled with beautiful things, if only you open your eyes.", movie: "The Tale of the Princess Kaguya", character: "Kaguya" },
+  { quote: "My heart is lighter now that I have shared my burden.", movie: "When Marnie Was There", character: "Anna Sasaki" },
+  { quote: "You will always be my secret, Anna.", movie: "When Marnie Was There", character: "Marnie" },
+  { quote: "We are bound together by the places we love.", movie: "When Marnie Was There", character: "Marnie" },
+  { quote: "I love Ponyo! Ponyo loves Sosuke!", movie: "Ponyo", character: "Ponyo" },
+  { quote: "Don't worry, Ponyo. No matter what happens, I'll protect you.", movie: "Ponyo", character: "Sosuke" },
+  { quote: "It's a miracle! The world is being renewed!", movie: "Ponyo", character: "Granmamare" },
+  { quote: "Love is the ultimate transformation.", movie: "Ponyo", character: "Granmamare" },
+  { quote: "I'm tiny, but my courage is huge!", movie: "The Secret World of Arrietty", character: "Arrietty" },
+  { quote: "Sometimes you have to fight for the things that are worth holding onto.", movie: "The Secret World of Arrietty", character: "Arrietty" },
+  { quote: "You gave me the courage to live, Arrietty.", movie: "The Secret World of Arrietty", character: "Shawn" },
+  { quote: "My heart will be stronger now that you're in it.", movie: "The Secret World of Arrietty", character: "Shawn" },
+  { quote: "There is no future for people who worship the future and forget the past.", movie: "From Up on Poppy Hill", character: "Shun Kazama" },
+  { quote: "Let's clear away the dust of yesterday to make room for tomorrow.", movie: "From Up on Poppy Hill", character: "Umi Matsuzaki" },
+  { quote: "If you keep moving forward, you'll eventually find your light.", movie: "From Up on Poppy Hill", character: "Umi Matsuzaki" },
+  { quote: "I'll keep signaling every day, so you know I'm still here.", movie: "From Up on Poppy Hill", character: "Umi Matsuzaki" },
+  { quote: "A wizard who loses his heart loses everything.", movie: "Tales from Earthsea", character: "Ged" },
+  { quote: "To deny death is to deny life itself.", movie: "Tales from Earthsea", character: "Ged" },
+  { quote: "What cannot be returned must be cherished.", movie: "Tales from Earthsea", character: "Therru" },
+  { quote: "Life is precious because it is finite.", movie: "Tales from Earthsea", character: "Therru" },
+  { quote: "I am not afraid of hard work, only of losing my purpose.", movie: "My Neighbors the Yamadas", character: "Takashi Yamada" },
+  { quote: "Family is a journey we take together, one laugh at a time.", movie: "My Neighbors the Yamadas", character: "Matsuko Yamada" },
+  { quote: "Even small steps can lead you to great places.", movie: "My Neighbors the Yamadas", character: "Shige Yamada" },
+  { quote: "The wind carries memories of people long forgotten.", movie: "The Red Turtle", character: "Narrator" },
+  { quote: "Nature speaks in silence, to those who stop to listen.", movie: "The Red Turtle", character: "Narrator" },
+  { quote: "The ocean holds every story ever told.", movie: "The Red Turtle", character: "Narrator" },
+  { quote: "I may be young, but I know what my heart wants.", movie: "The Boy and the Heron", character: "Mahito Maki" },
+  { quote: "Build a world of your own, free from malice and sorrow.", movie: "The Boy and the Heron", character: "Granduncle" },
+  { quote: "Fire purifies all things, but love breathes life into them.", movie: "The Boy and the Heron", character: "Himi" },
+  { quote: "Where you come from doesn't matter as much as where you choose to go.", movie: "The Boy and the Heron", character: "Kiriko" },
+  { quote: "True strength comes from accepting your flaws.", movie: "The Boy and the Heron", character: "Mahito Maki" },
+  { quote: "When you smile, the world smiles with you.", movie: "My Neighbor Totoro", character: "Satsuki Kusakabe" },
+  { quote: "Magic is everywhere if you know how to look for it.", movie: "My Neighbor Totoro", character: "Satsuki Kusakabe" },
+  { quote: "I promise I'll grow up strong and brave!", movie: "My Neighbor Totoro", character: "Mei Kusakabe" },
+  { quote: "No matter how dark the night, dawn will always break.", movie: "Spirited Away", character: "Lin" },
+  { quote: "Don't get greedy, or you might end up like your parents!", movie: "Spirited Away", character: "Yubaba" },
+  { quote: "Names have power. Protect yours.", movie: "Spirited Away", character: "Haku" },
+  { quote: "Even if you're scared, take one step forward anyway.", movie: "Kiki's Delivery Service", character: "Kiki" },
+  { quote: "Flight isn't just about wings; it's about spirit.", movie: "Kiki's Delivery Service", character: "Tombo" },
+  { quote: "You can't run away from who you truly are.", movie: "Howl's Moving Castle", character: "Madame Suliman" },
+  { quote: "A home is wherever the people you love are gathered.", movie: "Howl's Moving Castle", character: "Sophie Hatter" },
+  { quote: "Old age has its advantages—you have less to lose.", movie: "Howl's Moving Castle", character: "Sophie Hatter" },
+  { quote: "To love someone is to give them the freedom to fly.", movie: "The Wind Rises", character: "Naoko Satomi" },
+  { quote: "We must live, even in a world that is breaking.", movie: "The Wind Rises", character: "Jiro Horikoshi" },
+  { quote: "The sky belongs to everyone who dares to look up.", movie: "The Wind Rises", character: "Caproni" },
+  { quote: "A quiet heart can hear the whispers of the universe.", movie: "Whisper of the Heart", character: "Shiro Nishi" }
+];
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const randomIndex = Math.floor(Math.random() * devQuotes.length);
+    const selected = devQuotes[randomIndex];
+    document.getElementById("quote-text").innerHTML = 
+      `${selected.quote}`;
+      document.getElementById("quote-author").innerHTML = 
+      `~ ${selected.author}`;
+  });
+
+let currentCategory = "dev";
+
+  function toggleQuoteCategory() {
+    const btn = document.getElementById("quote-toggle-btn");
+    if (currentCategory === "dev") {
+      const selected = ghibliQuotes[Math.floor(Math.random() * ghibliQuotes.length)];
+      document.getElementById("quote-text").innerHTML = `"${selected.quote}"`;
+      document.getElementById("quote-author").innerHTML = `~ ${selected.character} (${selected.movie})`;
+      btn.innerHTML = "💻 Switch to Dev Quotes";
+      currentCategory = "ghibli";
+    } else {
+      const selected = devQuotes[Math.floor(Math.random() * devQuotes.length)];
+      document.getElementById("quote-text").innerHTML = `${selected.quote}`;
+      document.getElementById("quote-author").innerHTML = `~ ${selected.author}`;
+      btn.innerHTML = "✨ Switch to Ghibli Quotes";
+      currentCategory = "dev";
+    }
+  }
+
+</script>
+
+## Latest Posts
+
+
+
+{% assign sorted_docs = site.docs | where_exp: "doc", "doc.has_children != true" | sort: 'date' | reverse %}
+
+<style>
+  .git-timeline {
+    position: relative;
+    padding-left: 28px;
+    border-left: 2px dashed #94a3b8;
+  }
+  .git-node {
+    position: absolute;
+    left: -36px;
+    top: 12px;
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff;
+    border: 3px solid #2563eb;
+    border-radius: 50%;
+  }
+</style>
+<div style="border-left: 1.5px solid #e0e0e0; margin-left: 10px; padding-left: 20px;">
+  {% for doc in sorted_docs limit:10 %}
+    <div style="margin-bottom: 2rem; position: relative;">
+      <!-- Timeline Node Dot -->
+      
+      <!-- <div style="position: absolute; width: 10px; height: 10px; background-color: #7c3aed; border-radius: 50%; left: -26px; top: 8px;"></div> -->
+      <!-- <div style="position: absolute; left: -32px; top: 4px; font-size: 14px; line-height: 1;">🪻</div> -->
+      <div style="position: absolute; left: -30px; top: 6px; font-size: 14px; color: #7c3aed; line-height: 1;">🌸</div>
+ 
+      
+      <!-- Timeline Content Box -->
+      <div class="p-3 border border-radius-6" style="background-color: #f8fafc; border-radius:8px; padding-right:5px;">
+        
+        
+        <h3 class="mt-0">
+          <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+          {% if  doc.parent %}
+            <span style="display: inline-flex; align-items: center; gap: 4px; background-color: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; padding: 2px 8px; border-radius: 4px; font-family: monospace; font-size: 0.7rem; margin-bottom: 0rem; margin-left: 0.5rem;">
+            <span style="color: #7c3aed;"></span> {{ doc.parent | default: doc.parent | downcase | replace: " ", "-" }}
+            </span>
+        {% endif %}
+        </h3>
+
+        <p class="text-small mb-0">
+          {% if doc.date %}
+            {{ doc.date | date: "%b %d, %Y" }}
+          {% else %}
+            Undated Note
+          {% endif %}
+        </p>
+        
+
+        
+      </div>
+    </div>
+{% endfor %}
+</div>
+
+<br>
+
+<div class="polaroid-wrapper">
+  <!-- Hidden audio element (replace audio source with your own file if needed) -->
+  <audio id="polaroid-sound" src="/bits-and-bytes/assets/sounds/cat-meow.mp3" preload="auto"></audio>
+
+  <div class="polaroid-card" onmouseenter="playHoverSound()">
+    <div class="tape-tag">📌 End of page!</div>
+    <div class="photo-frame">
+      <img src="/bits-and-bytes/assets/images/header-animation.gif" alt="Cat biting computer" class="polaroid-gif" />
+    </div>
+    <div class="polaroid-caption">
+      Nice meeting you! 🐾
+      <span class="sub-caption">Checkout navbar for more bits and bytes</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  function playHoverSound() {
+    const sound = document.getElementById("polaroid-sound");
+    if (sound) {
+      sound.currentTime = 0; // Rewind to start if hovered rapidly
+      sound.play().catch(() => {
+        // Autoplay policy fallback: sound will play once user interacts with the page
+      });
+    }
+  }
+</script>
+
+<style>
+.polaroid-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.polaroid-card {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px 12px 16px 12px;
+  border-radius: 4px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eaeaea;
+  transform: rotate(-1.5deg);
+  transition: transform 0.2s ease;
+  margin: 0 auto;
+}
+
+.polaroid-card:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.tape-tag {
+  position: absolute;
+  top: -10px;
+  background: #fef9c3;
+  color: #854d0e;
+  font-family: monospace;
+  font-size: 0.8rem;
+  padding: 2px 10px;
+  border: 1px dashed #fde047;
+  border-radius: 2px;
+}
+
+.photo-frame {
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 4px;
+  padding: 6px;
+  margin-top: 6px;
+}
+
+.polaroid-gif {
+  width: 204px;
+  height: 204px;
+  object-fit: contain;
+  display: block;
+}
+
+.polaroid-caption {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sub-caption {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #64748b;
+}
+</style>

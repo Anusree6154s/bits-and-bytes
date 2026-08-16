@@ -11,6 +11,7 @@
     "cz-conventional-changelog": "^3.3.0"
   },
   "scripts": {
+    "install": "bundle install",
     "start": "bundle exec jekyll serve",
     "clean": "rm -rf .jekyll-cache _site"
   }

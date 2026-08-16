@@ -1,0 +1,12 @@
+# Top-level navigation
+- title: Home
+  url: /
+
+- title: About
+  url: /about
+
+- title: Docs
+  url: /docs/
+
+- title: All Posts
+  url: /all-posts
