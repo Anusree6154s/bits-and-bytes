@@ -7,21 +7,51 @@ backend:
   auth_endpoint: /auth?site=https://anusree6154s.github.io/bits-and-bytes
 
 media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+public_folder: "/bits-and-bytes/assets/uploads"
+# public_folder: "/assets/uploads"
+
+# collections:
+#   - name: "pages"
+#     label: "Content Pages"
+#     folder: "content"
+#     create: true
+#     format: frontmatter
+#     slug: "{{slug}}/README"
+#     path: "{{slug}}/README"  # This is where CMS will write the file
+#     extension: "md"
+#     fields:
+#       - { label: "Title", name: "title", widget: "string" }
+#       - { label: "Permalink", name: "permalink", widget: "string" }
+#       - { label: "Date", name: "date", widget: "datetime" }
+#       - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
+#       - { label: "Tags", name: "tags", widget: "list", required: false }
+#       - { label: "Body", name: "body", widget: "markdown" }
 
 collections:
-  - name: "pages"
-    label: "Content Pages"
-    folder: "content"
+
+  - name: "docs"
+    label: "Documentation"
+    folder: "docs"
     create: true
-    format: frontmatter
-    slug: "{{slug}}/README"
-    path: "{{slug}}/README"  # This is where CMS will write the file
     extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Permalink", name: "permalink", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Parent"
+        name: "parent"
+        widget: "string"
+        required: false
+
+      - label: "Navigation Order"
+        name: "nav_order"
+        widget: "number"
+        required: false
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"

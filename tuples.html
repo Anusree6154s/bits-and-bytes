@@ -1,93 +1,267 @@
+
+
 <!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/bits-and-bytes/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/bits-and-bytes/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul:nth-of-type(1) > li > a,
+    .site-nav > ul:nth-of-type(1) > li > ul > li > a,
+    
+    .site-nav > ul:nth-of-type(1) > li > ul > li > ul > li:not(:nth-child(14)) > a,
+    .site-nav > ul:nth-of-type(1) > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul:not(:nth-of-type(1)) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul:nth-of-type(1) > li:nth-child(8) > ul > li:nth-child(1) > ul > li:nth-child(14) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul:nth-of-type(1) > li:nth-child(8) > button svg,
+    .site-nav > ul:nth-of-type(1) > li:nth-child(8) > ul > li:nth-child(1) > button svg,
+    .site-nav > ul:nth-of-type(1) > li:nth-child(8) > ul > li:nth-child(1) > ul > li:nth-child(14) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul:nth-of-type(1) > li.nav-list-item:nth-child(8) > ul.nav-list,
+    .site-nav > ul:nth-of-type(1) > li.nav-list-item:nth-child(8) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list,
+    .site-nav > ul:nth-of-type(1) > li.nav-list-item:nth-child(8) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(14) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+
+  
+    <script src="/bits-and-bytes/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/bits-and-bytes/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/bits-and-bytes/assets/images/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
 <title>Tuples and how it differs from Arrays | Bits &amp; Bytes</title>
-<meta name="generator" content="Jekyll v3.10.0" />
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Tuples and how it differs from Arrays" />
 <meta name="author" content="Anusree Anilkumar" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="More about tuples, and difference between tuples and arrays" />
-<meta property="og:description" content="More about tuples, and difference between tuples and arrays" />
+<meta name="twitter:description" property="og:description" content="More about tuples, and difference between tuples and arrays" />
 <link rel="canonical" href="https://anusree6154s.github.io/bits-and-bytes/tuples" />
 <meta property="og:url" content="https://anusree6154s.github.io/bits-and-bytes/tuples" />
 <meta property="og:site_name" content="Bits &amp; Bytes" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-01-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-01-19T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Tuples and how it differs from Arrays" />
+<meta name="twitter:title" content="Tuples and how it differs from Arrays" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Anusree Anilkumar"},"dateModified":"2025-01-19T00:00:00+00:00","datePublished":"2025-01-19T00:00:00+00:00","description":"More about tuples, and difference between tuples and arrays","headline":"Tuples and how it differs from Arrays","mainEntityOfPage":{"@type":"WebPage","@id":"https://anusree6154s.github.io/bits-and-bytes/tuples"},"url":"https://anusree6154s.github.io/bits-and-bytes/tuples"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/bits-and-bytes/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://anusree6154s.github.io/bits-and-bytes/feed.xml" title="Bits &amp; Bytes" /><!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSNY1FXG3P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TSNY1FXG3P');
-</script><!-- Simple Jekyll Search JS -->
-  <script src="https://unpkg.com/simple-jekyll-search@1.9.2/dest/simple-jekyll-search.min.js"></script>
-</head>
-<body><header class="site-header">
-  <div class="loader"></div>
 
-    <div class="wrapper"><!-- <a class="site-title" rel="author" href="/bits-and-bytes/">Bits &amp; Bytes</a> -->
-          <a class="site-title"  rel="author" href="/bits-and-bytes/"><span>BITS</span><span> & </span><span>BYTES</span></a><nav class="site-nav">
-          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-          <label for="nav-trigger">
-            <span class="menu-icon">
-              <svg viewBox="0 0 18 15" width="18px" height="15px">
-                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-              </svg>
-            </span>
-          </label>
+
   
-          <div class="trigger">
-            <!--<a class="page-link" href="/bits-and-bytes/about">About Me</a>-->
 
-            <a class="page-link" href="/bits-and-bytes/#latest-posts">LATEST POSTS</a>
-            <a class="page-link" href="/bits-and-bytes/all-posts">ALL POSTS</a>
-            <a class="page-link" href="/bits-and-bytes/#projects">PROJECTS</a>
-            <a class="page-link" href="/bits-and-bytes/#profile">PROFILE</a>
-            <a class="page-link" href="/bits-and-bytes/#contact">CONTACT</a>
-          </div>
-        </nav></div>
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/bits-and-bytes/" class="site-title lh-tight">
+  Bits & Bytes
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/bits-and-bytes/about" class="nav-list-link">About Me</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Computer Science Concepts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/computer-science-concepts" class="nav-list-link">Computer Science Concepts</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/hld" class="nav-list-link">High Level Design Guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/lld" class="nav-list-link">Low Level Design Guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/oop" class="nav-list-link">OOP</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Databases submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/databases" class="nav-list-link">Databases</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="No SQL submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/no-sql" class="nav-list-link">No SQL</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/mongodb" class="nav-list-link">MongoDB Concepts Guide</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/bits-and-bytes/deployment" class="nav-list-link">Deployment Websites</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Import Modules submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/import-modules" class="nav-list-link">Import Modules</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/tests" class="nav-list-link">Tests</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Interview Questions submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/interview-questions" class="nav-list-link">Interview Questions</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Crio Interview Questions submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/crio-interview-questions" class="nav-list-link">Crio Interview Questions</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-101" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-102" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-103" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-201" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-202" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-301" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-302" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-intv-1" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-hld-1" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-mern-2" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-node-201" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-node-202" class="nav-list-link">FE-101 HTML</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Languages submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/languages" class="nav-list-link">Languages</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Typescript learners guide submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/typescript-learners-guide" class="nav-list-link">Typescript learners guide</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/generics" class="nav-list-link">Generics Examples</a></li><li class="nav-list-item"><a href="/bits-and-bytes/advanced-decorator" class="nav-list-link">More about Advanced Decorator</a></li><li class="nav-list-item"><a href="/bits-and-bytes/conditional-types" class="nav-list-link">More about Conditional Types</a></li><li class="nav-list-item"><a href="/bits-and-bytes/declaration-merging" class="nav-list-link">More about Declaration Merging</a></li><li class="nav-list-item"><a href="/bits-and-bytes/decorators" class="nav-list-link">More about Decorators in Typescript</a></li><li class="nav-list-item"><a href="/bits-and-bytes/discriminated-unions" class="nav-list-link">More about Discriminated Unions</a></li><li class="nav-list-item"><a href="/bits-and-bytes/inferences" class="nav-list-link">More about Inferences in Typescript</a></li><li class="nav-list-item"><a href="/bits-and-bytes/mapped-types" class="nav-list-link">More about Mapped Types</a></li><li class="nav-list-item"><a href="/bits-and-bytes/module-augmentation" class="nav-list-link">More about Module Augmentation</a></li><li class="nav-list-item"><a href="/bits-and-bytes/modules" class="nav-list-link">More about Modules in Typescript</a></li><li class="nav-list-item"><a href="/bits-and-bytes/namespace" class="nav-list-link">More about Namespaces in Typescript</a></li><li class="nav-list-item"><a href="/bits-and-bytes/type-aliases" class="nav-list-link">More about Type Aliases</a></li><li class="nav-list-item"><a href="/bits-and-bytes/type-manipulation" class="nav-list-link">More about Type Manipulation</a></li><li class="nav-list-item"><a href="/bits-and-bytes/tuples" class="nav-list-link">Tuples and how it differs from Arrays</a></li><li class="nav-list-item"><a href="/bits-and-bytes/interfaces-usecases" class="nav-list-link">Typescript Interfaces Usecases</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Libraries submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/libraries" class="nav-list-link">Libraries</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/react" class="nav-list-link">React Concepts Guide</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Mobile Dev submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/mobile-dev" class="nav-list-link">Mobile Dev</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Flutter submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/flutter" class="nav-list-link">Flutter</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/basics-of-dart" class="nav-list-link">Basics of Dart</a></li><li class="nav-list-item"><a href="/bits-and-bytes/setting-up-flutter" class="nav-list-link">Flutter Setup Guide</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/bits-and-bytes/takehome-guidelines" class="nav-list-link">Takehome Guidelines</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Web Dev submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/web-dev" class="nav-list-link">Web Dev</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/api-documentaion" class="nav-list-link">API Documentation Tools</a></li><li class="nav-list-item"><a href="/bits-and-bytes/claudeai-code" class="nav-list-link">Claude AI Code for Nodemailer</a></li><li class="nav-list-item"><a href="/bits-and-bytes/email-service" class="nav-list-link">Email Service Guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/optimise-img-external" class="nav-list-link">External Image Optimisation</a></li><li class="nav-list-item"><a href="/bits-and-bytes/git%20-commit-standards" class="nav-list-link">Git Commit Standards</a></li><li class="nav-list-item"><a href="/bits-and-bytes/gitignore-commands" class="nav-list-link">Gitignore Config for Certificates</a></li><li class="nav-list-item"><a href="/bits-and-bytes/git-commit-guidelines" class="nav-list-link">Guidelines to cleaner git commits</a></li><li class="nav-list-item"><a href="/bits-and-bytes/oauth-config-setup" class="nav-list-link">OAuth Config Setup in Different Apps</a></li><li class="nav-list-item"><a href="/bits-and-bytes/oauth-oidc" class="nav-list-link">OAuth/OIDC App Configurations</a></li><li class="nav-list-item"><a href="/bits-and-bytes/react-node" class="nav-list-link">React-Node App</a></li><li class="nav-list-item"><a href="/bits-and-bytes/readme-formatting-guidelines" class="nav-list-link">Readme files formatting guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/readme-file-writing" class="nav-list-link">Readme files writing guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/ssl-commands" class="nav-list-link">SSL Commands</a></li><li class="nav-list-item"><a href="/bits-and-bytes/tailwing-styling-without-inline" class="nav-list-link">Tailwind styling without inline</a></li><li class="nav-list-item"><a href="/bits-and-bytes/bootstrap-icons-usage" class="nav-list-link">Using Bootstrap Icons</a></li><li class="nav-list-item"><a href="/bits-and-bytes/vercel-env" class="nav-list-link">Vercel .env extraction</a></li><li class="nav-list-item"><a href="/bits-and-bytes/web-dev" class="nav-list-link">Web development Css related</a></li></ul></li></ul>
+  
     
-  </header><main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article
-  class="post h-entry"
-  itemscope
-  itemtype="http://schema.org/BlogPosting"
->
-  <header class="post-header">
-     
-    <div class="parent-link">
-      This post is part of
-      <a href="/bits-and-bytes/typescript-learners-guide"
-        >Typescript learners guide</a
-      >.
-    </div>
+    
+      
+      
+      
+      
+        
+          
+            <div class="nav-category"></div>
+            <ul class="nav-list"></ul>
+          
+        
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
     
 
-    <h1 class="post-title p-name" itemprop="name headline">
-      Tuples and how it differs from Arrays
-    </h1>
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Bits & Bytes" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search Bits & Bytes</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
 
-    <p class="post-meta">
-      <time
-        class="dt-published"
-        datetime="2025-01-19T00:00:00+00:00"
-        itemprop="datePublished"
-      >
-        <span>19 Jan 2025</span>
-        <span>•</span>
-        <span><span id="visitor-count">0</span> views</span> 
-      </time></p><p class="tag-container"><span class="tag-badge"> typescript </span><span class="tag-badge"> tuples </span></p></header>
+  
+  
+  
+</div>
 
-  <div class="post-content e-content" itemprop="articleBody"><h3 id="table-of-contents"><strong>Table of Contents</strong></h3>
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/bits-and-bytes/languages">Languages</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/bits-and-bytes/typescript-learners-guide">Typescript learners guide</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Tuples and how it differs from Arrays</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h3 id="table-of-contents">
+  
+  
+    <a href="#table-of-contents" class="anchor-heading" aria-labelledby="table-of-contents"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Table of Contents</strong>
+  
+  
+</h3>
+    
 <ol>
   <li><a href="#1-what-is-tuple">What is Tuple</a></li>
   <li><a href="#2-key-characteristics-of-tuples">Key Characteristics of Tuples</a></li>
@@ -99,12 +273,24 @@
   <li><a href="#8-differences-between-arrays-and-tuples">Differences Between Arrays and Tuples</a>
 <br /></li>
 </ol>
-
-<h3 id="1-what-is-tuple">1. <strong>What is Tuple</strong></h3>
+<h3 id="1-what-is-tuple">
+  
+  
+    <a href="#1-what-is-tuple" class="anchor-heading" aria-labelledby="1-what-is-tuple"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 1. <strong>What is Tuple</strong>
+  
+  
+</h3>
+    
 
 <p>A <strong>tuple</strong> is a special type of array in TypeScript where the number of elements and their types are fixed. Unlike regular arrays, where all elements must be of the same type, a tuple can contain elements of different types, and the number of elements is fixed when the tuple is created.</p>
-
-<h4 id="syntax-for-tuples"><strong>Syntax for Tuples</strong></h4>
+<h4 id="syntax-for-tuples">
+  
+  
+    <a href="#syntax-for-tuples" class="anchor-heading" aria-labelledby="syntax-for-tuples"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Syntax for Tuples</strong>
+  
+  
+</h4>
+    
 
 <p>A tuple is defined using square brackets <code class="language-plaintext highlighter-rouge">[]</code>, with types specified for each element. The order of the types in the tuple corresponds to the order of the elements in the tuple.</p>
 
@@ -119,8 +305,14 @@
 </ul>
 
 <p><br /></p>
-
-<h3 id="2-key-characteristics-of-tuples">2. <strong>Key Characteristics of Tuples</strong></h3>
+<h3 id="2-key-characteristics-of-tuples">
+  
+  
+    <a href="#2-key-characteristics-of-tuples" class="anchor-heading" aria-labelledby="2-key-characteristics-of-tuples"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 2. <strong>Key Characteristics of Tuples</strong>
+  
+  
+</h3>
+    
 
 <ul>
   <li><strong>Fixed Size</strong>: The size of a tuple is fixed. You cannot add or remove elements without causing a type error.</li>
@@ -156,12 +348,24 @@
 <p>TypeScript will enforce the correct types when you access the elements, ensuring that the type of the value at the specified index matches the type in the tuple’s definition.</p>
 
 <p><br /></p>
-
-<h3 id="3-optional-and-rest-elements-in-tuples">3. <strong>Optional and Rest Elements in Tuples</strong></h3>
+<h3 id="3-optional-and-rest-elements-in-tuples">
+  
+  
+    <a href="#3-optional-and-rest-elements-in-tuples" class="anchor-heading" aria-labelledby="3-optional-and-rest-elements-in-tuples"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 3. <strong>Optional and Rest Elements in Tuples</strong>
+  
+  
+</h3>
+    
 
 <p>Tuples in TypeScript can also support <strong>optional elements</strong> (using <code class="language-plaintext highlighter-rouge">?</code>) and <strong>rest elements</strong> (using <code class="language-plaintext highlighter-rouge">...</code>), allowing for more flexibility when defining the tuple’s structure.</p>
-
-<h4 id="optional-elements"><strong>Optional Elements</strong></h4>
+<h4 id="optional-elements">
+  
+  
+    <a href="#optional-elements" class="anchor-heading" aria-labelledby="optional-elements"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Optional Elements</strong>
+  
+  
+</h4>
+    
 
 <p>Optional elements in tuples can be used when an element is not always required. This is done by adding a <code class="language-plaintext highlighter-rouge">?</code> after the element’s type.</p>
 
@@ -181,8 +385,14 @@
   <li>The second element (<code class="language-plaintext highlighter-rouge">number</code>) and the third element (<code class="language-plaintext highlighter-rouge">boolean</code>) are optional.</li>
   <li>The tuple can have 1, 2, or 3 elements.</li>
 </ul>
-
-<h4 id="rest-elements"><strong>Rest Elements</strong></h4>
+<h4 id="rest-elements">
+  
+  
+    <a href="#rest-elements" class="anchor-heading" aria-labelledby="rest-elements"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Rest Elements</strong>
+  
+  
+</h4>
+    
 
 <p>Rest elements allow you to define a tuple that can accept additional elements beyond the ones specified in the tuple’s definition. Rest elements are placed after the fixed elements and are prefixed with <code class="language-plaintext highlighter-rouge">...</code>.</p>
 
@@ -200,8 +410,14 @@
 </ul>
 
 <p><br /></p>
-
-<h3 id="4-tuples-with-named-types-or-objects">4. <strong>Tuples with Named Types or Objects</strong></h3>
+<h3 id="4-tuples-with-named-types-or-objects">
+  
+  
+    <a href="#4-tuples-with-named-types-or-objects" class="anchor-heading" aria-labelledby="4-tuples-with-named-types-or-objects"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 4. <strong>Tuples with Named Types or Objects</strong>
+  
+  
+</h3>
+    
 
 <p>You can also use <strong>named types</strong> or <strong>objects</strong> in a tuple. This allows you to combine the benefits of tuples and objects, making it possible to work with structured data in a more readable way.</p>
 
@@ -216,8 +432,14 @@
 
 <p>In this example, the third element in the tuple is an object with a property <code class="language-plaintext highlighter-rouge">role</code> that is a <code class="language-plaintext highlighter-rouge">string</code>. This allows you to store more complex data in tuples while preserving type safety.
 <br /></p>
-
-<h3 id="5-destructuring-tuples">5. <strong>Destructuring Tuples</strong></h3>
+<h3 id="5-destructuring-tuples">
+  
+  
+    <a href="#5-destructuring-tuples" class="anchor-heading" aria-labelledby="5-destructuring-tuples"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 5. <strong>Destructuring Tuples</strong>
+  
+  
+</h3>
+    
 
 <p>TypeScript allows destructuring of tuples just like arrays, making it easy to extract values from a tuple and assign them to variables.</p>
 
@@ -233,8 +455,14 @@
 
 <p>Here, we use array destructuring syntax to extract the <code class="language-plaintext highlighter-rouge">name</code> and <code class="language-plaintext highlighter-rouge">age</code> from the <code class="language-plaintext highlighter-rouge">person</code> tuple.
 <br /></p>
-
-<h3 id="6-readonly-tuples">6. <strong>Readonly Tuples</strong></h3>
+<h3 id="6-readonly-tuples">
+  
+  
+    <a href="#6-readonly-tuples" class="anchor-heading" aria-labelledby="6-readonly-tuples"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 6. <strong>Readonly Tuples</strong>
+  
+  
+</h3>
+    
 
 <p>If you want to prevent modification of a tuple’s elements after its creation, you can use the <code class="language-plaintext highlighter-rouge">readonly</code> modifier to create a <strong>readonly tuple</strong>. This ensures that once the tuple is created, its values cannot be changed.</p>
 
@@ -247,8 +475,14 @@
 
 <p>In this example, <code class="language-plaintext highlighter-rouge">person</code> is a readonly tuple, so trying to modify its elements will result in an error.
 <br /></p>
-
-<h3 id="7-using-tuples-with-functions">7. <strong>Using Tuples with Functions</strong></h3>
+<h3 id="7-using-tuples-with-functions">
+  
+  
+    <a href="#7-using-tuples-with-functions" class="anchor-heading" aria-labelledby="7-using-tuples-with-functions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 7. <strong>Using Tuples with Functions</strong>
+  
+  
+</h3>
+    
 
 <p>You can also use tuples as function return types or arguments. This is useful when a function returns multiple values of different types.</p>
 
@@ -263,8 +497,14 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span> <span class="c1">// Output: 25</span>
 </code></pre></div></div>
 <p><br /></p>
-
-<h3 id="8-differences-between-arrays-and-tuples">8. <strong>Differences Between Arrays and Tuples</strong></h3>
+<h3 id="8-differences-between-arrays-and-tuples">
+  
+  
+    <a href="#8-differences-between-arrays-and-tuples" class="anchor-heading" aria-labelledby="8-differences-between-arrays-and-tuples"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 8. <strong>Differences Between Arrays and Tuples</strong>
+  
+  
+</h3>
+    
 
 <p>While both arrays and tuples can store multiple values, they differ in the following key ways:</p>
 
@@ -272,19 +512,37 @@
   <li><strong>Arrays</strong> are homogeneous collections, meaning all elements are of the same type (e.g., an array of numbers, an array of strings).</li>
   <li><strong>Tuples</strong> are heterogeneous collections, meaning the elements can be of different types, and the types are fixed and predefined.</li>
 </ul>
-
-<h4 id="example-of-an-array">Example of an Array:</h4>
+<h4 id="example-of-an-array">
+  
+  
+    <a href="#example-of-an-array" class="anchor-heading" aria-labelledby="example-of-an-array"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Example of an Array:
+  
+  
+</h4>
+    
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">numbers</span><span class="p">:</span> <span class="kr">number</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span> <span class="c1">// All elements are of type 'number'</span>
 </code></pre></div></div>
-
-<h4 id="example-of-a-tuple">Example of a Tuple:</h4>
+<h4 id="example-of-a-tuple">
+  
+  
+    <a href="#example-of-a-tuple" class="anchor-heading" aria-labelledby="example-of-a-tuple"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Example of a Tuple:
+  
+  
+</h4>
+    
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">user</span><span class="p">:</span> <span class="p">[</span><span class="kr">string</span><span class="p">,</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">boolean</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Alice</span><span class="dl">"</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="kc">true</span><span class="p">];</span> <span class="c1">// Different types</span>
 </code></pre></div></div>
 <p><br /></p>
-
-<h3 id="conclusion"><strong>Conclusion</strong></h3>
+<h3 id="conclusion">
+  
+  
+    <a href="#conclusion" class="anchor-heading" aria-labelledby="conclusion"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Conclusion</strong>
+  
+  
+</h3>
+    
 
 <ul>
   <li><strong>Tuples</strong> are a special type of array that allows you to store values of different types in a fixed-length collection. Tuples are useful when you want to represent heterogeneous data in a fixed order.</li>
@@ -292,145 +550,39 @@
 </ul>
 
 <p>By using arrays and tuples effectively, you can write more robust, maintainable, and type-safe code in TypeScript.</p>
-</div>
 
-  
-  <div class="related-posts">
-    
+          
 
-  <div class="disqus-comments" width='500'><div id="disqus_thread"></div>
-  <script>
-    var disqus_config = function () {
-      this.page.url = 'https://anusree6154s.github.io/bits-and-bytes/tuples';
-      this.page.identifier = 'https://anusree6154s.github.io/bits-and-bytes/tuples';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-
-      s.src = 'https://anusree-anilkumar-blog.disqus.com/embed.js';
-
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div>
-
-  <a class="u-url" href="/bits-and-bytes/tuples" hidden></a>
-</article>
-
-
-
-      </div>
-    </main><!-- <footer class="site-footer h-card">
-    <data class="u-url" href="/bits-and-bytes/"></data>
-  
-    <div class="wrapper">
-  
-      <div class="footer-col-wrapper">
-        <div class="footer-col">
-          <p class="feed-subscribe">
-            <a href="https://anusree6154s.github.io/bits-and-bytes/feed.xml">
-              <svg class="svg-icon orange">
-                <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
-                  11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
-                  13.806c0-1.21.983-2.195 2.194-2.195zM10.606
-                  16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
-                />
-              </svg><span>Subscribe</span>
-            </a>
-          </p>
-          <ul class="contact-list">
+          
             
-          </ul>
-        </div>
-        <div class="footer-col">
-          <p>Tech Blog</p>
-        </div>
-      </div>
+          
+        </main>
+        
+<hr>
+<footer>
   
-      <div class="social-links"><ul class="social-media-list"><li><a href="https://github.com/Anusree6154s"><svg class="svg-icon"><use xlink:href="/bits-and-bytes/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Anusree6154s</span></a></li><li><a href="https://www.linkedin.com/in/anusreeanilkumar1"><svg class="svg-icon"><use xlink:href="/bits-and-bytes/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">anusreeanilkumar1</span></a></li><li><a href="https://www.twitter.com/anu6154s"><svg class="svg-icon"><use xlink:href="/bits-and-bytes/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anu6154s</span></a></li><li><a href="/bits-and-bytes/feed.xml"><svg class="svg-icon"><use xlink:href="/bits-and-bytes/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
-</div>
+
   
-    </div>
-  
-  </footer> -->
 
-<footer id="contact">
-  <section class="footer-inner">
-    <div class="contact">
-      <div class="contact-inner">
-        <p>CONTACT</p>
-        <p>
-          <span class="logo"></span><span>anilkumaranusree113@gmail.com</span>
-        </p>
-        <p><span class="logo"></span><span>+91-9699973230</span></p>
-        <p><span class="logo"></span><span>Surat, Gujarat, India</span></p>
-      </div>
-
-      <div class="socials">
-        <a href="https://www.linkedin.com/in/anusreeanilkumar1/"
-          ><span></span
-        ></a>
-        <a href="https://github.com/Anusree6154s"><span></span></a>
-        <a href="https://x.com/anu6154s"><span></span></a>
-      </div>
-    </div>
-    <div class="list">
-      <div class="sections">
-        <p>SECTIONS</p>
-        <a href="/bits-and-bytes/#latest-posts">Latest Posts</a>
-        <a href="/bits-and-bytes/all-posts">All Posts</a>
-        <a href="/bits-and-bytes/#projects">Projects</a>
-        <a href="/bits-and-bytes/#profile">Profile</a>
-      </div>
-      <div class="links">
-        <p>LINKS</p>
-        <a href="https://anusreeanilkumar.vercel.app/">Personal Portfolio</a>
-        <a href="https://www.crio.do/learn/portfolio/anilkumaranusree113/"
-          >Crio.Do Portfolio</a
-        >
-        <a href="https://anusreeanilkumar.vercel.app/projects">All Projects</a>
-        <a
-          href="https://drive.google.com/file/d/1Y8_r1SKBmwClHUr-pszQpEmI3XLBEbTO/view?usp=sharing"
-          >Resume</a
-        >
-      </div>
-    </div>
-  </section>
-
-  <section class="sub-footer">@ 2025 Anusree Anilkumar</section>
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    
+  </div>
 </footer>
-<script>
-      SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '/bits-and-bytes/search.json',
-        searchResultTemplate: '<li class="search-list"><a href="{url}">{title}</a></li>',
-        noResultsText: '<li class="search-list">No results found</li>',
-        limit: 5
-      });
+
+      </div>
+    </div>
+    
       
-       document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'https://bits-and-bytes-backend-pi.vercel.app';
-    const pageUrl = window.location.href;
 
-    fetch(apiUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: pageUrl })
-    })
-    .then(response => response.json())
-    .then(data => {
-      const countEl = document.getElementById('visitor-count');
-      if (countEl) {
-        countEl.textContent = `${data.count}`;
-      }
-    })
-    .catch(error => console.error('Error updating visitor count:', error));
-  });
-    </script>
+<div class="search-overlay"></div>
 
-  </body>
+    
+  </div>
 
+  
+</body>
 </html>
+

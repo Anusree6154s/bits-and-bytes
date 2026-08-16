@@ -1,268 +1,768 @@
+
+
 <!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>MongoDB Concepts Guide | Bits &amp; Bytes</title>
-<meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="MongoDB Concepts Guide" />
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/bits-and-bytes/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/bits-and-bytes/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul:nth-of-type(1) > li > a,
+    
+    .site-nav > ul:nth-of-type(1) > li > ul > li:not(:nth-child(1)) > a,
+    .site-nav > ul:nth-of-type(1) > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul:not(:nth-of-type(1)) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul:nth-of-type(1) > li:nth-child(9) > ul > li:nth-child(1) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul:nth-of-type(1) > li:nth-child(9) > button svg,
+    .site-nav > ul:nth-of-type(1) > li:nth-child(9) > ul > li:nth-child(1) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul:nth-of-type(1) > li.nav-list-item:nth-child(9) > ul.nav-list,
+    .site-nav > ul:nth-of-type(1) > li.nav-list-item:nth-child(9) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+
+  
+    <script src="/bits-and-bytes/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/bits-and-bytes/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/bits-and-bytes/assets/images/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>React Concepts Guide | Bits &amp; Bytes</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="React Concepts Guide" />
 <meta name="author" content="Anusree Anilkumar" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="To study basic and advanced MongoDB" />
-<meta property="og:description" content="To study basic and advanced MongoDB" />
+<meta name="description" content="To study basic and advanced React" />
+<meta name="twitter:description" property="og:description" content="To study basic and advanced React" />
 <link rel="canonical" href="https://anusree6154s.github.io/bits-and-bytes/react" />
 <meta property="og:url" content="https://anusree6154s.github.io/bits-and-bytes/react" />
 <meta property="og:site_name" content="Bits &amp; Bytes" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-02-25T00:00:00+00:00" />
+<meta property="article:published_time" content="2025-01-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-01-22T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="MongoDB Concepts Guide" />
+<meta name="twitter:title" content="React Concepts Guide" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Anusree Anilkumar"},"dateModified":"2025-02-25T00:00:00+00:00","datePublished":"2025-02-25T00:00:00+00:00","description":"To study basic and advanced MongoDB","headline":"MongoDB Concepts Guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://anusree6154s.github.io/bits-and-bytes/react"},"url":"https://anusree6154s.github.io/bits-and-bytes/react"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Anusree Anilkumar"},"dateModified":"2025-01-22T00:00:00+00:00","datePublished":"2025-01-22T00:00:00+00:00","description":"To study basic and advanced React","headline":"React Concepts Guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://anusree6154s.github.io/bits-and-bytes/react"},"url":"https://anusree6154s.github.io/bits-and-bytes/react"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/bits-and-bytes/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://anusree6154s.github.io/bits-and-bytes/feed.xml" title="Bits &amp; Bytes" /><!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSNY1FXG3P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TSNY1FXG3P');
-</script><!-- Simple Jekyll Search JS -->
-  <script src="https://unpkg.com/simple-jekyll-search@1.9.2/dest/simple-jekyll-search.min.js"></script>
-</head>
-<body><header class="site-header">
-  <div class="loader"></div>
 
-    <div class="wrapper"><!-- <a class="site-title" rel="author" href="/bits-and-bytes/">Bits &amp; Bytes</a> -->
-          <a class="site-title"  rel="author" href="/bits-and-bytes/"><span>BITS</span><span> & </span><span>BYTES</span></a><nav class="site-nav">
-          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-          <label for="nav-trigger">
-            <span class="menu-icon">
-              <svg viewBox="0 0 18 15" width="18px" height="15px">
-                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-              </svg>
-            </span>
-          </label>
+
   
-          <div class="trigger">
-            <!--<a class="page-link" href="/bits-and-bytes/about">About Me</a>-->
 
-            <a class="page-link" href="/bits-and-bytes/#latest-posts">LATEST POSTS</a>
-            <a class="page-link" href="/bits-and-bytes/all-posts">ALL POSTS</a>
-            <a class="page-link" href="/bits-and-bytes/#projects">PROJECTS</a>
-            <a class="page-link" href="/bits-and-bytes/#profile">PROFILE</a>
-            <a class="page-link" href="/bits-and-bytes/#contact">CONTACT</a>
-          </div>
-        </nav></div>
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/bits-and-bytes/" class="site-title lh-tight">
+  Bits & Bytes
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/bits-and-bytes/about" class="nav-list-link">About Me</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Computer Science Concepts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/computer-science-concepts" class="nav-list-link">Computer Science Concepts</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/hld" class="nav-list-link">High Level Design Guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/lld" class="nav-list-link">Low Level Design Guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/oop" class="nav-list-link">OOP</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Databases submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/databases" class="nav-list-link">Databases</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="No SQL submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/no-sql" class="nav-list-link">No SQL</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/mongodb" class="nav-list-link">MongoDB Concepts Guide</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/bits-and-bytes/deployment" class="nav-list-link">Deployment Websites</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Import Modules submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/import-modules" class="nav-list-link">Import Modules</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/tests" class="nav-list-link">Tests</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Interview Questions submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/interview-questions" class="nav-list-link">Interview Questions</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Crio Interview Questions submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/crio-interview-questions" class="nav-list-link">Crio Interview Questions</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-101" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-102" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-103" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-201" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-202" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-301" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-302" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-intv-1" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-hld-1" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-mern-2" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-node-201" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-node-202" class="nav-list-link">FE-101 HTML</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Languages submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/languages" class="nav-list-link">Languages</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Typescript learners guide submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/typescript-learners-guide" class="nav-list-link">Typescript learners guide</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/generics" class="nav-list-link">Generics Examples</a></li><li class="nav-list-item"><a href="/bits-and-bytes/advanced-decorator" class="nav-list-link">More about Advanced Decorator</a></li><li class="nav-list-item"><a href="/bits-and-bytes/conditional-types" class="nav-list-link">More about Conditional Types</a></li><li class="nav-list-item"><a href="/bits-and-bytes/declaration-merging" class="nav-list-link">More about Declaration Merging</a></li><li class="nav-list-item"><a href="/bits-and-bytes/decorators" class="nav-list-link">More about Decorators in Typescript</a></li><li class="nav-list-item"><a href="/bits-and-bytes/discriminated-unions" class="nav-list-link">More about Discriminated Unions</a></li><li class="nav-list-item"><a href="/bits-and-bytes/inferences" class="nav-list-link">More about Inferences in Typescript</a></li><li class="nav-list-item"><a href="/bits-and-bytes/mapped-types" class="nav-list-link">More about Mapped Types</a></li><li class="nav-list-item"><a href="/bits-and-bytes/module-augmentation" class="nav-list-link">More about Module Augmentation</a></li><li class="nav-list-item"><a href="/bits-and-bytes/modules" class="nav-list-link">More about Modules in Typescript</a></li><li class="nav-list-item"><a href="/bits-and-bytes/namespace" class="nav-list-link">More about Namespaces in Typescript</a></li><li class="nav-list-item"><a href="/bits-and-bytes/type-aliases" class="nav-list-link">More about Type Aliases</a></li><li class="nav-list-item"><a href="/bits-and-bytes/type-manipulation" class="nav-list-link">More about Type Manipulation</a></li><li class="nav-list-item"><a href="/bits-and-bytes/tuples" class="nav-list-link">Tuples and how it differs from Arrays</a></li><li class="nav-list-item"><a href="/bits-and-bytes/interfaces-usecases" class="nav-list-link">Typescript Interfaces Usecases</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Libraries submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/libraries" class="nav-list-link">Libraries</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/react" class="nav-list-link">React Concepts Guide</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Mobile Dev submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/mobile-dev" class="nav-list-link">Mobile Dev</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Flutter submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/flutter" class="nav-list-link">Flutter</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/basics-of-dart" class="nav-list-link">Basics of Dart</a></li><li class="nav-list-item"><a href="/bits-and-bytes/setting-up-flutter" class="nav-list-link">Flutter Setup Guide</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/bits-and-bytes/takehome-guidelines" class="nav-list-link">Takehome Guidelines</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Web Dev submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/web-dev" class="nav-list-link">Web Dev</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/api-documentaion" class="nav-list-link">API Documentation Tools</a></li><li class="nav-list-item"><a href="/bits-and-bytes/claudeai-code" class="nav-list-link">Claude AI Code for Nodemailer</a></li><li class="nav-list-item"><a href="/bits-and-bytes/email-service" class="nav-list-link">Email Service Guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/optimise-img-external" class="nav-list-link">External Image Optimisation</a></li><li class="nav-list-item"><a href="/bits-and-bytes/git%20-commit-standards" class="nav-list-link">Git Commit Standards</a></li><li class="nav-list-item"><a href="/bits-and-bytes/gitignore-commands" class="nav-list-link">Gitignore Config for Certificates</a></li><li class="nav-list-item"><a href="/bits-and-bytes/git-commit-guidelines" class="nav-list-link">Guidelines to cleaner git commits</a></li><li class="nav-list-item"><a href="/bits-and-bytes/oauth-config-setup" class="nav-list-link">OAuth Config Setup in Different Apps</a></li><li class="nav-list-item"><a href="/bits-and-bytes/oauth-oidc" class="nav-list-link">OAuth/OIDC App Configurations</a></li><li class="nav-list-item"><a href="/bits-and-bytes/react-node" class="nav-list-link">React-Node App</a></li><li class="nav-list-item"><a href="/bits-and-bytes/readme-formatting-guidelines" class="nav-list-link">Readme files formatting guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/readme-file-writing" class="nav-list-link">Readme files writing guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/ssl-commands" class="nav-list-link">SSL Commands</a></li><li class="nav-list-item"><a href="/bits-and-bytes/tailwing-styling-without-inline" class="nav-list-link">Tailwind styling without inline</a></li><li class="nav-list-item"><a href="/bits-and-bytes/bootstrap-icons-usage" class="nav-list-link">Using Bootstrap Icons</a></li><li class="nav-list-item"><a href="/bits-and-bytes/vercel-env" class="nav-list-link">Vercel .env extraction</a></li><li class="nav-list-item"><a href="/bits-and-bytes/web-dev" class="nav-list-link">Web development Css related</a></li></ul></li></ul>
+  
     
-  </header><main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article
-  class="post h-entry"
-  itemscope
-  itemtype="http://schema.org/BlogPosting"
->
-  <header class="post-header">
+    
+      
+      
+      
+      
+        
+          
+            <div class="nav-category"></div>
+            <ul class="nav-list"></ul>
+          
+        
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
     
 
-    <h1 class="post-title p-name" itemprop="name headline">
-      MongoDB Concepts Guide
-    </h1>
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Bits & Bytes" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search Bits & Bytes</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
 
-    <p class="post-meta">
-      <time
-        class="dt-published"
-        datetime="2025-02-25T00:00:00+00:00"
-        itemprop="datePublished"
-      >
-        <span>25 Feb 2025</span>
-        <span>•</span>
-        <span><span id="visitor-count">0</span> views</span> 
-      </time></p><p class="tag-container"><span class="tag-badge"> mongodb </span></p></header>
+  
+  
+  
+</div>
 
-  <div class="post-content e-content" itemprop="articleBody"><ul>
-  <li><strong>Topics Constituting Basic MongoDB</strong>
-    <h4 id="1-introduction-to-mongodb"><strong>1. Introduction to MongoDB</strong></h4>
-    <h4 id="2-mongodb-installation-and-setup"><strong>2. MongoDB Installation and Setup</strong></h4>
-    <h4 id="3-crud-operations"><strong>3. CRUD Operations</strong></h4>
-  </li>
-</ul>
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/bits-and-bytes/libraries">Libraries</a></li>
+    <li class="breadcrumb-nav-list-item"><span>React Concepts Guide</span></li>
+  </ol>
+</nav>
 
-<h4 id="4-mongodb-data-types"><strong>4. MongoDB Data Types</strong></h4>
 
-<h4 id="5-collections-and-documents"><strong>5. Collections and Documents</strong></h4>
-<h4 id="6-querying-data"><strong>6. Querying Data</strong></h4>
-
-<h4 id="7-indexing-basics"><strong>7. Indexing Basics</strong></h4>
-<h4 id="8-aggregation-basics"><strong>8. Aggregation Basics</strong></h4>
-<h4 id="9-basic-security"><strong>9. Basic Security</strong></h4>
-
-<h4 id="10-mongodb-drivers-and-tools"><strong>10. MongoDB Drivers and Tools</strong></h4>
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h2 id="table-of-concepts">
+  
+  
+    <a href="#table-of-concepts" class="anchor-heading" aria-labelledby="table-of-concepts"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Table of Concepts
+  
+  
+</h2>
+    
 
 <ul>
-  <li><strong>Topics Constituting Advanced MongoDB</strong>
-    <h4 id="1-advanced-indexing"><strong>1. Advanced Indexing</strong></h4>
+  <li>Basic React
+    <ol>
+      <li>Core Concepts</li>
+      <li>Rendering</li>
+      <li>Handling Events</li>
+      <li>Forms</li>
+      <li>Styling</li>
+      <li>State Management (Basic)</li>
+      <li>Routing</li>
+      <li>Error Handling</li>
+      <li>Working with APIs</li>
+      <li>Performance Optimization (Introductory)</li>
+    </ol>
+  </li>
+  <li>Advanced React
+    <ol>
+      <li>Hooks (Advanced)</li>
+      <li>State Management (Advanced)</li>
+      <li>Code Splitting and Lazy Loading</li>
+      <li>Server-Side Rendering (SSR)</li>
+      <li>Testing</li>
+      <li>Performance Optimization (Advanced)</li>
+      <li>TypeScript with React</li>
+      <li>Animations</li>
+      <li>Patterns and Architecture</li>
+      <li>GraphQL Integration</li>
+      <li>WebSockets and Real-Time Updates</li>
+      <li>Custom Rendering</li>
+      <li>Advanced Routing</li>
+      <li>Accessibility</li>
+      <li>Internationalization (i18n)</li>
+    </ol>
   </li>
 </ul>
 
-<h4 id="2-aggregation-framework"><strong>2. Aggregation Framework</strong></h4>
-<h4 id="3-schema-design"><strong>3. Schema Design</strong></h4>
-
-<h4 id="4-transactions"><strong>4. Transactions</strong></h4>
-
-<h4 id="5-replication"><strong>5. Replication</strong></h4>
-
-<h4 id="6-sharding"><strong>6. Sharding</strong></h4>
-<h4 id="7-performance-optimization"><strong>7. Performance Optimization</strong></h4>
-<h4 id="8-mongodb-atlas"><strong>8. MongoDB Atlas</strong></h4>
-
-<h4 id="9-backup-and-restore"><strong>9. Backup and Restore</strong></h4>
-
-<h4 id="10-security-enhancements"><strong>10. Security Enhancements</strong></h4>
-<h4 id="11-mongodb-and-big-data-integration"><strong>11. MongoDB and Big Data Integration</strong></h4>
-<h4 id="12-advanced-query-techniques"><strong>12. Advanced Query Techniques</strong></h4>
-<h4 id="13-horizontal-scaling-and-high-availability"><strong>13. Horizontal Scaling and High Availability</strong></h4>
-
-<h4 id="14-customizations-and-plugins"><strong>14. Customizations and Plugins</strong></h4>
-</div>
-
+<p>Certainly! Here’s an explanation of the key React topics you mentioned. React is a JavaScript library for building user interfaces, particularly for single-page applications. Below, I’ll break down the basics of each topic:</p><hr />
+<h3 id="core-concepts">
   
-  <div class="related-posts">
+  
+    <a href="#core-concepts" class="anchor-heading" aria-labelledby="core-concepts"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Core Concepts</strong>
+  
+  
+</h3>
     
-
-  <div class="disqus-comments" width='500'><div id="disqus_thread"></div>
-  <script>
-    var disqus_config = function () {
-      this.page.url = 'https://anusree6154s.github.io/bits-and-bytes/react';
-      this.page.identifier = 'https://anusree6154s.github.io/bits-and-bytes/react';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-
-      s.src = 'https://anusree-anilkumar-blog.disqus.com/embed.js';
-
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div>
-
-  <a class="u-url" href="/bits-and-bytes/react" hidden></a>
-</article>
-
-
-
-      </div>
-    </main><!-- <footer class="site-footer h-card">
-    <data class="u-url" href="/bits-and-bytes/"></data>
+<h4 id="jsx-javascript-xml">
   
-    <div class="wrapper">
   
-      <div class="footer-col-wrapper">
-        <div class="footer-col">
-          <p class="feed-subscribe">
-            <a href="https://anusree6154s.github.io/bits-and-bytes/feed.xml">
-              <svg class="svg-icon orange">
-                <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
-                  11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
-                  13.806c0-1.21.983-2.195 2.194-2.195zM10.606
-                  16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
-                />
-              </svg><span>Subscribe</span>
-            </a>
-          </p>
-          <ul class="contact-list">
+    <a href="#jsx-javascript-xml" class="anchor-heading" aria-labelledby="jsx-javascript-xml"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>JSX (JavaScript XML)</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>JSX is a syntax extension for JavaScript that looks similar to HTML.</li>
+  <li>It allows you to write HTML elements and components directly in your JavaScript code.</li>
+  <li>Example:
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, world!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>JSX gets transpiled into standard JavaScript using tools like Babel.</li>
+</ul>
+<h4 id="components-functional-and-class">
+  
+  
+    <a href="#components-functional-and-class" class="anchor-heading" aria-labelledby="components-functional-and-class"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Components (Functional and Class)</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li><strong>Functional Components</strong>: These are simple JavaScript functions that return JSX.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Greeting</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Class Components</strong>: ES6 classes that extend <code class="language-plaintext highlighter-rouge">React.Component</code> and include a <code class="language-plaintext highlighter-rouge">render</code> method.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Greeting</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+<h4 id="props-and-state">
+  
+  
+    <a href="#props-and-state" class="anchor-heading" aria-labelledby="props-and-state"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Props and State</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li><strong>Props</strong>: Short for “properties,” they are inputs passed to components.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Welcome</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>State</strong>: A component’s internal data that changes over time, used with <code class="language-plaintext highlighter-rouge">useState</code> (functional components) or <code class="language-plaintext highlighter-rouge">this.state</code> (class components).</li>
+</ul>
+<h4 id="component-lifecycle-class-components">
+  
+  
+    <a href="#component-lifecycle-class-components" class="anchor-heading" aria-labelledby="component-lifecycle-class-components"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Component Lifecycle (Class Components)</strong>
+  
+  
+</h4>
+    
+<p>Lifecycle methods manage what happens at different stages of a component’s life:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">componentDidMount()</code>: Runs after the component is mounted.</li>
+  <li><code class="language-plaintext highlighter-rouge">componentDidUpdate()</code>: Runs after the component updates.</li>
+  <li><code class="language-plaintext highlighter-rouge">componentWillUnmount()</code>: Runs before the component is removed.</li>
+</ul><hr />
+<h3 id="rendering">
+  
+  
+    <a href="#rendering" class="anchor-heading" aria-labelledby="rendering"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Rendering</strong>
+  
+  
+</h3>
+    
+<h4 id="conditional-rendering">
+  
+  
+    <a href="#conditional-rendering" class="anchor-heading" aria-labelledby="conditional-rendering"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Conditional Rendering</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>Rendering elements based on conditions.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">isLoggedIn</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="k">return</span> <span class="nx">isLoggedIn</span> <span class="p">?</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome back!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span> <span class="p">:</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Please sign in.<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+<h4 id="lists-and-keys">
+  
+  
+    <a href="#lists-and-keys" class="anchor-heading" aria-labelledby="lists-and-keys"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Lists and Keys</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>Rendering a list of items with the <code class="language-plaintext highlighter-rouge">map</code> method.</li>
+  <li>Keys help React identify which items have changed.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Item 1</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Item 2</span><span class="dl">'</span><span class="p">];</span>
+<span class="k">return</span> <span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">index</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">item</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;);</span>
+</code></pre></div>    </div>
+  </li>
+</ul><hr />
+<h3 id="handling-events">
+  
+  
+    <a href="#handling-events" class="anchor-heading" aria-labelledby="handling-events"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Handling Events</strong>
+  
+  
+</h3>
+    
+<h4 id="event-handling">
+  
+  
+    <a href="#event-handling" class="anchor-heading" aria-labelledby="event-handling"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Event Handling</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>React uses camelCase for event names (e.g., <code class="language-plaintext highlighter-rouge">onClick</code>).
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">handleClick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Clicked!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">handleClick</span><span class="si">}</span><span class="p">&gt;</span>Click Me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+<h4 id="synthetic-events">
+  
+  
+    <a href="#synthetic-events" class="anchor-heading" aria-labelledby="synthetic-events"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Synthetic Events</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>A cross-browser wrapper around the browser’s native event.</li>
+</ul><hr />
+<h3 id="forms">
+  
+  
+    <a href="#forms" class="anchor-heading" aria-labelledby="forms"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Forms</strong>
+  
+  
+</h3>
+    
+<h4 id="controlled-vs-uncontrolled-components">
+  
+  
+    <a href="#controlled-vs-uncontrolled-components" class="anchor-heading" aria-labelledby="controlled-vs-uncontrolled-components"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Controlled vs. Uncontrolled Components</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li><strong>Controlled</strong>: Component controls form input values using <code class="language-plaintext highlighter-rouge">state</code>.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+<span class="k">return</span> <span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">value</span><span class="si">}</span> <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setValue</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span> <span class="p">/&gt;;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Uncontrolled</strong>: Use <code class="language-plaintext highlighter-rouge">ref</code> to access DOM elements directly.</li>
+</ul>
+<h4 id="form-handling-and-validation">
+  
+  
+    <a href="#form-handling-and-validation" class="anchor-heading" aria-labelledby="form-handling-and-validation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Form Handling and Validation</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>Handle form submissions and validate input values programmatically.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">handleSubmit</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">trim</span><span class="p">()</span> <span class="o">===</span> <span class="dl">''</span><span class="p">)</span> <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Value required</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>    </div>
+  </li>
+</ul><hr />
+<h3 id="styling">
+  
+  
+    <a href="#styling" class="anchor-heading" aria-labelledby="styling"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Styling</strong>
+  
+  
+</h3>
+    
+<h4 id="inline-styles">
+  
+  
+    <a href="#inline-styles" class="anchor-heading" aria-labelledby="inline-styles"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Inline Styles</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>Define styles directly in JSX.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">style</span> <span class="o">=</span> <span class="p">{</span> <span class="na">color</span><span class="p">:</span> <span class="dl">'</span><span class="s1">blue</span><span class="dl">'</span><span class="p">,</span> <span class="na">fontSize</span><span class="p">:</span> <span class="dl">'</span><span class="s1">20px</span><span class="dl">'</span> <span class="p">};</span>
+<span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="p">=</span><span class="si">{</span><span class="nx">style</span><span class="si">}</span><span class="p">&gt;</span>Styled Text<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+<h4 id="css-modules">
+  
+  
+    <a href="#css-modules" class="anchor-heading" aria-labelledby="css-modules"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>CSS Modules</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>Locally scoped CSS classes by importing CSS files as modules.
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* styles.module.css */</span>
+<span class="nc">.header</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div>    </div>
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">styles</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./styles.module.css</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">header</span><span class="si">}</span><span class="p">&gt;</span>Hello<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+<h4 id="styled-components-optional">
+  
+  
+    <a href="#styled-components-optional" class="anchor-heading" aria-labelledby="styled-components-optional"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Styled-Components (Optional)</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>CSS-in-JS library to style components.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">styled</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">styled-components</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">StyledButton</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">button</span><span class="s2">`background: blue; color: white;`</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul><hr />
+<h3 id="state-management-basic">
+  
+  
+    <a href="#state-management-basic" class="anchor-heading" aria-labelledby="state-management-basic"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>State Management (Basic)</strong>
+  
+  
+</h3>
+    
+<h4 id="using-the-usestate-hook">
+  
+  
+    <a href="#using-the-usestate-hook" class="anchor-heading" aria-labelledby="using-the-usestate-hook"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Using the <code class="language-plaintext highlighter-rouge">useState</code> Hook</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>Manages state in functional components.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+<h4 id="context-api-introduction">
+  
+  
+    <a href="#context-api-introduction" class="anchor-heading" aria-labelledby="context-api-introduction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Context API (Introduction)</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>Provides a way to pass data through the component tree without props.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">ThemeContext</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createContext</span><span class="p">(</span><span class="dl">'</span><span class="s1">light</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+</ul><hr />
+<h3 id="routing">
+  
+  
+    <a href="#routing" class="anchor-heading" aria-labelledby="routing"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Routing</strong>
+  
+  
+</h3>
+    
+<h4 id="react-router-basics-v6">
+  
+  
+    <a href="#react-router-basics-v6" class="anchor-heading" aria-labelledby="react-router-basics-v6"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>React Router Basics (v6+)</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>Define routes for navigation.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-router-dom</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nc">Routes</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/"</span> <span class="na">element</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Home</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nc">Routes</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+<h4 id="navigation-and-link-components">
+  
+  
+    <a href="#navigation-and-link-components" class="anchor-heading" aria-labelledby="navigation-and-link-components"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Navigation and Link Components</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">Link</code> to navigate between routes without refreshing.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">Link</span> <span class="na">to</span><span class="p">=</span><span class="s">"/about"</span><span class="p">&gt;</span>About<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;;</span>
+</code></pre></div>    </div>
+  </li>
+</ul><hr />
+<h3 id="error-handling">
+  
+  
+    <a href="#error-handling" class="anchor-heading" aria-labelledby="error-handling"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Error Handling</strong>
+  
+  
+</h3>
+    
+<h4 id="error-boundaries-class-components">
+  
+  
+    <a href="#error-boundaries-class-components" class="anchor-heading" aria-labelledby="error-boundaries-class-components"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Error Boundaries (Class Components)</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>Catch errors in a component tree using <code class="language-plaintext highlighter-rouge">componentDidCatch</code> and <code class="language-plaintext highlighter-rouge">getDerivedStateFromError</code>.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">ErrorBoundary</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">componentDidCatch</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">info</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span> <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul><hr />
+<h3 id="working-with-apis">
+  
+  
+    <a href="#working-with-apis" class="anchor-heading" aria-labelledby="working-with-apis"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Working with APIs</strong>
+  
+  
+</h3>
+    
+<h4 id="fetching-data-using-fetch-or-axios">
+  
+  
+    <a href="#fetching-data-using-fetch-or-axios" class="anchor-heading" aria-labelledby="fetching-data-using-fetch-or-axios"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Fetching Data (Using Fetch or Axios)</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">fetch</code> or <code class="language-plaintext highlighter-rouge">axios</code> to get data.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/data</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setData</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">},</span> <span class="p">[]);</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+<h4 id="handling-promises-and-asyncawait">
+  
+  
+    <a href="#handling-promises-and-asyncawait" class="anchor-heading" aria-labelledby="handling-promises-and-asyncawait"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Handling Promises and Async/Await</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>Prefer async/await for cleaner asynchronous code.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fetchData</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/data</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+  <span class="nx">setData</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>    </div>
+  </li>
+</ul><hr />
+<h3 id="performance-optimization-introductory">
+  
+  
+    <a href="#performance-optimization-introductory" class="anchor-heading" aria-labelledby="performance-optimization-introductory"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Performance Optimization (Introductory)</strong>
+  
+  
+</h3>
+    
+<h4 id="reactmemo">
+  
+  
+    <a href="#reactmemo" class="anchor-heading" aria-labelledby="reactmemo"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>React.memo</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li>Prevents unnecessary re-renders by memoizing components.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MemoizedComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">memo</span><span class="p">(</span><span class="nx">MyComponent</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+<h4 id="usecallback-and-usememo-basic-use-cases">
+  
+  
+    <a href="#usecallback-and-usememo-basic-use-cases" class="anchor-heading" aria-labelledby="usecallback-and-usememo-basic-use-cases"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong><code class="language-plaintext highlighter-rouge">useCallback</code> and <code class="language-plaintext highlighter-rouge">useMemo</code> (Basic Use Cases)</strong>
+  
+  
+</h4>
+    
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">useCallback</code></strong>: Memoizes functions.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">memoizedCallback</span> <span class="o">=</span> <span class="nx">useCallback</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">doSomething</span><span class="p">();</span> <span class="p">},</span> <span class="p">[</span><span class="nx">dependencies</span><span class="p">]);</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">useMemo</code></strong>: Memoizes values.
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">computedValue</span> <span class="o">=</span> <span class="nx">useMemo</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">computeExpensiveValue</span><span class="p">(),</span> <span class="p">[</span><span class="nx">dependencies</span><span class="p">]);</span>
+</code></pre></div>    </div>
+  </li>
+</ul><hr />
+
+<p>This overview provides a foundation for React. Let me know if you’d like a deeper dive into any specific topic!</p>
+
+          
+
+          
             
-          </ul>
-        </div>
-        <div class="footer-col">
-          <p>Tech Blog</p>
-        </div>
-      </div>
+          
+        </main>
+        
+<hr>
+<footer>
   
-      <div class="social-links"><ul class="social-media-list"><li><a href="https://github.com/Anusree6154s"><svg class="svg-icon"><use xlink:href="/bits-and-bytes/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Anusree6154s</span></a></li><li><a href="https://www.linkedin.com/in/anusreeanilkumar1"><svg class="svg-icon"><use xlink:href="/bits-and-bytes/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">anusreeanilkumar1</span></a></li><li><a href="https://www.twitter.com/anu6154s"><svg class="svg-icon"><use xlink:href="/bits-and-bytes/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anu6154s</span></a></li><li><a href="/bits-and-bytes/feed.xml"><svg class="svg-icon"><use xlink:href="/bits-and-bytes/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
-</div>
+
   
-    </div>
-  
-  </footer> -->
 
-<footer id="contact">
-  <section class="footer-inner">
-    <div class="contact">
-      <div class="contact-inner">
-        <p>CONTACT</p>
-        <p>
-          <span class="logo"></span><span>anilkumaranusree113@gmail.com</span>
-        </p>
-        <p><span class="logo"></span><span>+91-9699973230</span></p>
-        <p><span class="logo"></span><span>Surat, Gujarat, India</span></p>
-      </div>
-
-      <div class="socials">
-        <a href="https://www.linkedin.com/in/anusreeanilkumar1/"
-          ><span></span
-        ></a>
-        <a href="https://github.com/Anusree6154s"><span></span></a>
-        <a href="https://x.com/anu6154s"><span></span></a>
-      </div>
-    </div>
-    <div class="list">
-      <div class="sections">
-        <p>SECTIONS</p>
-        <a href="/bits-and-bytes/#latest-posts">Latest Posts</a>
-        <a href="/bits-and-bytes/all-posts">All Posts</a>
-        <a href="/bits-and-bytes/#projects">Projects</a>
-        <a href="/bits-and-bytes/#profile">Profile</a>
-      </div>
-      <div class="links">
-        <p>LINKS</p>
-        <a href="https://anusreeanilkumar.vercel.app/">Personal Portfolio</a>
-        <a href="https://www.crio.do/learn/portfolio/anilkumaranusree113/"
-          >Crio.Do Portfolio</a
-        >
-        <a href="https://anusreeanilkumar.vercel.app/projects">All Projects</a>
-        <a
-          href="https://drive.google.com/file/d/1Y8_r1SKBmwClHUr-pszQpEmI3XLBEbTO/view?usp=sharing"
-          >Resume</a
-        >
-      </div>
-    </div>
-  </section>
-
-  <section class="sub-footer">@ 2025 Anusree Anilkumar</section>
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    
+  </div>
 </footer>
-<script>
-      SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '/bits-and-bytes/search.json',
-        searchResultTemplate: '<li class="search-list"><a href="{url}">{title}</a></li>',
-        noResultsText: '<li class="search-list">No results found</li>',
-        limit: 5
-      });
+
+      </div>
+    </div>
+    
       
-       document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'https://bits-and-bytes-backend-pi.vercel.app';
-    const pageUrl = window.location.href;
 
-    fetch(apiUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: pageUrl })
-    })
-    .then(response => response.json())
-    .then(data => {
-      const countEl = document.getElementById('visitor-count');
-      if (countEl) {
-        countEl.textContent = `${data.count}`;
-      }
-    })
-    .catch(error => console.error('Error updating visitor count:', error));
-  });
-    </script>
+<div class="search-overlay"></div>
 
-  </body>
+    
+  </div>
 
+  
+</body>
 </html>
+
