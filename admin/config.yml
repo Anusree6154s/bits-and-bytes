@@ -16,7 +16,7 @@ collections:
     folder: "_docs"
     create: true
     format: frontmatter
-    slug: "{{slug}}/"
+    slug: "{{slug}}"
     path: "{{slug}}/readme" # This is where CMS will write the file
     extension: "md"
     fields:
