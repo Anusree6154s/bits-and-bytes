@@ -274,7 +274,11 @@ let currentCategory = "dev";
 
 
 
-{% assign sorted_docs = site.docs | where_exp: "doc", "doc.has_children != true" | sort: 'date' | reverse %}
+{% assign sorted_docs = site.docs
+  | where_exp: "doc", "doc.has_children != true or doc.parent"
+  | sort: 'date'
+  | reverse
+%}
 
 <style>
   .git-timeline {
