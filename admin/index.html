@@ -1,90 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
-    <!-- <script>
-      window.CMS_MANUAL_INIT = true;
-    </script> -->
+    <link href="config.yml" type="text/yaml" rel="cms-config-url" />
   </head>
   <body>
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <!-- Decap CMS Script -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
     <script>
-      window.addEventListener("message", async (e) => {
-        const { code, state } = e.data || {};
-        console.log("📩 Message received from popup:", e.data);
-      });
-    </script>
-    <!-- <script>
-      async function initializeCMS() {
-        try {
-          console.log("🚀 Initializing CMS...");
-          await CMS.init();
-          console.log("✅ CMS initialized successfully.");
-        } catch (err) {
-          console.error("❌ CMS.init error:", err);
-          document.body.innerHTML = `<p>CMS failed to load. Check console for errors.</p>`;
-        }
-      }
-
-      // Initial CMS load (shows login button)
-      initializeCMS();
-
-      window.addEventListener("message", async (e) => {
-        const { code, state } = e.data || {};
-        console.log("📩 Message received from popup:", e.data);
-
-        if (code) {
-          console.log("🚀 ~ window.addEventListener ~ code:", code);
-
+      window.addEventListener("message", (event) => {
+        // Ensure message is string data from OAuth popup
+        if (typeof event.data === "string" && event.data.startsWith("authorization:github:success:")) {
           try {
-            const response = await fetch(
-              `https://netlify-cms-github-oauth-bf5t.onrender.com/auth/callback?site=https://anusree6154s.github.io/bits-and-bytes&code=${code}&state=${state}`
-            );
+            const jsonStr = event.data.replace("authorization:github:success:", "");
+            const authData = JSON.parse(jsonStr);
 
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
+            // Construct exact user object Decap requires
+            const cmsUser = {
+              token: authData.token,
+              provider: "github",
+              backendName: "github"
+            };
 
-            const data = await response.json();
+            // Save to localStorage
+            localStorage.setItem("decap-cms-user", JSON.stringify(cmsUser));
 
-            if (data.token) {
-              console.log(
-                "🚀 ~ window.addEventListener ~ data.token:",
-                data.token
-              );
-
-              //   await CMS.auth.login(data.token);
-
-              //   // Clear the page content just to be safe
-              //   document.body.innerHTML = "";
-
-              //   // Re-initialize CMS for authenticated session
-              //   await initializeCMS();
-
-              // Construct the user object as CMS expects
-              const user = {
-                token: data.token,
-                // You can optionally add: 'provider': 'github', 'login': 'your-user', 'name': 'Your Name'
-              };
-              // Save token for Netlify CMS
-              localStorage.setItem("netlify-cms-user", JSON.stringify(user));
-              // Reload to trigger CMS to detect user
-              window.location.reload();
-            } else {
-              console.error("OAuth callback failed", data);
-              document.body.innerHTML =
-                "<p>Authentication failed: No token returned.</p>";
-            }
+            // Reload to activate CMS dashboard
+            window.location.reload();
           } catch (err) {
-            console.error(
-              "❌ Error during OAuth token exchange or CMS login:",
-              err
-            );
-            document.body.innerHTML = `<p>Authentication error: ${err.message}</p>`;
+            console.error("Failed to parse OAuth message:", err);
           }
         }
       });
-    </script> -->
+    </script>
   </body>
 </html>

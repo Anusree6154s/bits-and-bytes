@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -7,7 +7,7 @@
   <body>
     <p>Completing login…</p>
 
-    <script>
+    <!-- <script>
       document.addEventListener("DOMContentLoaded", function () {
         function parseParams() {
           const params = {};
@@ -31,6 +31,32 @@
           document.body.innerHTML = "<p>Error: Missing code/state.</p>";
         }
       });
+    </script> -->
+    <script>
+      (function () {
+        function getQueryParam(name) {
+          const match = RegExp("[?&]" + name + "=([^&]*)").exec(
+            window.location.search,
+          );
+          return match && decodeURIComponent(match[1].replace(/\+/g, " "));
+        }
+
+        const token = getQueryParam("token");
+        const provider = "github";
+
+        if (token) {
+          const message = `authorization:${provider}:success:${JSON.stringify({
+            token: token,
+            provider: provider,
+          })}`;
+
+          window.opener.postMessage(message, window.location.origin);
+          window.close();
+        } else {
+          document.body.innerHTML =
+            "<p>Authentication failed: No token returned.</p>";
+        }
+      })();
     </script>
   </body>
 </html>

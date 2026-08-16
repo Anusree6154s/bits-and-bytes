@@ -10,48 +10,39 @@ media_folder: "assets/uploads"
 public_folder: "/bits-and-bytes/assets/uploads"
 # public_folder: "/assets/uploads"
 
-# collections:
-#   - name: "pages"
-#     label: "Content Pages"
-#     folder: "content"
-#     create: true
-#     format: frontmatter
-#     slug: "{{slug}}/README"
-#     path: "{{slug}}/README"  # This is where CMS will write the file
-#     extension: "md"
-#     fields:
-#       - { label: "Title", name: "title", widget: "string" }
-#       - { label: "Permalink", name: "permalink", widget: "string" }
-#       - { label: "Date", name: "date", widget: "datetime" }
-#       - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
-#       - { label: "Tags", name: "tags", widget: "list", required: false }
-#       - { label: "Body", name: "body", widget: "markdown" }
-
 collections:
-
   - name: "docs"
-    label: "Documentation"
-    folder: "docs"
+    label: "Docs"
+    folder: "_docs"
     create: true
+    format: frontmatter
+    slug: "{{slug}}/"
+    path: "{{slug}}/readme" # This is where CMS will write the file
     extension: "md"
-    format: "frontmatter"
-    slug: "{{slug}}"
-
     fields:
-      - label: "Title"
-        name: "title"
-        widget: "string"
+      - { label: "Layout", name: "layout", widget: "hidden", default: "default" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Parent", name: "parent", widget: "string", required: false  }
+      - { label: "Has Children", name: "has_children", widget: "boolean", default: false, required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "pages"
+    label: "Pages (old version)"
+    folder: "content"
+    create: true
+    format: frontmatter
+    slug: "{{slug}}/README"
+    path: "{{slug}}/README"  # This is where CMS will write the file
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
 
-      - label: "Parent"
-        name: "parent"
-        widget: "string"
-        required: false
-
-      - label: "Navigation Order"
-        name: "nav_order"
-        widget: "number"
-        required: false
-
-      - label: "Body"
-        name: "body"
-        widget: "markdown"
+# local_backend: true # Add this line to debug locally, also run npx decap-server
