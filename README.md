@@ -1,6 +1,8 @@
+
 <div align='center'>
   <h2>Blog Website</h2>
-<img src='https://github.com/user-attachments/assets/3d34a9ec-e32a-459f-86df-61a71ba71425' width=500/>
+<!-- <img src='https://github.com/user-attachments/assets/3d34a9ec-e32a-459f-86df-61a71ba71425' width=500/> -->
+<img src='https://github.com/user-attachments/assets/1601b23c-58d3-4d18-a8f7-51dfd5b9287d' width=500/>
 </div>
 
 ### Techstack
@@ -18,4 +20,6 @@
 <br>
 <br>
 
+
+<!-- <img width="1918" height="944" alt="Recording 2026-11-06 203727 (1)" src="https://github.com/user-attachments/assets/1601b23c-58d3-4d18-a8f7-51dfd5b9287d" /> -->
 
