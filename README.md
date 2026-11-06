@@ -17,6 +17,18 @@
 
 ### Adding Docs
 
-To add a doc manually, create a Markdown file under `_docs/<slug>/readme.md` (or `content/<slug>/README.md`) with frontmatter (title, permalink, date, tags, parent, etc.) followed by the body.
+- To add a doc manually, create a Markdown file under `_docs/<slug>/readme.md` (or `content/<slug>/README.md`) with frontmatter (title, permalink, date, tags, parent, etc.) followed by the body.
+  Eg: 
+  ```
+  ---
+  layout: default
+  date: 26 apr 2026
+  title: OOP
+  excerpt: Learning object oriented programming
+  permalink: oop
+  tags: [oop, software design, computer basics]
+  parent : Computer Science Concepts
+  ---
+  ```
 
-To add a doc via UI, add docs through the Decap CMS at `/admin` (GitHub OAuth).
+- To add a doc via UI, add docs through the Decap CMS at `/admin` (GitHub OAuth). [Not working currently]
