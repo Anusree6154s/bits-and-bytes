@@ -4,6 +4,7 @@ title: Flutter
 permalink: flutter
 has_children: true
 parent: Mobile Dev
+date: Jul 13, 2025
 ---
 
 {% assign child_p   ages = site.docs | where: "parent", page.title | where_exp: "item", "item.hidden != true" | sort: "date" | reverse %}

@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Kubernetes
-date: NOv 04, 2026
+date: Nov 04, 2026
 excerpt: Intro to kubernetes
-# permalink: deployment
+parent: Devops And Infrastructure
+permalink: kubernetes
 ---
 
 # Kubernetes (K8s)
