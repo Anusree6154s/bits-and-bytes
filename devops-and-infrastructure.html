@@ -13,16 +13,30 @@
 
   <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
+
+    
+    .site-nav > ul:nth-of-type(1) > li:not(:nth-child(6)) > a,
+    .site-nav > ul:nth-of-type(1) > li > ul > li a {
       background-image: none;
     }
-    .site-nav > ul.nav-category-list > li > button svg {
-      transform: rotate(-90deg);
-    }
-    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list {
-      display: block;
+
+    .site-nav > ul:not(:nth-of-type(1)) a,
+    .site-nav li.external a {
+      background-image: none;
     }
 
+    .site-nav > ul:nth-of-type(1) > li:nth-child(6) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul:nth-of-type(1) > li:nth-child(6) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul:nth-of-type(1) > li.nav-list-item:nth-child(6) > ul.nav-list {
+      display: block;
+    }
   </style>
 
   
@@ -42,23 +56,23 @@
 
 
   <!-- Begin Jekyll SEO tag v2.9.0 -->
-<title>Kubernetes | Bits &amp; Bytes</title>
+<title>Devops And Infrastructure | Bits &amp; Bytes</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Kubernetes" />
+<meta property="og:title" content="Devops And Infrastructure" />
 <meta name="author" content="Anusree Anilkumar" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Intro to kubernetes" />
-<meta name="twitter:description" property="og:description" content="Intro to kubernetes" />
-<link rel="canonical" href="https://anusree6154s.github.io/bits-and-bytes/devops-and-infrastructure/kubernetes/readme/" />
-<meta property="og:url" content="https://anusree6154s.github.io/bits-and-bytes/devops-and-infrastructure/kubernetes/readme/" />
+<meta name="description" content="Tech Blog" />
+<meta name="twitter:description" property="og:description" content="Tech Blog" />
+<link rel="canonical" href="https://anusree6154s.github.io/bits-and-bytes/devops-and-infrastructure" />
+<meta property="og:url" content="https://anusree6154s.github.io/bits-and-bytes/devops-and-infrastructure" />
 <meta property="og:site_name" content="Bits &amp; Bytes" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-11-04T00:00:00+00:00" />
-<meta property="article:modified_time" content="2026-11-04T00:00:00+00:00" />
+<meta property="article:published_time" content="2026-11-06T17:58:52+00:00" />
+<meta property="article:modified_time" content="2026-11-06T17:58:52+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Kubernetes" />
+<meta name="twitter:title" content="Devops And Infrastructure" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Anusree Anilkumar"},"dateModified":"2026-11-04T00:00:00+00:00","datePublished":"2026-11-04T00:00:00+00:00","description":"Intro to kubernetes","headline":"Kubernetes","mainEntityOfPage":{"@type":"WebPage","@id":"https://anusree6154s.github.io/bits-and-bytes/devops-and-infrastructure/kubernetes/readme/"},"url":"https://anusree6154s.github.io/bits-and-bytes/devops-and-infrastructure/kubernetes/readme/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Anusree Anilkumar"},"dateModified":"2026-11-06T17:58:52+00:00","datePublished":"2026-11-06T17:58:52+00:00","description":"Tech Blog","headline":"Devops And Infrastructure","mainEntityOfPage":{"@type":"WebPage","@id":"https://anusree6154s.github.io/bits-and-bytes/devops-and-infrastructure"},"url":"https://anusree6154s.github.io/bits-and-bytes/devops-and-infrastructure"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -153,7 +167,9 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
       </button><a href="/bits-and-bytes/databases" class="nav-list-link">Databases</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="No SQL submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
-      </button><a href="/bits-and-bytes/no-sql" class="nav-list-link">No SQL</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/mongodb" class="nav-list-link">MongoDB Concepts Guide</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/bits-and-bytes/deployment" class="nav-list-link">Deployment Websites</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Import Modules submenu" aria-expanded="false">
+      </button><a href="/bits-and-bytes/no-sql" class="nav-list-link">No SQL</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/mongodb" class="nav-list-link">MongoDB Concepts Guide</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/bits-and-bytes/deployment" class="nav-list-link">Deployment Websites</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Devops And Infrastructure submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/devops-and-infrastructure" class="nav-list-link">Devops And Infrastructure</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes" class="nav-list-link">Kubernetes</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Import Modules submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
       </button><a href="/bits-and-bytes/import-modules" class="nav-list-link">Import Modules</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/tests" class="nav-list-link">Tests</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Interview Questions submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
@@ -226,73 +242,21 @@
       <div id="main-content" class="main-content">
         <main>
           
-            # Kubernetes (K8s)
-<p align='center'><img src='image.png' width=100/></p>
-
-
-## Structure and visualisation
-Let us visualise it as a rack of physical servers
-
-### Visualisation
-```
-Datacenter Rack
-|--Physical Servers
-```
-
-Eg:
-```
-Datacenter Rack
-|--Server A
-|    |--Control Plane (Management brain)
-|        |--Api Server
-|        |--Scheduler
-|        |--Control Manager
-|        |--etcd
-|--Server B
-|    |--kubelet (local node employee/node agent)
-|    |--container runtime (executes runtime)
-|    |--Pods (workloads)
-|        |--Pod
-|        |   |--Container (nestJS)
-|        |--Pod
-|            |--Container (Redis)
-|--Server C (worker node)
-|   |--kubelet
-|   |--Container runtime
-|   |--Pods
-|        |--Pod
-|            |--Container (Postgres)
-|--Server D (worker node)
-    |--kubelet
-    |--container runtime
-    |--Pods
-        |--Pod
-            |--Container (Prometheus)
-```
-
-## Linux Basics
-Now some linux basics first so that we understand the working of K8s in comparison to physical servers much easily.
-
-```
-Data Center Rack
-|-- Server 1
-|    |-- CPU, RAM, SSD/HDD, Network Card
-|    |--Linux Kernel
-|    |--Processes running
-|        |--nginx PID 101
-|        |--postgers PID 220
-|        |--node app PID 450
-|-- Server 2
-|-- Server 3
-.
-.
-.
-```
-
-          
-
-          
             
+
+          
+
+          
+            <hr>
+<h2 class="text-delta">Table of contents</h2>
+
+<ul>
+  
+  <li>
+    <a href="/bits-and-bytes/kubernetes">Kubernetes</a>
+  </li>
+  
+</ul>
           
         </main>
         
