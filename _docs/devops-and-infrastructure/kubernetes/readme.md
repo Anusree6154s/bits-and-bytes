@@ -129,7 +129,7 @@ RAM
 I attempted learning more about linux and k8s with help of a partly done mini project. Techand their purposes:
 - Docker: 
     - Run app in containers
-    - SOlve issue of "works on my machine"
+    - Solve issue of "works on my machine"
     - ALternatives:
         - Podman: docker compatible container engine
         - CXC/CXD: system containers
