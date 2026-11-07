@@ -117,7 +117,7 @@ RAM
 |-----------------------|
 | Process: postgres     |
 |-----------------------|
-| Process: nodes        |
+| Process: node         |
 |-----------------------|
 | Linux Kernel Reserved |
 |-----------------------|
@@ -126,7 +126,7 @@ RAM
 - Kernel prevent process A from reading process B's memory
 
 ## Media Forge
-I attempted learning more about linux and k8s with help of a partly done mini project. Techand their purposes:
+I attempted learning more about linux and k8s with help of a partly done mini project. Tech and their purposes:
 - Docker: 
     - Run app in containers
     - Solve issue of "works on my machine"
