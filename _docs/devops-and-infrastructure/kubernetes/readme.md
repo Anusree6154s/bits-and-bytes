@@ -165,5 +165,5 @@ I attempted learning more about linux and k8s with help of a partly done mini pr
 ## K8s Basics
 So we are back to continuing with k8s basics dropping media forge in between 🥲🙂
 ### Linux Basics
-Back to understanding linnux basics for k8s. THey include processes, ports, networking, DNS, file systems, permissions, env variables, systemd, services, logs
+Back to understanding linux basics for k8s. They include processes, ports, networking, DNS, file systems, permissions, env variables, systemd, services, logs
 
