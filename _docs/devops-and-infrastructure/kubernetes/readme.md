@@ -8,7 +8,7 @@ permalink: kubernetes
 ---
 
 # Kubernetes (K8s)
-<p align='center'><img src='./image.png' width=100/></p>
+<p align='center'><img src='https://github.com/user-attachments/assets/f0cac749-5d43-4a25-8865-da9bd83f2e87' width=100/></p>
 
 
 ## Structure and visualisation
