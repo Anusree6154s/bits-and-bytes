@@ -8,7 +8,7 @@ permalink: kubernetes
 ---
 
 # Kubernetes (K8s)
-<p align='center'><img src='image.png' width=100/></p>
+<p align='center'><img src='./image.png' width=100/></p>
 
 
 ## Structure and visualisation
@@ -69,3 +69,95 @@ Data Center Rack
 .
 .
 ```
+
+### Visualisation
+```
+Physical server
+
+|-------------------|
+| CPU --------------|-----> executes instructions
+| RAM --------------|-----> process memory
+| SSD/HDD ----------|-----> stores files/dbs/logs
+| NIC/Network Card -|-----> sends and receives network packets
+| --------------    |
+| |Linux Kernel| ---|-----> schedules CPU time (sits between application
+| --------------    |        and hardware)
+|                   |       * manages memory
+| Processes running:|       * manages file systems
+| nginx PID 101     |       * manages networking via NIC
+| postgres PID 220  |
+| node app PID 450  |
+|-------------------|
+```
+
+- **Process** = Program code + memory + CPU execution + kernel-managed resources 
+- **Linux Kernel**
+    - Sits between application and hardware
+    - When app neesd something, it initiates kernel and kernel initates disk for data
+    - Eg: 
+    ```
+    node app
+        |
+        v
+    Kernel sys call
+        |
+        v
+    disk read
+        |
+        v
+    SSD returns bytes
+    ``` 
+    - App never touches hardware directly. Kernel controls everything
+
+### Visualising Process in RAM
+```
+RAM
+|-----------------------|
+| Process: nginx        |
+|-----------------------|
+| Process: postgres     |
+|-----------------------|
+| Process: nodes        |
+|-----------------------|
+| Linux Kernel Reserved |
+|-----------------------|
+```
+- Each process getsisolated memory
+- Kernel prevent process A from reading process B's memory
+
+## Media Forge
+I attempted learning more about linux and k8s with help of a partly done mini project. Techand their purposes:
+- Docker: 
+    - Run app in containers
+    - SOlve issue of "works on my machine"
+    - ALternatives:
+        - Podman: docker compatible container engine
+        - CXC/CXD: system containers
+        - containerd
+        - CRI-O
+- Docker compose
+    - Run multiple containers together (instead of running containers separately)
+- kube ctl (pronounced: koobcuttle)
+    - CLI to control k8 clusters
+    - alternatives: Lens/Openlens UI, k9s, Rancher
+- Kind (Full form: kubernetes in docker)
+    - Runs local k8s cluster using docker containers
+    - Lightweight alternatives to real k8 clusters
+    - Alternative: Minikub, k3d, MicroK8s, Docker Desktop K8s 
+- Helm
+    - Package manager for K8s
+    - npm for K8s
+    - When lots of k8s yaml comes, helm ackages them into reusable templates called chartsw
+    - ALternatives: Kustomize, Jsonnet/Tnaks, CUEe
+- K9s
+    - Terminal UI for k8s
+    - Alternative to kubectl commands in terminal
+    - ALternatives: OpenLens, Rancher, Octant
+- OpenLens
+    - Desktop GUI for k8s cluster
+    - Alternatives: Lens, Rancher, Octant
+- PNPM
+    - Fullform: performative npm
+    - Faster + efficient npm
+    - Used for nx monorepos running multiple services
+    - Alternative: npm, yarn, Bun package manager
