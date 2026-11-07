@@ -785,7 +785,7 @@
   },"112": {
     "doc": "Kubernetes",
     "title": "K8s Basics",
-    "content": "So we are back to continuing with k8s basics dropping media forge in between 🥲🙂 . Linux Basics . Back to understanding linnux basics for k8s. THey include processes, ports, networking, DNS, file systems, permissions, env variables, systemd, services, logs . ",
+    "content": "So we are back to continuing with k8s basics dropping media forge in between 🥲🙂 . Linux Basics . Back to understanding linux basics for k8s. They include processes, ports, networking, DNS, file systems, permissions, env variables, systemd, services, logs . ",
     "url": "/bits-and-bytes/kubernetes#k8s-basics",
     
     "relUrl": "/kubernetes#k8s-basics"
