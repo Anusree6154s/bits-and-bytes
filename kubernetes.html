@@ -260,7 +260,7 @@
   
 </h1>
     
-<p align="center"><img src="image.png" width="100" /></p>
+<p align="center"><img src="./image.png" width="100" /></p>
 <h2 id="structure-and-visualisation">
   
   
@@ -335,6 +335,150 @@
 .
 .
 </code></pre></div></div>
+<h3 id="visualisation-1">
+  
+  
+    <a href="#visualisation-1" class="anchor-heading" aria-labelledby="visualisation-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Visualisation
+  
+  
+</h3>
+    
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Physical server
+
+|-------------------|
+| CPU --------------|-----&gt; executes instructions
+| RAM --------------|-----&gt; process memory
+| SSD/HDD ----------|-----&gt; stores files/dbs/logs
+| NIC/Network Card -|-----&gt; sends and receives network packets
+| --------------    |
+| |Linux Kernel| ---|-----&gt; schedules CPU time (sits between application
+| --------------    |        and hardware)
+|                   |       * manages memory
+| Processes running:|       * manages file systems
+| nginx PID 101     |       * manages networking via NIC
+| postgres PID 220  |
+| node app PID 450  |
+|-------------------|
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Process</strong> = Program code + memory + CPU execution + kernel-managed resources</li>
+  <li><strong>Linux Kernel</strong>
+    <ul>
+      <li>Sits between application and hardware</li>
+      <li>When app neesd something, it initiates kernel and kernel initates disk for data</li>
+      <li>Eg:
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  node app
+  |
+  v
+  Kernel sys call
+  |
+  v
+  disk read
+  |
+  v
+  SSD returns bytes
+</code></pre></div>        </div>
+      </li>
+      <li>App never touches hardware directly. Kernel controls everything</li>
+    </ul>
+  </li>
+</ul>
+<h3 id="visualising-process-in-ram">
+  
+  
+    <a href="#visualising-process-in-ram" class="anchor-heading" aria-labelledby="visualising-process-in-ram"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Visualising Process in RAM
+  
+  
+</h3>
+    
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RAM
+|-----------------------|
+| Process: nginx        |
+|-----------------------|
+| Process: postgres     |
+|-----------------------|
+| Process: nodes        |
+|-----------------------|
+| Linux Kernel Reserved |
+|-----------------------|
+</code></pre></div></div>
+<ul>
+  <li>Each process getsisolated memory</li>
+  <li>Kernel prevent process A from reading process B’s memory</li>
+</ul>
+<h2 id="media-forge">
+  
+  
+    <a href="#media-forge" class="anchor-heading" aria-labelledby="media-forge"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Media Forge
+  
+  
+</h2>
+    
+<p>I attempted learning more about linux and k8s with help of a partly done mini project. Techand their purposes:</p>
+<ul>
+  <li>Docker:
+    <ul>
+      <li>Run app in containers</li>
+      <li>SOlve issue of “works on my machine”</li>
+      <li>ALternatives:
+        <ul>
+          <li>Podman: docker compatible container engine</li>
+          <li>CXC/CXD: system containers</li>
+          <li>containerd</li>
+          <li>CRI-O</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Docker compose
+    <ul>
+      <li>Run multiple containers together (instead of running containers separately)</li>
+    </ul>
+  </li>
+  <li>kube ctl (pronounced: koobcuttle)
+    <ul>
+      <li>CLI to control k8 clusters</li>
+      <li>alternatives: Lens/Openlens UI, k9s, Rancher</li>
+    </ul>
+  </li>
+  <li>Kind (Full form: kubernetes in docker)
+    <ul>
+      <li>Runs local k8s cluster using docker containers</li>
+      <li>Lightweight alternatives to real k8 clusters</li>
+      <li>Alternative: Minikub, k3d, MicroK8s, Docker Desktop K8s</li>
+    </ul>
+  </li>
+  <li>Helm
+    <ul>
+      <li>Package manager for K8s</li>
+      <li>npm for K8s</li>
+      <li>When lots of k8s yaml comes, helm ackages them into reusable templates called chartsw</li>
+      <li>ALternatives: Kustomize, Jsonnet/Tnaks, CUEe</li>
+    </ul>
+  </li>
+  <li>K9s
+    <ul>
+      <li>Terminal UI for k8s</li>
+      <li>Alternative to kubectl commands in terminal</li>
+      <li>ALternatives: OpenLens, Rancher, Octant</li>
+    </ul>
+  </li>
+  <li>OpenLens
+    <ul>
+      <li>Desktop GUI for k8s cluster</li>
+      <li>Alternatives: Lens, Rancher, Octant</li>
+    </ul>
+  </li>
+  <li>PNPM
+    <ul>
+      <li>Fullform: performative npm</li>
+      <li>Faster + efficient npm</li>
+      <li>Used for nx monorepos running multiple services</li>
+      <li>Alternative: npm, yarn, Bun package manager</li>
+    </ul>
+  </li>
+</ul>
 
           
 
