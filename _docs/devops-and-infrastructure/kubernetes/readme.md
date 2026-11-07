@@ -93,7 +93,7 @@ Physical server
 - **Process** = Program code + memory + CPU execution + kernel-managed resources 
 - **Linux Kernel**
     - Sits between application and hardware
-    - When app neesd something, it initiates kernel and kernel initates disk for data
+    - When app needs something, it initiates kernel and kernel initates disk for data
     - Eg: 
     ```
     node app
