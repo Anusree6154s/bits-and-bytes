@@ -130,7 +130,7 @@ I attempted learning more about linux and k8s with help of a partly done mini pr
 - Docker: 
     - Run app in containers
     - Solve issue of "works on my machine"
-    - ALternatives:
+    - Alternatives:
         - Podman: docker compatible container engine
         - CXC/CXD: system containers
         - containerd
@@ -148,11 +148,11 @@ I attempted learning more about linux and k8s with help of a partly done mini pr
     - Package manager for K8s
     - npm for K8s
     - When lots of k8s yaml comes, helm ackages them into reusable templates called chartsw
-    - ALternatives: Kustomize, Jsonnet/Tnaks, CUEe
+    - Alternatives: Kustomize, Jsonnet/Tnaks, CUEe
 - K9s
     - Terminal UI for k8s
     - Alternative to kubectl commands in terminal
-    - ALternatives: OpenLens, Rancher, Octant
+    - Alternatives: OpenLens, Rancher, Octant
 - OpenLens
     - Desktop GUI for k8s cluster
     - Alternatives: Lens, Rancher, Octant
