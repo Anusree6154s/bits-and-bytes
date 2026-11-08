@@ -497,6 +497,34 @@
 </h3>
     
 <p>Back to understanding linux basics for k8s. They include processes, ports, networking, DNS, file systems, permissions, env variables, systemd, services, logs</p>
+<ul>
+  <li>Processes:
+    <ul>
+      <li>A combination of program instructions, memory used, CPU execution state, open files, netwrok connections, security identity, env variables is called a process</li>
+      <li>Process handling in physical rack server
+        <ul>
+          <li>CPU core execute process instruction</li>
+          <li>RAM store process data</li>
+          <li>Disk (HDD/SSD) store process file</li>
+          <li>NIC/network card process network traffic (send and receives network packets)</li>
+          <li>Linux kernel schedue CPU time between processes</li>
+        </ul>
+      </li>
+      <li>Physical rack visualization
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|------------------------|
+CPU
+RAM
+SSD/HDD
+NIC
+|----------------------|
+Linux Kernel
+|----------------------|
+|-------------------------|
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
 
           
 
