@@ -8,19 +8,22 @@ permalink: kubernetes
 ---
 
 # Kubernetes (K8s)
+
 <p align='center'><img src='https://github.com/user-attachments/assets/f0cac749-5d43-4a25-8865-da9bd83f2e87' width=100/></p>
 
-
 ## Structure and visualisation
+
 Let us visualise it as a rack of physical servers
 
 ### Visualisation
+
 ```
 Datacenter Rack
 |--Physical Servers
 ```
 
 Eg:
+
 ```
 Datacenter Rack
 |--Server A
@@ -52,6 +55,7 @@ Datacenter Rack
 ```
 
 ## Linux Basics
+
 Now some linux basics first so that we understand the working of K8s in comparison to physical servers much easily.
 
 ```
@@ -71,6 +75,7 @@ Data Center Rack
 ```
 
 ### Visualisation
+
 ```
 Physical server
 
@@ -90,26 +95,29 @@ Physical server
 |-------------------|
 ```
 
-- **Process** = Program code + memory + CPU execution + kernel-managed resources 
+- **Process** = Program code + memory + CPU execution + kernel-managed resources
 - **Linux Kernel**
-    - Sits between application and hardware
-    - When app needs something, it initiates kernel and kernel initates disk for data
-    - Eg: 
-    ```
-    node app
-        |
-        v
-    Kernel sys call
-        |
-        v
-    disk read
-        |
-        v
-    SSD returns bytes
-    ``` 
-    - App never touches hardware directly. Kernel controls everything
+  - Sits between application and hardware
+  - When app needs something, it initiates kernel and kernel initates disk for data
+  - Eg:
+
+  ```
+  node app
+      |
+      v
+  Kernel sys call
+      |
+      v
+  disk read
+      |
+      v
+  SSD returns bytes
+  ```
+
+  - App never touches hardware directly. Kernel controls everything
 
 ### Visualising Process in RAM
+
 ```
 RAM
 |-----------------------|
@@ -122,202 +130,271 @@ RAM
 | Linux Kernel Reserved |
 |-----------------------|
 ```
+
 - Each process getsisolated memory
 - Kernel prevent process A from reading process B's memory
 
 ## Media Forge
+
 I attempted learning more about linux and k8s with help of a partly done mini project. Tech and their purposes:
-- Docker: 
-    - Run app in containers
-    - Solve issue of "works on my machine"
-    - Alternatives:
-        - Podman: docker compatible container engine
-        - CXC/CXD: system containers
-        - containerd
-        - CRI-O
+
+- Docker:
+  - Run app in containers
+  - Solve issue of "works on my machine"
+  - Alternatives:
+    - Podman: docker compatible container engine
+    - CXC/CXD: system containers
+    - containerd
+    - CRI-O
 - Docker compose
-    - Run multiple containers together (instead of running containers separately)
+  - Run multiple containers together (instead of running containers separately)
 - kube ctl (pronounced: koobcuttle)
-    - CLI to control k8 clusters
-    - alternatives: Lens/Openlens UI, k9s, Rancher
+  - CLI to control k8 clusters
+  - alternatives: Lens/Openlens UI, k9s, Rancher
 - Kind (Full form: kubernetes in docker)
-    - Runs local k8s cluster using docker containers
-    - Lightweight alternatives to real k8 clusters
-    - Alternative: Minikub, k3d, MicroK8s, Docker Desktop K8s 
+  - Runs local k8s cluster using docker containers
+  - Lightweight alternatives to real k8 clusters
+  - Alternative: Minikub, k3d, MicroK8s, Docker Desktop K8s
 - Helm
-    - Package manager for K8s
-    - npm for K8s
-    - When lots of k8s yaml comes, helm ackages them into reusable templates called chartsw
-    - Alternatives: Kustomize, Jsonnet/Tnaks, CUEe
+  - Package manager for K8s
+  - npm for K8s
+  - When lots of k8s yaml comes, helm ackages them into reusable templates called chartsw
+  - Alternatives: Kustomize, Jsonnet/Tnaks, CUEe
 - K9s
-    - Terminal UI for k8s
-    - Alternative to kubectl commands in terminal
-    - Alternatives: OpenLens, Rancher, Octant
+  - Terminal UI for k8s
+  - Alternative to kubectl commands in terminal
+  - Alternatives: OpenLens, Rancher, Octant
 - OpenLens
-    - Desktop GUI for k8s cluster
-    - Alternatives: Lens, Rancher, Octant
+  - Desktop GUI for k8s cluster
+  - Alternatives: Lens, Rancher, Octant
 - PNPM
-    - Fullform: performative npm
-    - Faster + efficient npm
-    - Used for nx monorepos running multiple services
-    - Alternative: npm, yarn, Bun package manager
+  - Fullform: performative npm
+  - Faster + efficient npm
+  - Used for nx monorepos running multiple services
+  - Alternative: npm, yarn, Bun package manager
 
 ## K8s Basics
+
 So we are back to continuing with k8s basics dropping media forge in between 🥲🙂
+
 ### Linux Basics
+
+<p align='center'><img src='https://github.com/user-attachments/assets/846c2d65-c0ac-4b9c-a929-6bf847ad297f' width=100/></p>
+
 Back to understanding linux basics for k8s. They include processes, ports, networking, DNS, file systems, permissions, env variables, systemd, services, logs
-- Processes:
-    - A combination of program instructions, memory used, CPU execution state, open files, netwrok connections, security identity, env variables is called a process
-    - Process handling in physical rack server
-        - CPU core execute process instruction
-        - RAM store process data
-        - Disk (HDD/SSD) store process file
-        - NIC/network card process network traffic (send and receives network packets)
-        - Linux kernel schedue CPU time between processes
-    - Physical rack visualization
-      ```
-      |-------------------------|
-      | CPU                     |
-      | RAM                     |
-      | SSD/HDD                 |
-      | NIC                     |
-      | |----------------|      |
-      | | Linux Kernel   |      |
-      | |----------------|      |
-      |-------------------------|
-      ```
-        - NIC
-            - Network interface card
-            - Hardware for network communication like via ethernet ports, fibre ports, wireless radio hardwood
-        - VIsualization
-        ```
-        Nestjs app -----|
-            |           |-----Application
-            v           |
-        Socket API -----|
-            |
-            v
-        Linux Kernel Netwroking Stack
-            |
-            v
-        NIC driver -----------------|
-            |                       |
-            v                       |
-        NIC hardware                |------- Hardware to communicate via sockets
-            |                       |
-            v                       |
-        Ethernet cable/ network ----|
-        ```
-- Ports:
-    - Communication endpoint
-    - Use ports to decide which process receives incoming n/w traffic
-    - Kernel does forwarding of n/w from ports to its associated process
-- Networking
-    - Just basic concepts of who connects by what
-    - Eg: Ethernet cables/fiber connects server, cables connect to switches, etc
-- DNS (Domain Name System)
-    - Converts domain names to IP address, via which servers communicate
-- File systems
-    - organize data on storage systems
-    - eg: SSD, HDD, etc
-- permissions
-    - Eg: -rwxr-x---
-    - Rules followed in permissions:
-        ```
-        - rwx r-x r--
-        | |-| |-| |-|
-        |  |   |   |
-        |  |   |   v
-        |  |   |   other permission
-        |  |   v   
-        |  |   group permission
-        |  v   
-        |  owner permission
+
+- **Processes**:
+  - A combination of program instructions, memory used, CPU execution state, open files, netwrok connections, security identity, env variables is called a process
+  - Process handling in physical rack server
+    - CPU core execute process instruction
+    - RAM store process data
+    - Disk (HDD/SSD) store process file
+    - NIC/network card process network traffic (send and receives network packets)
+    - Linux kernel schedue CPU time between processes
+  - Physical rack visualization
+
+    ```
+    |-------------------------|
+    | CPU                     |
+    | RAM                     |
+    | SSD/HDD                 |
+    | NIC                     |
+    | |----------------|      |
+    | | Linux Kernel   |      |
+    | |----------------|      |
+    |-------------------------|
+    ```
+
+    - NIC
+      - Network interface card
+      - Hardware for network communication like via ethernet ports, fibre ports, wireless radio hardwood
+    - VIsualization
+
+    ```
+    Nestjs app -----|
+        |           |-----Application
+        v           |
+    Socket API -----|
+        |
         v
-        Filetype
+    Linux Kernel Netwroking Stack
+        |
+        v
+    NIC driver -----------------|
+        |                       |
+        v                       |
+    NIC hardware                |------- Hardware to communicate via sockets
+        |                       |
+        v                       |
+    Ethernet cable/ network ----|
+    ```
+
+- **Ports**:
+  - Communication endpoint
+  - Use ports to decide which process receives incoming n/w traffic
+  - Kernel does forwarding of n/w from ports to its associated process
+- **Networking**
+  - Just basic concepts of who connects by what
+  - Eg: Ethernet cables/fiber connects server, cables connect to switches, etc
+- **DNS** (Domain Name System)
+  - Converts domain names to IP address, via which servers communicate
+- **File systems**
+  - organize data on storage systems
+  - eg: SSD, HDD, etc
+- **Permissions**
+  - Eg: -rwxr-x---
+  - Rules followed in permissions:
+    ```
+    - rwx r-x r--
+    | |-| |-| |-|
+    |  |   |   |
+    |  |   |   v
+    |  |   |   other permission
+    |  |   v
+    |  |   group permission
+    |  v
+    |  owner permission
+    v
+    Filetype
+    ```
+  - filetype
+    - `-`: regular file
+    - `d`: directory
+    - `l`: symbolic link
+  - permissions - `r` read, `w` write, `x` execute, `-` no permission
+  - Numeric representation
+    - `r` - 4
+    - `w` - 2
+    - `x` - 1
+    - `rwx` - 7
+    - `r-x` - 5
+    - `---` - 0
+    - `- rwx r-x r--` - 750
+    - Can be used as `"chmod 750 filename"`
+- **Env variable** - As we know it
+- **systemd / services**
+  - `systemd`
+    - linux service manager
+    - controls starting, stopping, restarting services, etc.
+    - `eg services` -> nginx, ssh, docker, etc.
+    - `command` -> `"systemctl status"`
+- **Logs** - As we know it
+
+### Containers
+
+<p align='center'><img src='https://github.com/user-attachments/assets/40e5e9aa-bdae-4c09-9996-a22745908366' width=100/></p>
+
+Images, containers, layers, volumes, networks, entrypoints, env variables, multi stage builds.
+
+- **Images**
+  - packaged filesystem
+  - metadata used to create container
+  - contains application files, libraries, runtime binaries, default config, startup command.
+  - readonly templates
+  - when container starts
+    - mount image filesystem
+    - add a writable layer
+      - copy files from readonly to writable files & run from there
+    - start process
+- **Container Runtime**
+  - eg: docker, containerd
+  - creates containers (processes from image), configure namespaces/cgroup, mount filesystem, set networking, start process
+- **Container**
+  - Process made from image
+  - Eg: running "docker run redis"..
+    - creates redis process
+    - creates isolated filesystem
+    - creates virtual n/w interface
+    - creates writable container layer
+- **Layers**
+  - something with which images are built.
+  - each Dockerfile instruction creates a build tor file/file/folder, that is a new filesystem layer.
+  - Each tor file/folder created is immutable, and each of them is called a layer.
+  - Container stacks them using OverlayFS (a linux filesystem tech that allows multiple directories/filesystems to be stacked together into one unified filesystem view).
+- **Volumes**
+  - Persistent storage for containers outside container lifecycle.
+- **Networks**
+  - Docker creates virtual networking using:
+    - linux bridges
+    - Virtual Ethernet interfaces (Veth)
+    - NAT rules
+    - routing tables
+  - _Linux bridge:_
+    - virtual software switch to which containers connect to; called "docker0"
+    - created by docker.
+    - Visualisation
+
+    ```
+    `container A` ---\
+    `container B` ----> `"docker0" bridge --> `Host NIC` --> `Internet`
+    `container C` ---/
+    ```
+
+    - Part of virtual network interfaces
+
+  - _Virtual Ethernet interfaces (Veth pair)_
+    - created by docker during container start
+    - called as "virtual cable pair" (veth pair)
+    - part of virtual network interfaces.
+    - has one side inside container (`eth0`), one side outside container (`veth7abc123`)
+    - visualisation:
+    ```
+    container eth0 <--- virtual cable ---> host veth xyz
+    ```
+  - _NAT rules (Network Address Translation)_
+    - Networking Address Translation rules
+    - Rules/Instructions to how packets (that travel through sys) must be rewritten.
+    - This rewriting allows containers w/ private IPs to access host's internet via host IP (translation).
+    - Rules exist because not every packet must be translated.
+    - Eg commands: SNAT, DNAT, MASQUERADE, REDIRECT.
+    - This is not just of docker but of host system, linux in general, VPN, etc too. (used everywhere for rewriting packet addresses)
+    - It is a subset rule among many other rules in linux iptables.
+      - _ip-table_
+        - tool/sys/networking/firewall utility.
+        - iptable defines what happens to packets.
+        - used for managing packet rules.
+        - eg:
+
         ```
-    - filetype
-        - `-`: regular file
-        - `d`: directory
-        - `l`: symbolic link
-    - permissions - `r` read, `w` write, `x` execute, `-` no permission
-    - Numeric representation
-        - `r` - 4
-        - `w` - 2
-        - `x` - 1
-        - `rwx` - 7
-        - `r-x` - 5
-        - `---` - 0
-        - `- rwx r-x r--` - 750
-        - Can be used as `"chmod 750 filename"`
-- Env variable - As we know it
-- systemd / services
-    - `systemd`
-        - linux service manager
-        - controls starting, stopping, restarting services, etc.
-        - `eg services` -> nginx, ssh, docker, etc.
-        - `command` -> `"systemctl status"`
-- Logs - As we know it
-- Containers
-    - Images, containers, layers, volumes, networks, entrypoints, env variables, multi stage builds.
-    - Images*
-        - packaged filesystem
-        - metadata used to create container
-        - contains application files, libraries, runtime binaries, default config, startup command.
-        - readonly templates
-        - when container starts
-            - mount image filesystem
-            - add a writable layer
-                - copy files from readonly to writable files & run from there
-            - start process
-- Container Runtime
-    - eg: docker, containerd
-    - creates containers (processes from image), configure namespaces/cgroup, mount filesystem, set networking, start process
-- Container
-    - Process made from image
-    - Eg: running "docker run redis"..
-        - creates redis process
-        - creates isolated filesystem
-        - creates virtual n/w interface
-        - creates writable container layer
-- Layers
-    - something with which images are built.
-    - each Dockerfile instruction creates a build tor file/file/folder, that is a new filesystem layer.
-    - Each tor file/folder created is immutable, and each of them is called a layer.
-    - Container stacks them using OverlayFS (a linux filesystem tech that allows multiple directories/filesystems to be stacked together into one unified filesystem view).
-- Volumes
-    - Persistent storage for containers outside container lifecycle.
-- Networks
-    - Docker creates virtual networking using:
-        - linux bridges
-        - Virtual Ethernet interfaces (Veth)
-        - NAT rules
-        - routing tables
-    - linux bridge:
-        - virtual software switch to which containers connect to; called "docker0"
-        - created by docker.
-        - Visualisation
+        iptables
+        |--- filter rules
+        |--- forwarding rules
+        |--- logging rules
+        |--- NAT rules
         ```
-        `container A` ---\
-        `container B` ----> `"docker0" bridge --> `Host NIC` --> `Internet`
-        `container C` ---/
-        ```
-        - Part of virtual network interfaces
-    - Virtual Ethernet interfaces (Veth pair)
-        - created by docker during container start
-        - called as "virtual cable pair" (veth pair)
-        - part of virtual network interfaces.
-        - has one side inside container (`eth0`), one side outside container (`veth7abc123`)
-        - visualisation:
-        ```
-        container eth0 <--- virtual cable ---> host veth xyz
-        ```
-    - NAT rules (Network Address Translation)
-        - Networking Address Translation rules
-        - Rules/Instructions to how packets (that travel through sys) must be rewritten.
-        - This rewriting allows containers w/ private IPs to access host's internet via host IP (translation).
-        - Rules exist because not every packet must be translated.
-        - Eg commands: SNAT, DNAT, MASQUERADE, REDIRECT.
-        - This is not just of docker but of host system, linux in general, VPN, etc too. (used everywhere for rewriting packet addresses)
-        - Select rule among many other rules in linux iptables.
-            - ip-table -> tool/sys/networking/firewall utility.
+
+        - eg of iptable rules:
+          - Allow incoming SSH traffic
+          - Rewrite packet source IP.
+          - . . . etc
+        - Answers questions like allow packet?, block packet?, rewrite IP?, forward IP?, log packet?
+
+  - _Routing Tables_
+    - Answers questions like where to hop next, which network interface should transmit the packet, etc.
+    - decides where the packets go to.
+    - In terms of docker, this decides which packets go to that container related packets go to docker0 (linux bridge), while internet traffic go to router etc.
+
+- **Entry Points**
+  - main command started when container launches.
+  - Eg: ENTRYPOINT ["node", "server.js"]
+  - When the process marked as entrypoint (here it is "node server.js"), it becomes PID 1 process.
+- **Env Variables** (same we know it)
+- **Multi stage builds**
+  - We can have multiple stages in dockerfile by writing like this - "FROM xyz as abc".
+  - Generally all commands in dockerfile creator makes one layer.
+  - All layers all together makes one stage.
+  - And this stage builds itself to create one image which is referenced by docker to run in the container.
+  - With multistage builds, only the final stage is referenced as the image created by the dockerfile
+  - During each stage in multistage builds, multiple stages (few stage images / temporary stages) are created (collection of layer files) and stored in disk. But only final stage image is exposed to docker & becomes the o/p.
+  - Benefit : smaller containers, faster deployments, reduced attack surface, lower memory/storage usage.
+
+### Purpose of K8s
+
+<p><img width=100 src=https://github.com/user-attachments/assets/a108877a-e606-4a36-8f2b-9df66bed84cd' /></p>
+
+- Problem — containers crashing 
+- K8s solution = self-healing 
+- Explanation 
+    - K8s continuously watches containers 
+
+    $\star$ K8S visualization A data center looks like this
