@@ -511,16 +511,43 @@
         </ul>
       </li>
       <li>Physical rack visualization
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|------------------------|
-CPU
-RAM
-SSD/HDD
-NIC
-|----------------------|
-Linux Kernel
-|----------------------|
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|-------------------------|
+| CPU                     |
+| RAM                     |
+| SSD/HDD                 |
+| NIC                     |
+| |----------------|      |
+| | Linux Kernel   |      |
+| |----------------|      |
 |-------------------------|
 </code></pre></div>        </div>
+        <ul>
+          <li>NIC
+            <ul>
+              <li>Network interface card</li>
+              <li>Hardware for network communication like via ethernet ports, fibre ports, wireless radio hardwood</li>
+            </ul>
+          </li>
+          <li>VIsualization
+            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Nestjs app -----|
+  |           |-----Application
+  v           |
+  Socket API -----|
+  |
+  v
+  Linux Kernel Netwroking Stack
+  |
+  v
+  NIC driver -----------------|
+  |                       |
+  v                       |
+  NIC hardware                |------- Hardware to communicate via sockets
+  |                       |
+  v                       |
+  Ethernet cable/ network ----|
+</code></pre></div>            </div>
+          </li>
+        </ul>
       </li>
     </ul>
   </li>
