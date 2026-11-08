@@ -166,4 +166,23 @@ I attempted learning more about linux and k8s with help of a partly done mini pr
 So we are back to continuing with k8s basics dropping media forge in between 🥲🙂
 ### Linux Basics
 Back to understanding linux basics for k8s. They include processes, ports, networking, DNS, file systems, permissions, env variables, systemd, services, logs
-
+- Processes:
+    - A combination of program instructions, memory used, CPU execution state, open files, netwrok connections, security identity, env variables is called a process
+    - Process handling in physical rack server
+        - CPU core execute process instruction
+        - RAM store process data
+        - Disk (HDD/SSD) store process file
+        - NIC/network card process network traffic (send and receives network packets)
+        - Linux kernel schedue CPU time between processes
+    - Physical rack visualization
+      ```
+      |------------------------|
+      CPU
+      RAM
+      SSD/HDD
+      NIC
+      |----------------------|
+      Linux Kernel
+      |----------------------|
+      |-------------------------|
+      ```
