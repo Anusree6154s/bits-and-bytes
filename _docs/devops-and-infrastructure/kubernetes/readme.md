@@ -245,17 +245,17 @@ Back to understanding linux basics for k8s. They include processes, ports, netwo
   - Eg: -rwxr-x---
   - Rules followed in permissions:
     ```
-    - rwx r-x r--
-    | |-| |-| |-|
-    |  |   |   |
-    |  |   |   v
-    |  |   |   other permission
-    |  |   v
-    |  |   group permission
-    |  v
-    |  owner permission
-    v
-    Filetype
+    `- rwx r-x r--`
+     | |-| |-| |-|
+     |  |   |   |
+     |  |   |   v
+     |  |   |   other permission
+     |  |   v
+     |  |   group permission
+     |  v
+     |  owner permission
+     v
+     Filetype
     ```
   - filetype
     - `-`: regular file
