@@ -184,7 +184,7 @@ So we are back to continuing with k8s basics dropping media forge in between ðŸ¥
 Back to understanding linux basics for k8s. They include processes, ports, networking, DNS, file systems, permissions, env variables, systemd, services, logs
 
 - **Processes**:
-  - A combination of program instructions, memory used, CPU execution state, open files, netwrok connections, security identity, env variables is called a process
+  - A combination of program instructions, memory used, CPU execution state, open files, network connections, security identity, env variables is called a process
   - Process handling in physical rack server
     - CPU core execute process instruction
     - RAM store process data
@@ -217,7 +217,7 @@ Back to understanding linux basics for k8s. They include processes, ports, netwo
     Socket API -----|
         |
         v
-    Linux Kernel Netwroking Stack
+    Linux Kernel Networking Stack
         |
         v
     NIC driver -----------------|
