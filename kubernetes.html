@@ -260,6 +260,7 @@
   
 </h1>
     
+
 <p align="center"><img src="https://github.com/user-attachments/assets/f0cac749-5d43-4a25-8865-da9bd83f2e87" width="100" /></p>
 <h2 id="structure-and-visualisation">
   
@@ -269,6 +270,7 @@
   
 </h2>
     
+
 <p>Let us visualise it as a rack of physical servers</p>
 <h3 id="visualisation">
   
@@ -278,11 +280,13 @@
   
 </h3>
     
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Datacenter Rack
 |--Physical Servers
 </code></pre></div></div>
 
 <p>Eg:</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Datacenter Rack
 |--Server A
 |    |--Control Plane (Management brain)
@@ -319,6 +323,7 @@
   
 </h2>
     
+
 <p>Now some linux basics first so that we understand the working of K8s in comparison to physical servers much easily.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Data Center Rack
@@ -343,6 +348,7 @@
   
 </h3>
     
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Physical server
 
 |-------------------|
@@ -367,19 +373,22 @@
     <ul>
       <li>Sits between application and hardware</li>
       <li>When app needs something, it initiates kernel and kernel initates disk for data</li>
-      <li>Eg:
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  node app
-  |
-  v
-  Kernel sys call
-  |
-  v
-  disk read
-  |
-  v
-  SSD returns bytes
-</code></pre></div>        </div>
-      </li>
+      <li>Eg:</li>
+    </ul>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node app
+    |
+    v
+Kernel sys call
+    |
+    v
+disk read
+    |
+    v
+SSD returns bytes
+</code></pre></div>    </div>
+
+    <ul>
       <li>App never touches hardware directly. Kernel controls everything</li>
     </ul>
   </li>
@@ -392,6 +401,7 @@
   
 </h3>
     
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RAM
 |-----------------------|
 | Process: nginx        |
@@ -403,6 +413,7 @@
 | Linux Kernel Reserved |
 |-----------------------|
 </code></pre></div></div>
+
 <ul>
   <li>Each process getsisolated memory</li>
   <li>Kernel prevent process A from reading process B’s memory</li>
@@ -415,7 +426,9 @@
   
 </h2>
     
+
 <p>I attempted learning more about linux and k8s with help of a partly done mini project. Tech and their purposes:</p>
+
 <ul>
   <li>Docker:
     <ul>
@@ -487,6 +500,7 @@
   
 </h2>
     
+
 <p>So we are back to continuing with k8s basics dropping media forge in between 🥲🙂</p>
 <h3 id="linux-basics-1">
   
@@ -496,9 +510,13 @@
   
 </h3>
     
+
+<p align="center"><img src="https://github.com/user-attachments/assets/846c2d65-c0ac-4b9c-a929-6bf847ad297f" width="100" /></p>
+
 <p>Back to understanding linux basics for k8s. They include processes, ports, networking, DNS, file systems, permissions, env variables, systemd, services, logs</p>
+
 <ul>
-  <li>Processes:
+  <li><strong>Processes</strong>:
     <ul>
       <li>A combination of program instructions, memory used, CPU execution state, open files, netwrok connections, security identity, env variables is called a process</li>
       <li>Process handling in physical rack server
@@ -510,7 +528,9 @@
           <li>Linux kernel schedue CPU time between processes</li>
         </ul>
       </li>
-      <li>Physical rack visualization
+      <li>
+        <p>Physical rack visualization</p>
+
         <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|-------------------------|
 | CPU                     |
 | RAM                     |
@@ -521,6 +541,7 @@
 | |----------------|      |
 |-------------------------|
 </code></pre></div>        </div>
+
         <ul>
           <li>NIC
             <ul>
@@ -528,71 +549,71 @@
               <li>Hardware for network communication like via ethernet ports, fibre ports, wireless radio hardwood</li>
             </ul>
           </li>
-          <li>VIsualization
-            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Nestjs app -----|
-  |           |-----Application
-  v           |
-  Socket API -----|
-  |
-  v
-  Linux Kernel Netwroking Stack
-  |
-  v
-  NIC driver -----------------|
-  |                       |
-  v                       |
-  NIC hardware                |------- Hardware to communicate via sockets
-  |                       |
-  v                       |
-  Ethernet cable/ network ----|
-</code></pre></div>            </div>
-          </li>
+          <li>VIsualization</li>
         </ul>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Nestjs app -----|
+    |           |-----Application
+    v           |
+Socket API -----|
+    |
+    v
+Linux Kernel Netwroking Stack
+    |
+    v
+NIC driver -----------------|
+    |                       |
+    v                       |
+NIC hardware                |------- Hardware to communicate via sockets
+    |                       |
+    v                       |
+Ethernet cable/ network ----|
+</code></pre></div>        </div>
       </li>
     </ul>
   </li>
-  <li>Ports:
+  <li><strong>Ports</strong>:
     <ul>
       <li>Communication endpoint</li>
       <li>Use ports to decide which process receives incoming n/w traffic</li>
       <li>Kernel does forwarding of n/w from ports to its associated process</li>
     </ul>
   </li>
-  <li>Networking
+  <li><strong>Networking</strong>
     <ul>
       <li>Just basic concepts of who connects by what</li>
       <li>Eg: Ethernet cables/fiber connects server, cables connect to switches, etc</li>
     </ul>
   </li>
-  <li>DNS (Domain Name System)
+  <li><strong>DNS</strong> (Domain Name System)
     <ul>
       <li>Converts domain names to IP address, via which servers communicate</li>
     </ul>
   </li>
-  <li>File systems
+  <li><strong>File systems</strong>
     <ul>
       <li>organize data on storage systems</li>
       <li>eg: SSD, HDD, etc</li>
     </ul>
   </li>
-  <li>permissions
+  <li><strong>Permissions</strong>
     <ul>
       <li>Eg: -rwxr-x—</li>
       <li>Rules followed in permissions:
-  ```
+```
         <ul>
           <li>rwx r-x r–
-  | |-| |-| |-|
-  |  |   |   |
-  |  |   |   v
-  |  |   |   other permission
-  |  |   v <br />
-  |  |   group permission
-  |  v <br />
-  |  owner permission
-  v
-  Filetype
-  ```</li>
+| |-| |-| |-|
+|  |   |   |
+|  |   |   v
+|  |   |   other permission
+|  |   v
+|  |   group permission
+|  v
+|  owner permission
+v
+Filetype
+```</li>
         </ul>
       </li>
       <li>filetype
@@ -617,8 +638,8 @@
       </li>
     </ul>
   </li>
-  <li>Env variable - As we know it</li>
-  <li>systemd / services
+  <li><strong>Env variable</strong> - As we know it</li>
+  <li><strong>systemd / services</strong>
     <ul>
       <li><code class="language-plaintext highlighter-rouge">systemd</code>
         <ul>
@@ -630,38 +651,48 @@
       </li>
     </ul>
   </li>
-  <li>Logs - As we know it</li>
-  <li>Containers
+  <li><strong>Logs</strong> - As we know it</li>
+</ul>
+<h3 id="containers">
+  
+  
+    <a href="#containers" class="anchor-heading" aria-labelledby="containers"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Containers
+  
+  
+</h3>
+    
+
+<p align="center"><img src="https://github.com/user-attachments/assets/40e5e9aa-bdae-4c09-9996-a22745908366" width="100" /></p>
+
+<p>Images, containers, layers, volumes, networks, entrypoints, env variables, multi stage builds.</p>
+
+<ul>
+  <li><strong>Images</strong>
     <ul>
-      <li>Images, containers, layers, volumes, networks, entrypoints, env variables, multi stage builds.</li>
-      <li>Images*
+      <li>packaged filesystem</li>
+      <li>metadata used to create container</li>
+      <li>contains application files, libraries, runtime binaries, default config, startup command.</li>
+      <li>readonly templates</li>
+      <li>when container starts
         <ul>
-          <li>packaged filesystem</li>
-          <li>metadata used to create container</li>
-          <li>contains application files, libraries, runtime binaries, default config, startup command.</li>
-          <li>readonly templates</li>
-          <li>when container starts
+          <li>mount image filesystem</li>
+          <li>add a writable layer
             <ul>
-              <li>mount image filesystem</li>
-              <li>add a writable layer
-                <ul>
-                  <li>copy files from readonly to writable files &amp; run from there</li>
-                </ul>
-              </li>
-              <li>start process</li>
+              <li>copy files from readonly to writable files &amp; run from there</li>
             </ul>
           </li>
+          <li>start process</li>
         </ul>
       </li>
     </ul>
   </li>
-  <li>Container Runtime
+  <li><strong>Container Runtime</strong>
     <ul>
       <li>eg: docker, containerd</li>
       <li>creates containers (processes from image), configure namespaces/cgroup, mount filesystem, set networking, start process</li>
     </ul>
   </li>
-  <li>Container
+  <li><strong>Container</strong>
     <ul>
       <li>Process made from image</li>
       <li>Eg: running “docker run redis”..
@@ -674,7 +705,7 @@
       </li>
     </ul>
   </li>
-  <li>Layers
+  <li><strong>Layers</strong>
     <ul>
       <li>something with which images are built.</li>
       <li>each Dockerfile instruction creates a build tor file/file/folder, that is a new filesystem layer.</li>
@@ -682,12 +713,12 @@
       <li>Container stacks them using OverlayFS (a linux filesystem tech that allows multiple directories/filesystems to be stacked together into one unified filesystem view).</li>
     </ul>
   </li>
-  <li>Volumes
+  <li><strong>Volumes</strong>
     <ul>
       <li>Persistent storage for containers outside container lifecycle.</li>
     </ul>
   </li>
-  <li>Networks
+  <li><strong>Networks</strong>
     <ul>
       <li>Docker creates virtual networking using:
         <ul>
@@ -697,32 +728,35 @@
           <li>routing tables</li>
         </ul>
       </li>
-      <li>linux bridge:
+      <li><em>Linux bridge:</em>
         <ul>
           <li>virtual software switch to which containers connect to; called “docker0”</li>
           <li>created by docker.</li>
-          <li>Visualisation
-            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  `container A` ---\
-  `container B` ----&gt; `"docker0" bridge --&gt; `Host NIC` --&gt; `Internet`
-  `container C` ---/
-</code></pre></div>            </div>
-          </li>
+          <li>Visualisation</li>
+        </ul>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>`container A` ---\
+`container B` ----&gt; `"docker0" bridge --&gt; `Host NIC` --&gt; `Internet`
+`container C` ---/
+</code></pre></div>        </div>
+
+        <ul>
           <li>Part of virtual network interfaces</li>
         </ul>
       </li>
-      <li>Virtual Ethernet interfaces (Veth pair)
+      <li><em>Virtual Ethernet interfaces (Veth pair)</em>
         <ul>
           <li>created by docker during container start</li>
           <li>called as “virtual cable pair” (veth pair)</li>
           <li>part of virtual network interfaces.</li>
           <li>has one side inside container (<code class="language-plaintext highlighter-rouge">eth0</code>), one side outside container (<code class="language-plaintext highlighter-rouge">veth7abc123</code>)</li>
           <li>visualisation:
-            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  container eth0 &lt;--- virtual cable ---&gt; host veth xyz
+            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>container eth0 &lt;--- virtual cable ---&gt; host veth xyz
 </code></pre></div>            </div>
           </li>
         </ul>
       </li>
-      <li>NAT rules (Network Address Translation)
+      <li><em>NAT rules (Network Address Translation)</em>
         <ul>
           <li>Networking Address Translation rules</li>
           <li>Rules/Instructions to how packets (that travel through sys) must be rewritten.</li>
@@ -730,14 +764,87 @@
           <li>Rules exist because not every packet must be translated.</li>
           <li>Eg commands: SNAT, DNAT, MASQUERADE, REDIRECT.</li>
           <li>This is not just of docker but of host system, linux in general, VPN, etc too. (used everywhere for rewriting packet addresses)</li>
-          <li>Select rule among many other rules in linux iptables.
+          <li>It is a subset rule among many other rules in linux iptables.
             <ul>
-              <li>ip-table -&gt; tool/sys/networking/firewall utility.</li>
+              <li><em>ip-table</em>
+                <ul>
+                  <li>tool/sys/networking/firewall utility.</li>
+                  <li>iptable defines what happens to packets.</li>
+                  <li>used for managing packet rules.</li>
+                  <li>eg:</li>
+                </ul>
+
+                <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iptables
+|--- filter rules
+|--- forwarding rules
+|--- logging rules
+|--- NAT rules
+</code></pre></div>                </div>
+
+                <ul>
+                  <li>eg of iptable rules:
+                    <ul>
+                      <li>Allow incoming SSH traffic</li>
+                      <li>Rewrite packet source IP.</li>
+                      <li>. . . etc</li>
+                    </ul>
+                  </li>
+                  <li>Answers questions like allow packet?, block packet?, rewrite IP?, forward IP?, log packet?</li>
+                </ul>
+              </li>
             </ul>
           </li>
         </ul>
       </li>
+      <li><em>Routing Tables</em>
+        <ul>
+          <li>Answers questions like where to hop next, which network interface should transmit the packet, etc.</li>
+          <li>decides where the packets go to.</li>
+          <li>In terms of docker, this decides which packets go to that container related packets go to docker0 (linux bridge), while internet traffic go to router etc.</li>
+        </ul>
+      </li>
     </ul>
+  </li>
+  <li><strong>Entry Points</strong>
+    <ul>
+      <li>main command started when container launches.</li>
+      <li>Eg: ENTRYPOINT [“node”, “server.js”]</li>
+      <li>When the process marked as entrypoint (here it is “node server.js”), it becomes PID 1 process.</li>
+    </ul>
+  </li>
+  <li><strong>Env Variables</strong> (same we know it)</li>
+  <li><strong>Multi stage builds</strong>
+    <ul>
+      <li>We can have multiple stages in dockerfile by writing like this - “FROM xyz as abc”.</li>
+      <li>Generally all commands in dockerfile creator makes one layer.</li>
+      <li>All layers all together makes one stage.</li>
+      <li>And this stage builds itself to create one image which is referenced by docker to run in the container.</li>
+      <li>With multistage builds, only the final stage is referenced as the image created by the dockerfile</li>
+      <li>During each stage in multistage builds, multiple stages (few stage images / temporary stages) are created (collection of layer files) and stored in disk. But only final stage image is exposed to docker &amp; becomes the o/p.</li>
+      <li>Benefit : smaller containers, faster deployments, reduced attack surface, lower memory/storage usage.</li>
+    </ul>
+  </li>
+</ul>
+<h3 id="purpose-of-k8s">
+  
+  
+    <a href="#purpose-of-k8s" class="anchor-heading" aria-labelledby="purpose-of-k8s"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Purpose of K8s
+  
+  
+</h3>
+    
+
+<p>&lt;img width=100 src=https://github.com/user-attachments/assets/a108877a-e606-4a36-8f2b-9df66bed84cd' /&gt;</p>
+
+<ul>
+  <li>Problem — containers crashing</li>
+  <li>K8s solution = self-healing</li>
+  <li>Explanation
+    <ul>
+      <li>K8s continuously watches containers</li>
+    </ul>
+
+    <p>$\star$ K8S visualization A data center looks like this</p>
   </li>
 </ul>
 
