@@ -176,13 +176,35 @@ Back to understanding linux basics for k8s. They include processes, ports, netwo
         - Linux kernel schedue CPU time between processes
     - Physical rack visualization
       ```
-      |------------------------|
-      CPU
-      RAM
-      SSD/HDD
-      NIC
-      |----------------------|
-      Linux Kernel
-      |----------------------|
+      |-------------------------|
+      | CPU                     |
+      | RAM                     |
+      | SSD/HDD                 |
+      | NIC                     |
+      | |----------------|      |
+      | | Linux Kernel   |      |
+      | |----------------|      |
       |-------------------------|
       ```
+        - NIC
+            - Network interface card
+            - Hardware for network communication like via ethernet ports, fibre ports, wireless radio hardwood
+        - VIsualization
+        ```
+        Nestjs app -----|
+            |           |-----Application
+            v           |
+        Socket API -----|
+            |
+            v
+        Linux Kernel Netwroking Stack
+            |
+            v
+        NIC driver -----------------|
+            |                       |
+            v                       |
+        NIC hardware                |------- Hardware to communicate via sockets
+            |                       |
+            v                       |
+        Ethernet cable/ network ----|
+        ```
