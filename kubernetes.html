@@ -1105,7 +1105,7 @@ pod</li>
 "label:   
     app: backend"   
 Service   
-"label: selector:   
+"selector:   
     app: backend"   
 </code></pre></div>            </div>
             <p>Now K8S matches them.</p>
@@ -1115,7 +1115,119 @@ Service
       </li>
     </ul>
   </li>
-  <li>Phase 4 — Configmap &amp; Secrets   - Env variable injection - Pass config into containers as env variables   - - Eg: Config map contain env variables, containers can access them inside process env.[var-name]   - Mounted files   - Provide config as files instead of env variables   - Eg: Config map has app.conf.   it is mounted in containers as /etc/config/app.conf   - to app “it looks like normal file on disk”   Image 23- (means file contents become visible inside filesystem namespace, just like a normal file).   - Separation of config from image   — container image is kept independent from configuration   — ie, when config changes per namespace like diff for prod &amp; dev, the image of container is unaffected.   - Secrets - store sensitive config   - consumed as env variables or mounted files.   - Phase 5 — Ingress   - Reverse proxy — receive req &amp; forward it to execution   - Ingress controller: is a process running on worker node CPUs.   - Eg: user requests at <a href="https://example.com">https://example.com</a> ingress receives it &amp; forwards it to frontend-service.   - Routing — a thing that reverse proxy does.   - deciding which service gets the incoming req.   - Domain name — human readable names created from Service names instead of IP addresses.   (122)   Image 24- DNS resolves the domain to the ingress endpoint   Traffic then flows through switches, routers, NICs, and into the cluster   - TLS termination — handle HTTPS encryption   — TLS = Transport layer security.   — Ingress terminates TLS (stops encrypted traffic &amp; decrypts it by security)   - it decrypts &amp; forwards the req internally.   - NGINX ingress controller   - perform the ingress functionality based on ingress obj stored in etcd.   - Phase 6 — Storage   - Volumes — provide storage to pods   — Volume ultimately resides on SSD, NVMe (solid state device), NVMe, &amp; HDD, n/w storage   - Persistent Volume (PV) — declares/represents actual storage available to the cluster.   - Persistent Volume Claim (PVC)   - Storage requested by pods   - Eg: Pod requests “I need 50GB”.   K8S find a matching PV &amp; binds them   (123)   Image 25   Pod &amp; PV.   Pod don’t care which disk provides the storage.   - Stateful Workloads   - Apps / Pods which are not stateless   - Eg: PostgreSQL, MySQL, MongoDB, redis   - When these pods restart, the process change from old to new container, but same volume/storage is used.   - Phase 6 — Networking Fundamentals   - Pod net networking   - Every pod gets its own IP &amp; each one communicates to other via these IPs.   - Packets of data need to travel through these to reach from one pod to another via network :-   Pod 1 - VETH (virtual n/w interface) - worker node NIC - switch - other worker node - destination pod.   - Service virtual IPs   - Eg: “backend-service”   - stable addresses for a group of pods.   - kube-proxy — routing btw pods internally based on service names.   - it also configures networking rules on every worker node.   - CNI plugin — Container Networking Interface   (Continued in book) - Create Pod networking.</li>
+  <li>Phase 4 — Configmap &amp; Secrets
+    <ul>
+      <li>Env variable injection
+        <ul>
+          <li>Eg: Config map contain env variables, containers can access them inside process env.[var-name]</li>
+        </ul>
+      </li>
+      <li>Mounted files
+        <ul>
+          <li>Provide config as files instead of env variables</li>
+          <li>Eg: Config map has app.conf. It is mounted in containers as /etc/config/app.conf</li>
+          <li>to app “it looks like normal file on disk”</li>
+          <li>(means file contents become visible inside filesystem namespace, just like a normal file).</li>
+        </ul>
+      </li>
+      <li>Separation of config from image <br />
+— container image is kept independent from configuration <br />
+— ie, when config changes per namespace like diff for prod &amp; dev, the image of container is unaffected.</li>
+      <li>Secrets
+        <ul>
+          <li>store sensitive config</li>
+          <li>consumed as env variables or mounted files.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Phase 5 — Ingress
+    <ul>
+      <li>Reverse proxy 
+— receive req &amp; forward it to execution
+        <ul>
+          <li>Ingress controller: is a process running on worker node CPUs.</li>
+          <li>Eg: user requests at <a href="https://example.com">https://example.com</a> ingress receives it &amp; forwards it to frontend-service.</li>
+        </ul>
+      </li>
+      <li>Routing 
+— a thing that reverse proxy does.
+        <ul>
+          <li>deciding which service gets the incoming req.</li>
+        </ul>
+      </li>
+      <li>Domain name 
+— human readable names created from Service names instead of IP addresses.
+        <ul>
+          <li>DNS resolves the domain to the ingress endpoint</li>
+          <li>Traffic then flows through switches, routers, NICs, and into the cluster</li>
+        </ul>
+      </li>
+      <li>TLS termination — handle HTTPS encryption <br />
+— TLS = Transport layer security. <br />
+— Ingress terminates TLS (stops encrypted traffic &amp; decrypts it by security)
+        <ul>
+          <li>it decrypts &amp; forwards the req internally.</li>
+        </ul>
+      </li>
+      <li>NGINX ingress controller
+        <ul>
+          <li>perform the ingress functionality based on ingress obj stored in etcd.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Phase 6 — Storage
+    <ul>
+      <li>Volumes 
+— provide storage to pods<br />
+— Volume ultimately resides on SSD, NVMe (solid state device), NVMe, &amp; HDD, n/w storage</li>
+      <li>Persistent Volume (PV) 
+— declares/represents actual storage available to the cluster.</li>
+      <li>Persistent Volume Claim (PVC)
+        <ul>
+          <li>Storage requested by pods</li>
+          <li>Eg: Pod requests “I need 50GB”. K8S find a matching PV &amp; binds Pod &amp; PV.   Pod don’t care which disk provides the storage.</li>
+        </ul>
+      </li>
+      <li>Stateful Workloads
+        <ul>
+          <li>Apps / Pods which are not stateless</li>
+          <li>Eg: PostgreSQL, MySQL, MongoDB, redis</li>
+          <li>When these pods restart, the process change from old to new container, but same volume/storage is used.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Phase 6 — Networking Fundamentals
+    <ul>
+      <li>Pod net networking
+        <ul>
+          <li>Every pod gets its own IP &amp; each one communicates to other via these IPs.</li>
+          <li>Packets of data need to travel through these to reach from one pod to another via network :- <br />
+Pod 1 - VETH (virtual n/w interface) - worker node NIC - switch - other worker node - destination pod.</li>
+        </ul>
+      </li>
+      <li>Service virtual IPs
+        <ul>
+          <li>Eg: “backend-service”</li>
+          <li>stable addresses for a group of pods.</li>
+        </ul>
+      </li>
+      <li>kube-proxy 
+— routing btw pods internally based on service names.
+        <ul>
+          <li>it also configures networking rules on every worker node.</li>
+        </ul>
+      </li>
+      <li>CNI plugin
+        <ul>
+          <li>Container Networking Interface</li>
+          <li>Create Pod networking.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul><hr />
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\star$ K8S visualization A data center looks like this - Datacenter   - Rack   - Server 1   - Server 2   - Server 3   - Rack   - Server 4   - Server 5   - Server 6   - Different servers on diff racks can be part of same Kubernetes cluster.   - When multiple servers have cost check, certain requirements, they are as associated of k8s, they are then part of k8s cluster.   - Requirements to be part of k8s cluster:-   $\star$ K8s terms   kubelet   - small local agent/process   - Exists on every worker node / control plane node.   - Make sure containers/pods runs correctly on that m/c.   Image 11- Tasks of kubelet :- talk to api server, receive pod assignments, start/stop containers, report node health, report pod status, mounts volume, handle probes.   kubelet   - Pronounced "kyoo-belet" or "kyoo-be-control".   - Exists on developer laptop / admin m/c / control server.   - It communicates of kube-apiserver.   kube-proxy   - Kubernetes n/w proxy.   - exists on every worker node (as daemon/fbg process).   - It handles k8s n/wing rules inside cluster   Eg: Service virtual IPs, load balancing, traffic forwarding, ip tables / ipvs rules.   Node   - Physical servers or VM running linux, kubelet or container runtime.   kubeadm   - K8s admin / bootstrap tool   Image 12- exists on control plane m/c.   - worker setup m/c   - used during cluster creation for creating control plane "kubeadm init" &amp; join worker pods "kubeadm join", etc...   - Not part of ras running cluster logic instead part of cluster installation / setup tool.   kube-apiserver   - main entry point for k8s cluster.   Everything talks to this.   Acts like central management api.   - Exists on control plane server.   - Talks to kubectl, kubelet, scheduler, controller-manager, etcd.   kube-scheduler   - chooses which node runs pods.   (decision engine)   - Exists on control plane server.   Chooses where worker node try maintains desired state pods.   - talks to kube-apiserver, worker nodes indirectly.   Image 13- kube-controller-manager   - Exists on control plane server.   - Maintains desired state.   - Talks to :- kube-apiserver, etcd ... indirectly.   - Runs reconciliation loops (loops inside k8s that continuously check desired state vs actual state).   - eg: desired replica = 3, actual replica = 2. Then create another pod.   etcd (etc distributed) (ct-see-di)   - etcd dictionary / distributed db (like redis)   - store cluster state db.   - most critical k8s db (source of truth).   - Exists on control plane servers.   - Stores :- pods, deployments, services, [as key-value pairs] nodes, secrets, cluster desired state.   $\star$ distributed   it is called distributed bcoz multiple etcd servers can work together.   [Continued containerized]   (actually runs containers)   - container runtime (actually runs containers)   - Exists on worker node.   - Talks to kubelet through CRI.   eg if multiple control planes with diff etcd, they communicate via "consensus" algorithm which stores a copy of the...   Image 14   - [.. exists on worker node - talks to kubelet through CRI with diff etcd, they communicate via consensus algorithm which stores a copy of the cluster state, thus preserving data even if one etcd beads down. (cluster state is not the same as control plane).   CoreDNS (Core Domain Name Sys)   - K8s   - Internal cluster dns.   - lets pods communicate using names.   eg: api-service.default.svc.cluster.local.   - usually runs as pods on worker nodes.   Container Network Interface (CNI)   - Provide pod networking.   - Exists as CNI plugins on worker nodes.   - eg: Calico, Flannel, Cilium.   CRI   - Container runtime interface. (node agent)   - Standard interface btw. kubelet &amp; container runtime (containerd).   - Types of communication being done via here include kubelet asking to pull image, start container, stop container, delete container, get container status, etc..   CSI   - Container storage interface.   - Standard way k8s interact w/ storage systems.   
