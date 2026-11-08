@@ -600,21 +600,18 @@ Ethernet cable/ network ----|
     <ul>
       <li>Eg: -rwxr-x—</li>
       <li>Rules followed in permissions:
-```
-        <ul>
-          <li>rwx r-x r–
-| |-| |-| |-|
-|  |   |   |
-|  |   |   v
-|  |   |   other permission
-|  |   v
-|  |   group permission
-|  v
-|  owner permission
-v
-Filetype
-```</li>
-        </ul>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>`- rwx r-x r--`
+ | |-| |-| |-|
+ |  |   |   |
+ |  |   |   v
+ |  |   |   other permission
+ |  |   v
+ |  |   group permission
+ |  v
+ |  owner permission
+ v
+ Filetype
+</code></pre></div>        </div>
       </li>
       <li>filetype
         <ul>
