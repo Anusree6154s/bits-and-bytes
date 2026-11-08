@@ -208,3 +208,116 @@ Back to understanding linux basics for k8s. They include processes, ports, netwo
             v                       |
         Ethernet cable/ network ----|
         ```
+- Ports:
+    - Communication endpoint
+    - Use ports to decide which process receives incoming n/w traffic
+    - Kernel does forwarding of n/w from ports to its associated process
+- Networking
+    - Just basic concepts of who connects by what
+    - Eg: Ethernet cables/fiber connects server, cables connect to switches, etc
+- DNS (Domain Name System)
+    - Converts domain names to IP address, via which servers communicate
+- File systems
+    - organize data on storage systems
+    - eg: SSD, HDD, etc
+- permissions
+    - Eg: -rwxr-x---
+    - Rules followed in permissions:
+        ```
+        - rwx r-x r--
+        | |-| |-| |-|
+        |  |   |   |
+        |  |   |   v
+        |  |   |   other permission
+        |  |   v   
+        |  |   group permission
+        |  v   
+        |  owner permission
+        v
+        Filetype
+        ```
+    - filetype
+        - `-`: regular file
+        - `d`: directory
+        - `l`: symbolic link
+    - permissions - `r` read, `w` write, `x` execute, `-` no permission
+    - Numeric representation
+        - `r` - 4
+        - `w` - 2
+        - `x` - 1
+        - `rwx` - 7
+        - `r-x` - 5
+        - `---` - 0
+        - `- rwx r-x r--` - 750
+        - Can be used as `"chmod 750 filename"`
+- Env variable - As we know it
+- systemd / services
+    - `systemd`
+        - linux service manager
+        - controls starting, stopping, restarting services, etc.
+        - `eg services` -> nginx, ssh, docker, etc.
+        - `command` -> `"systemctl status"`
+- Logs - As we know it
+- Containers
+    - Images, containers, layers, volumes, networks, entrypoints, env variables, multi stage builds.
+    - Images*
+        - packaged filesystem
+        - metadata used to create container
+        - contains application files, libraries, runtime binaries, default config, startup command.
+        - readonly templates
+        - when container starts
+            - mount image filesystem
+            - add a writable layer
+                - copy files from readonly to writable files & run from there
+            - start process
+- Container Runtime
+    - eg: docker, containerd
+    - creates containers (processes from image), configure namespaces/cgroup, mount filesystem, set networking, start process
+- Container
+    - Process made from image
+    - Eg: running "docker run redis"..
+        - creates redis process
+        - creates isolated filesystem
+        - creates virtual n/w interface
+        - creates writable container layer
+- Layers
+    - something with which images are built.
+    - each Dockerfile instruction creates a build tor file/file/folder, that is a new filesystem layer.
+    - Each tor file/folder created is immutable, and each of them is called a layer.
+    - Container stacks them using OverlayFS (a linux filesystem tech that allows multiple directories/filesystems to be stacked together into one unified filesystem view).
+- Volumes
+    - Persistent storage for containers outside container lifecycle.
+- Networks
+    - Docker creates virtual networking using:
+        - linux bridges
+        - Virtual Ethernet interfaces (Veth)
+        - NAT rules
+        - routing tables
+    - linux bridge:
+        - virtual software switch to which containers connect to; called "docker0"
+        - created by docker.
+        - Visualisation
+        ```
+        `container A` ---\
+        `container B` ----> `"docker0" bridge --> `Host NIC` --> `Internet`
+        `container C` ---/
+        ```
+        - Part of virtual network interfaces
+    - Virtual Ethernet interfaces (Veth pair)
+        - created by docker during container start
+        - called as "virtual cable pair" (veth pair)
+        - part of virtual network interfaces.
+        - has one side inside container (`eth0`), one side outside container (`veth7abc123`)
+        - visualisation:
+        ```
+        container eth0 <--- virtual cable ---> host veth xyz
+        ```
+    - NAT rules (Network Address Translation)
+        - Networking Address Translation rules
+        - Rules/Instructions to how packets (that travel through sys) must be rewritten.
+        - This rewriting allows containers w/ private IPs to access host's internet via host IP (translation).
+        - Rules exist because not every packet must be translated.
+        - Eg commands: SNAT, DNAT, MASQUERADE, REDIRECT.
+        - This is not just of docker but of host system, linux in general, VPN, etc too. (used everywhere for rewriting packet addresses)
+        - Select rule among many other rules in linux iptables.
+            - ip-table -> tool/sys/networking/firewall utility.
