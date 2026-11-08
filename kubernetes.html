@@ -551,6 +551,194 @@
       </li>
     </ul>
   </li>
+  <li>Ports:
+    <ul>
+      <li>Communication endpoint</li>
+      <li>Use ports to decide which process receives incoming n/w traffic</li>
+      <li>Kernel does forwarding of n/w from ports to its associated process</li>
+    </ul>
+  </li>
+  <li>Networking
+    <ul>
+      <li>Just basic concepts of who connects by what</li>
+      <li>Eg: Ethernet cables/fiber connects server, cables connect to switches, etc</li>
+    </ul>
+  </li>
+  <li>DNS (Domain Name System)
+    <ul>
+      <li>Converts domain names to IP address, via which servers communicate</li>
+    </ul>
+  </li>
+  <li>File systems
+    <ul>
+      <li>organize data on storage systems</li>
+      <li>eg: SSD, HDD, etc</li>
+    </ul>
+  </li>
+  <li>permissions
+    <ul>
+      <li>Eg: -rwxr-x—</li>
+      <li>Rules followed in permissions:
+  ```
+        <ul>
+          <li>rwx r-x r–
+  | |-| |-| |-|
+  |  |   |   |
+  |  |   |   v
+  |  |   |   other permission
+  |  |   v <br />
+  |  |   group permission
+  |  v <br />
+  |  owner permission
+  v
+  Filetype
+  ```</li>
+        </ul>
+      </li>
+      <li>filetype
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">-</code>: regular file</li>
+          <li><code class="language-plaintext highlighter-rouge">d</code>: directory</li>
+          <li><code class="language-plaintext highlighter-rouge">l</code>: symbolic link</li>
+        </ul>
+      </li>
+      <li>permissions - <code class="language-plaintext highlighter-rouge">r</code> read, <code class="language-plaintext highlighter-rouge">w</code> write, <code class="language-plaintext highlighter-rouge">x</code> execute, <code class="language-plaintext highlighter-rouge">-</code> no permission</li>
+      <li>Numeric representation
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">r</code> - 4</li>
+          <li><code class="language-plaintext highlighter-rouge">w</code> - 2</li>
+          <li><code class="language-plaintext highlighter-rouge">x</code> - 1</li>
+          <li><code class="language-plaintext highlighter-rouge">rwx</code> - 7</li>
+          <li><code class="language-plaintext highlighter-rouge">r-x</code> - 5</li>
+          <li><code class="language-plaintext highlighter-rouge">---</code> - 0</li>
+          <li><code class="language-plaintext highlighter-rouge">- rwx r-x r--</code> - 750</li>
+          <li>Can be used as <code class="language-plaintext highlighter-rouge">"chmod 750 filename"</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Env variable - As we know it</li>
+  <li>systemd / services
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">systemd</code>
+        <ul>
+          <li>linux service manager</li>
+          <li>controls starting, stopping, restarting services, etc.</li>
+          <li><code class="language-plaintext highlighter-rouge">eg services</code> -&gt; nginx, ssh, docker, etc.</li>
+          <li><code class="language-plaintext highlighter-rouge">command</code> -&gt; <code class="language-plaintext highlighter-rouge">"systemctl status"</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Logs - As we know it</li>
+  <li>Containers
+    <ul>
+      <li>Images, containers, layers, volumes, networks, entrypoints, env variables, multi stage builds.</li>
+      <li>Images*
+        <ul>
+          <li>packaged filesystem</li>
+          <li>metadata used to create container</li>
+          <li>contains application files, libraries, runtime binaries, default config, startup command.</li>
+          <li>readonly templates</li>
+          <li>when container starts
+            <ul>
+              <li>mount image filesystem</li>
+              <li>add a writable layer
+                <ul>
+                  <li>copy files from readonly to writable files &amp; run from there</li>
+                </ul>
+              </li>
+              <li>start process</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Container Runtime
+    <ul>
+      <li>eg: docker, containerd</li>
+      <li>creates containers (processes from image), configure namespaces/cgroup, mount filesystem, set networking, start process</li>
+    </ul>
+  </li>
+  <li>Container
+    <ul>
+      <li>Process made from image</li>
+      <li>Eg: running “docker run redis”..
+        <ul>
+          <li>creates redis process</li>
+          <li>creates isolated filesystem</li>
+          <li>creates virtual n/w interface</li>
+          <li>creates writable container layer</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Layers
+    <ul>
+      <li>something with which images are built.</li>
+      <li>each Dockerfile instruction creates a build tor file/file/folder, that is a new filesystem layer.</li>
+      <li>Each tor file/folder created is immutable, and each of them is called a layer.</li>
+      <li>Container stacks them using OverlayFS (a linux filesystem tech that allows multiple directories/filesystems to be stacked together into one unified filesystem view).</li>
+    </ul>
+  </li>
+  <li>Volumes
+    <ul>
+      <li>Persistent storage for containers outside container lifecycle.</li>
+    </ul>
+  </li>
+  <li>Networks
+    <ul>
+      <li>Docker creates virtual networking using:
+        <ul>
+          <li>linux bridges</li>
+          <li>Virtual Ethernet interfaces (Veth)</li>
+          <li>NAT rules</li>
+          <li>routing tables</li>
+        </ul>
+      </li>
+      <li>linux bridge:
+        <ul>
+          <li>virtual software switch to which containers connect to; called “docker0”</li>
+          <li>created by docker.</li>
+          <li>Visualisation
+            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  `container A` ---\
+  `container B` ----&gt; `"docker0" bridge --&gt; `Host NIC` --&gt; `Internet`
+  `container C` ---/
+</code></pre></div>            </div>
+          </li>
+          <li>Part of virtual network interfaces</li>
+        </ul>
+      </li>
+      <li>Virtual Ethernet interfaces (Veth pair)
+        <ul>
+          <li>created by docker during container start</li>
+          <li>called as “virtual cable pair” (veth pair)</li>
+          <li>part of virtual network interfaces.</li>
+          <li>has one side inside container (<code class="language-plaintext highlighter-rouge">eth0</code>), one side outside container (<code class="language-plaintext highlighter-rouge">veth7abc123</code>)</li>
+          <li>visualisation:
+            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  container eth0 &lt;--- virtual cable ---&gt; host veth xyz
+</code></pre></div>            </div>
+          </li>
+        </ul>
+      </li>
+      <li>NAT rules (Network Address Translation)
+        <ul>
+          <li>Networking Address Translation rules</li>
+          <li>Rules/Instructions to how packets (that travel through sys) must be rewritten.</li>
+          <li>This rewriting allows containers w/ private IPs to access host’s internet via host IP (translation).</li>
+          <li>Rules exist because not every packet must be translated.</li>
+          <li>Eg commands: SNAT, DNAT, MASQUERADE, REDIRECT.</li>
+          <li>This is not just of docker but of host system, linux in general, VPN, etc too. (used everywhere for rewriting packet addresses)</li>
+          <li>Select rule among many other rules in linux iptables.
+            <ul>
+              <li>ip-table -&gt; tool/sys/networking/firewall utility.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
           
