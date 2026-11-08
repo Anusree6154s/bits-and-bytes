@@ -391,7 +391,7 @@ Images, containers, layers, volumes, networks, entrypoints, env variables, multi
 
 ### Purpose of K8s
 
-<p align='center'><img width=100 src='https://github.com/user-attachments/assets/aaa7d857-4270-44f8-a848-9b834f0c1b53' /></p>
+<p align='center'><img src='https://github.com/user-attachments/assets/aaa7d857-4270-44f8-a848-9b834f0c1b53' width=100 /></p>
 
 #### Problem and their solutions via k8s
 - Container crashes —> self healing   
