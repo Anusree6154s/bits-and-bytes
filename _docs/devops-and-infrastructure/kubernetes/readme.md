@@ -834,13 +834,11 @@ Datacenter
       - name: data
       mountPath: /data
     ```
-  ```
   - It is specified as part of pod template in deployment manifest. When deployment controller creates pods each pod gets a volume named 'data'. Just part of pod specification.
   - When pod is destroyed, the volume directly from container path will also be destroyed. When the directory gets destroyed, the associated actual db ins volume on disk also loses files in it.
   - Cons of volume per pod.
     - It is tied to pod life
     - Every pod will need to have volume specified
-  ```
 - PV (Persistent volume) (Static Provisioning)
   - cluster level K8s obj stored in etcd created from PV manifest
   - Actual storage is on Node disk/cloud/NFS.
@@ -896,15 +894,17 @@ Datacenter
     - values.yaml - configurable params
     - chart.yaml - metadata (name, version)
   - Structure:
+
   ```
   my-chart/
   |--- chart.yaml
   |--- values.yaml
   |--- templates
-        |--> deployment.yaml 
-        |--> service.yaml 
+        |--> deployment.yaml
+        |--> service.yaml
         |--> configmap.yaml
   ```
+
   - Working of helm:
     - You install a chart: `helm install prometheus prometheus-community/prometheus`
     - Helm renders templates: - replaces placeholders in yaml.
@@ -922,12 +922,14 @@ Datacenter
     - Without helm: use kubectl apply on every yaml file. No release history, nothing.
     - With helm: use helm install my-app name.
     - eg. internally it will pull templates yaml, values.yaml, generate less yaml. internally apply them (like kubectl), store release history.
+
 - Operator:
   - K8s extension that automates full lifecycle of complex applications using CRD (Custom Resource Definitions) & Custom Controllers (reconciliation logic).
   - It acts like a system administrator ("operator")
   - In normal K8s, it can manage stateless apps (deployments), basic scaling (HPA), simple configs.
   - But it struggles with stateful, complex systems like Postgres databases, kafka cluster, elasticsearch, etc.
--  A cluster is multiple pods spun within same K8s cluster related to same application for complex purpose. Like :-
+- A cluster is multiple pods spun within same K8s cluster related to same application for complex purpose. Like :-
+
 ```
 k8s
 |--> nestjs Pod (Our own app)
@@ -935,24 +937,25 @@ k8s
 |--> postgres-replica-1     |---> postgres cluster
 |--> postgres-replica-2-----|
 ```
-  - CRD obj is stored in etcd
-  - It is watched by operator controller. specific to the cluster we want (Postgres, kafka) . The cluster specific operator is installed in K8s cluster, via operator manifest in  which in the deployment section, the location from/image from where the operator needs to be installed is mentioned. This installed operator will take care of replicas, replication, failure, backups, upgrades, etc.
+
+- CRD obj is stored in etcd
+- It is watched by operator controller. specific to the cluster we want (Postgres, kafka) . The cluster specific operator is installed in K8s cluster, via operator manifest in which in the deployment section, the location from/image from where the operator needs to be installed is mentioned. This installed operator will take care of replicas, replication, failure, backups, upgrades, etc.
 
 > Deployment section example in operator
-```yaml
-kind: deployment
-containers:
-- image: 
-  Some-company
-  postgres
-  Operator: v1
-```
+> ```yaml
+> kind: deployment
+> containers:
+> - image:
+>   Some-company
+>   postgres
+>   Operator: v1
+> ```
 
 - CRD (Custom Resource Definition):
-  -  lets us add new resource type to K8s. (that are not built-in like kind:Pod, kind:Service, kind:Deployment, etc)
+  - lets us add new resource type to K8s. (that are not built-in like kind:Pod, kind:Service, kind:Deployment, etc)
   - Examples for new resource types:
   - kind: kafkaCluster, kind: PostgresCluster
-  -  Added it is defined in operator manifest in CRD section, which only fully K8s that one specific type of obj exists.
+  - Added it is defined in operator manifest in CRD section, which only fully K8s that one specific type of obj exists.
   - The actual creation of object for that cluster is dependent on custom resource file (the manifest specific to that object)
   - eg. If CRD section in operator.yaml
   ```yaml
@@ -961,7 +964,7 @@ containers:
     names:
       kind: PostgresCluster
   ```
-  
+
 -> Custom Resource (CR) example# postgres-cluster.yamlkind: PostgresClustermetadata:name: my-dbspec:instances: 3API Group:-> so when K8s cluster is made storing it is installed. kubeapi server comes along w/ it. In kube api server, along w/ it comes some built-in API (sources) -> These APIs are exposed to outside K8s to which HTTP API calls are made by kubectl (http client)-> Built-in API groups are some groupings made by K8s for these api paths for each resource type.-> Built-in API groups & paths:CORE (no group)api/v1-> pods, services, configmaps, secrets, nodes, namespacesPage 12 (Image 12)app. (/apps/apps/v1)-> Deployments, Replicasets, Statefulsets, Daemonsetsbatch (/apis/batch/v1)-> Jobs, CronJobsnetworking (/apis/networking.k8s.io/v1)-> Ingress, NetworkPolicyautoscaling (/apis/ /HPA)These all are compiled into kube-apiserver.Additional APIs-> Generate via CRDS.-> kube-apiserver dynamically registers new route when user creates CRD.-> wee get new api path like apis/[mycompany.com/v1/resources](https://mycompany.com/v1/resources).-> Aggregated API server (Advanced). External API server can also plug into kube-api server.-> Most of the conversations with K8s cluster between kubectl, kubelet, etc, controller schedules with kube-api server.happens via http/https rest & watch api calls & requests & these api pathsPage 13 (Image 13)-> when writing manifest files, we mention the api path associated with its resource type so that kube-api server can do it like this :-apiVersion: apps/v1kind: DeploymentapiVersion: v1kind: PodapiVersion: batch/v1kind: Job ... etcThis is done so that when these manifests are applied, kube-api server can do the following:-Parse apiVersion + kindFind matching resource handlerValidate schemasRun admission controllersDefault missing fieldsStore object in etcdAdmission Controllers-> So when a request is made to K8s cluster via kubectl, a lot of stuff/checks happen w/ admission controllers.Page 14 (Image 14)just part of it.-> Stuff that happens after req from kubectl to kube-api server:-kubectl apply deployment.yaml (via http req)kube-api-server:http routing(matches apiVersion = apps/v1, kind = Deployment)authentication(verify who is making the req)authorization(verify if authenticated user is allowed to make req)request decoders(convert manifest to resource obj)API resource lookup(kube finds appropriate handlers from internal api-registry to handle [apps/v1, Deployment])Decoded resourceobj (chain of) (built-in)Admission chain (chain of)-> service account controllers(injects default secure account)-> default storage class(adds default storage class if omitted)Page 15 (Image 15)-> limit ranger (applies/enforces resource limits)-> Pod security (checks security requirement)-> resource quota (check namespace quota)-> Mutating Admission Webhook (Calls custom mutation webhooks)-> Validating Admission webhook (Calls custom validation webhooks)-> Custom use defined admission controllers can also be added later via manifests.Taints-> rule applied to node based on which pods are not to be scheduled there. (cause normally all nodes are welcome to host pods).-> Cases when you need to taint: GPU workloads, db workloads, infra components, control plane components.-> How a taint looks like:dedicated = database : NoSchedulegpu = true : NoScheduleWays to taint nodes:-> (Most common) kubectl taint:kubectl taint nods worker-1 dedicated = gpu : NoSchedulePage 16 (Image 16)-> directly in Node manifest (less common).apiVersion : v1kind: Nodemetadata:name: worker-1spec:taints:- key: dedicatedvalue: gpueffect: NoSchedule-> Automatically by K8s (some taints are added by controller)e.g: node.kubernetes.io/not-readynode.kubernetes.io/memory-pressure ... etc.Tolerations-> Rule on pod saying, allowing it to run on a node set not wanting taint.node set not wanting taint.-> Defined in Pod, Deployment, StatefulSet, Daemonset specification manifests.e.g: apiVersion: apps/v1kind: Deploymentspec:template:spec:tolerations- key: dedicatedPage 17 (Image 17)operator: equalvalue: gpueffect: NoScheduleNot satisfying taint -> toleration can smoke pod pending.e.g: 3 taint & tolerationNode 1 -> accept all pods (no taint)Node 2 -> tainted (gpu=true:NoSchedule)Pod 1 -> no toleration $\rightarrow$ ejectedPod 2 -> toleration $\rightarrow$ gpu=true, pod 2 allowedResult:Node 2 $\rightarrow$ Pod 2 allowed, pod 2 allowedNode 1 $\rightarrow$ Pod 1 allowed, pod 2 allowed.Affinity/Anti-affinity-> Rules before allowing pods to be placed near/force from any node/pod.-> Can have node affinity e.g: pod affinity/anti affinity.Can be hard/soft rules.Must have topology key.Node affinity-> pod placement based on node labels.e.g: if Node A $\rightarrow$ disk=sssdNode B $\rightarrow$ disk=hddThen Pod $\rightarrow$ Node Affinity :- disk = ssd. Schedule onto SSD nodes.(Continued on pg# 54)
 
 ## K8s Cluster Diagram (For Reference)
