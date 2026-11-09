@@ -53,6 +53,7 @@ Datacenter Rack
         |--Pod
             |--Container (Prometheus)
 ```
+
 [Continued in [here](#k8s-structure-and-visualization)]
 
 ## Linux Basics
@@ -394,91 +395,96 @@ Images, containers, layers, volumes, networks, entrypoints, env variables, multi
 <p align='center'><img src='https://github.com/user-attachments/assets/aaa7d857-4270-44f8-a848-9b834f0c1b53' width=100 /></p>
 
 #### Problem and their solutions via k8s
-- Container crashes —> self healing   
-  - w/o containers K8s, need to manually up stuff   
-  - K8s continuously watches containers 
-  - w/ containers K8s, RAM etc re-allocation, filesystem remounting, network interface recreation etc is taken care of.
-- multiple server -> scheduling   
-  - K8s simplifies scheduling pods into free servers w/o having to manually track it via scheduler   
-- Traffic routing -> services   
-  - K8s services allow having stable traffic routing to healthy BE pods w/o manually having to handle it.   
-- Scaling -> Replica Set via Services   
-  - Distribution of load across back servers automatically done by K8s w/o manual intervention under higher load via ReplicaSet   
-- Config management -> configmaps / Secrets   
-  - Diff env config & secrets injected into container memory w/o rebuilding using K8s.   
-- Deployments -> Rolling updates   
-  - Updates applications w/o downtime via K8s.   
-  - Process: — start new pod, wait until healthy, stop old pod, repeat gradually.   
-- Service discovery -> DNS   
-  - K8s provides internal DNS to communicate set of pods even when they move frequently b/w back servers.   
-  - Process: — Application attempts to DNS lookup, req sent through DNS Virtual n/w, cluster DNS responds, app server receives current service IP. 
-- Resource Control -> Requests / limits   
-  - To avoid applns from competing for hardware resources, we can set request limits & limits for cpu, memory, etc in k8s deployment manifest (or any other manifest that has deployment spec).   This set hardware resource limits on containers (not on pod or node).   
-- Receiving K8s Architecture First   
-  - Cluster 
-    - group of physical/virtual servers working together to run applications
-    - Consists of control plne and worker nodes  
-  - Control plane 
-    - management brain of K8s.   
-    - doesn't normally run an appln container   
-    - Responsibilities :- accept requests, store cluster state, make decisions, monitor cluster status, command worker nodes.   
-  - API server 
-    - front door of K8s (and through it)   
-    - Everything talks to it :- kubectl, scheduler, controller manager, kubelet   - Responsibilities — validate req, authenticate user, authorize action, store resource obj.   
-  - etcd 
-    - K8s db. Stores cluster state   
-    - Also writes to physical storage devices (CRI, CSI, etc)   
-  - scheduler 
-    - decides which node the pod must go to.   
-    - a process running on control plane   
-  - Controller manager 
-    - continuously check desired state vs actual state
-    - a process on control plane that keeps doing - observe, compare, correct (called as reconciliation loop).   
-    - reason why K8s correct itself   
-  - kubelet 
-    - agent running on every worker node.   
-    - receives instruction from control plane   
-    - ensures containers are running   
-  - Container runtime 
-    - runtime that actually runs containers   
-    - eg: containerd, CRI-O   
-    - Process :- Pull required image, create filesystem, configure networking, start process   
-  - kube proxy 
-    - manage n/w rules for services.   
-    - when traffic arrives at a service, kube proxy routes it to correct pod based on iptables / networking rules.   
 
-#### Most important K8s concept (Desired state reconciliation)   
-- Desired state reconciliation   
-  - We declare desired state (eg: replicas 3) and K8s try to match it to reality via reconciliation loops  
-- Self healing 
-  - basically reconciliation fixing failures   
-  - cluster repairing itself   
-- Auto recreation   
-  - K8s automatically recreates missing resources   
-  - Eg: Someone manually deletes a pod. But desired state says it needs 3 replicas, & reality has only 2 pods, so controller immediately creates another pod.   
-- Controllers   
-  - software that perform reconciliation   
-  - Reconciliation loop :- controller continuously watching, comparing, acting & repeating   
-  - A linux process running on control plane service   
-- Deployments   
-  - stores desired appln state   
-  (deployment is the instruction, controllers perform the instruction)  
-- Scaling   
-  - changing desired capacity   
-  - eg: from replica: 3 to replica: 10   
-- Rollback   
-  - change desired state to prev version   
-#### Learn Objects   
-- Phase 1 - Pods   
-  - what: 
+- Container crashes —> self healing
+  - w/o containers K8s, need to manually up stuff
+  - K8s continuously watches containers
+  - w/ containers K8s, RAM etc re-allocation, filesystem remounting, network interface recreation etc is taken care of.
+- multiple server -> scheduling
+  - K8s simplifies scheduling pods into free servers w/o having to manually track it via scheduler
+- Traffic routing -> services
+  - K8s services allow having stable traffic routing to healthy BE pods w/o manually having to handle it.
+- Scaling -> Replica Set via Services
+  - Distribution of load across back servers automatically done by K8s w/o manual intervention under higher load via ReplicaSet
+- Config management -> configmaps / Secrets
+  - Diff env config & secrets injected into container memory w/o rebuilding using K8s.
+- Deployments -> Rolling updates
+  - Updates applications w/o downtime via K8s.
+  - Process: — start new pod, wait until healthy, stop old pod, repeat gradually.
+- Service discovery -> DNS
+  - K8s provides internal DNS to communicate set of pods even when they move frequently b/w back servers.
+  - Process: — Application attempts to DNS lookup, req sent through DNS Virtual n/w, cluster DNS responds, app server receives current service IP.
+- Resource Control -> Requests / limits
+  - To avoid applns from competing for hardware resources, we can set request limits & limits for cpu, memory, etc in k8s deployment manifest (or any other manifest that has deployment spec). This set hardware resource limits on containers (not on pod or node).
+- Receiving K8s Architecture First
+  - Cluster
+    - group of physical/virtual servers working together to run applications
+    - Consists of control plne and worker nodes
+  - Control plane
+    - management brain of K8s.
+    - doesn't normally run an appln container
+    - Responsibilities :- accept requests, store cluster state, make decisions, monitor cluster status, command worker nodes.
+  - API server
+    - front door of K8s (and through it)
+    - Everything talks to it :- kubectl, scheduler, controller manager, kubelet - Responsibilities — validate req, authenticate user, authorize action, store resource obj.
+  - etcd
+    - K8s db. Stores cluster state
+    - Also writes to physical storage devices (CRI, CSI, etc)
+  - scheduler
+    - decides which node the pod must go to.
+    - a process running on control plane
+  - Controller manager
+    - continuously check desired state vs actual state
+    - a process on control plane that keeps doing - observe, compare, correct (called as reconciliation loop).
+    - reason why K8s correct itself
+  - kubelet
+    - agent running on every worker node.
+    - receives instruction from control plane
+    - ensures containers are running
+  - Container runtime
+    - runtime that actually runs containers
+    - eg: containerd, CRI-O
+    - Process :- Pull required image, create filesystem, configure networking, start process
+  - kube proxy
+    - manage n/w rules for services.
+    - when traffic arrives at a service, kube proxy routes it to correct pod based on iptables / networking rules.
+
+#### Most important K8s concept (Desired state reconciliation)
+
+- Desired state reconciliation
+  - We declare desired state (eg: replicas 3) and K8s try to match it to reality via reconciliation loops
+- Self healing
+  - basically reconciliation fixing failures
+  - cluster repairing itself
+- Auto recreation
+  - K8s automatically recreates missing resources
+  - Eg: Someone manually deletes a pod. But desired state says it needs 3 replicas, & reality has only 2 pods, so controller immediately creates another pod.
+- Controllers
+  - software that perform reconciliation
+  - Reconciliation loop :- controller continuously watching, comparing, acting & repeating
+  - A linux process running on control plane service
+- Deployments
+  - stores desired appln state  
+    (deployment is the instruction, controllers perform the instruction)
+- Scaling
+  - changing desired capacity
+  - eg: from replica: 3 to replica: 10
+- Rollback
+  - change desired state to prev version
+
+#### Learn Objects
+
+- Phase 1 - Pods
+  - what:
     - smallest deployable unit in K8s.
     - The thing that k8s schedules into worker nodes
-    - contains >= 1 containers   
-    - not a process itself.   
-    - a K8s object that run & manages the process (aka :- container)   
-    - pod & container :- 
-      - pod = wrapper 
-      - container = isolated process env 
+    - contains >= 1 containers
+    - not a process itself.
+    - a K8s object that run & manages the process (aka :- container)
+    - pod & container :-
+      - pod = wrapper
+      - container = isolated process env
+
       ```
       pod
 
@@ -486,132 +492,200 @@ Images, containers, layers, volumes, networks, entrypoints, env variables, multi
       |-------------|     |-------------|
       | process A   |     | process B   |
       |-------------|     |-------------|
-      ```  
-        - a pod provides shared n/w, shared storage, shared lifecycle.   
-      - multi containers Pods - pods can have multiple containers   
-      - pod lifecycle   Green 
-        - Pending -> Pod created, image downloading, waiting for node.   
-        - running -> containers started, app "running"   
-        - Failed -> container crashed - pod failed   
-      - logs — "kubectl logs my-pod"   
+      ```
+
+      - a pod provides shared n/w, shared storage, shared lifecycle.
+      - multi containers Pods - pods can have multiple containers
+      - pod lifecycle Green
+        - Pending -> Pod created, image downloading, waiting for node.
+        - running -> containers started, app "running"
+        - Failed -> container crashed - pod failed
+      - logs — "kubectl logs my-pod"
       - Exec into pod :
-        - "kubectl exec -it my-pod -- sh"   
-        - allows to start a command inside a running container.   
-- Phase 2 — Deployment   
-  - Replica set - ensure specific no. of pods exist   
-  - Scaling - Change no. of pod replicas   
-  - Rolling updates - update application version gradually   
-  - Rollback - revert back version   
-- Phase 3 — Service  
-  - Service - Provides a reliable n/w endpoint for pods   
+        - "kubectl exec -it my-pod -- sh"
+        - allows to start a command inside a running container.
+
+- Phase 2 — Deployment
+  - Replica set - ensure specific no. of pods exist
+  - Scaling - Change no. of pod replicas
+  - Rolling updates - update application version gradually
+  - Rollback - revert back version
+- Phase 3 — Service
+  - Service - Provides a reliable n/w endpoint for pods
   - Cluster IP :
-    - IP for internal cluster communication.   
-    - So that traffic remains inside cluster networking & no external traffic reaches it.   
-  - Nodeport 
-    — port used to expose a service through a worker node's IP.   
-    — can be accessed from outside cluster   cluster IP   
-    — common uses includes connecting external load balancers, for development & testing quickly.   
-    - expose app "1010 DNS or load balancers, etc.   
-    - Eg for NodePort & Node IP.   "http://Node-IP:30050"   
-    - worker node listens to this TCP port.   
-  - Load balancer 
-    - for exposing services externally.   & forward traffic to cluster nodes   
-  - Service discovery   
-    - Service discovery is done via service names   
-    - It is done so that pods can move around w/o breaking communication   
-    - A service can point to multiple pods like redis-service can have multiple replicas of pods, but all can be accessed by same name.   
-  - kube-dns/coredns 
-    — DNS server K8S   
-    - just another pod running on worker node CPU's & RAM   
-  - Label selectors 
-    — labels used for services to find pods   
-    - Eg: 
+    - IP for internal cluster communication.
+    - So that traffic remains inside cluster networking & no external traffic reaches it.
+  - Nodeport
+    — port used to expose a service through a worker node's IP.  
+    — can be accessed from outside cluster cluster IP  
+    — common uses includes connecting external load balancers, for development & testing quickly.
+    - expose app "1010 DNS or load balancers, etc.
+    - Eg for NodePort & Node IP. "http://Node-IP:30050"
+    - worker node listens to this TCP port.
+  - Load balancer
+    - for exposing services externally. & forward traffic to cluster nodes
+  - Service discovery
+    - Service discovery is done via service names
+    - It is done so that pods can move around w/o breaking communication
+    - A service can point to multiple pods like redis-service can have multiple replicas of pods, but all can be accessed by same name.
+  - kube-dns/coredns
+    — DNS server K8S
+    - just another pod running on worker node CPU's & RAM
+  - Label selectors
+    — labels used for services to find pods
+    - Eg:
     ```
-    Pod   
-      "label:   
-          app: backend"   
-    Service   
-      "selector:   
-          app: backend"   
+    Pod
+      "label:
+          app: backend"
+    Service
+      "selector:
+          app: backend"
     ```
-    Now K8S matches them.   
-    - labels are metadata stored in it.cd   
-- Phase 4 — Configmap & Secrets   
-  - Env variable injection 
-    - Eg: Config map contain env variables, containers can access them inside process env.[var-name]   
-  - Mounted files   
-    - Provide config as files instead of env variables   
-    - Eg: Config map has app.conf. It is mounted in containers as /etc/config/app.conf   
-    - to app "it looks like normal file on disk"   
-    - (means file contents become visible inside filesystem namespace, just like a normal file).   
-  - Separation of config from image   
-    — container image is kept independent from configuration   
-    — ie, when config changes per namespace like diff for prod & dev, the image of container is unaffected.   
-  - Secrets 
-    - store sensitive config   
-    - consumed as env variables or mounted files.   
-- Phase 5 — Ingress   
-  - Reverse proxy 
-    — receive req & forward it to execution   
-    - Ingress controller: is a process running on worker node CPUs.   
-    - Eg: user requests at [https://example.com](https://example.com) ingress receives it & forwards it to frontend-service.   
-  - Routing 
-    — a thing that reverse proxy does.   
-    - deciding which service gets the incoming req.   
-  - Domain name 
-    — human readable names created from Service names instead of IP addresses.   
-    - DNS resolves the domain to the ingress endpoint   
-    - Traffic then flows through switches, routers, NICs, and into the cluster   
-  - TLS termination — handle HTTPS encryption   
-    — TLS = Transport layer security.   
-    — Ingress terminates TLS (stops encrypted traffic & decrypts it by security)   
-      - it decrypts & forwards the req internally.   
-  - NGINX ingress controller   
-    - perform the ingress functionality based on ingress obj stored in etcd.   
-- Phase 6 — Storage   
-  - Volumes 
+    Now K8S matches them.
+    - labels are metadata stored in it.cd
+- Phase 4 — Configmap & Secrets
+  - Env variable injection
+    - Eg: Config map contain env variables, containers can access them inside process env.[var-name]
+  - Mounted files
+    - Provide config as files instead of env variables
+    - Eg: Config map has app.conf. It is mounted in containers as /etc/config/app.conf
+    - to app "it looks like normal file on disk"
+    - (means file contents become visible inside filesystem namespace, just like a normal file).
+  - Separation of config from image  
+    — container image is kept independent from configuration  
+    — ie, when config changes per namespace like diff for prod & dev, the image of container is unaffected.
+  - Secrets
+    - store sensitive config
+    - consumed as env variables or mounted files.
+- Phase 5 — Ingress
+  - Reverse proxy
+    — receive req & forward it to execution
+    - Ingress controller: is a process running on worker node CPUs.
+    - Eg: user requests at [https://example.com](https://example.com) ingress receives it & forwards it to frontend-service.
+  - Routing
+    — a thing that reverse proxy does.
+    - deciding which service gets the incoming req.
+  - Domain name
+    — human readable names created from Service names instead of IP addresses.
+    - DNS resolves the domain to the ingress endpoint
+    - Traffic then flows through switches, routers, NICs, and into the cluster
+  - TLS termination — handle HTTPS encryption  
+    — TLS = Transport layer security.  
+    — Ingress terminates TLS (stops encrypted traffic & decrypts it by security)
+    - it decrypts & forwards the req internally.
+  - NGINX ingress controller
+    - perform the ingress functionality based on ingress obj stored in etcd.
+- Phase 6 — Storage
+  - Volumes
     — provide storage to pods  
-    — Volume ultimately resides on SSD, NVMe (solid state device), NVMe, & HDD, n/w storage   
-  - Persistent Volume (PV) 
-    — declares/represents actual storage available to the cluster.   
-  - Persistent Volume Claim (PVC)   
-    - Storage requested by pods   
-    - Eg: Pod requests "I need 50GB". K8S find a matching PV & binds Pod & PV.   Pod don't care which disk provides the storage.   
-  - Stateful Workloads   
-    - Apps / Pods which are not stateless   
-    - Eg: PostgreSQL, MySQL, MongoDB, redis   
-    - When these pods restart, the process change from old to new container, but same volume/storage is used.   
-- Phase 6 — Networking Fundamentals   
-  - Pod net networking   
-    - Every pod gets its own IP & each one communicates to other via these IPs.   
-    - Packets of data need to travel through these to reach from one pod to another via network :-   
-    Pod 1 - VETH (virtual n/w interface) - worker node NIC - switch - other worker node - destination pod.   
-  - Service virtual IPs   
-    - Eg: "backend-service"   
-    - stable addresses for a group of pods.   
-  - kube-proxy 
-    — routing btw pods internally based on service names.   
-    - it also configures networking rules on every worker node.   
-  - CNI plugin 
-    - Container Networking Interface 
+    — Volume ultimately resides on SSD, NVMe (solid state device), NVMe, & HDD, n/w storage
+  - Persistent Volume (PV)
+    — declares/represents actual storage available to the cluster.
+  - Persistent Volume Claim (PVC)
+    - Storage requested by pods
+    - Eg: Pod requests "I need 50GB". K8S find a matching PV & binds Pod & PV. Pod don't care which disk provides the storage.
+  - Stateful Workloads
+    - Apps / Pods which are not stateless
+    - Eg: PostgreSQL, MySQL, MongoDB, redis
+    - When these pods restart, the process change from old to new container, but same volume/storage is used.
+- Phase 6 — Networking Fundamentals
+  - Pod net networking
+    - Every pod gets its own IP & each one communicates to other via these IPs.
+    - Packets of data need to travel through these to reach from one pod to another via network :-  
+      Pod 1 - VETH (virtual n/w interface) - worker node NIC - switch - other worker node - destination pod.
+  - Service virtual IPs
+    - Eg: "backend-service"
+    - stable addresses for a group of pods.
+  - kube-proxy
+    — routing btw pods internally based on service names.
+    - it also configures networking rules on every worker node.
+  - CNI plugin
+    - Container Networking Interface
     - Create Pod networking.
 
 ## K8s Structure and Visualization
+
 So we're back to understanding K8s now that we've taken a round of understanding the undelining linux basics.
 
 ### Visualisation
+
 A data center looks like this
 
 ```
-Datacenter   
-|--- Rack   
-|    |--- Server 1   
-|    |--- Server 2   
-|    |--- Server 3   
-|--- Rack   
-     |--- Server 4   
-     |--- Server 5   
-     |--- Server 6   
+Datacenter
+|--- Rack
+|    |--- Server 1
+|    |--- Server 2
+|    |--- Server 3
+|--- Rack
+     |--- Server 4
+     |--- Server 5
+     |--- Server 6
 ```
 
-- Different servers on diff racks can be part of same Kubernetes cluster.   - When multiple servers have cost check, certain requirements, they are as associated of k8s, they are then part of k8s cluster.   - Requirements to be part of k8s cluster:-   $\star$ K8s terms   kubelet   - small local agent/process   - Exists on every worker node / control plane node.   - Make sure containers/pods runs correctly on that m/c.   Image 11- Tasks of kubelet :- talk to api server, receive pod assignments, start/stop containers, report node health, report pod status, mounts volume, handle probes.   kubelet   - Pronounced "kyoo-belet" or "kyoo-be-control".   - Exists on developer laptop / admin m/c / control server.   - It communicates of kube-apiserver.   kube-proxy   - Kubernetes n/w proxy.   - exists on every worker node (as daemon/fbg process).   - It handles k8s n/wing rules inside cluster   Eg: Service virtual IPs, load balancing, traffic forwarding, ip tables / ipvs rules.   Node   - Physical servers or VM running linux, kubelet or container runtime.   kubeadm   - K8s admin / bootstrap tool   Image 12- exists on control plane m/c.   - worker setup m/c   - used during cluster creation for creating control plane "kubeadm init" & join worker pods "kubeadm join", etc...   - Not part of ras running cluster logic instead part of cluster installation / setup tool.   kube-apiserver   - main entry point for k8s cluster.   Everything talks to this.   Acts like central management api.   - Exists on control plane server.   - Talks to kubectl, kubelet, scheduler, controller-manager, etcd.   kube-scheduler   - chooses which node runs pods.   (decision engine)   - Exists on control plane server.   Chooses where worker node try maintains desired state pods.   - talks to kube-apiserver, worker nodes indirectly.   Image 13- kube-controller-manager   - Exists on control plane server.   - Maintains desired state.   - Talks to :- kube-apiserver, etcd ... indirectly.   - Runs reconciliation loops (loops inside k8s that continuously check desired state vs actual state).   - eg: desired replica = 3, actual replica = 2. Then create another pod.   etcd (etc distributed) (ct-see-di)   - etcd dictionary / distributed db (like redis)   - store cluster state db.   - most critical k8s db (source of truth).   - Exists on control plane servers.   - Stores :- pods, deployments, services, [as key-value pairs] nodes, secrets, cluster desired state.   $\star$ distributed   it is called distributed bcoz multiple etcd servers can work together.   [Continued containerized]   (actually runs containers)   - container runtime (actually runs containers)   - Exists on worker node.   - Talks to kubelet through CRI.   eg if multiple control planes with diff etcd, they communicate via "consensus" algorithm which stores a copy of the...   Image 14   - [.. exists on worker node - talks to kubelet through CRI with diff etcd, they communicate via consensus algorithm which stores a copy of the cluster state, thus preserving data even if one etcd beads down. (cluster state is not the same as control plane).   CoreDNS (Core Domain Name Sys)   - K8s   - Internal cluster dns.   - lets pods communicate using names.   eg: api-service.default.svc.cluster.local.   - usually runs as pods on worker nodes.   Container Network Interface (CNI)   - Provide pod networking.   - Exists as CNI plugins on worker nodes.   - eg: Calico, Flannel, Cilium.   CRI   - Container runtime interface. (node agent)   - Standard interface btw. kubelet & container runtime (containerd).   - Types of communication being done via here include kubelet asking to pull image, start container, stop container, delete container, get container status, etc..   CSI   - Container storage interface.   - Standard way k8s interact w/ storage systems.   
+- Different servers on diff racks can be part of same Kubernetes cluster.
+- When multiple servers have cost check, certain requirements, they are as associated of k8s, they are then part of k8s cluster. -
+
+### K8s terms
+
+- kubelet 
+  - small local agent/process 
+  - Exists on every worker node / control plane node. 
+  - Make sure containers/pods runs correctly on that m/c. 
+- Tasks of kubelet :
+  - talk to api server, receive pod assignments, start/stop containers, report node health, report pod status, mounts volume, handle probes. 
+- kubectl 
+  - Pronounced "kyoobe-cuttle" or "kyoobe-control". 
+  - Exists on developer laptop / admin m/c / control server. 
+  - It communicates of kube-apiserver. 
+- kube-proxy 
+  - Kubernetes n/w proxy. 
+  - exists on every worker node (as daemon/fbg process). 
+  - It handles k8s n/wing rules inside cluster Eg: Service virtual IPs, load balancing, traffic forwarding, ip tables / ipvs rules. 
+- kubeadm 
+  - K8s admin / bootstrap tool 
+  - exists on control plane m/c. 
+  - worker setup m/c 
+  - used during cluster creation for creating control plane "kubeadm init" & join worker pods "kubeadm join", etc... 
+  - Not part of ras running cluster logic instead part of cluster installation / setup tool. 
+- kube-apiserver 
+  - main entry point for k8s cluster. Everything talks to this. Acts like central management api. - Exists on control plane server. 
+  - Talks to kubectl, kubelet, scheduler, controller-manager, etcd. 
+- kube-scheduler 
+  - chooses which node runs pods. (decision engine) 
+  - Exists on control plane server. Chooses where worker node try maintains desired state pods. 
+  - talks to kube-apiserver, worker nodes indirectly. 
+- kube-controller-manager 
+  - Exists on control plane server. 
+  - Maintains desired state. 
+  - Talks to :- kube-apiserver, etcd ... indirectly. 
+  - Runs reconciliation loops (loops inside k8s that continuously check desired state vs actual state). 
+  - eg: desired replica = 3, actual replica = 2. Then create another pod. 
+- etcd (etc distributed) (et-see-di) 
+  - etcd directory / distributed key value db (like redis) 
+  - store cluster state db. 
+  - most critical k8s db (source of truth). 
+  - Exists on control plane servers. 
+  - Stores :- pods, deployments, services, [as key-value pairs] nodes, secrets, cluster desired state. 
+  - *distributed* 
+    - it is called distributed bcoz multiple etcd servers can work together.
+    - eg if multiple control planes with diff etcd, they communicate via a "Raft consensus" algorithm which stores a copy of the cluster state, thus preserving data even if one etcd beads down. (cluster state is not the same as control plane). 
+- containerd 
+  - container runtime (actually runs containers) 
+  - Exists on worker node. 
+  - Talks to kubelet through CRI.  
+- CoreDNS (Core Domain Name Sys) 
+  - K8s - Internal cluster dns. 
+  - lets pods communicate using names. eg: api-service.default.svc.cluster.local. - usually runs as pods on worker nodes. 
+- Container Network Interface (CNI) 
+  - Provide pod networking. 
+  - Exists as CNI plugins on worker nodes. 
+  - eg: Calico, Flannel, Cilium. 
+- CRI 
+  - Container runtime interface.  
+  - Standard interface btw. kubelet (node agent) & container runtime (containerd). 
+  - Types of communication being done via here include kubelet asking to pull image, start container, stop container, delete container, get container status, etc.. 
+- CSI 
+  - Container storage interface. 
+  - Standard way k8s interact w/ storage systems.
