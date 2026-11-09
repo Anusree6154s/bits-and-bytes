@@ -942,6 +942,7 @@ k8s
 - It is watched by operator controller. specific to the cluster we want (Postgres, kafka) . The cluster specific operator is installed in K8s cluster, via operator manifest in which in the deployment section, the location from/image from where the operator needs to be installed is mentioned. This installed operator will take care of replicas, replication, failure, backups, upgrades, etc.
 
 > Deployment section example in operator
+>
 > ```yaml
 > kind: deployment
 > containers:
@@ -958,6 +959,7 @@ k8s
   - Added it is defined in operator manifest in CRD section, which only fully K8s that one specific type of obj exists.
   - The actual creation of object for that cluster is dependent on custom resource file (the manifest specific to that object)
   - eg. If CRD section in operator.yaml
+
   ```yaml
   kind: CustomResourceDefinition
   spec:
@@ -965,7 +967,318 @@ k8s
       kind: PostgresCluster
   ```
 
--> Custom Resource (CR) example# postgres-cluster.yamlkind: PostgresClustermetadata:name: my-dbspec:instances: 3API Group:-> so when K8s cluster is made storing it is installed. kubeapi server comes along w/ it. In kube api server, along w/ it comes some built-in API (sources) -> These APIs are exposed to outside K8s to which HTTP API calls are made by kubectl (http client)-> Built-in API groups are some groupings made by K8s for these api paths for each resource type.-> Built-in API groups & paths:CORE (no group)api/v1-> pods, services, configmaps, secrets, nodes, namespacesPage 12 (Image 12)app. (/apps/apps/v1)-> Deployments, Replicasets, Statefulsets, Daemonsetsbatch (/apis/batch/v1)-> Jobs, CronJobsnetworking (/apis/networking.k8s.io/v1)-> Ingress, NetworkPolicyautoscaling (/apis/ /HPA)These all are compiled into kube-apiserver.Additional APIs-> Generate via CRDS.-> kube-apiserver dynamically registers new route when user creates CRD.-> wee get new api path like apis/[mycompany.com/v1/resources](https://mycompany.com/v1/resources).-> Aggregated API server (Advanced). External API server can also plug into kube-api server.-> Most of the conversations with K8s cluster between kubectl, kubelet, etc, controller schedules with kube-api server.happens via http/https rest & watch api calls & requests & these api pathsPage 13 (Image 13)-> when writing manifest files, we mention the api path associated with its resource type so that kube-api server can do it like this :-apiVersion: apps/v1kind: DeploymentapiVersion: v1kind: PodapiVersion: batch/v1kind: Job ... etcThis is done so that when these manifests are applied, kube-api server can do the following:-Parse apiVersion + kindFind matching resource handlerValidate schemasRun admission controllersDefault missing fieldsStore object in etcdAdmission Controllers-> So when a request is made to K8s cluster via kubectl, a lot of stuff/checks happen w/ admission controllers.Page 14 (Image 14)just part of it.-> Stuff that happens after req from kubectl to kube-api server:-kubectl apply deployment.yaml (via http req)kube-api-server:http routing(matches apiVersion = apps/v1, kind = Deployment)authentication(verify who is making the req)authorization(verify if authenticated user is allowed to make req)request decoders(convert manifest to resource obj)API resource lookup(kube finds appropriate handlers from internal api-registry to handle [apps/v1, Deployment])Decoded resourceobj (chain of) (built-in)Admission chain (chain of)-> service account controllers(injects default secure account)-> default storage class(adds default storage class if omitted)Page 15 (Image 15)-> limit ranger (applies/enforces resource limits)-> Pod security (checks security requirement)-> resource quota (check namespace quota)-> Mutating Admission Webhook (Calls custom mutation webhooks)-> Validating Admission webhook (Calls custom validation webhooks)-> Custom use defined admission controllers can also be added later via manifests.Taints-> rule applied to node based on which pods are not to be scheduled there. (cause normally all nodes are welcome to host pods).-> Cases when you need to taint: GPU workloads, db workloads, infra components, control plane components.-> How a taint looks like:dedicated = database : NoSchedulegpu = true : NoScheduleWays to taint nodes:-> (Most common) kubectl taint:kubectl taint nods worker-1 dedicated = gpu : NoSchedulePage 16 (Image 16)-> directly in Node manifest (less common).apiVersion : v1kind: Nodemetadata:name: worker-1spec:taints:- key: dedicatedvalue: gpueffect: NoSchedule-> Automatically by K8s (some taints are added by controller)e.g: node.kubernetes.io/not-readynode.kubernetes.io/memory-pressure ... etc.Tolerations-> Rule on pod saying, allowing it to run on a node set not wanting taint.node set not wanting taint.-> Defined in Pod, Deployment, StatefulSet, Daemonset specification manifests.e.g: apiVersion: apps/v1kind: Deploymentspec:template:spec:tolerations- key: dedicatedPage 17 (Image 17)operator: equalvalue: gpueffect: NoScheduleNot satisfying taint -> toleration can smoke pod pending.e.g: 3 taint & tolerationNode 1 -> accept all pods (no taint)Node 2 -> tainted (gpu=true:NoSchedule)Pod 1 -> no toleration $\rightarrow$ ejectedPod 2 -> toleration $\rightarrow$ gpu=true, pod 2 allowedResult:Node 2 $\rightarrow$ Pod 2 allowed, pod 2 allowedNode 1 $\rightarrow$ Pod 1 allowed, pod 2 allowed.Affinity/Anti-affinity-> Rules before allowing pods to be placed near/force from any node/pod.-> Can have node affinity e.g: pod affinity/anti affinity.Can be hard/soft rules.Must have topology key.Node affinity-> pod placement based on node labels.e.g: if Node A $\rightarrow$ disk=sssdNode B $\rightarrow$ disk=hddThen Pod $\rightarrow$ Node Affinity :- disk = ssd. Schedule onto SSD nodes.(Continued on pg# 54)
+  - Custom Resource (CR) example
+
+  ```
+  postgres-cluster.yaml
+  kind: PostgresCluster
+  metadata:
+    name: my-db
+  spec:
+    instances: 3
+  ```
+
+- API Group:
+  - so when K8s is installed. kubeapi server comes along w/ it. In kube api server, along w/ it comes some built-in API (sources) - These APIs are exposed to outside K8s to which HTTP API calls are made by kubectl (http client)
+  - API groups are some groupings made by K8s for these api paths for each resource type.
+    - Built in API groups & paths:
+      - CORE (no group) api/v1
+        - pods, services, configmaps, secrets, nodes, namespaces
+      - app. (/apps/apps/v1)
+        - Deployments, Replicasets, Statefulsets, Daemonsets
+      - batch (/apis/batch/v1)
+        - Jobs, CronJobs
+      - networking (/apis/networking.k8s.io/v1)
+        - Ingress, NetworkPolicy
+      - autoscaling (/apis/ /HPA)
+        These all are compiled into kube-apiserver.
+    - Additional APIs
+      - Generate via CRDS.
+      - kube-apiserver dynamically registers new route when user creates CRD.
+      - we get new api path like apis/[mycompany.com/v1/resources](https://mycompany.com/v1/resources).
+    - Aggregated API server (Advanced).
+      - External API server can also plug into kube-api server.
+    - Most of the conversations with K8s cluster between kubectl, kubelet, etc, controller schedules with kube-api server.happens via http/https rest & watch api calls & requests & these api paths
+    - when writing manifest files, we mention the api path associated with its resource type so that kube-api server can do it like this :
+      - apiVersion: apps/v1
+        - kind: Deployment
+      - apiVersion: v1
+        - kind: Pod
+      - apiVersion: batch/v1
+        - kind: Job ... etc
+    - This is done so that when these manifests are applied, kube-api server can do the following:
+      - Parse apiVersion + kind
+      - Find matching resource handler
+      - Validate schemas
+      - Run admission controllers
+      - Default missing fields
+      - Store object in etcd
+- Admission Controllers
+  - So when a request is made to K8s cluster via kubectl, a lot of stuff/checks happen w/ admission controllers are just part of it.
+  - Stuff that happens after req from kubectl to kube-api server:
+
+  ```
+  kubectl apply deployment.yaml (via http req)
+    |
+    v
+  kube-api-server
+  |-- http routing (matches apiVersion = apps/v1, kind = Deployment)
+  |-- authentication(verify who is making the req)
+  |-- authorization(verify if authenticated user is allowed to make req)
+  |-- request decoders(convert manifest to resource obj)
+  |-- API resource lookup(kube finds appropriate handlers from
+  |     internal api-registry to handle [apps/v1, Deployment])Decoded resourceobj
+  |-- (built-in) Admission chain (chain of admission controllers)
+      |-- service account controllers(injects default secure account)
+      |-- default storage class(adds default storage class if omitted)
+      |-- limit ranger (applies/enforces resource limits)
+      |-- Pod security (checks security requirement)
+      |-- resource quota (check namespace quota)
+      |-- Mutating Admission Webhook (Calls custom mutation webhooks)
+      |-- Validating Admission webhook (Calls custom validation webhooks)
+  ```
+
+  - Custom use defined admission controllers can also be added later via manifests.
+
+- Taints
+  - rule applied to node based on which pods are not to be scheduled there. (cause normally all nodes are welcome to host pods).
+  - Cases when you need to taint: GPU workloads, db workloads, infra components, control plane components.
+  - How a taint looks like:
+    - dedicated = database : NoSchedule
+    - gpu = true : NoSchedule
+  - Ways to taint nodes:
+    - (Most common) kubectl taint `kubectl taint nods worker-1 dedicated = gpu : NoSchedule`
+    - directly in Node manifest (less common).
+
+    ```
+    apiVersion : v1
+    kind: Node
+    metadata:
+      name: worker-1
+    spec:
+      taints:
+      - key: dedicated
+      value: gpu
+      effect: NoSchedule
+    ```
+
+    - Automatically by K8s (some taints are added by controller)
+    - e.g: node.kubernetes.io/not-readynode.kubernetes.io/memory-pressure ... etc.
+
+- Tolerations
+  - Rule on pod saying, allowing it to run on a node set not wanting taint.node set not wanting taint.
+  - Defined in Pod, Deployment, StatefulSet, Daemonset specification manifests.
+  - e.g:
+  ```
+  apiVersion: apps/v1
+  kind: Deployment
+  spec:
+    template:
+      spec:
+        tolerations
+        - key: dedicated
+        operator: equal
+        value: gpu
+        effect: NoSchedule
+  ```
+  > Not satisfying taint - toleration can make pods pending
+  - e.g: 3 taint & toleration
+    - Node 1 -> accept all pods (no taint)
+    - Node 2 -> tainted (gpu=true:NoSchedule)
+    - Pod 1 -> no toleration
+    - Pod 2 -> toleration - gpu=true: noo schedule
+    - Result:
+      - Node 2 - Pod 2 allowed, pod 2 rejected
+      - Node 1 - Pod 1 allowed, pod 2 allowed.
+- Affinity/Anti-affinity
+  - Rules before allowing pods to be placed near/force from any node/pod.
+  - Can have node affinity e.g: pod affinity/anti affinity.Can be hard/soft rules.Must have topology key.
+  - Node affinity
+    - pod placement based on node labels.
+    - e.g: if
+      - Node A - disk=ssd
+      - Node B - disk=hdd
+      - Then Pod - Node Affinity :- disk = ssd. Schedule onto SSD nodes.
+  - Pod Affinity/AntiAffinity
+    - Pod placement based on other pod labels.
+  - Hard rule: Soft rules
+    - Hard rule
+      - must satisfy. Else pod state goes into pending.
+    - Soft rule
+      - nice to have. But pod will still run somewhere.
+  - Topology key (Scope)
+    - Region where pod must have affinity/anti-affinity.
+    - Eg: Near xyz node. Near xyz zone... etc.
+  - eg to all taint + toleration + affinities
+
+  ```
+  Cluster
+  |--Node A
+  |  |--labels:
+  |  |   type=gpu
+  |  |   zone=east
+  |  |--taint:
+  |      dedicated = gpu : NoSchedule.
+  |--Node B
+  |  |--labels:
+  |  |   type=general
+  |  |   zone=east
+  |  |--no taint.
+  |--Node C
+     |--labels:
+     |   type=gpu
+     |   zone=west
+     |--taint:
+         dedicated = gpu : NoSchedule.
+
+  -> Existing pod
+  redis
+  |-- running on node A.
+  |--labels:
+  |--app=redis
+
+  -> New pod (api-server)
+  Tolerations:
+  - key: dedicated
+    value: gpu
+  affinity:
+    Node Affinity:
+      required:
+        type = gpu
+    Pod Affinity:
+      required:
+        app = redis
+    Pod AntiAffinity:
+      required:
+        app = api-server
+
+  -> Result:
+  Node taint -> all gpu tainted.
+  New pod toleration -> gpu taint. So can run on all nodes A, B, C.
+  Node affinity -> on nodes w/ type=gpu.
+                  So Node A ✓, Node B ×, Node C ✓
+  new pod, pod affinity -> near redis so Node A ✓, Node C ×
+  pod anti affinity -> Not near api-server.
+                      Since no node has api-server pod, Node A ✓.
+  ```
+
+  - Case
+    - If Node A had a pod for api-server, then new pod will go into pending state.
+
+- Eviction
+  - K8s process of removing pod from Node. K8s pod would normally stop on its own.
+  - Reasons: Memory pressure, Disk Pressure, Node failure, A node having taint called "No-execut" like maintenance = true.
+    "NoExecute" like "maintenance = true? NoExecute
+  - Eviction vs Deletion
+    - Eviction done by k8s, Delete - user removal
+    - User can also manually want it to evict via kubectl.
+  - After eviction
+    - If statefulset or deployment or replacement pod from evicted w/ new one created w/ out migration.
+    - If standalone pod -> Pod evicted & Gone.
+  - Evictions can be rejected by. Pod Disruption Budget (PDB) restricted.
+    - Eg: minAvailable : 2
+    - (keeps 2 replicas always healthy - Protection during maintenance).
+  - Eviction Not same as OOM kill.
+    - Eviction -> Done by k8s
+    - OOMkill -> (out of memory kill) done by node.
+- Drain
+  - Process of safely removing workloads from node.
+  - Reasons: Reboot a VM, upgrade the OS, replace hardware, upgrade, kubelet; Shutdown node.
+  - Process
+    - marks pod mode as unschedulable.
+    - evicts existing pods.
+    - if deployment, the controller - recreate pods elsewhere & then evict.
+    - After drain, safe to reboot, shutdown, etc.
+  - Cordon vs Drain
+    - cordon -> only marking node as unschedulable.
+    - drain -> mark & evict.
+      > Uncordon -> unmark it as schedulable.
+  - Daemonset Pods are generally ignored during drain in terminal command
+    "kubectl drain worker-1 --ignore -daemonsets."
+
+### Cluster diagram
+
+```
+Developer/User machine
+|-- Developer laptop
+| |-- kubectl
+| |-- kubeconfig
+| |-- Browser
+|-- CI/CD machine
+| |-- kubectl
+| |-- helm
+| |-- ArgoCD CLI
+| |-- Deployment Pipelines
+|-- Admin Machine
+|-- kubectl
+|-- kubeadm
+
+K8s cluster
+|-- Control Plane Nodes
+| |-- kubelet
+| |-- Static Pods
+| | |-- kube-api-server Pod
+| | |-- kube-scheduler Pod
+| | |-- kube-controller-manager Pod
+| | |-- etcd Pod
+| |-- Container Runtime (containerd / CRI-O)
+| |-- CNI components
+| |-- CSI components
+|-- Worker Nodes
+| |-- kubelet
+| |-- kube-proxy
+| |-- Container Runtime (containerd / CRI-O)
+| |-- CNI Components
+| |-- CSI Node components
+| |-- Pods
+| |-- Application Pod
+| |-- CoreDNS Pod
+| |-- Metrics Server Pod
+| |-- Ingress Controller Pod
+| |-- Prometheus Pod
+| |-- Grafana Pod
+|-- K8s API objects (records stored in etcd)
+|-- Namespace
+|-- Node
+|-- Pod
+|-- ReplicationSet
+|-- Deployment
+|-- StatefulSet
+|-- DaemonSet
+|-- Job
+|-- CronJob
+|-- Ingress
+|-- Ingress Class
+|-- Gateway
+|-- HttpRoute
+|-- Config Map
+|-- Secret
+|-- Secure Account
+|-- Persistent Volume
+|-- Persistent Volume Claim
+|-- Storage Class
+|-- Service
+|-- Endpoints
+|-- EndpointSlice
+|-- Resource Quota
+|-- Limit Range
+|-- Resource Quota
+|-- Limit Range
+|-- Network Policy
+|-- Horizontal Pod Autoscaler
+|-- Pod Disruption Budget
+|-- Priority Class
+|-- Runtime Class
+|-- Custom Resource Definition
+|-- Custom Resources
+
+External Systems
+|-- Container Registry (Docker Hub, GHCR, ECR, GCR, Artifact Registry)
+|-- DNS provider
+|-- Storage System (NFS, Ceph, SAN, NAS)
+|-- Cloud load balancer
+|-- External users
+```
 
 ## K8s Cluster Diagram (For Reference)
 
