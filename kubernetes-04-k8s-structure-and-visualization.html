@@ -1,0 +1,1305 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/bits-and-bytes/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/bits-and-bytes/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul:nth-of-type(1) > li > a,
+    .site-nav > ul:nth-of-type(1) > li > ul > li > a,
+    
+    .site-nav > ul:nth-of-type(1) > li > ul > li > ul > li:not(:nth-child(5)) > a,
+    .site-nav > ul:nth-of-type(1) > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul:not(:nth-of-type(1)) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul:nth-of-type(1) > li:nth-child(6) > ul > li:nth-child(1) > ul > li:nth-child(5) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul:nth-of-type(1) > li:nth-child(6) > button svg,
+    .site-nav > ul:nth-of-type(1) > li:nth-child(6) > ul > li:nth-child(1) > button svg,
+    .site-nav > ul:nth-of-type(1) > li:nth-child(6) > ul > li:nth-child(1) > ul > li:nth-child(5) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul:nth-of-type(1) > li.nav-list-item:nth-child(6) > ul.nav-list,
+    .site-nav > ul:nth-of-type(1) > li.nav-list-item:nth-child(6) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list,
+    .site-nav > ul:nth-of-type(1) > li.nav-list-item:nth-child(6) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+
+  
+    <script src="/bits-and-bytes/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/bits-and-bytes/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/bits-and-bytes/assets/images/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>K8s Structure and visualization Part2 | Bits &amp; Bytes</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="K8s Structure and visualization Part2" />
+<meta name="author" content="Anusree Anilkumar" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Intro to kubernetes (K8s Structure and visualization Part 2)" />
+<meta name="twitter:description" property="og:description" content="Intro to kubernetes (K8s Structure and visualization Part 2)" />
+<link rel="canonical" href="https://anusree6154s.github.io/bits-and-bytes/kubernetes-04-k8s-structure-and-visualization" />
+<meta property="og:url" content="https://anusree6154s.github.io/bits-and-bytes/kubernetes-04-k8s-structure-and-visualization" />
+<meta property="og:site_name" content="Bits &amp; Bytes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-11-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-11-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="K8s Structure and visualization Part2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Anusree Anilkumar"},"dateModified":"2026-11-09T00:00:00+00:00","datePublished":"2026-11-09T00:00:00+00:00","description":"Intro to kubernetes (K8s Structure and visualization Part 2)","headline":"K8s Structure and visualization Part2","mainEntityOfPage":{"@type":"WebPage","@id":"https://anusree6154s.github.io/bits-and-bytes/kubernetes-04-k8s-structure-and-visualization"},"url":"https://anusree6154s.github.io/bits-and-bytes/kubernetes-04-k8s-structure-and-visualization"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/bits-and-bytes/" class="site-title lh-tight">
+  Bits & Bytes
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/bits-and-bytes/about" class="nav-list-link">About Me</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Computer Science Concepts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/computer-science-concepts" class="nav-list-link">Computer Science Concepts</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/hld" class="nav-list-link">High Level Design Guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/lld" class="nav-list-link">Low Level Design Guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/oop" class="nav-list-link">OOP</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Databases submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/databases" class="nav-list-link">Databases</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="No SQL submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/no-sql" class="nav-list-link">No SQL</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/mongodb" class="nav-list-link">MongoDB Concepts Guide</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/bits-and-bytes/deployment" class="nav-list-link">Deployment Websites</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Devops And Infrastructure submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/devops-and-infrastructure" class="nav-list-link">Devops And Infrastructure</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Kubernetes submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/kubernetes" class="nav-list-link">Kubernetes</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-00-structure-and-visualization" class="nav-list-link">00. Structure and Visualisation</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-01-linux-basics" class="nav-list-link">01. Linux Basics</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-02-media-forge" class="nav-list-link">02. Media Forge</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-03-k8s-basics" class="nav-list-link">03. K8s Basics</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-04-k8s-structure-and-visualization" class="nav-list-link">04. K8s Structure and visualization Part2</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-05-k8s-cluster-diagram" class="nav-list-link">05. K8s Cluster Diagram</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Import Modules submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/import-modules" class="nav-list-link">Import Modules</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/tests" class="nav-list-link">Tests</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Interview Questions submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/interview-questions" class="nav-list-link">Interview Questions</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Crio Interview Questions submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/crio-interview-questions" class="nav-list-link">Crio Interview Questions</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-101" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-102" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-103" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-201" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-202" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-301" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-302" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-fe-intv-1" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-hld-1" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-mern-2" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-node-201" class="nav-list-link">FE-101 HTML</a></li><li class="nav-list-item"><a href="/bits-and-bytes/crio-interview-questions-node-202" class="nav-list-link">FE-101 HTML</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Languages submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/languages" class="nav-list-link">Languages</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Typescript learners guide submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/typescript-learners-guide" class="nav-list-link">Typescript learners guide</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/generics" class="nav-list-link">Generics Examples</a></li><li class="nav-list-item"><a href="/bits-and-bytes/advanced-decorator" class="nav-list-link">More about Advanced Decorator</a></li><li class="nav-list-item"><a href="/bits-and-bytes/conditional-types" class="nav-list-link">More about Conditional Types</a></li><li class="nav-list-item"><a href="/bits-and-bytes/declaration-merging" class="nav-list-link">More about Declaration Merging</a></li><li class="nav-list-item"><a href="/bits-and-bytes/decorators" class="nav-list-link">More about Decorators in Typescript</a></li><li class="nav-list-item"><a href="/bits-and-bytes/discriminated-unions" class="nav-list-link">More about Discriminated Unions</a></li><li class="nav-list-item"><a href="/bits-and-bytes/inferences" class="nav-list-link">More about Inferences in Typescript</a></li><li class="nav-list-item"><a href="/bits-and-bytes/mapped-types" class="nav-list-link">More about Mapped Types</a></li><li class="nav-list-item"><a href="/bits-and-bytes/module-augmentation" class="nav-list-link">More about Module Augmentation</a></li><li class="nav-list-item"><a href="/bits-and-bytes/modules" class="nav-list-link">More about Modules in Typescript</a></li><li class="nav-list-item"><a href="/bits-and-bytes/namespace" class="nav-list-link">More about Namespaces in Typescript</a></li><li class="nav-list-item"><a href="/bits-and-bytes/type-aliases" class="nav-list-link">More about Type Aliases</a></li><li class="nav-list-item"><a href="/bits-and-bytes/type-manipulation" class="nav-list-link">More about Type Manipulation</a></li><li class="nav-list-item"><a href="/bits-and-bytes/tuples" class="nav-list-link">Tuples and how it differs from Arrays</a></li><li class="nav-list-item"><a href="/bits-and-bytes/interfaces-usecases" class="nav-list-link">Typescript Interfaces Usecases</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Libraries submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/libraries" class="nav-list-link">Libraries</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/react" class="nav-list-link">React Concepts Guide</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Mobile Dev submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/mobile-dev" class="nav-list-link">Mobile Dev</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Flutter submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/flutter" class="nav-list-link">Flutter</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/basics-of-dart" class="nav-list-link">Basics of Dart</a></li><li class="nav-list-item"><a href="/bits-and-bytes/setting-up-flutter" class="nav-list-link">Flutter Setup Guide</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/bits-and-bytes/takehome-guidelines" class="nav-list-link">Takehome Guidelines</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Web Dev submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/bits-and-bytes/web-dev" class="nav-list-link">Web Dev</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/api-documentaion" class="nav-list-link">API Documentation Tools</a></li><li class="nav-list-item"><a href="/bits-and-bytes/claudeai-code" class="nav-list-link">Claude AI Code for Nodemailer</a></li><li class="nav-list-item"><a href="/bits-and-bytes/email-service" class="nav-list-link">Email Service Guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/optimise-img-external" class="nav-list-link">External Image Optimisation</a></li><li class="nav-list-item"><a href="/bits-and-bytes/git%20-commit-standards" class="nav-list-link">Git Commit Standards</a></li><li class="nav-list-item"><a href="/bits-and-bytes/gitignore-commands" class="nav-list-link">Gitignore Config for Certificates</a></li><li class="nav-list-item"><a href="/bits-and-bytes/git-commit-guidelines" class="nav-list-link">Guidelines to cleaner git commits</a></li><li class="nav-list-item"><a href="/bits-and-bytes/oauth-config-setup" class="nav-list-link">OAuth Config Setup in Different Apps</a></li><li class="nav-list-item"><a href="/bits-and-bytes/oauth-oidc" class="nav-list-link">OAuth/OIDC App Configurations</a></li><li class="nav-list-item"><a href="/bits-and-bytes/react-node" class="nav-list-link">React-Node App</a></li><li class="nav-list-item"><a href="/bits-and-bytes/readme-formatting-guidelines" class="nav-list-link">Readme files formatting guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/readme-file-writing" class="nav-list-link">Readme files writing guide</a></li><li class="nav-list-item"><a href="/bits-and-bytes/ssl-commands" class="nav-list-link">SSL Commands</a></li><li class="nav-list-item"><a href="/bits-and-bytes/tailwing-styling-without-inline" class="nav-list-link">Tailwind styling without inline</a></li><li class="nav-list-item"><a href="/bits-and-bytes/bootstrap-icons-usage" class="nav-list-link">Using Bootstrap Icons</a></li><li class="nav-list-item"><a href="/bits-and-bytes/vercel-env" class="nav-list-link">Vercel .env extraction</a></li><li class="nav-list-item"><a href="/bits-and-bytes/web-dev" class="nav-list-link">Web development Css related</a></li></ul></li></ul>
+  
+    
+    
+      
+      
+      
+      
+        
+          
+            <div class="nav-category"></div>
+            <ul class="nav-list"></ul>
+          
+        
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Bits & Bytes" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search Bits & Bytes</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/bits-and-bytes/devops-and-infrastructure">Devops And Infrastructure</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/bits-and-bytes/kubernetes">Kubernetes</a></li>
+    <li class="breadcrumb-nav-list-item"><span>04. K8s Structure and visualization Part2</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h2 id="k8s-structure-and-visualization">
+  
+  
+    <a href="#k8s-structure-and-visualization" class="anchor-heading" aria-labelledby="k8s-structure-and-visualization"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> K8s Structure and Visualization
+  
+  
+</h2>
+    
+
+<p>So we’re back to understanding K8s now that we’ve taken a round of understanding the undelining linux basics.</p>
+<h3 id="visualisation">
+  
+  
+    <a href="#visualisation" class="anchor-heading" aria-labelledby="visualisation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Visualisation
+  
+  
+</h3>
+    
+
+<p>A data center looks like this</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Datacenter
+|--- Rack
+|    |--- Server 1
+|    |--- Server 2
+|    |--- Server 3
+|--- Rack
+     |--- Server 4
+     |--- Server 5
+     |--- Server 6
+</code></pre></div></div>
+
+<ul>
+  <li>Different servers on diff racks can be part of same Kubernetes cluster.</li>
+  <li>When multiple servers have cost check, certain requirements, they are as associated of k8s, they are then part of k8s cluster. -</li>
+</ul>
+<h3 id="k8s-terms">
+  
+  
+    <a href="#k8s-terms" class="anchor-heading" aria-labelledby="k8s-terms"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> K8s terms
+  
+  
+</h3>
+    
+
+<ul>
+  <li>kubelet
+    <ul>
+      <li>small local agent/process</li>
+      <li>Exists on every worker node / control plane node.</li>
+      <li>Make sure containers/pods runs correctly on that m/c.</li>
+    </ul>
+  </li>
+  <li>Tasks of kubelet :
+    <ul>
+      <li>talk to api server, receive pod assignments, start/stop containers, report node health, report pod status, mounts volume, handle probes.</li>
+    </ul>
+  </li>
+  <li>kubectl
+    <ul>
+      <li>Pronounced “kyoobe-cuttle” or “kyoobe-control”.</li>
+      <li>Exists on developer laptop / admin m/c / control server.</li>
+      <li>It communicates of kube-apiserver.</li>
+    </ul>
+  </li>
+  <li>kube-proxy
+    <ul>
+      <li>Kubernetes n/w proxy.</li>
+      <li>exists on every worker node (as daemon/fbg process).</li>
+      <li>It handles k8s n/wing rules inside cluster Eg: Service virtual IPs, load balancing, traffic forwarding, ip tables / ipvs rules.</li>
+    </ul>
+  </li>
+  <li>kubeadm
+    <ul>
+      <li>K8s admin / bootstrap tool</li>
+      <li>exists on control plane m/c.</li>
+      <li>worker setup m/c</li>
+      <li>used during cluster creation for creating control plane “kubeadm init” &amp; join worker pods “kubeadm join”, etc…</li>
+      <li>Not part of ras running cluster logic instead part of cluster installation / setup tool.</li>
+    </ul>
+  </li>
+  <li>kube-apiserver
+    <ul>
+      <li>main entry point for k8s cluster. Everything talks to this. Acts like central management api. - Exists on control plane server.</li>
+      <li>Talks to kubectl, kubelet, scheduler, controller-manager, etcd.</li>
+    </ul>
+  </li>
+  <li>kube-scheduler
+    <ul>
+      <li>chooses which node runs pods. (decision engine)</li>
+      <li>Exists on control plane server. Chooses where worker node try maintains desired state pods.</li>
+      <li>talks to kube-apiserver, worker nodes indirectly.</li>
+    </ul>
+  </li>
+  <li>kube-controller-manager
+    <ul>
+      <li>Exists on control plane server.</li>
+      <li>Maintains desired state.</li>
+      <li>Talks to :- kube-apiserver, etcd … indirectly.</li>
+      <li>Runs reconciliation loops (loops inside k8s that continuously check desired state vs actual state).</li>
+      <li>eg: desired replica = 3, actual replica = 2. Then create another pod.</li>
+    </ul>
+  </li>
+  <li>etcd (etc distributed) (et-see-di)
+    <ul>
+      <li>etcd directory / distributed key value db (like redis)</li>
+      <li>store cluster state db.</li>
+      <li>most critical k8s db (source of truth).</li>
+      <li>Exists on control plane servers.</li>
+      <li>Stores :- pods, deployments, services, [as key-value pairs] nodes, secrets, cluster desired state.</li>
+      <li><em>distributed</em>
+        <ul>
+          <li>it is called distributed bcoz multiple etcd servers can work together.</li>
+          <li>eg if multiple control planes with diff etcd, they communicate via a “Raft consensus” algorithm which stores a copy of the cluster state, thus preserving data even if one etcd beads down. (cluster state is not the same as control plane).</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>containerd
+    <ul>
+      <li>container runtime (actually runs containers)</li>
+      <li>Exists on worker node.</li>
+      <li>Talks to kubelet through CRI.</li>
+    </ul>
+  </li>
+  <li>CoreDNS (Core Domain Name Sys)
+    <ul>
+      <li>K8s - Internal cluster dns.</li>
+      <li>lets pods communicate using names. eg: api-service.default.svc.cluster.local. - usually runs as pods on worker nodes.</li>
+    </ul>
+  </li>
+  <li>Container Network Interface (CNI)
+    <ul>
+      <li>Provide pod networking.</li>
+      <li>Exists as CNI plugins on worker nodes.</li>
+      <li>eg: Calico, Flannel, Cilium.</li>
+    </ul>
+  </li>
+  <li>CRI
+    <ul>
+      <li>Container runtime interface.</li>
+      <li>Standard interface btw. kubelet (node agent) &amp; container runtime (containerd).</li>
+      <li>Types of communication being done via here include kubelet asking to pull image, start container, stop container, delete container, get container status, etc..</li>
+    </ul>
+  </li>
+  <li>CSI
+    <ul>
+      <li>Container storage interface.</li>
+      <li>Standard way k8s interact w/ storage systems.</li>
+      <li>Exists on worker node, control plane (occasionally on worker node, control plane)</li>
+    </ul>
+  </li>
+  <li>Pod
+    <ul>
+      <li>Small deployable unit holding one or more containers together</li>
+      <li>Runs on worker nodes inside container runtime (containerd)</li>
+      <li>Contains 1 or more containers, shared n/w, shared storage, shared localhost</li>
+      <li>e.g., k8s Pod</li>
+      <li>e.g., pod may contain:
+        <ul>
+          <li>nodejs API container</li>
+          <li>sidecar logging container, etc.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Deployment
+    <ul>
+      <li>An object that is stored in etcd (API resource)</li>
+      <li>It is used to keep a permanent record of the desired state of cluster
+        <ul>
+          <li>Deployment controller continuously checks actual state against the desired state stored in deployment object (key-value pair) stored in etcd</li>
+        </ul>
+      </li>
+      <li>It is generated by k8s from the deployment.yml file (also called deployment manifest) upon running a command like “kubectl apply -f .yaml”
+        <ul>
+          <li>It can also be generated from a json file or directly from terminal like “kubectl create deployment –image=”. In such case kubectl itself creates a deployment object based w/ configuration based on kubectl defaults, k8s, defaults by API server generated metadata.</li>
+        </ul>
+      </li>
+      <li>Also handles replicas, rolling updates, self healing, rollout history</li>
+    </ul>
+  </li>
+  <li>Replica set
+    <ul>
+      <li>replica = copy, set = collection</li>
+      <li>it is an API resource (cluster resource) whose instance is stored within etcd</li>
+      <li>Deployment controller, from developer / cr server sense kube controller manages, creates a replica set.</li>
+      <li>Though replicaset obj can be created from a riperi [replica] &lt;missing text: “set”&gt; manifest like deployment</li>
+      <li>it is generally auto-generated by deployment controller. The trigger for creating a replicaset is the appearance or change of deployment object. If expected no. of replicasets are 3 &amp; these objects are 3 &amp; deployment controller creates the extra one.</li>
+      <li>it manages the no. of pods to be kept up</li>
+    </ul>
+  </li>
+  <li>Service
+    <ul>
+      <li>Objects that defines a service name that also becomes the DNS name inside the cluster (we can also set a static IP for that service that falls in its cluster’s service IP range &amp; must be unique). It is this DNS name kube proxy will use to get incoming calls to BE from FE &amp; then re-route to actual IPs of each pod that gets generated</li>
+      <li>created by user themselves via kubectl (like deployment obj) using a source manifest &amp; stored in etcd</li>
+      <li>Endpoint Slice Controller, watches service objects &amp; Pods, it also creates endpoint slice objects for the service.
+        <blockquote>
+          <p>The objects stored in etcd can be multiple in number (eg: multiple service, deployment, replicaset objects, etc.). They can be multiple depending on diff manifests or based on diff namespaces<br />
+eg: → etcd A
+    |  ↳ deployments
+    |  ↳ dev
+    |  ↳ staging
+    |  ↳ prod
+    |  ↳ services
+    |  ↳ dev
+    |  ↳ staging
+    |  ↳ prod
+    |  ↳ pod
+    |  ↳ dev
+    |  ↳ staging
+    |  ↳ prod
+    → etcd B (same thing)</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>All the etcd’s of the same cluster will shared this segregation based on namespaces &amp; such.
+(so that if one etcd goes down, others still have data)</p>
+</blockquote>
+
+<ul>
+  <li>Ingress
+    <ul>
+      <li>meaning → incoming traffic</li>
+      <li>it routes external HTTP / HTTPS traffic into cluster.</li>
+      <li>created from ingress manifest by the user/developer using kubectl .</li>
+      <li>It is an api cluster resource stored in etcd, it is called ingress object</li>
+      <li>Ingress controller watches the ingress objects. It is deployed along with other pods as one among them like:</li>
+    </ul>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Node A → App pod
+       ↳ App pod
+       ↳ nginx ingress controller pod
+Node B → App pod
+       ↳ App pod
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Based on ingress object config, ingress controller manages the routing. -</li>
+    </ul>
+  </li>
+  <li>namespaces:
+    <ul>
+      <li>means a boundary that keeps names from colliding</li>
+      <li>it is used for policy checks
+        <ul>
+          <li>Eg:
+            <ul>
+              <li>Resource Quota: Pod belongs to prod –&gt; check prod quota</li>
+              <li>RBAC :- user accesses prod namespace –&gt; check permissions</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>When we provide namespace to any manifest file, it creates multiple objects from that manifest file for each namespace.</li>
+    </ul>
+  </li>
+  <li>stateful set
+    <ul>
+      <li>Most k8s workloads / pods are managed by a “Deployment” • But when a pod dies and when “Deployment” recreates the pod, the new pod recreates the pod, the IP &amp; node can have suff name, IP &amp; node. This is called stateless • This is generally used for- FE, API, servers, etc.</li>
+      <li>But some applications care about identity of the pods created &amp; are not interchangable. In such case use “Stateful set”</li>
+      <li>Deployment pods look like api-6f84… etc, &amp; every recreated pod gets a new name. stateful set pods look like postgres-1, postgres-2, etc out fixed names. each pod also gets a predictable pod name. This is very important for databases, distributed systems, cluster membership.</li>
+      <li>this works in association of persistent volume claim (PVC). Each pod gets its own storage which wont get destroyed when the pod gets destroyed. when a pod is recreated it attaches the same PVC as the older pod.</li>
+      <li>Ordered startup
+        <ul>
+          <li>In Deployment, “create 10 pods”, k8s may start them in parallel.</li>
+          <li>But stateful set starts in order: postgres-1 → postgres-2 → postgres-3, etc Similarly during shutdown, it stop db’s in reverse order.</li>
+          <li>this is because many distributed dbs require db 1 to start bt db2, b2 db 3, etc.</li>
+        </ul>
+      </li>
+      <li>ordered updates
+        <ul>
+          <li>Pod deployment generally updates pods in batches. But Stateful set updates pods one after another. this is ordered rollout and generally useful for dbs.</li>
+        </ul>
+      </li>
+      <li>stateful set components
+        <ul>
+          <li>when we apply “kind: StatefulSet” ; k8s creates a statefulset object stored in etcd. statefulset controller watches it. Statefulset controller then creates pods like postgres-1, postgres-2, etc based on the desired no. of pods mentioned in stateful set object being watched.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Daemonset
+    <ul>
+      <li>A k8s resource that ensures one copy of a pod runs on every matching node.</li>
+      <li>called daemonset because it is a set of
+        <ul>
+          <li>daemon-like pods running on nodes daemon → a background process that run continuously in background.</li>
+          <li>Example: we want to run a log collector on every node</li>
+        </ul>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Node A → log collector
+Node B → log collector
+Node C → log collector
+</code></pre></div>        </div>
+
+        <ul>
+          <li>Deployment can’t guarantee this, it creates N replicas somewhere. (sometimes on one node)</li>
+          <li>But daemonset guarantees 1 pod per node.</li>
+          <li>Working:
+            <ul>
+              <li>We apply “kind: Daemonset”</li>
+              <li>kubectl reads the yaml file</li>
+              <li>API server authenticate</li>
+              <li>Daemonset object gets stored in etcd</li>
+              <li>Daemon controller watches daemon</li>
+              <li>By default it creates 1 pod per matching node.</li>
+            </ul>
+
+            <blockquote>
+              <p>We cannot tell daemonset how many pods to sunper node. We can only say to run current pod in every node.</p>
+              <ul>
+                <li>Eg of usage for :- kubeproxy, log controller, monitoring agents.</li>
+              </ul>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Job:
+    <ul>
+      <li>A k8s resource that tails, does same work</li>
+      <li>used for stuff like pdf generation, db migration</li>
+      <li>When deployment fails there is no further management as to retry or anything else. But when we configure job we can either retry or mark job as failed.</li>
+      <li>Can run parallel jobs</li>
+      <li>Flow:
+        <ul>
+          <li>Job obj stored in etcd</li>
+          <li>API server exposes it</li>
+          <li>Job controller watches Job obj</li>
+          <li>Job controller creates pod objects</li>
+          <li>Pod succeeds or fails Pod runs tasks</li>
+          <li>Job task succeeds go fails.</li>
+          <li>Job controller creates new pod if retry enabled, else marks Job as complete</li>
+          <li>Pod remain</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>CronJob:
+    <ul>
+      <li>K8s resource that creates job on schedule.</li>
+      <li>Create from CronJob manifest by kubectl &amp; stored in etcd</li>
+      <li>CronJob controller watches CronJob via API server. When it is time, CronJob controller creates a Job obj.</li>
+      <li>Job controller creates job obj &amp; creates a pod, Pod runs.</li>
+      <li>Pod succeed succeeds or fails. Retries if configured.</li>
+      <li>Job complete : Pods still remain</li>
+    </ul>
+  </li>
+  <li>Secrets:
+    <ul>
+      <li>a K8s resource stored in etcd via terminal command for sake of safety. (bcz yaml file will record the secrets which we do not want)</li>
+      <li>We then reference the secrets obj name in deployment manifest, which will fetch the secrets directly from secrets obj. (eg: password)</li>
+    </ul>
+  </li>
+  <li>Config map:
+    <ul>
+      <li>To store stuff like hostname, ports numbers, feature flags etc. (Non-sensitive data)</li>
+      <li>A K8s resource stored in etcd from manifest</li>
+    </ul>
+  </li>
+  <li>Volume
+    <ul>
+      <li>Data storage</li>
+      <li>Specified as part of deployment manifest.</li>
+      <li>The actual data maybe stored within node/VM’s real disk or cloud or NFS (Network File system), but to the container it will look like it is coming from a folder within the container files.</li>
+      <li>Specification example:
+```yaml
+volumes:
+        <ul>
+          <li>name: data
+  mountPath: /data
+```</li>
+        </ul>
+      </li>
+      <li>It is specified as part of pod template in deployment manifest. When deployment controller creates pods each pod gets a volume named ‘data’. Just part of pod specification.</li>
+      <li>When pod is destroyed, the volume directly from container path will also be destroyed. When the directory gets destroyed, the associated actual db ins volume on disk also loses files in it.</li>
+      <li>Cons of volume per pod.
+        <ul>
+          <li>It is tied to pod life</li>
+          <li>Every pod will need to have volume specified</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>PV (Persistent volume) (Static Provisioning)
+    <ul>
+      <li>cluster level K8s obj stored in etcd created from PV manifest</li>
+      <li>Actual storage is on Node disk/cloud/NFS.</li>
+      <li>This object is created only for creating a… [continues to next page]</li>
+      <li>volume within the cluster for a ahead change in the volume, we use PVC.</li>
+      <li>Flow of creating PV volume in list
+        <ul>
+          <li>Fuse you create volume yourself.</li>
+          <li>Then just reference it in pv object. (This method is not used anymore)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>PVC (Persistent Volume Claim):
+    <ul>
+      <li>Dynamic provisioning:</li>
+      <li>obj created from PVC manifest in etcd.</li>
+      <li>A storage controller notices PVC is pending &amp; provisions storage.</li>
+      <li>eg: create EBS disk, GCP persistent disk, etc.</li>
+      <li>It then creates PV obj. &amp; binds it to PVC (EBS, GCP disk, etc).</li>
+    </ul>
+  </li>
+  <li>Node: Physical/virtual server.</li>
+  <li>Cluster: Group of physical datacenter servers.</li>
+  <li>Kube-system:
+    <ul>
+      <li>Namespace object stored in etcd.</li>
+      <li>created automatically during bootstap of control plane. (Eg: kubeadm init)</li>
+      <li>Part of other predefined yaml manifests</li>
+      <li>of system components : CoreDNS, kube-proxy, networking plugins (cni), etc.</li>
+      <li>Created by Namespace controller. It also creates default, kube system, kube public</li>
+      <li>Kube-node-lease:</li>
+      <li>Purpose: holds K8s internal components.</li>
+    </ul>
+  </li>
+  <li>Sidecar:
+    <ul>
+      <li>Auxiliary container that runs inside same pod as main application &amp; enhances or supports it.</li>
+      <li>has same network namespace (cannel, localhost shared), same storage volumes. (can be shared)</li>
+      <li>has separate process space (different container), separate lifecycle (can restart independently)</li>
+      <li>used to add functionality to or modifying main application code.</li>
+      <li>Eg:- logging, monitoring, proxying, security, configuration sync.</li>
+    </ul>
+  </li>
+  <li>Init Containers:
+    <ul>
+      <li>temporary container that runs before main application</li>
+      <li>used to prepare env required by app (eg: wait for db/cache readiness, download config or secrets at runtime (sun DB migrations))</li>
+      <li>Not commonly used for smaller apps, but sahay for prod k8s systems, microservices</li>
+      <li>w/ dependencies, etc.</li>
+      <li>created from Pod yaml manifests.</li>
+      <li>spec -&gt; initContainers -&gt; Turns into pod object.</li>
+      <li>If initcontainers are omitted, pods start directly with containers</li>
+      <li>Developer defines it, K8s creates pod obj, kubelet executes based on pod objs.</li>
+    </ul>
+  </li>
+  <li>Helm:
+    <ul>
+      <li>means ships steering wheel (k8s logo)</li>
+      <li>package manager for K8s. Bundles K8s yaml manifests into reusable, versioned packages called charts.</li>
+      <li>not a core component of cluster -&gt; It is a cli tool on our m/c or CI/CD pipeline.</li>
+      <li>talks to K8s API server, applies manifests into cluster.</li>
+      <li>Without helm you need to manually manage multiple yaml files, repeated configs across envs, hard to version &amp; reuse</li>
+      <li>Deployments:
+        <ul>
+          <li>with helm, everything is packaged, configurable via values, easy install/upgrade/rollback.</li>
+        </ul>
+      </li>
+      <li>Helm Chart:
+        <ul>
+          <li>Chart
+            <ul>
+              <li>package K8s applicationist</li>
+              <li>contains templates values &amp; chart yaml files</li>
+            </ul>
+          </li>
+          <li>Template - K8s yaml templates</li>
+          <li>values.yaml - configurable params</li>
+          <li>chart.yaml - metadata (name, version)</li>
+        </ul>
+      </li>
+      <li>Structure:</li>
+    </ul>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my-chart/
+|--- chart.yaml
+|--- values.yaml
+|--- templates
+      |--&gt; deployment.yaml
+      |--&gt; service.yaml
+      |--&gt; configmap.yaml
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Working of helm:
+        <ul>
+          <li>You install a chart: <code class="language-plaintext highlighter-rouge">helm install prometheus prometheus-community/prometheus</code></li>
+          <li>Helm renders templates: - replaces placeholders in yaml.
+            <ul>
+              <li>Eg: <code class="language-plaintext highlighter-rouge">image: </code> becomes <code class="language-plaintext highlighter-rouge">image: prom/prometheus</code></li>
+            </ul>
+          </li>
+          <li>Helm applies manifests:
+            <ul>
+              <li>helm sends final yaml to K8s API server</li>
+              <li>eg: deployment, service, configmap, ingress, etc.</li>
+            </ul>
+          </li>
+          <li>K8s stores it in etcd like other normal resources.</li>
+        </ul>
+      </li>
+      <li>Key features:
+        <ul>
+          <li>Allows install of packages called charts, like prometheus, grafana, nginx, ingress, postgresql.</li>
+          <li>Versioning/rollback supported: “helm rollback my-release 1”</li>
+          <li>Reusability: Same chart works across dev, staging, prod. Just change values.yaml.</li>
+          <li>Upgrade/update cluster resources safely: “helm upgrade my-app /chart”</li>
+        </ul>
+      </li>
+      <li>Comparison of helm vs normal kubectl:
+        <ul>
+          <li>Without helm: use kubectl apply on every yaml file. No release history, nothing.</li>
+          <li>With helm: use helm install my-app name.</li>
+          <li>eg. internally it will pull templates yaml, values.yaml, generate less yaml. internally apply them (like kubectl), store release history.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Operator:
+    <ul>
+      <li>K8s extension that automates full lifecycle of complex applications using CRD (Custom Resource Definitions) &amp; Custom Controllers (reconciliation logic).</li>
+      <li>It acts like a system administrator (“operator”)</li>
+      <li>In normal K8s, it can manage stateless apps (deployments), basic scaling (HPA), simple configs.</li>
+      <li>But it struggles with stateful, complex systems like Postgres databases, kafka cluster, elasticsearch, etc.</li>
+    </ul>
+  </li>
+  <li>A cluster is multiple pods spun within same K8s cluster related to same application for complex purpose. Like :-</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>k8s
+|--&gt; nestjs Pod (Our own app)
+|--&gt; postgres-primary-------|
+|--&gt; postgres-replica-1     |---&gt; postgres cluster
+|--&gt; postgres-replica-2-----|
+</code></pre></div></div>
+
+<ul>
+  <li>CRD obj is stored in etcd</li>
+  <li>It is watched by operator controller. specific to the cluster we want (Postgres, kafka) . The cluster specific operator is installed in K8s cluster, via operator manifest in which in the deployment section, the location from/image from where the operator needs to be installed is mentioned. This installed operator will take care of replicas, replication, failure, backups, upgrades, etc.</li>
+</ul>
+
+<blockquote>
+  <p>Deployment section example in operator</p>
+
+  <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kind</span><span class="pi">:</span> <span class="s">deployment</span>
+<span class="na">containers</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">image</span><span class="pi">:</span>
+  <span class="s">Some-company</span>
+  <span class="s">postgres</span>
+  <span class="na">Operator</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<ul>
+  <li>CRD (Custom Resource Definition):
+    <ul>
+      <li>lets us add new resource type to K8s. (that are not built-in like kind:Pod, kind:Service, kind:Deployment, etc)</li>
+      <li>Examples for new resource types:</li>
+      <li>kind: kafkaCluster, kind: PostgresCluster</li>
+      <li>Added it is defined in operator manifest in CRD section, which only fully K8s that one specific type of obj exists.</li>
+      <li>The actual creation of object for that cluster is dependent on custom resource file (the manifest specific to that object)</li>
+      <li>eg. If CRD section in operator.yaml</li>
+    </ul>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kind</span><span class="pi">:</span> <span class="s">CustomResourceDefinition</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">names</span><span class="pi">:</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">PostgresCluster</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Custom Resource (CR) example</li>
+    </ul>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postgres-cluster.yaml
+kind: PostgresCluster
+metadata:
+  name: my-db
+spec:
+  instances: 3
+</code></pre></div>    </div>
+  </li>
+  <li>API Group:
+    <ul>
+      <li>so when K8s is installed. kubeapi server comes along w/ it. In kube api server, along w/ it comes some built-in API (sources) - These APIs are exposed to outside K8s to which HTTP API calls are made by kubectl (http client)</li>
+      <li>API groups are some groupings made by K8s for these api paths for each resource type.
+        <ul>
+          <li>Built in API groups &amp; paths:
+            <ul>
+              <li>CORE (no group) api/v1
+                <ul>
+                  <li>pods, services, configmaps, secrets, nodes, namespaces</li>
+                </ul>
+              </li>
+              <li>app. (/apps/apps/v1)
+                <ul>
+                  <li>Deployments, Replicasets, Statefulsets, Daemonsets</li>
+                </ul>
+              </li>
+              <li>batch (/apis/batch/v1)
+                <ul>
+                  <li>Jobs, CronJobs</li>
+                </ul>
+              </li>
+              <li>networking (/apis/networking.k8s.io/v1)
+                <ul>
+                  <li>Ingress, NetworkPolicy</li>
+                </ul>
+              </li>
+              <li>autoscaling (/apis/ /HPA)
+These all are compiled into kube-apiserver.</li>
+            </ul>
+          </li>
+          <li>Additional APIs
+            <ul>
+              <li>Generate via CRDS.</li>
+              <li>kube-apiserver dynamically registers new route when user creates CRD.</li>
+              <li>we get new api path like apis/<a href="https://mycompany.com/v1/resources">mycompany.com/v1/resources</a>.</li>
+            </ul>
+          </li>
+          <li>Aggregated API server (Advanced).
+            <ul>
+              <li>External API server can also plug into kube-api server.</li>
+            </ul>
+          </li>
+          <li>Most of the conversations with K8s cluster between kubectl, kubelet, etc, controller schedules with kube-api server.happens via http/https rest &amp; watch api calls &amp; requests &amp; these api paths</li>
+          <li>when writing manifest files, we mention the api path associated with its resource type so that kube-api server can do it like this :
+            <ul>
+              <li>apiVersion: apps/v1
+                <ul>
+                  <li>kind: Deployment</li>
+                </ul>
+              </li>
+              <li>apiVersion: v1
+                <ul>
+                  <li>kind: Pod</li>
+                </ul>
+              </li>
+              <li>apiVersion: batch/v1
+                <ul>
+                  <li>kind: Job … etc</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>This is done so that when these manifests are applied, kube-api server can do the following:
+            <ul>
+              <li>Parse apiVersion + kind</li>
+              <li>Find matching resource handler</li>
+              <li>Validate schemas</li>
+              <li>Run admission controllers</li>
+              <li>Default missing fields</li>
+              <li>Store object in etcd</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Admission Controllers
+    <ul>
+      <li>So when a request is made to K8s cluster via kubectl, a lot of stuff/checks happen w/ admission controllers are just part of it.</li>
+      <li>Stuff that happens after req from kubectl to kube-api server:</li>
+    </ul>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl apply deployment.yaml (via http req)
+  |
+  v
+kube-api-server
+|-- http routing (matches apiVersion = apps/v1, kind = Deployment)
+|-- authentication(verify who is making the req)
+|-- authorization(verify if authenticated user is allowed to make req)
+|-- request decoders(convert manifest to resource obj)
+|-- API resource lookup(kube finds appropriate handlers from
+|     internal api-registry to handle [apps/v1, Deployment])Decoded resourceobj
+|-- (built-in) Admission chain (chain of admission controllers)
+    |-- service account controllers(injects default secure account)
+    |-- default storage class(adds default storage class if omitted)
+    |-- limit ranger (applies/enforces resource limits)
+    |-- Pod security (checks security requirement)
+    |-- resource quota (check namespace quota)
+    |-- Mutating Admission Webhook (Calls custom mutation webhooks)
+    |-- Validating Admission webhook (Calls custom validation webhooks)
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Custom use defined admission controllers can also be added later via manifests.</li>
+    </ul>
+  </li>
+  <li>Taints
+    <ul>
+      <li>rule applied to node based on which pods are not to be scheduled there. (cause normally all nodes are welcome to host pods).</li>
+      <li>Cases when you need to taint: GPU workloads, db workloads, infra components, control plane components.</li>
+      <li>How a taint looks like:
+        <ul>
+          <li>dedicated = database : NoSchedule</li>
+          <li>gpu = true : NoSchedule</li>
+        </ul>
+      </li>
+      <li>Ways to taint nodes:
+        <ul>
+          <li>(Most common) kubectl taint <code class="language-plaintext highlighter-rouge">kubectl taint nods worker-1 dedicated = gpu : NoSchedule</code></li>
+          <li>directly in Node manifest (less common).</li>
+        </ul>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apiVersion : v1
+kind: Node
+metadata:
+  name: worker-1
+spec:
+  taints:
+  - key: dedicated
+  value: gpu
+  effect: NoSchedule
+</code></pre></div>        </div>
+
+        <ul>
+          <li>Automatically by K8s (some taints are added by controller)</li>
+          <li>e.g: node.kubernetes.io/not-readynode.kubernetes.io/memory-pressure … etc.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Tolerations
+    <ul>
+      <li>Rule on pod saying, allowing it to run on a node set not wanting taint.node set not wanting taint.</li>
+      <li>Defined in Pod, Deployment, StatefulSet, Daemonset specification manifests.</li>
+      <li>e.g:
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apiVersion: apps/v1
+kind: Deployment
+spec:
+template:
+  spec:
+    tolerations
+    - key: dedicated
+    operator: equal
+    value: gpu
+    effect: NoSchedule
+</code></pre></div>        </div>
+        <blockquote>
+          <p>Not satisfying taint - toleration can make pods pending</p>
+        </blockquote>
+      </li>
+      <li>e.g: 3 taint &amp; toleration
+        <ul>
+          <li>Node 1 -&gt; accept all pods (no taint)</li>
+          <li>Node 2 -&gt; tainted (gpu=true:NoSchedule)</li>
+          <li>Pod 1 -&gt; no toleration</li>
+          <li>Pod 2 -&gt; toleration - gpu=true: noo schedule</li>
+          <li>Result:
+            <ul>
+              <li>Node 2 - Pod 2 allowed, pod 2 rejected</li>
+              <li>Node 1 - Pod 1 allowed, pod 2 allowed.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Affinity/Anti-affinity
+    <ul>
+      <li>Rules before allowing pods to be placed near/force from any node/pod.</li>
+      <li>Can have node affinity e.g: pod affinity/anti affinity.Can be hard/soft rules.Must have topology key.</li>
+      <li>Node affinity
+        <ul>
+          <li>pod placement based on node labels.</li>
+          <li>e.g: if
+            <ul>
+              <li>Node A - disk=ssd</li>
+              <li>Node B - disk=hdd</li>
+              <li>Then Pod - Node Affinity :- disk = ssd. Schedule onto SSD nodes.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Pod Affinity/AntiAffinity
+        <ul>
+          <li>Pod placement based on other pod labels.</li>
+        </ul>
+      </li>
+      <li>Hard rule: Soft rules
+        <ul>
+          <li>Hard rule
+            <ul>
+              <li>must satisfy. Else pod state goes into pending.</li>
+            </ul>
+          </li>
+          <li>Soft rule
+            <ul>
+              <li>nice to have. But pod will still run somewhere.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Topology key (Scope)
+        <ul>
+          <li>Region where pod must have affinity/anti-affinity.</li>
+          <li>Eg: Near xyz node. Near xyz zone… etc.</li>
+        </ul>
+      </li>
+      <li>eg to all taint + toleration + affinities</li>
+    </ul>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cluster
+|--Node A
+|  |--labels:
+|  |   type=gpu
+|  |   zone=east
+|  |--taint:
+|      dedicated = gpu : NoSchedule.
+|--Node B
+|  |--labels:
+|  |   type=general
+|  |   zone=east
+|  |--no taint.
+|--Node C
+   |--labels:
+   |   type=gpu
+   |   zone=west
+   |--taint:
+       dedicated = gpu : NoSchedule.
+
+-&gt; Existing pod
+redis
+|-- running on node A.
+|--labels:
+|--app=redis
+
+-&gt; New pod (api-server)
+Tolerations:
+- key: dedicated
+  value: gpu
+affinity:
+  Node Affinity:
+    required:
+      type = gpu
+  Pod Affinity:
+    required:
+      app = redis
+  Pod AntiAffinity:
+    required:
+      app = api-server
+
+-&gt; Result:
+Node taint -&gt; all gpu tainted.
+New pod toleration -&gt; gpu taint. So can run on all nodes A, B, C.
+Node affinity -&gt; on nodes w/ type=gpu.
+                So Node A ✓, Node B ×, Node C ✓
+new pod, pod affinity -&gt; near redis so Node A ✓, Node C ×
+pod anti affinity -&gt; Not near api-server.
+                    Since no node has api-server pod, Node A ✓.
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Case
+        <ul>
+          <li>If Node A had a pod for api-server, then new pod will go into pending state.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Eviction
+    <ul>
+      <li>K8s process of removing pod from Node. K8s pod would normally stop on its own.</li>
+      <li>Reasons: Memory pressure, Disk Pressure, Node failure, A node having taint called “No-execut” like maintenance = true.
+“NoExecute” like “maintenance = true? NoExecute</li>
+      <li>Eviction vs Deletion
+        <ul>
+          <li>Eviction done by k8s, Delete - user removal</li>
+          <li>User can also manually want it to evict via kubectl.</li>
+        </ul>
+      </li>
+      <li>After eviction
+        <ul>
+          <li>If statefulset or deployment or replacement pod from evicted w/ new one created w/ out migration.</li>
+          <li>If standalone pod -&gt; Pod evicted &amp; Gone.</li>
+        </ul>
+      </li>
+      <li>Evictions can be rejected by. Pod Disruption Budget (PDB) restricted.
+        <ul>
+          <li>Eg: minAvailable : 2</li>
+          <li>(keeps 2 replicas always healthy - Protection during maintenance).</li>
+        </ul>
+      </li>
+      <li>Eviction Not same as OOM kill.
+        <ul>
+          <li>Eviction -&gt; Done by k8s</li>
+          <li>OOMkill -&gt; (out of memory kill) done by node.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Drain
+    <ul>
+      <li>Process of safely removing workloads from node.</li>
+      <li>Reasons: Reboot a VM, upgrade the OS, replace hardware, upgrade, kubelet; Shutdown node.</li>
+      <li>Process
+        <ul>
+          <li>marks pod mode as unschedulable.</li>
+          <li>evicts existing pods.</li>
+          <li>if deployment, the controller - recreate pods elsewhere &amp; then evict.</li>
+          <li>After drain, safe to reboot, shutdown, etc.</li>
+        </ul>
+      </li>
+      <li>Cordon vs Drain
+        <ul>
+          <li>cordon -&gt; only marking node as unschedulable.</li>
+          <li>drain -&gt; mark &amp; evict.
+            <blockquote>
+              <p>Uncordon -&gt; unmark it as schedulable.</p>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+      <li>Daemonset Pods are generally ignored during drain in terminal command
+“kubectl drain worker-1 –ignore -daemonsets.”</li>
+    </ul>
+  </li>
+</ul>
+<h3 id="cluster-diagram">
+  
+  
+    <a href="#cluster-diagram" class="anchor-heading" aria-labelledby="cluster-diagram"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Cluster diagram
+  
+  
+</h3>
+    
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Developer/User machine
+|-- Developer laptop
+| |-- kubectl
+| |-- kubeconfig
+| |-- Browser
+|-- CI/CD machine
+| |-- kubectl
+| |-- helm
+| |-- ArgoCD CLI
+| |-- Deployment Pipelines
+|-- Admin Machine
+|-- kubectl
+|-- kubeadm
+
+K8s cluster
+|-- Control Plane Nodes
+| |-- kubelet
+| |-- Static Pods
+| | |-- kube-api-server Pod
+| | |-- kube-scheduler Pod
+| | |-- kube-controller-manager Pod
+| | |-- etcd Pod
+| |-- Container Runtime (containerd / CRI-O)
+| |-- CNI components
+| |-- CSI components
+|-- Worker Nodes
+| |-- kubelet
+| |-- kube-proxy
+| |-- Container Runtime (containerd / CRI-O)
+| |-- CNI Components
+| |-- CSI Node components
+| |-- Pods
+| |-- Application Pod
+| |-- CoreDNS Pod
+| |-- Metrics Server Pod
+| |-- Ingress Controller Pod
+| |-- Prometheus Pod
+| |-- Grafana Pod
+|-- K8s API objects (records stored in etcd)
+|-- Namespace
+|-- Node
+|-- Pod
+|-- ReplicationSet
+|-- Deployment
+|-- StatefulSet
+|-- DaemonSet
+|-- Job
+|-- CronJob
+|-- Ingress
+|-- Ingress Class
+|-- Gateway
+|-- HttpRoute
+|-- Config Map
+|-- Secret
+|-- Secure Account
+|-- Persistent Volume
+|-- Persistent Volume Claim
+|-- Storage Class
+|-- Service
+|-- Endpoints
+|-- EndpointSlice
+|-- Resource Quota
+|-- Limit Range
+|-- Resource Quota
+|-- Limit Range
+|-- Network Policy
+|-- Horizontal Pod Autoscaler
+|-- Pod Disruption Budget
+|-- Priority Class
+|-- Runtime Class
+|-- Custom Resource Definition
+|-- Custom Resources
+
+External Systems
+|-- Container Registry (Docker Hub, GHCR, ECR, GCR, Artifact Registry)
+|-- DNS provider
+|-- Storage System (NFS, Ceph, SAN, NAS)
+|-- Cloud load balancer
+|-- External users
+</code></pre></div></div>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+  
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+
