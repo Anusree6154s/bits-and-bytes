@@ -9,6 +9,8 @@ permalink: kubernetes-01-linux-basics
 
 ## Linux Basics
 
+<p align='center'><img src='https://github.com/user-attachments/assets/598f7ec0-caeb-4260-bb1b-6f180b0a2a79' width=100/></p>
+
 Now some linux basics first so that we understand the working of K8s in comparison to physical servers much easily.
 
 ```
