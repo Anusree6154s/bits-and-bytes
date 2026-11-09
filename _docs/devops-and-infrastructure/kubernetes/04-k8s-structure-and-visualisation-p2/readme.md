@@ -9,6 +9,8 @@ permalink: kubernetes-04-k8s-structure-and-visualization
 
 ## K8s Structure and Visualization
 
+<p align='center'><img src='https://github.com/user-attachments/assets/9748719b-a09f-40c9-bbd7-801f0080bd36' width=100/></p>
+
 So we're back to understanding K8s now that we've taken a round of understanding the undelining linux basics.
 
 ### Visualisation
