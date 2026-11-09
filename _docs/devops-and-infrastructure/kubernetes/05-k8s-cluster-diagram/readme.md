@@ -9,6 +9,8 @@ permalink: kubernetes-05-k8s-cluster-diagram
 
 ## K8s Cluster Diagram (For Reference)
 
+<p align='center'><img src='https://github.com/user-attachments/assets/35e9a8bd-6267-4e83-a637-bf1f24665e66' width=100/></p>
+
 ### k8s clusters
 
 ```
