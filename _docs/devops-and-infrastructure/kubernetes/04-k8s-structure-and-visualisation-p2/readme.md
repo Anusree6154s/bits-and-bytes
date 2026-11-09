@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 04. K8s Structure and visualization Part2
+title: 04. K8s Structure and visualization - Part 2
 date: Nov 09, 2026
 excerpt: Intro to kubernetes (K8s Structure and visualization Part 2)
 parent: Kubernetes

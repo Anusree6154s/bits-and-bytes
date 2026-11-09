@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 00. Structure and Visualisation
+title: 00. Structure and Visualisation - Part 1
 date: Nov 04, 2026
 excerpt: Intro to kubernetes - 00. Structure and Visualisation
 parent: Kubernetes
