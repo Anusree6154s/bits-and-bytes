@@ -629,63 +629,189 @@ Datacenter
 
 ### K8s terms
 
-- kubelet 
-  - small local agent/process 
-  - Exists on every worker node / control plane node. 
-  - Make sure containers/pods runs correctly on that m/c. 
+- kubelet
+  - small local agent/process
+  - Exists on every worker node / control plane node.
+  - Make sure containers/pods runs correctly on that m/c.
 - Tasks of kubelet :
-  - talk to api server, receive pod assignments, start/stop containers, report node health, report pod status, mounts volume, handle probes. 
-- kubectl 
-  - Pronounced "kyoobe-cuttle" or "kyoobe-control". 
-  - Exists on developer laptop / admin m/c / control server. 
-  - It communicates of kube-apiserver. 
-- kube-proxy 
-  - Kubernetes n/w proxy. 
-  - exists on every worker node (as daemon/fbg process). 
-  - It handles k8s n/wing rules inside cluster Eg: Service virtual IPs, load balancing, traffic forwarding, ip tables / ipvs rules. 
-- kubeadm 
-  - K8s admin / bootstrap tool 
-  - exists on control plane m/c. 
-  - worker setup m/c 
-  - used during cluster creation for creating control plane "kubeadm init" & join worker pods "kubeadm join", etc... 
-  - Not part of ras running cluster logic instead part of cluster installation / setup tool. 
-- kube-apiserver 
-  - main entry point for k8s cluster. Everything talks to this. Acts like central management api. - Exists on control plane server. 
-  - Talks to kubectl, kubelet, scheduler, controller-manager, etcd. 
-- kube-scheduler 
-  - chooses which node runs pods. (decision engine) 
-  - Exists on control plane server. Chooses where worker node try maintains desired state pods. 
-  - talks to kube-apiserver, worker nodes indirectly. 
-- kube-controller-manager 
-  - Exists on control plane server. 
-  - Maintains desired state. 
-  - Talks to :- kube-apiserver, etcd ... indirectly. 
-  - Runs reconciliation loops (loops inside k8s that continuously check desired state vs actual state). 
-  - eg: desired replica = 3, actual replica = 2. Then create another pod. 
-- etcd (etc distributed) (et-see-di) 
-  - etcd directory / distributed key value db (like redis) 
-  - store cluster state db. 
-  - most critical k8s db (source of truth). 
-  - Exists on control plane servers. 
-  - Stores :- pods, deployments, services, [as key-value pairs] nodes, secrets, cluster desired state. 
-  - *distributed* 
+  - talk to api server, receive pod assignments, start/stop containers, report node health, report pod status, mounts volume, handle probes.
+- kubectl
+  - Pronounced "kyoobe-cuttle" or "kyoobe-control".
+  - Exists on developer laptop / admin m/c / control server.
+  - It communicates of kube-apiserver.
+- kube-proxy
+  - Kubernetes n/w proxy.
+  - exists on every worker node (as daemon/fbg process).
+  - It handles k8s n/wing rules inside cluster Eg: Service virtual IPs, load balancing, traffic forwarding, ip tables / ipvs rules.
+- kubeadm
+  - K8s admin / bootstrap tool
+  - exists on control plane m/c.
+  - worker setup m/c
+  - used during cluster creation for creating control plane "kubeadm init" & join worker pods "kubeadm join", etc...
+  - Not part of ras running cluster logic instead part of cluster installation / setup tool.
+- kube-apiserver
+  - main entry point for k8s cluster. Everything talks to this. Acts like central management api. - Exists on control plane server.
+  - Talks to kubectl, kubelet, scheduler, controller-manager, etcd.
+- kube-scheduler
+  - chooses which node runs pods. (decision engine)
+  - Exists on control plane server. Chooses where worker node try maintains desired state pods.
+  - talks to kube-apiserver, worker nodes indirectly.
+- kube-controller-manager
+  - Exists on control plane server.
+  - Maintains desired state.
+  - Talks to :- kube-apiserver, etcd ... indirectly.
+  - Runs reconciliation loops (loops inside k8s that continuously check desired state vs actual state).
+  - eg: desired replica = 3, actual replica = 2. Then create another pod.
+- etcd (etc distributed) (et-see-di)
+  - etcd directory / distributed key value db (like redis)
+  - store cluster state db.
+  - most critical k8s db (source of truth).
+  - Exists on control plane servers.
+  - Stores :- pods, deployments, services, [as key-value pairs] nodes, secrets, cluster desired state.
+  - _distributed_
     - it is called distributed bcoz multiple etcd servers can work together.
-    - eg if multiple control planes with diff etcd, they communicate via a "Raft consensus" algorithm which stores a copy of the cluster state, thus preserving data even if one etcd beads down. (cluster state is not the same as control plane). 
-- containerd 
-  - container runtime (actually runs containers) 
-  - Exists on worker node. 
-  - Talks to kubelet through CRI.  
-- CoreDNS (Core Domain Name Sys) 
-  - K8s - Internal cluster dns. 
-  - lets pods communicate using names. eg: api-service.default.svc.cluster.local. - usually runs as pods on worker nodes. 
-- Container Network Interface (CNI) 
-  - Provide pod networking. 
-  - Exists as CNI plugins on worker nodes. 
-  - eg: Calico, Flannel, Cilium. 
-- CRI 
-  - Container runtime interface.  
-  - Standard interface btw. kubelet (node agent) & container runtime (containerd). 
-  - Types of communication being done via here include kubelet asking to pull image, start container, stop container, delete container, get container status, etc.. 
-- CSI 
-  - Container storage interface. 
+    - eg if multiple control planes with diff etcd, they communicate via a "Raft consensus" algorithm which stores a copy of the cluster state, thus preserving data even if one etcd beads down. (cluster state is not the same as control plane).
+- containerd
+  - container runtime (actually runs containers)
+  - Exists on worker node.
+  - Talks to kubelet through CRI.
+- CoreDNS (Core Domain Name Sys)
+  - K8s - Internal cluster dns.
+  - lets pods communicate using names. eg: api-service.default.svc.cluster.local. - usually runs as pods on worker nodes.
+- Container Network Interface (CNI)
+  - Provide pod networking.
+  - Exists as CNI plugins on worker nodes.
+  - eg: Calico, Flannel, Cilium.
+- CRI
+  - Container runtime interface.
+  - Standard interface btw. kubelet (node agent) & container runtime (containerd).
+  - Types of communication being done via here include kubelet asking to pull image, start container, stop container, delete container, get container status, etc..
+- CSI
+  - Container storage interface.
   - Standard way k8s interact w/ storage systems.
+  - Exists on worker node, control plane (occasionally on worker node, control plane)
+- Pod
+  - Small deployable unit holding one or more containers together
+  - Runs on worker nodes inside container runtime (containerd)
+  - Contains 1 or more containers, shared n/w, shared storage, shared localhost
+  - e.g., k8s Pod
+  - e.g., pod may contain:
+    - nodejs API container
+    - sidecar logging container, etc.
+- Deployment
+  - An object that is stored in etcd (API resource)
+  - It is used to keep a permanent record of the desired state of cluster
+    - Deployment controller continuously checks actual state against the desired state stored in deployment object (key-value pair) stored in etcd
+  - It is generated by k8s from the deployment.yml file (also called deployment manifest) upon running a command like "kubectl apply -f .yaml"
+    - It can also be generated from a json file or directly from terminal like "kubectl create deployment --image=". In such case kubectl itself creates a deployment object based w/ configuration based on kubectl defaults, k8s, defaults by API server generated metadata.
+  - Also handles replicas, rolling updates, self healing, rollout history
+- Replica set
+  - replica = copy, set = collection
+  - it is an API resource (cluster resource) whose instance is stored within etcd
+  - Deployment controller, from developer / cr server sense kube controller manages, creates a replica set.
+  - Though replicaset obj can be created from a riperi [replica] <missing text: "set"> manifest like deployment
+  - it is generally auto-generated by deployment controller. The trigger for creating a replicaset is the appearance or change of deployment object. If expected no. of replicasets are 3 & these objects are 3 & deployment controller creates the extra one.
+  - it manages the no. of pods to be kept up
+- Service serv.
+  - Objects that defines a service name that also becomes the DNS name inside the cluster (we can also set a static IP for that service that falls in its cluster's service IP range & must be unique). It is this DNS name kube proxy will use to
+
+## K8s Cluster Diagram (For Reference)
+
+### k8s clusters
+
+```
+Cluster 1 (ex: prod cluster)
+|---*Control Plane node A*
+|    |---kube-apiserver
+|    |    ↳ Authentication
+|    |    ↳ Authorization (RBAC)
+|    |    ↳ Admission controllers
+|    |    ↳ API endpoints
+|    |    ↳ Validation
+|    |    ↳ watches
+|    |---etcd
+|    |     ↳ deployments
+|    |     ↳ replicasets
+|    |     ↳ pods
+|    |     ↳ services
+|    |     ↳ configmaps
+|    |     ↳ secrets
+|    |     ↳ namespaces
+|    |     ↳ service accounts
+|    |     ↳ roles
+|    |     ↳ rolebindings
+|    |     ↳ clusterroles
+|    |     ↳ clusterrolebindings
+|    |     ↳ jobs
+|    |     ↳ cronjobs
+|    |     ↳ daemonsets
+|    |     ↳ statefulsets
+|    |     ↳ persistent volumes
+|    |     ↳ persistent volume claims
+|    |     ↳ storage classes
+|    |     ↳ nodes
+|    |     ↳ events
+|    |     ↳ leases
+|    |     ↳ Custom Resources (CRD)
+|    |---Kubernetes Controller Manager    
+|    |     ↳ deployment controller (creates/manages replicasets)   
+|    |     ↳ replicaset controller (creates/deletes pods)   
+|    |     ↳ job controller   
+|    |     ↳ cronjob controller   
+|    |     ↳ statefulset controller   
+|    |     ↳ daemonset controller   
+|    |     ↳ namespace controller   
+|    |     ↳ node controller   
+|    |     ↳ service account controller   
+|    |     ↳ endpoint slice controller   
+|    |     ↳ persistent volume controller   
+|    |     ↳ replication controller   
+|    |     ↳ ... many other controllers.   
+|    |--- kube-scheduler   
+|    |      ↳ watches pending pods   
+|    |      ↳ selects worker node   
+|    |      ↳ resource calculations   
+|    |      ↳ affinity rules   
+|    |      ↳ taints & tolerations   
+|    |      ↳ writes node assignment
+|    |---Other controller managers (optional)   
+|          ↳ load balancer controller   
+|          ↳ route controller   
+|          ↳ volume controller   
+|          ↳ node-controller   
+|---*Control Plane node B*
+|      ↳ ... same as above   
+↳ Cluster 2 (ex: staging cluster) 
+
+
+ 
+Developer machine / CI server
+↳ kubectl   
+↳ kube-adm   
+↳ Helm   
+↳ Kustomize   
+↳ ArgoCD   
+↳ Terraform   
+↳ Custom clients   
+
+Worker Nodes   
+↳ Node 1   
+|  ↳ kubelet   
+|  |  ↳ talks to api server   
+|  |  ↳ watches Pod objects   
+|  |  ↳ starts containers   
+|  ↳ Container runtime   
+|  |  ↳ containerd   
+|  |  ↳ CRI-O 
+|  |  ↳(formerly docker)   
+|  ↳ kube-proxy   
+|  |  ↳ Service Networking   
+|  |  ↳ iptables   
+|  |  ↳ IPVS   
+|  ↳ Running Pods   
+|    ↳ Pod A
+|    ↳ Pod B
+|    ↳ Pod C 
+↳ Node B -> Same structure
+↳ Node C -> Same structure  
+```
