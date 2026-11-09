@@ -1613,8 +1613,7 @@ volumes:
         <ul>
           <li>name: data
   mountPath: /data
-            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div>            </div>
-          </li>
+```</li>
         </ul>
       </li>
       <li>It is specified as part of pod template in deployment manifest. When deployment controller creates pods each pod gets a volume named ‘data’. Just part of pod specification.</li>
@@ -1622,8 +1621,7 @@ volumes:
       <li>Cons of volume per pod.
         <ul>
           <li>It is tied to pod life</li>
-          <li>Every pod will need to have volume specified
-```</li>
+          <li>Every pod will need to have volume specified</li>
         </ul>
       </li>
     </ul>
@@ -1710,16 +1708,19 @@ volumes:
           <li>chart.yaml - metadata (name, version)</li>
         </ul>
       </li>
-      <li>Structure:
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my-chart/
+      <li>Structure:</li>
+    </ul>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my-chart/
 |--- chart.yaml
 |--- values.yaml
 |--- templates
-    |--&gt; deployment.yaml 
-    |--&gt; service.yaml 
-    |--&gt; configmap.yaml
-</code></pre></div>        </div>
-      </li>
+      |--&gt; deployment.yaml
+      |--&gt; service.yaml
+      |--&gt; configmap.yaml
+</code></pre></div>    </div>
+
+    <ul>
       <li>Working of helm:
         <ul>
           <li>You install a chart: <code class="language-plaintext highlighter-rouge">helm install prometheus prometheus-community/prometheus</code></li>
@@ -1762,23 +1763,26 @@ volumes:
       <li>But it struggles with stateful, complex systems like Postgres databases, kafka cluster, elasticsearch, etc.</li>
     </ul>
   </li>
-  <li>A cluster is multiple pods spun within same K8s cluster related to same application for complex purpose. Like :-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>k8s
+  <li>A cluster is multiple pods spun within same K8s cluster related to same application for complex purpose. Like :-</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>k8s
 |--&gt; nestjs Pod (Our own app)
 |--&gt; postgres-primary-------|
 |--&gt; postgres-replica-1     |---&gt; postgres cluster
 |--&gt; postgres-replica-2-----|
-</code></pre></div>    </div>
-  </li>
+</code></pre></div></div>
+
+<ul>
   <li>CRD obj is stored in etcd</li>
-  <li>It is watched by operator controller. specific to the cluster we want (Postgres, kafka) . The cluster specific operator is installed in K8s cluster, via operator manifest in  which in the deployment section, the location from/image from where the operator needs to be installed is mentioned. This installed operator will take care of replicas, replication, failure, backups, upgrades, etc.</li>
+  <li>It is watched by operator controller. specific to the cluster we want (Postgres, kafka) . The cluster specific operator is installed in K8s cluster, via operator manifest in which in the deployment section, the location from/image from where the operator needs to be installed is mentioned. This installed operator will take care of replicas, replication, failure, backups, upgrades, etc.</li>
 </ul>
 
 <blockquote>
   <p>Deployment section example in operator</p>
   <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kind</span><span class="pi">:</span> <span class="s">deployment</span>
 <span class="na">containers</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> 
+<span class="pi">-</span> <span class="na">image</span><span class="pi">:</span>
   <span class="s">Some-company</span>
   <span class="s">postgres</span>
   <span class="na">Operator</span><span class="pi">:</span> <span class="s">v1</span>
