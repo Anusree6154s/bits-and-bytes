@@ -1428,9 +1428,282 @@ Pod 1 - VETH (virtual n/w interface) - worker node NIC - switch - other worker n
       <li>it manages the no. of pods to be kept up</li>
     </ul>
   </li>
-  <li>Service serv.
+  <li>Service
     <ul>
-      <li>Objects that defines a service name that also becomes the DNS name inside the cluster (we can also set a static IP for that service that falls in its cluster’s service IP range &amp; must be unique). It is this DNS name kube proxy will use to</li>
+      <li>Objects that defines a service name that also becomes the DNS name inside the cluster (we can also set a static IP for that service that falls in its cluster’s service IP range &amp; must be unique). It is this DNS name kube proxy will use to get incoming calls to BE from FE &amp; then re-route to actual IPs of each pod that gets generated</li>
+      <li>created by user themselves via kubectl (like deployment obj) using a source manifest &amp; stored in etcd</li>
+      <li>Endpoint Slice Controller, watches service objects &amp; Pods, it also creates endpoint slice objects for the service.
+        <blockquote>
+          <p>The objects stored in etcd can be multiple in number (eg: multiple service, deployment, replicaset objects, etc.). They can be multiple depending on diff manifests or based on diff namespaces<br />
+eg: → etcd A
+    |  ↳ deployments
+    |  ↳ dev
+    |  ↳ staging
+    |  ↳ prod
+    |  ↳ services
+    |  ↳ dev
+    |  ↳ staging
+    |  ↳ prod
+    |  ↳ pod
+    |  ↳ dev
+    |  ↳ staging
+    |  ↳ prod
+    → etcd B (same thing)</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>All the etcd’s of the same cluster will shared this segregation based on namespaces &amp; such.
+(so that if one etcd goes down, others still have data)</p>
+</blockquote>
+
+<ul>
+  <li>Ingress
+    <ul>
+      <li>meaning → incoming traffic</li>
+      <li>it routes external HTTP / HTTPS traffic into cluster.</li>
+      <li>created from ingress manifest by the user/developer using kubectl .</li>
+      <li>It is an api cluster resource stored in etcd, it is called ingress object</li>
+      <li>Ingress controller watches the ingress objects. It is deployed along with other pods as one among them like:</li>
+    </ul>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Node A → App pod
+       ↳ App pod
+       ↳ nginx ingress controller pod
+Node B → App pod
+       ↳ App pod
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Based on ingress object config, ingress controller manages the routing. -</li>
+    </ul>
+  </li>
+  <li>namespaces:
+    <ul>
+      <li>means a boundary that keeps names from colliding</li>
+      <li>it is used for policy checks
+        <ul>
+          <li>Eg:
+            <ul>
+              <li>Resource Quota: Pod belongs to prod –&gt; check prod quota</li>
+              <li>RBAC :- user accesses prod namespace –&gt; check permissions</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>When we provide namespace to any manifest file, it creates multiple objects from that manifest file for each namespace.</li>
+    </ul>
+  </li>
+  <li>stateful set
+    <ul>
+      <li>Most k8s workloads / pods are managed by a “Deployment” • But when a pod dies and when “Deployment” recreates the pod, the new pod recreates the pod, the IP &amp; node can have suff name, IP &amp; node. This is called stateless • This is generally used for- FE, API, servers, etc.</li>
+      <li>But some applications care about identity of the pods created &amp; are not interchangable. In such case use “Stateful set”</li>
+      <li>Deployment pods look like api-6f84… etc, &amp; every recreated pod gets a new name. stateful set pods look like postgres-1, postgres-2, etc out fixed names. each pod also gets a predictable pod name. This is very important for databases, distributed systems, cluster membership.</li>
+      <li>this works in association of persistent volume claim (PVC). Each pod gets its own storage which wont get destroyed when the pod gets destroyed. when a pod is recreated it attaches the same PVC as the older pod.</li>
+      <li>Ordered startup
+        <ul>
+          <li>In Deployment, “create 10 pods”, k8s may start them in parallel.</li>
+          <li>But stateful set starts in order: postgres-1 → postgres-2 → postgres-3, etc Similarly during shutdown, it stop db’s in reverse order.</li>
+          <li>this is because many distributed dbs require db 1 to start bt db2, b2 db 3, etc.</li>
+        </ul>
+      </li>
+      <li>ordered updates
+        <ul>
+          <li>Pod deployment generally updates pods in batches. But Stateful set updates pods one after another. this is ordered rollout and generally useful for dbs.</li>
+        </ul>
+      </li>
+      <li>stateful set components
+        <ul>
+          <li>when we apply “kind: StatefulSet” ; k8s creates a statefulset object stored in etcd. statefulset controller watches it. Statefulset controller then creates pods like postgres-1, postgres-2, etc based on the desired no. of pods mentioned in stateful set object being watched.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Daemonset
+    <ul>
+      <li>A k8s resource that ensures one copy of a pod runs on every matching node.</li>
+      <li>called daemonset because it is a set of
+        <ul>
+          <li>daemon-like pods running on nodes daemon → a background process that run continuously in background.</li>
+          <li>Example: we want to run a log collector on every node</li>
+        </ul>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Node A → log collector
+Node B → log collector
+Node C → log collector
+</code></pre></div>        </div>
+
+        <ul>
+          <li>Deployment can’t guarantee this, it creates N replicas somewhere. (sometimes on one node)</li>
+          <li>But daemonset guarantees 1 pod per node.</li>
+          <li>Working:
+            <ul>
+              <li>We apply “kind: Daemonset”</li>
+              <li>kubectl reads the yaml file</li>
+              <li>API server authenticate</li>
+              <li>Daemonset object gets stored in etcd</li>
+              <li>Daemon controller watches daemon</li>
+              <li>By default it creates 1 pod per matching node.</li>
+            </ul>
+
+            <blockquote>
+              <p>We cannot tell daemonset how many pods to sunper node. We can only say to run current pod in every node.</p>
+              <ul>
+                <li>Eg of usage for :- kubeproxy, log controller, monitoring agents.</li>
+              </ul>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Job:
+    <ul>
+      <li>A k8s resource that tails, does same work</li>
+      <li>used for stuff like pdf generation, db migration</li>
+      <li>When deployment fails there is no further management as to retry or anything else. But when we configure job we can either retry or mark job as failed.</li>
+      <li>Can run parallel jobs</li>
+      <li>Flow:
+        <ul>
+          <li>Job obj stored in etcd</li>
+          <li>API server exposes it</li>
+          <li>Job controller watches Job obj</li>
+          <li>Job controller creates pod objects</li>
+          <li>Pod succeeds or fails Pod runs tasks</li>
+          <li>Job task succeeds go fails.</li>
+          <li>Job controller creates new pod if retry enabled, else marks Job as complete</li>
+          <li>Pod remain</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>CronJob:
+    <ul>
+      <li>K8s resource that creates job on schedule.</li>
+      <li>Create from CronJob manifest by kubectl &amp; stored in etcd</li>
+      <li>CronJob controller watches CronJob via API server. When it is time, CronJob controller creates a Job obj.</li>
+      <li>Job controller creates job obj &amp; creates a pod, Pod runs.</li>
+      <li>Pod succeed succeeds or fails. Retries if configured.</li>
+      <li>Job complete : Pods still remain</li>
+    </ul>
+  </li>
+  <li>Secrets:
+    <ul>
+      <li>a K8s resource stored in etcd via terminal command for sake of safety. (bcz yaml file will record the secrets which we do not want)</li>
+      <li>We then reference the secrets obj name in deployment manifest, which will fetch the secrets directly from secrets obj. (eg: password)</li>
+    </ul>
+  </li>
+  <li>Config map:
+    <ul>
+      <li>To store stuff like hostname, ports numbers, feature flags etc. (Non-sensitive data)</li>
+      <li>A K8s resource stored in etcd from manifest</li>
+    </ul>
+  </li>
+  <li>Volume
+    <ul>
+      <li>Data storage</li>
+      <li>Specified as part of deployment manifest.</li>
+      <li>The actual data maybe stored within node/VM’s real disk or cloud or NFS (Network File system), but to the container it will look like it is coming from a folder within the container files.</li>
+      <li>Specification example:
+```yaml
+volumes:
+        <ul>
+          <li>name: data
+  mountPath: /data
+            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div>            </div>
+          </li>
+        </ul>
+      </li>
+      <li>It is specified as part of pod template in deployment manifest. When deployment controller creates pods each pod gets a volume named ‘data’. Just part of pod specification.</li>
+      <li>When pod is destroyed, the volume directly from container path will also be destroyed. When the directory gets destroyed, the associated actual db ins volume on disk also loses files in it.</li>
+      <li>Cons of volume per pod.
+        <ul>
+          <li>It is tied to pod life</li>
+          <li>Every pod will need to have volume specified
+```</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>PV (Persistent volume) (Static Provisioning)
+    <ul>
+      <li>cluster level K8s obj stored in etcd created from PV manifest</li>
+      <li>Actual storage is on Node disk/cloud/NFS.</li>
+      <li>This object is created only for creating a… [continues to next page]</li>
+      <li>volume within the cluster for a ahead change in the volume, we use PVC.</li>
+      <li>Flow of creating PV volume in list
+        <ul>
+          <li>Fuse you create volume yourself.</li>
+          <li>Then just reference it in pv object. (This method is not used anymore)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>PVC (Persistent Volume Claim):
+    <ul>
+      <li>Dynamic provisioning:</li>
+      <li>obj created from PVC manifest in etcd.</li>
+      <li>A storage controller notices PVC is pending &amp; provisions storage.</li>
+      <li>eg: create EBS disk, GCP persistent disk, etc.</li>
+      <li>It then creates PV obj. &amp; binds it to PVC (EBS, GCP disk, etc).</li>
+    </ul>
+  </li>
+  <li>Node: Physical/virtual server.</li>
+  <li>Cluster: Group of physical datacenter servers.</li>
+  <li>Kube-system:
+    <ul>
+      <li>Namespace object stored in etcd.</li>
+      <li>created automatically during bootstap of control plane. (Eg: kubeadm init)</li>
+      <li>Part of other predefined yaml manifests</li>
+      <li>of system components : CoreDNS, kube-proxy, networking plugins (cni), etc.</li>
+      <li>Created by Namespace controller. It also creates default, kube system, kube public</li>
+      <li>Kube-node-lease:</li>
+      <li>Purpose: holds K8s internal components.</li>
+    </ul>
+  </li>
+  <li>Sidecar:
+    <ul>
+      <li>Auxiliary container that runs inside same pod as main application &amp; enhances or supports it.</li>
+      <li>has same network namespace (cannel, localhost shared), same storage volumes. (can be shared)</li>
+      <li>has separate process space (different container), separate lifecycle (can restart independently)</li>
+      <li>used to add functionality to or modifying main application code.</li>
+      <li>Eg:- logging, monitoring, proxying, security, configuration sync.</li>
+    </ul>
+  </li>
+  <li>Init Containers:
+    <ul>
+      <li>temporary container that runs before main application</li>
+      <li>used to prepare env required by app (eg: wait for db/cache readiness, download config or secrets at runtime (sun DB migrations))</li>
+      <li>Not commonly used for smaller apps, but sahay for prod k8s systems, microservices</li>
+      <li>w/ dependencies, etc.</li>
+      <li>created from Pod yaml manifests.</li>
+      <li>spec -&gt; initContainers -&gt; Turns into pod object.</li>
+      <li>If initcontainers are omitted, pods start directly with containers</li>
+      <li>Developer defines it, K8s creates pod obj, kubelet executes based on pod objs.</li>
+    </ul>
+  </li>
+  <li>Helm:
+    <ul>
+      <li>means ships steering wheel (k8s logo)</li>
+      <li>package manager for K8s. Bundles K8s yaml manifests into reusable, versioned packages called charts.</li>
+      <li>not a core component of cluster -&gt; It is a cli tool on our m/c or CI/CD pipeline.</li>
+      <li>talks to K8s API server, applies manifests into cluster.</li>
+      <li>Without helm you need to manually manage multiple yaml files, repeated configs across envs, hard to version &amp; reuse</li>
+    </ul>
+  </li>
+  <li>Deployments:
+    <ul>
+      <li>with helm, everything is packaged, configurable via values, easy install/upgrade/rollback.</li>
+    </ul>
+  </li>
+  <li>Helm Chart:
+    <ul>
+      <li>package K8s applicationist</li>
+      <li>contains templates values &amp; chart yaml files</li>
+      <li>show me yours gonna together showgirl?</li>
     </ul>
   </li>
 </ul>
@@ -1484,67 +1757,67 @@ Pod 1 - VETH (virtual n/w interface) - worker node NIC - switch - other worker n
 |    |     ↳ events
 |    |     ↳ leases
 |    |     ↳ Custom Resources (CRD)
-|    |---Kubernetes Controller Manager    
-|    |     ↳ deployment controller (creates/manages replicasets)   
-|    |     ↳ replicaset controller (creates/deletes pods)   
-|    |     ↳ job controller   
-|    |     ↳ cronjob controller   
-|    |     ↳ statefulset controller   
-|    |     ↳ daemonset controller   
-|    |     ↳ namespace controller   
-|    |     ↳ node controller   
-|    |     ↳ service account controller   
-|    |     ↳ endpoint slice controller   
-|    |     ↳ persistent volume controller   
-|    |     ↳ replication controller   
-|    |     ↳ ... many other controllers.   
-|    |--- kube-scheduler   
-|    |      ↳ watches pending pods   
-|    |      ↳ selects worker node   
-|    |      ↳ resource calculations   
-|    |      ↳ affinity rules   
-|    |      ↳ taints &amp; tolerations   
+|    |---Kubernetes Controller Manager
+|    |     ↳ deployment controller (creates/manages replicasets)
+|    |     ↳ replicaset controller (creates/deletes pods)
+|    |     ↳ job controller
+|    |     ↳ cronjob controller
+|    |     ↳ statefulset controller
+|    |     ↳ daemonset controller
+|    |     ↳ namespace controller
+|    |     ↳ node controller
+|    |     ↳ service account controller
+|    |     ↳ endpoint slice controller
+|    |     ↳ persistent volume controller
+|    |     ↳ replication controller
+|    |     ↳ ... many other controllers.
+|    |--- kube-scheduler
+|    |      ↳ watches pending pods
+|    |      ↳ selects worker node
+|    |      ↳ resource calculations
+|    |      ↳ affinity rules
+|    |      ↳ taints &amp; tolerations
 |    |      ↳ writes node assignment
-|    |---Other controller managers (optional)   
-|          ↳ load balancer controller   
-|          ↳ route controller   
-|          ↳ volume controller   
-|          ↳ node-controller   
+|    |---Other controller managers (optional)
+|          ↳ load balancer controller
+|          ↳ route controller
+|          ↳ volume controller
+|          ↳ node-controller
 |---*Control Plane node B*
-|      ↳ ... same as above   
-↳ Cluster 2 (ex: staging cluster) 
+|      ↳ ... same as above
+↳ Cluster 2 (ex: staging cluster)
 
 
- 
+
 Developer machine / CI server
-↳ kubectl   
-↳ kube-adm   
-↳ Helm   
-↳ Kustomize   
-↳ ArgoCD   
-↳ Terraform   
-↳ Custom clients   
+↳ kubectl
+↳ kube-adm
+↳ Helm
+↳ Kustomize
+↳ ArgoCD
+↳ Terraform
+↳ Custom clients
 
-Worker Nodes   
-↳ Node 1   
-|  ↳ kubelet   
-|  |  ↳ talks to api server   
-|  |  ↳ watches Pod objects   
-|  |  ↳ starts containers   
-|  ↳ Container runtime   
-|  |  ↳ containerd   
-|  |  ↳ CRI-O 
-|  |  ↳(formerly docker)   
-|  ↳ kube-proxy   
-|  |  ↳ Service Networking   
-|  |  ↳ iptables   
-|  |  ↳ IPVS   
-|  ↳ Running Pods   
+Worker Nodes
+↳ Node 1
+|  ↳ kubelet
+|  |  ↳ talks to api server
+|  |  ↳ watches Pod objects
+|  |  ↳ starts containers
+|  ↳ Container runtime
+|  |  ↳ containerd
+|  |  ↳ CRI-O
+|  |  ↳(formerly docker)
+|  ↳ kube-proxy
+|  |  ↳ Service Networking
+|  |  ↳ iptables
+|  |  ↳ IPVS
+|  ↳ Running Pods
 |    ↳ Pod A
 |    ↳ Pod B
-|    ↳ Pod C 
+|    ↳ Pod C
 ↳ Node B -&gt; Same structure
-↳ Node C -&gt; Same structure  
+↳ Node C -&gt; Same structure
 </code></pre></div></div>
 
           
