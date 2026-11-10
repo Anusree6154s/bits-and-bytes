@@ -1,6 +1,5 @@
 ---
 layout: default
-layout: default
 date: 20 feb 2025
 title: High Level Design Guide
 excerpt: To study basic and advanced High Level Design
