@@ -4,7 +4,7 @@ title: DNS and TLS/SSL
 permalink: dns-and-tls-ssl
 date: Nov 11, 2026
 excerpt: Understanding DNS and TSL/SSL
-parent: Core Internet Protocols
+parent: Networking And Protocols
 ---
 
 # DNS and TLS/SSL
