@@ -435,4 +435,69 @@ Images, containers, layers, volumes, networks, entrypoints, env variables, multi
   - CNI plugin
     - Container Networking Interface
     - Create Pod networking.
-
+    - Process of CNI working (what all CNI does)   
+      - when a new pod starts   
+        - CNI allocates an IP   
+        - create network interface   
+        - configure routing   
+        - connect pod to cluster N/W.   
+    - Points to note:   
+      - CNI (container n/w interface) is a specification, by a set of plugins.   
+      - it creates/configures n/working for containers & pods.   
+      - CNI plugin is a plugin that resides on every K8s node. It is an executable file. unlike API objects or controllers, which create/configure upon running the file.   
+      - It doesn't generally come with K8s cluster when we create one. A ductii controllers and such. A administrator generally need to set it up.   
+      - Commonly installed CNI plugins :- Calico, Cilium, Flannel.   Page 2(2)   
+      - But many providers provide auto installs, many things for developers thus it may feel like built in.   
+      - Providers that auto installs include :- minikube kind, EKS, GKE, AKS.   DNS Resolution - convert name into IP addresses.
+- Phase 7 - Resource management   
+  - Requests :
+    - to declare minimum resources required (pod-level)   
+    - eg: 
+    ```
+    requests:
+      cpu: 500m
+      memory: 512Mi
+    ```
+    - this means: pods node needs 0.5 CPU & 512 MB RAM.   
+  - Limits :
+    - to declare maximum resources allowed.   
+    - eg: 
+    ```
+    limits:
+      cpu : 1
+      memory : 1Gi
+    ```
+    - which means node needs max 1 CPU & 1 GB RAM   
+  > For nodes, resources are allocated via "capacity" and "allocatable resources"   To decide placement of pods in nodes, scheduler adds the requests & limits of pods/containers & then compares with node allocatable capacity  
+  - cpu throttling
+    - Prevent containers from exceeding CPU limits
+    - Process :
+      - Developer sets CPU limit   
+      ````
+      limits :
+        cpu : 1"  
+      ```
+      - kubelet reads pod spec.   
+      - Container runtime configures cgroups.   
+        - runtime creates linux cgroup setting for container   
+      - linux kernel tracks cpu usage by watching how much CPU time certain cgroup consumes.   
+      - Container reaches its quota C like if cpu is 1; but container consumes 100ms of cpu time (quota) every 100 ms window (period).   
+      - Kernel throttles.   
+        - kernel blocks further cpu execution. Container waits until the next period begins. (means process is either killed nor pod is contacted. Process sleeps.)   
+    - OOM killed   
+      - out of memory killed   
+      - purpose is to protect node from memory exhaustion   
+      - When RAM usage exceeds by containers, kernel kills the containers process. Then the pod may be restarted   
+    > **Note**   
+    > cpu limit exceed -> process only steps (Throttle)   
+    > memory limit exceed -> process killed (oom)   
+    
+    - scheduling   
+      - K8s scheduler choosing which node will run the pod.   
+    - Node Pressure:   
+      - Purpose is to detect overloaded nodes   
+      - Common pressure types:   Memory pressure, disk pressure, PID pressure.   
+      - e.g. K8s servers have RAM = 128 GB, used RAM = 127 GB   
+        - node enters memory pressure   
+        - K8s may evict nodes to protect the node.   
+      > If no free nodes 10% full memory exists on the cluster, then the   Page 5exists on the cluster, then the new pod goes into pending state   (In case of fixed replicaset with stateless deployment pods)   
