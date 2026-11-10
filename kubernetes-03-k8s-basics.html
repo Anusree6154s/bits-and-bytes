@@ -177,7 +177,7 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
       </button><a href="/bits-and-bytes/devops-and-infrastructure" class="nav-list-link">Devops And Infrastructure</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Kubernetes submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
-      </button><a href="/bits-and-bytes/kubernetes" class="nav-list-link">Kubernetes</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-00-structure-and-visualization" class="nav-list-link">00. Structure and Visualisation - Part 1</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-01-linux-basics" class="nav-list-link">01. Linux Basics</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-02-media-forge" class="nav-list-link">02. Media Forge</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-03-k8s-basics" class="nav-list-link">03. K8s Basics</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-04-k8s-structure-and-visualization" class="nav-list-link">04. K8s Structure and visualization - Part 2</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-05-k8s-cluster-diagram" class="nav-list-link">05. K8s Cluster Diagram</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Import Modules submenu" aria-expanded="false">
+      </button><a href="/bits-and-bytes/kubernetes" class="nav-list-link">Kubernetes</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-00-structure-and-visualization" class="nav-list-link">00. Structure and Visualisation - Part 1</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-01-linux-basics" class="nav-list-link">01. Linux Basics</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-02-media-forge" class="nav-list-link">02. Media Forge</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-03-k8s-basics" class="nav-list-link">03. K8s Basics</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-04-k8s-structure-and-visualization" class="nav-list-link">04. K8s Structure and visualization - Part 2</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-05-k8s-cluster-diagram" class="nav-list-link">05. K8s Cluster Diagram</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-06-k8s-points-to-remember" class="nav-list-link">06. K8s Points to Remember</a></li><li class="nav-list-item"><a href="/bits-and-bytes/kubernetes-07-k8s-next-topics" class="nav-list-link">07. K8s Next Topics</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Import Modules submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
       </button><a href="/bits-and-bytes/import-modules" class="nav-list-link">Import Modules</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/tests" class="nav-list-link">Tests</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Interview Questions submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
@@ -994,6 +994,122 @@ Pod 1 - VETH (virtual n/w interface) - worker node NIC - switch - other worker n
         <ul>
           <li>Container Networking Interface</li>
           <li>Create Pod networking.</li>
+          <li>Process of CNI working (what all CNI does)
+            <ul>
+              <li>when a new pod starts
+                <ul>
+                  <li>CNI allocates an IP</li>
+                  <li>create network interface</li>
+                  <li>configure routing</li>
+                  <li>connect pod to cluster N/W.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Points to note:
+            <ul>
+              <li>CNI (container n/w interface) is a specification, by a set of plugins.</li>
+              <li>it creates/configures n/working for containers &amp; pods.</li>
+              <li>CNI plugin is a plugin that resides on every K8s node. It is an executable file. unlike API objects or controllers, which create/configure upon running the file.</li>
+              <li>It doesn’t generally come with K8s cluster when we create one. A ductii controllers and such. A administrator generally need to set it up.</li>
+              <li>Commonly installed CNI plugins :- Calico, Cilium, Flannel.   Page 2(2)</li>
+              <li>But many providers provide auto installs, many things for developers thus it may feel like built in.</li>
+              <li>Providers that auto installs include :- minikube kind, EKS, GKE, AKS.   DNS Resolution - convert name into IP addresses.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Phase 7 - Resource management
+    <ul>
+      <li>Requests :
+        <ul>
+          <li>to declare minimum resources required (pod-level)</li>
+          <li>eg:
+            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>requests:
+cpu: 500m
+memory: 512Mi
+</code></pre></div>            </div>
+          </li>
+          <li>this means: pods node needs 0.5 CPU &amp; 512 MB RAM.</li>
+        </ul>
+      </li>
+      <li>Limits :
+        <ul>
+          <li>to declare maximum resources allowed.</li>
+          <li>eg:
+            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>limits:
+cpu : 1
+memory : 1Gi
+</code></pre></div>            </div>
+          </li>
+          <li>which means node needs max 1 CPU &amp; 1 GB RAM
+            <blockquote>
+              <p>For nodes, resources are allocated via “capacity” and “allocatable resources”   To decide placement of pods in nodes, scheduler adds the requests &amp; limits of pods/containers &amp; then compares with node allocatable capacity</p>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+      <li>cpu throttling
+        <ul>
+          <li>Prevent containers from exceeding CPU limits</li>
+          <li>Process :
+            <ul>
+              <li>Developer sets CPU limit
+                <pre><code class="language-`">limits :
+cpu : 1"  
+</code></pre>
+              </li>
+              <li>kubelet reads pod spec.</li>
+              <li>Container runtime configures cgroups.
+                <ul>
+                  <li>runtime creates linux cgroup setting for container</li>
+                </ul>
+              </li>
+              <li>linux kernel tracks cpu usage by watching how much CPU time certain cgroup consumes.</li>
+              <li>Container reaches its quota C like if cpu is 1; but container consumes 100ms of cpu time (quota) every 100 ms window (period).</li>
+              <li>Kernel throttles.
+                <ul>
+                  <li>kernel blocks further cpu execution. Container waits until the next period begins. (means process is either killed nor pod is contacted. Process sleeps.)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>OOM killed
+            <ul>
+              <li>out of memory killed</li>
+              <li>purpose is to protect node from memory exhaustion</li>
+              <li>When RAM usage exceeds by containers, kernel kills the containers process. Then the pod may be restarted
+                <blockquote>
+                  <p><strong>Note</strong> <br />
+cpu limit exceed -&gt; process only steps (Throttle) <br />
+memory limit exceed -&gt; process killed (oom)</p>
+                </blockquote>
+              </li>
+            </ul>
+          </li>
+          <li>scheduling
+            <ul>
+              <li>K8s scheduler choosing which node will run the pod.</li>
+            </ul>
+          </li>
+          <li>Node Pressure:
+            <ul>
+              <li>Purpose is to detect overloaded nodes</li>
+              <li>Common pressure types:   Memory pressure, disk pressure, PID pressure.</li>
+              <li>e.g. K8s servers have RAM = 128 GB, used RAM = 127 GB
+                <ul>
+                  <li>node enters memory pressure</li>
+                  <li>K8s may evict nodes to protect the node.
+                    <blockquote>
+                      <p>If no free nodes 10% full memory exists on the cluster, then the   Page 5exists on the cluster, then the new pod goes into pending state   (In case of fixed replicaset with stateless deployment pods)</p>
+                    </blockquote>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
         </ul>
       </li>
     </ul>
