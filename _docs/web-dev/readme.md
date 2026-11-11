@@ -5,7 +5,7 @@ permalink: web-dev
 has_children: true
 ---
 
-{% assign child_pages = site.docs | where: "parent", page.title | where_exp: "item", "item.hidden != true" | sort: "date" | reverse %}
+<!-- {% assign child_pages = site.docs | where: "parent", page.title | where_exp: "item", "item.hidden != true" | sort: "date" | reverse %}
 
 {% if child_pages.size > 0 %}   
   <p class="text-gamma text-grey-dk-000 mb-4" style="display:flex; justify-content:space-between;">
@@ -23,4 +23,4 @@ has_children: true
       </li>
     {% endfor %}
   </ul>
-{% endif %}
+{% endif %} -->

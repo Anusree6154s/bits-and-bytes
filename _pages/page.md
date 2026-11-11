@@ -1,15 +1,25 @@
 ---
 permalink: /all-posts
 layout: default
+title: All Posts
 nav_order: 3
-title: Table Of Contents
-nav_exclude: true
 ---
 
 <div class="toc-container">
   <div class="toc-post-list">
-    {% assign active_posts = site.docs | where_exp: "post", "post.hidden != true" | sort: "date" | reverse %}
-    
+    {% assign active_posts = "" | split: "" %}
+    {% for post in site.docs %}
+      {% assign cleaned_content = post.content
+        | remove_html_comments
+        | strip_html
+        | strip
+      %}
+      {% if post.hidden != true and cleaned_content != "" %}
+        {% assign active_posts = active_posts | push: post %}
+      {% endif %}
+    {% endfor %}
+    {% assign active_posts = active_posts | sort: "date" | reverse %}
+
     <div class="toc-meta-header">
       <p class="toc-total-count"><span>Total Posts: {{ active_posts.size }}</span></p>
       <span class="toc-sort-badge">Sorted: Newest → Oldest</span>
@@ -40,6 +50,7 @@ nav_exclude: true
         </a>
       {% endfor %}
     </div>
+
   </div>
 </div>
 

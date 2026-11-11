@@ -57,3 +57,6 @@ disqus:
 
 sass:
   style: compressed
+
+plugins:
+  - jekyll-relative-links
