@@ -212,30 +212,30 @@
     "doc": "Web development Css related",
     "title": "Css",
     "content": "Websites for help . | Handrawn icons/images . | unDraw | storyset - Already drawn line drawings | humaaans - Mix-&amp;-match illustrations of people with a design library | openpeeps - Mix-&amp;-match illustrations of people with a design library | . | svg/icons . | svgrepo | iconscout | . | Free Stock Images: Pexels | Free stck Images: PixaBay | fonts: Google Fonts | Color pallets etc: Coolors | . Websites for inspiration . | Dribble | astro/showcase | . Websites to practise . | Beginner practise html+css: Frontendmentor | higher level css practise: Css Battle | . ",
-    "url": "/bits-and-bytes/web-dev#css",
+    "url": "/bits-and-bytes/design-related-reference-websites#css",
     
-    "relUrl": "/web-dev#css"
+    "relUrl": "/design-related-reference-websites#css"
   },"31": {
     "doc": "Web development Css related",
     "title": "DEV",
     "content": "Web Dev ideas to practise from youtube . | React: . | Hospital slot booking app | . | . ",
-    "url": "/bits-and-bytes/web-dev#dev",
+    "url": "/bits-and-bytes/design-related-reference-websites#dev",
     
-    "relUrl": "/web-dev#dev"
+    "relUrl": "/design-related-reference-websites#dev"
   },"32": {
     "doc": "Web development Css related",
     "title": "React",
     "content": "Things to remember while starting a react app . | npx create-react-app | use tailwind for css | search for libraries. dont make things from scratch. | divide code into componenets. | . ",
-    "url": "/bits-and-bytes/web-dev#react",
+    "url": "/bits-and-bytes/design-related-reference-websites#react",
     
-    "relUrl": "/web-dev#react"
+    "relUrl": "/design-related-reference-websites#react"
   },"33": {
     "doc": "Web development Css related",
     "title": "Web development Css related",
     "content": " ",
-    "url": "/bits-and-bytes/web-dev",
+    "url": "/bits-and-bytes/design-related-reference-websites",
     
-    "relUrl": "/web-dev"
+    "relUrl": "/design-related-reference-websites"
   },"34": {
     "doc": "React-Node App",
     "title": "Concepts related to React-Node Web App",
@@ -755,530 +755,530 @@
     
     "relUrl": "/oauth-oidc#oidc-configuration"
   },"108": {
+    "doc": "All Posts",
+    "title": "All Posts",
+    "content": "Total Posts: 48 . Sorted: Newest → Oldest Express vs Fastify vs NestJS . 11/11/2026 Comparing Express vs Fastify vs NestJS . 09. Advanced K8s . 11/11/2026 Intro to kubernetes (Advanced K8s) . SSE vs Websocket . 11/11/2026 Understanding diff b/w SSE and Websocket . DNS and TLS/SSL . 11/11/2026 Understanding DNS and TSL/SSL . Load Balancing And Traffic Management . 11/11/2026 Understanding Load Balancing . Istio Ingress . 11/11/2026 Understanding Istio Ingress . Realtime sys vs Rest API . 11/11/2026 Understanding diff b/w Reatime system and Rest API . Graphql vs Rest API . 11/11/2026 Understanding diff b/w Graphql and Rest API . Load Testing . 10/11/2026 Understanding load testing . LXC . 10/11/2026 Understanding Linux Containers (LXC) . 08. K8s Leanring Continuation . 10/11/2026 Intro to kubernetes (K8s learning continuation) . 07. K8s Next Topics . 10/11/2026 Intro to kubernetes (K8s next topics) . 06. K8s Points to Remember . 10/11/2026 Intro to kubernetes (K8s Points to Remember) . 05. K8s Cluster Diagram . 09/11/2026 Intro to kubernetes (K8s Cluster Diagram) . 04. K8s Structure and visualization - Part 2 . 09/11/2026 Intro to kubernetes (K8s Structure and visualization Part 2) . 03. K8s Basics . 09/11/2026 Intro to kubernetes (K8s Basics) . 02. Media Forge . 09/11/2026 Intro to kubernetes (Media Forge) . 01. Linux Basics . 09/11/2026 Intro to kubernetes (Linux Basics) . 00. Structure and Visualisation - Part 1 . 04/11/2026 Intro to kubernetes - 00. Structure and Visualisation . OOP . 26/04/2026 Learning object oriented programming . TAGS: oop, software design, computer basics Flutter Setup Guide . 13/07/2025 Guide to setting up flutter in vs code . TAGS: flutter, dart, mobile, android, ios Basics of Dart . 13/07/2025 Some basic concepts of dart for flutter . TAGS: flutter, dart, mobile, android, ios Using Bootstrap Icons . 04/03/2025 How to use bootstrap icons in react or NextJS . Tailwind styling without inline . 03/03/2025 Methods to style using tailwind without inline . External Image Optimisation . 03/03/2025 Mehtods to optimise an image after it is imported from an external image source/cdn . Vercel .env extraction . 27/02/2025 Extracting environment variables from deployed vercel app . TAGS: vercel, env MongoDB Concepts Guide . 25/02/2025 To study basic and advanced MongoDB . TAGS: mongodb FE-101 HTML . 20/02/2025 HTML Crio Interview Questions for practise . TAGS: crio interview questions, html High Level Design Guide . 20/02/2025 To study basic and advanced High Level Design . TAGS: high-level-design Low Level Design Guide . 19/02/2025 To study basic and advanced Low Level Design . TAGS: low-level-design React Concepts Guide . 22/01/2025 To study basic and advanced React . TAGS: react Crio Interview Questions . 22/01/2025 Crio Interview Questions for practise . TAGS: crio interview questions Interview Questions . 22/01/2025 Interview Questions for practise . TAGS: interview questions Typescript learners guide . 18/01/2025 To study basic and advanced typescript . TAGS: typescript Index . 18/01/2025 This is my personal guide related to all about making github pages with and without jekyll. TAGS: jekyll, ruby, scss, markdown OAuth Config Setup in Different Apps . 09/01/2025 To study diff auth methods . TAGS: jwt, oauth2, typescript, nextjs, oidc, passwordless-authentication Guidelines to cleaner git commits . 31/10/2024 Guide to how to write cleaner git commits . API Documentation Tools . 31/10/2024 Following are the api documentation tools that helps you create api docs in pretty websites. Readme files writing guide . 26/10/2024 Comprehensive Guide to Writing README Files . Git Commit Standards . 26/10/2024 Git Commit Standards (Official) . Readme files formatting guide . 23/10/2024 Comprehensive Guide to Formatting README Files . Takehome Guidelines . 23/10/2024 Take home coding challenge template and guide . Email Service Guide . 22/10/2024 Guide to how to integrate email service with any project . Deployment Websites . 21/09/2024 Personal pros and cons of different deployment websites . Tests . 19/08/2024 Tests related documentation . React-Node App . 19/08/2024 Concepts related to React-Node Web App . Web development Css related . 19/08/2024 Css files and svgs to assist Css . Index . 19/08/2024 Passport JWT Documentation . ",
+    "url": "/bits-and-bytes/all-posts",
+    
+    "relUrl": "/all-posts"
+  },"109": {
     "doc": "LXC",
     "title": "LXC (Linux containers)",
     "content": ". | facts . | OS-level virtualisation - Not hardware virtualisation. | Runs in containers on a host linux kernel. | Acts like a small linux m/c. | system container (like how docker is application container) | Every container has its own - PID namespace, n/w namespace, mount namespace, hostname, filesystem, users (optionally mapped). | Containers are isolated using linux namespace and cgroups. | linux cgroups enforces following limits on lxc container: RAM, CPU cores, CPU time, disk quota, w/o bandwidth, I/O limits. | Has singe host ckernles the kernel. Cannot boot a diff kernel inside lxc like windows on FreeBSD. | . host ubuntu kernel | ----------------- | v v lxc 1 lxc 2 (ubuntu) (debian) . | Performance (Compared to VMs): . | Faster startup, lower RAM overhead, better density (more containers per host). | . | Persistence: . | Stays stuff installed on exe container remains installed even after reboot (less compared to VMs, bcz host kernel is shared). | . | Security:Less vulnerability can affect all containers. | Limitation: . | Linux guests only, cannot use different kernel version, some kernel features/modules depend on host; certain workloads (eg: some K8s or nested containers scenarios) may require extra configuration as workloads in VMs in K8s. | . | . ",
     "url": "/bits-and-bytes/lxc#lxc-linux-containers",
     
     "relUrl": "/lxc#lxc-linux-containers"
-  },"109": {
+  },"110": {
     "doc": "LXC",
     "title": "LXC",
     "content": " ",
     "url": "/bits-and-bytes/lxc",
     
     "relUrl": "/lxc"
-  },"110": {
+  },"111": {
     "doc": "07. K8s Next Topics",
     "title": "Next topics in k8s",
     "content": ". | Metric server | HPA | Deployment replicas | . Metrics server :- . | shows metrics for pods &amp; nodes for resource usage | Steps :- first install metrics-server from repository, then update metric-server with starter flag. check metrics “kubectl top nodes”, “kubectl top pods -n media-forge-dev” | . Importance HPA reads metrics from metrics - server to decide autoscaling. HPA . | Write an hpa.yaml with threshold mentioned, beyond which if cpu usage goes, then it increases replicas. | . ",
     "url": "/bits-and-bytes/kubernetes-07-k8s-next-topics#next-topics-in-k8s",
     
     "relUrl": "/kubernetes-07-k8s-next-topics#next-topics-in-k8s"
-  },"111": {
+  },"112": {
     "doc": "07. K8s Next Topics",
     "title": "Common K8s commands",
     "content": ". | kind create cluster –name --config | in config file: ``` kind: cluster apiVersion: kind.x-k8s.io/v1alpha4 nodes: . | role: control-plane | role: worker …etc ``` | . | kind get clusters (see clusters created) | kubectl get clusters (see clusters configured) | kubectl config get-contexts (see multiple cluster contexts) | docker build -t -f Dockerfile (to build image from code changes) . | kind load docker-image --name | | kubectl apply -k &lt;path-to-file | -kustomization&gt; (to start related pods &amp; clusters. apply kustomization file for each. path you want to spin. eg: for each service) | . | . ",
     "url": "/bits-and-bytes/kubernetes-07-k8s-next-topics#common-k8s-commands",
     
     "relUrl": "/kubernetes-07-k8s-next-topics#common-k8s-commands"
-  },"112": {
+  },"113": {
     "doc": "07. K8s Next Topics",
     "title": "07. K8s Next Topics",
     "content": " ",
     "url": "/bits-and-bytes/kubernetes-07-k8s-next-topics",
     
     "relUrl": "/kubernetes-07-k8s-next-topics"
-  },"113": {
+  },"114": {
     "doc": "00. Structure and Visualisation - Part 1",
     "title": "Kubernetes (K8s)",
     "content": ". ",
     "url": "/bits-and-bytes/kubernetes-00-structure-and-visualization#kubernetes-k8s",
     
     "relUrl": "/kubernetes-00-structure-and-visualization#kubernetes-k8s"
-  },"114": {
+  },"115": {
     "doc": "00. Structure and Visualisation - Part 1",
     "title": "Structure and visualisation",
     "content": "Let us visualise it as a rack of physical servers . Visualisation . Datacenter Rack |--Physical Servers . Eg: . Datacenter Rack |--Server A |--Control Plane (Management brain) |--Api Server |--Scheduler |--Control Manager |--etcd |--Server B |--kubelet (local node employee/node agent) |--container runtime (executes runtime) |--Pods (workloads) |--Pod | |--Container (nestJS) |--Pod |--Container (Redis) |--Server C (worker node) |--kubelet |--Container runtime |--Pods |--Pod |--Container (Postgres) |--Server D (worker node) |--kubelet |--container runtime |--Pods |--Pod |--Container (Prometheus) . [Continued in here] . ",
     "url": "/bits-and-bytes/kubernetes-00-structure-and-visualization#structure-and-visualisation",
     
     "relUrl": "/kubernetes-00-structure-and-visualization#structure-and-visualisation"
-  },"115": {
+  },"116": {
     "doc": "00. Structure and Visualisation - Part 1",
     "title": "00. Structure and Visualisation - Part 1",
     "content": " ",
     "url": "/bits-and-bytes/kubernetes-00-structure-and-visualization",
     
     "relUrl": "/kubernetes-00-structure-and-visualization"
-  },"116": {
+  },"117": {
     "doc": "04. K8s Structure and visualization - Part 2",
     "title": "K8s Structure and Visualization",
     "content": ". So we’re back to understanding K8s now that we’ve taken a round of understanding the undelining linux basics. Visualisation . A data center looks like this . Datacenter |--- Rack |--- Server 1 |--- Server 2 |--- Server 3 |--- Rack |--- Server 4 |--- Server 5 |--- Server 6 . | Different servers on diff racks can be part of same Kubernetes cluster. | When multiple servers have cost check, certain requirements, they are as associated of k8s, they are then part of k8s cluster. - | . K8s terms . | kubelet . | small local agent/process | Exists on every worker node / control plane node. | Make sure containers/pods runs correctly on that m/c. | . | Tasks of kubelet : . | talk to api server, receive pod assignments, start/stop containers, report node health, report pod status, mounts volume, handle probes. | . | kubectl . | Pronounced “kyoobe-cuttle” or “kyoobe-control”. | Exists on developer laptop / admin m/c / control server. | It communicates of kube-apiserver. | . | kube-proxy . | Kubernetes n/w proxy. | exists on every worker node (as daemon/fbg process). | It handles k8s n/wing rules inside cluster Eg: Service virtual IPs, load balancing, traffic forwarding, ip tables / ipvs rules. | . | kubeadm . | K8s admin / bootstrap tool | exists on control plane m/c. | worker setup m/c | used during cluster creation for creating control plane “kubeadm init” &amp; join worker pods “kubeadm join”, etc… | Not part of ras running cluster logic instead part of cluster installation / setup tool. | . | kube-apiserver . | main entry point for k8s cluster. Everything talks to this. Acts like central management api. - Exists on control plane server. | Talks to kubectl, kubelet, scheduler, controller-manager, etcd. | . | kube-scheduler . | chooses which node runs pods. (decision engine) | Exists on control plane server. Chooses where worker node try maintains desired state pods. | talks to kube-apiserver, worker nodes indirectly. | . | kube-controller-manager . | Exists on control plane server. | Maintains desired state. | Talks to :- kube-apiserver, etcd … indirectly. | Runs reconciliation loops (loops inside k8s that continuously check desired state vs actual state). | eg: desired replica = 3, actual replica = 2. Then create another pod. | . | etcd (etc distributed) (et-see-di) . | etcd directory / distributed key value db (like redis) | store cluster state db. | most critical k8s db (source of truth). | Exists on control plane servers. | Stores :- pods, deployments, services, [as key-value pairs] nodes, secrets, cluster desired state. | distributed . | it is called distributed bcoz multiple etcd servers can work together. | eg if multiple control planes with diff etcd, they communicate via a “Raft consensus” algorithm which stores a copy of the cluster state, thus preserving data even if one etcd beads down. (cluster state is not the same as control plane). | . | . | containerd . | container runtime (actually runs containers) | Exists on worker node. | Talks to kubelet through CRI. | . | CoreDNS (Core Domain Name Sys) . | K8s - Internal cluster dns. | lets pods communicate using names. eg: api-service.default.svc.cluster.local. - usually runs as pods on worker nodes. | . | Container Network Interface (CNI) . | Provide pod networking. | Exists as CNI plugins on worker nodes. | eg: Calico, Flannel, Cilium. | . | CRI . | Container runtime interface. | Standard interface btw. kubelet (node agent) &amp; container runtime (containerd). | Types of communication being done via here include kubelet asking to pull image, start container, stop container, delete container, get container status, etc.. | . | CSI . | Container storage interface. | Standard way k8s interact w/ storage systems. | Exists on worker node, control plane (occasionally on worker node, control plane) | . | Pod . | Small deployable unit holding one or more containers together | Runs on worker nodes inside container runtime (containerd) | Contains 1 or more containers, shared n/w, shared storage, shared localhost | e.g., k8s Pod | e.g., pod may contain: . | nodejs API container | sidecar logging container, etc. | . | . | Deployment . | An object that is stored in etcd (API resource) | It is used to keep a permanent record of the desired state of cluster . | Deployment controller continuously checks actual state against the desired state stored in deployment object (key-value pair) stored in etcd | . | It is generated by k8s from the deployment.yml file (also called deployment manifest) upon running a command like “kubectl apply -f .yaml” . | It can also be generated from a json file or directly from terminal like “kubectl create deployment –image=”. In such case kubectl itself creates a deployment object based w/ configuration based on kubectl defaults, k8s, defaults by API server generated metadata. | . | Also handles replicas, rolling updates, self healing, rollout history | . | Replica set . | replica = copy, set = collection | it is an API resource (cluster resource) whose instance is stored within etcd | Deployment controller, from developer / cr server sense kube controller manages, creates a replica set. | Though replicaset obj can be created from a riperi [replica] &lt;missing text: “set”&gt; manifest like deployment | it is generally auto-generated by deployment controller. The trigger for creating a replicaset is the appearance or change of deployment object. If expected no. of replicasets are 3 &amp; these objects are 3 &amp; deployment controller creates the extra one. | it manages the no. of pods to be kept up | . | Service . | Objects that defines a service name that also becomes the DNS name inside the cluster (we can also set a static IP for that service that falls in its cluster’s service IP range &amp; must be unique). It is this DNS name kube proxy will use to get incoming calls to BE from FE &amp; then re-route to actual IPs of each pod that gets generated | created by user themselves via kubectl (like deployment obj) using a source manifest &amp; stored in etcd | Endpoint Slice Controller, watches service objects &amp; Pods, it also creates endpoint slice objects for the service. The objects stored in etcd can be multiple in number (eg: multiple service, deployment, replicaset objects, etc.). They can be multiple depending on diff manifests or based on diff namespaces eg: → etcd A | ↳ deployments | ↳ dev | ↳ staging | ↳ prod | ↳ services | ↳ dev | ↳ staging | ↳ prod | ↳ pod | ↳ dev | ↳ staging | ↳ prod → etcd B (same thing) . | . | . All the etcd’s of the same cluster will shared this segregation based on namespaces &amp; such. (so that if one etcd goes down, others still have data) . | Ingress . | meaning → incoming traffic | it routes external HTTP / HTTPS traffic into cluster. | created from ingress manifest by the user/developer using kubectl . | It is an api cluster resource stored in etcd, it is called ingress object | Ingress controller watches the ingress objects. It is deployed along with other pods as one among them like: | . Node A → App pod ↳ App pod ↳ nginx ingress controller pod Node B → App pod ↳ App pod . | Based on ingress object config, ingress controller manages the routing. - | . | namespaces: . | means a boundary that keeps names from colliding | it is used for policy checks . | Eg: . | Resource Quota: Pod belongs to prod –&gt; check prod quota | RBAC :- user accesses prod namespace –&gt; check permissions | . | . | When we provide namespace to any manifest file, it creates multiple objects from that manifest file for each namespace. | . | stateful set . | Most k8s workloads / pods are managed by a “Deployment” • But when a pod dies and when “Deployment” recreates the pod, the new pod recreates the pod, the IP &amp; node can have suff name, IP &amp; node. This is called stateless • This is generally used for- FE, API, servers, etc. | But some applications care about identity of the pods created &amp; are not interchangable. In such case use “Stateful set” | Deployment pods look like api-6f84… etc, &amp; every recreated pod gets a new name. stateful set pods look like postgres-1, postgres-2, etc out fixed names. each pod also gets a predictable pod name. This is very important for databases, distributed systems, cluster membership. | this works in association of persistent volume claim (PVC). Each pod gets its own storage which wont get destroyed when the pod gets destroyed. when a pod is recreated it attaches the same PVC as the older pod. | Ordered startup . | In Deployment, “create 10 pods”, k8s may start them in parallel. | But stateful set starts in order: postgres-1 → postgres-2 → postgres-3, etc Similarly during shutdown, it stop db’s in reverse order. | this is because many distributed dbs require db 1 to start bt db2, b2 db 3, etc. | . | ordered updates . | Pod deployment generally updates pods in batches. But Stateful set updates pods one after another. this is ordered rollout and generally useful for dbs. | . | stateful set components . | when we apply “kind: StatefulSet” ; k8s creates a statefulset object stored in etcd. statefulset controller watches it. Statefulset controller then creates pods like postgres-1, postgres-2, etc based on the desired no. of pods mentioned in stateful set object being watched. | . | . | Daemonset . | A k8s resource that ensures one copy of a pod runs on every matching node. | called daemonset because it is a set of . | daemon-like pods running on nodes daemon → a background process that run continuously in background. | Example: we want to run a log collector on every node | . Node A → log collector Node B → log collector Node C → log collector . | Deployment can’t guarantee this, it creates N replicas somewhere. (sometimes on one node) | But daemonset guarantees 1 pod per node. | Working: . | We apply “kind: Daemonset” | kubectl reads the yaml file | API server authenticate | Daemonset object gets stored in etcd | Daemon controller watches daemon | By default it creates 1 pod per matching node. | . We cannot tell daemonset how many pods to sunper node. We can only say to run current pod in every node. | Eg of usage for :- kubeproxy, log controller, monitoring agents. | . | . | . | Job: . | A k8s resource that tails, does same work | used for stuff like pdf generation, db migration | When deployment fails there is no further management as to retry or anything else. But when we configure job we can either retry or mark job as failed. | Can run parallel jobs | Flow: . | Job obj stored in etcd | API server exposes it | Job controller watches Job obj | Job controller creates pod objects | Pod succeeds or fails Pod runs tasks | Job task succeeds go fails. | Job controller creates new pod if retry enabled, else marks Job as complete | Pod remain | . | . | CronJob: . | K8s resource that creates job on schedule. | Create from CronJob manifest by kubectl &amp; stored in etcd | CronJob controller watches CronJob via API server. When it is time, CronJob controller creates a Job obj. | Job controller creates job obj &amp; creates a pod, Pod runs. | Pod succeed succeeds or fails. Retries if configured. | Job complete : Pods still remain | . | Secrets: . | a K8s resource stored in etcd via terminal command for sake of safety. (bcz yaml file will record the secrets which we do not want) | We then reference the secrets obj name in deployment manifest, which will fetch the secrets directly from secrets obj. (eg: password) | . | Config map: . | To store stuff like hostname, ports numbers, feature flags etc. (Non-sensitive data) | A K8s resource stored in etcd from manifest | . | Volume . | Data storage | Specified as part of deployment manifest. | The actual data maybe stored within node/VM’s real disk or cloud or NFS (Network File system), but to the container it will look like it is coming from a folder within the container files. | Specification example: ```yaml volumes: . | name: data mountPath: /data ``` | . | It is specified as part of pod template in deployment manifest. When deployment controller creates pods each pod gets a volume named ‘data’. Just part of pod specification. | When pod is destroyed, the volume directly from container path will also be destroyed. When the directory gets destroyed, the associated actual db ins volume on disk also loses files in it. | Cons of volume per pod. | It is tied to pod life | Every pod will need to have volume specified | . | . | PV (Persistent volume) (Static Provisioning) . | cluster level K8s obj stored in etcd created from PV manifest | Actual storage is on Node disk/cloud/NFS. | This object is created only for creating a… [continues to next page] | volume within the cluster for a ahead change in the volume, we use PVC. | Flow of creating PV volume in list . | Fuse you create volume yourself. | Then just reference it in pv object. (This method is not used anymore) | . | . | PVC (Persistent Volume Claim): . | Dynamic provisioning: | obj created from PVC manifest in etcd. | A storage controller notices PVC is pending &amp; provisions storage. | eg: create EBS disk, GCP persistent disk, etc. | It then creates PV obj. &amp; binds it to PVC (EBS, GCP disk, etc). | . | Node: Physical/virtual server. | Cluster: Group of physical datacenter servers. | Kube-system: . | Namespace object stored in etcd. | created automatically during bootstap of control plane. (Eg: kubeadm init) | Part of other predefined yaml manifests | of system components : CoreDNS, kube-proxy, networking plugins (cni), etc. | Created by Namespace controller. It also creates default, kube system, kube public | Kube-node-lease: | Purpose: holds K8s internal components. | . | Sidecar: . | Auxiliary container that runs inside same pod as main application &amp; enhances or supports it. | has same network namespace (cannel, localhost shared), same storage volumes. (can be shared) | has separate process space (different container), separate lifecycle (can restart independently) | used to add functionality to or modifying main application code. | Eg:- logging, monitoring, proxying, security, configuration sync. | . | Init Containers: . | temporary container that runs before main application | used to prepare env required by app (eg: wait for db/cache readiness, download config or secrets at runtime (sun DB migrations)) | Not commonly used for smaller apps, but sahay for prod k8s systems, microservices | w/ dependencies, etc. | created from Pod yaml manifests. | spec -&gt; initContainers -&gt; Turns into pod object. | If initcontainers are omitted, pods start directly with containers | Developer defines it, K8s creates pod obj, kubelet executes based on pod objs. | . | Helm: . | means ships steering wheel (k8s logo) | package manager for K8s. Bundles K8s yaml manifests into reusable, versioned packages called charts. | not a core component of cluster -&gt; It is a cli tool on our m/c or CI/CD pipeline. | talks to K8s API server, applies manifests into cluster. | Without helm you need to manually manage multiple yaml files, repeated configs across envs, hard to version &amp; reuse | Deployments: . | with helm, everything is packaged, configurable via values, easy install/upgrade/rollback. | . | Helm Chart: . | Chart . | package K8s applicationist | contains templates values &amp; chart yaml files | . | Template - K8s yaml templates | values.yaml - configurable params | chart.yaml - metadata (name, version) | . | Structure: | . my-chart/ |--- chart.yaml |--- values.yaml |--- templates |--&gt; deployment.yaml |--&gt; service.yaml |--&gt; configmap.yaml . | Working of helm: . | You install a chart: helm install prometheus prometheus-community/prometheus | Helm renders templates: - replaces placeholders in yaml. | Eg: image: becomes image: prom/prometheus | . | Helm applies manifests: . | helm sends final yaml to K8s API server | eg: deployment, service, configmap, ingress, etc. | . | K8s stores it in etcd like other normal resources. | . | Key features: . | Allows install of packages called charts, like prometheus, grafana, nginx, ingress, postgresql. | Versioning/rollback supported: “helm rollback my-release 1” | Reusability: Same chart works across dev, staging, prod. Just change values.yaml. | Upgrade/update cluster resources safely: “helm upgrade my-app /chart” | . | Comparison of helm vs normal kubectl: . | Without helm: use kubectl apply on every yaml file. No release history, nothing. | With helm: use helm install my-app name. | eg. internally it will pull templates yaml, values.yaml, generate less yaml. internally apply them (like kubectl), store release history. | . | . | Operator: . | K8s extension that automates full lifecycle of complex applications using CRD (Custom Resource Definitions) &amp; Custom Controllers (reconciliation logic). | It acts like a system administrator (“operator”) | In normal K8s, it can manage stateless apps (deployments), basic scaling (HPA), simple configs. | But it struggles with stateful, complex systems like Postgres databases, kafka cluster, elasticsearch, etc. | . | A cluster is multiple pods spun within same K8s cluster related to same application for complex purpose. Like :- | . k8s |--&gt; nestjs Pod (Our own app) |--&gt; postgres-primary-------|--&gt; postgres-replica-1 |---&gt; postgres cluster |--&gt; postgres-replica-2-----| . | CRD obj is stored in etcd | It is watched by operator controller. specific to the cluster we want (Postgres, kafka) . The cluster specific operator is installed in K8s cluster, via operator manifest in which in the deployment section, the location from/image from where the operator needs to be installed is mentioned. This installed operator will take care of replicas, replication, failure, backups, upgrades, etc. | . Deployment section example in operator . kind: deployment containers: - image: Some-company postgres Operator: v1 . | CRD (Custom Resource Definition): . | lets us add new resource type to K8s. (that are not built-in like kind:Pod, kind:Service, kind:Deployment, etc) | Examples for new resource types: | kind: kafkaCluster, kind: PostgresCluster | Added it is defined in operator manifest in CRD section, which only fully K8s that one specific type of obj exists. | The actual creation of object for that cluster is dependent on custom resource file (the manifest specific to that object) | eg. If CRD section in operator.yaml | . kind: CustomResourceDefinition spec: names: kind: PostgresCluster . | Custom Resource (CR) example | . postgres-cluster.yaml kind: PostgresCluster metadata: name: my-db spec: instances: 3 . | API Group: . | so when K8s is installed. kubeapi server comes along w/ it. In kube api server, along w/ it comes some built-in API (sources) - These APIs are exposed to outside K8s to which HTTP API calls are made by kubectl (http client) | API groups are some groupings made by K8s for these api paths for each resource type. | Built in API groups &amp; paths: . | CORE (no group) api/v1 . | pods, services, configmaps, secrets, nodes, namespaces | . | app. (/apps/apps/v1) . | Deployments, Replicasets, Statefulsets, Daemonsets | . | batch (/apis/batch/v1) . | Jobs, CronJobs | . | networking (/apis/networking.k8s.io/v1) . | Ingress, NetworkPolicy | . | autoscaling (/apis/ /HPA) These all are compiled into kube-apiserver. | . | Additional APIs . | Generate via CRDS. | kube-apiserver dynamically registers new route when user creates CRD. | we get new api path like apis/mycompany.com/v1/resources. | . | Aggregated API server (Advanced). | External API server can also plug into kube-api server. | . | Most of the conversations with K8s cluster between kubectl, kubelet, etc, controller schedules with kube-api server.happens via http/https rest &amp; watch api calls &amp; requests &amp; these api paths | when writing manifest files, we mention the api path associated with its resource type so that kube-api server can do it like this : . | apiVersion: apps/v1 . | kind: Deployment | . | apiVersion: v1 . | kind: Pod | . | apiVersion: batch/v1 . | kind: Job … etc | . | . | This is done so that when these manifests are applied, kube-api server can do the following: . | Parse apiVersion + kind | Find matching resource handler | Validate schemas | Run admission controllers | Default missing fields | Store object in etcd | . | . | . | Admission Controllers . | So when a request is made to K8s cluster via kubectl, a lot of stuff/checks happen w/ admission controllers are just part of it. | Stuff that happens after req from kubectl to kube-api server: | . kubectl apply deployment.yaml (via http req) | v kube-api-server |-- http routing (matches apiVersion = apps/v1, kind = Deployment) |-- authentication(verify who is making the req) |-- authorization(verify if authenticated user is allowed to make req) |-- request decoders(convert manifest to resource obj) |-- API resource lookup(kube finds appropriate handlers from | internal api-registry to handle [apps/v1, Deployment])Decoded resourceobj |-- (built-in) Admission chain (chain of admission controllers) |-- service account controllers(injects default secure account) |-- default storage class(adds default storage class if omitted) |-- limit ranger (applies/enforces resource limits) |-- Pod security (checks security requirement) |-- resource quota (check namespace quota) |-- Mutating Admission Webhook (Calls custom mutation webhooks) |-- Validating Admission webhook (Calls custom validation webhooks) . | Custom use defined admission controllers can also be added later via manifests. | . | Taints . | rule applied to node based on which pods are not to be scheduled there. (cause normally all nodes are welcome to host pods). | Cases when you need to taint: GPU workloads, db workloads, infra components, control plane components. | How a taint looks like: . | dedicated = database : NoSchedule | gpu = true : NoSchedule | . | Ways to taint nodes: . | (Most common) kubectl taint kubectl taint nods worker-1 dedicated = gpu : NoSchedule | directly in Node manifest (less common). | . apiVersion : v1 kind: Node metadata: name: worker-1 spec: taints: - key: dedicated value: gpu effect: NoSchedule . | Automatically by K8s (some taints are added by controller) | e.g: node.kubernetes.io/not-readynode.kubernetes.io/memory-pressure … etc. | . | . | Tolerations . | Rule on pod saying, allowing it to run on a node set not wanting taint.node set not wanting taint. | Defined in Pod, Deployment, StatefulSet, Daemonset specification manifests. | e.g: apiVersion: apps/v1 kind: Deployment spec: template: spec: tolerations - key: dedicated operator: equal value: gpu effect: NoSchedule . Not satisfying taint - toleration can make pods pending . | e.g: 3 taint &amp; toleration . | Node 1 -&gt; accept all pods (no taint) | Node 2 -&gt; tainted (gpu=true:NoSchedule) | Pod 1 -&gt; no toleration | Pod 2 -&gt; toleration - gpu=true: noo schedule | Result: . | Node 2 - Pod 2 allowed, pod 2 rejected | Node 1 - Pod 1 allowed, pod 2 allowed. | . | . | . | Affinity/Anti-affinity . | Rules before allowing pods to be placed near/force from any node/pod. | Can have node affinity e.g: pod affinity/anti affinity.Can be hard/soft rules.Must have topology key. | Node affinity . | pod placement based on node labels. | e.g: if . | Node A - disk=ssd | Node B - disk=hdd | Then Pod - Node Affinity :- disk = ssd. Schedule onto SSD nodes. | . | . | Pod Affinity/AntiAffinity . | Pod placement based on other pod labels. | . | Hard rule: Soft rules . | Hard rule . | must satisfy. Else pod state goes into pending. | . | Soft rule . | nice to have. But pod will still run somewhere. | . | . | Topology key (Scope) . | Region where pod must have affinity/anti-affinity. | Eg: Near xyz node. Near xyz zone… etc. | . | eg to all taint + toleration + affinities | . Cluster |--Node A |--labels: | type=gpu | zone=east |--taint: | dedicated = gpu : NoSchedule. |--Node B |--labels: | type=general | zone=east |--no taint. |--Node C |--labels: | type=gpu | zone=west |--taint: dedicated = gpu : NoSchedule. -&gt; Existing pod redis |-- running on node A. |--labels: |--app=redis -&gt; New pod (api-server) Tolerations: - key: dedicated value: gpu affinity: Node Affinity: required: type = gpu Pod Affinity: required: app = redis Pod AntiAffinity: required: app = api-server -&gt; Result: Node taint -&gt; all gpu tainted. New pod toleration -&gt; gpu taint. So can run on all nodes A, B, C. Node affinity -&gt; on nodes w/ type=gpu. So Node A ✓, Node B ×, Node C ✓ new pod, pod affinity -&gt; near redis so Node A ✓, Node C × pod anti affinity -&gt; Not near api-server. Since no node has api-server pod, Node A ✓. | Case . | If Node A had a pod for api-server, then new pod will go into pending state. | . | . | Eviction . | K8s process of removing pod from Node. K8s pod would normally stop on its own. | Reasons: Memory pressure, Disk Pressure, Node failure, A node having taint called “No-execut” like maintenance = true. “NoExecute” like “maintenance = true? NoExecute | Eviction vs Deletion . | Eviction done by k8s, Delete - user removal | User can also manually want it to evict via kubectl. | . | After eviction . | If statefulset or deployment or replacement pod from evicted w/ new one created w/ out migration. | If standalone pod -&gt; Pod evicted &amp; Gone. | . | Evictions can be rejected by. Pod Disruption Budget (PDB) restricted. | Eg: minAvailable : 2 | (keeps 2 replicas always healthy - Protection during maintenance). | . | Eviction Not same as OOM kill. | Eviction -&gt; Done by k8s | OOMkill -&gt; (out of memory kill) done by node. | . | . | Drain . | Process of safely removing workloads from node. | Reasons: Reboot a VM, upgrade the OS, replace hardware, upgrade, kubelet; Shutdown node. | Process . | marks pod mode as unschedulable. | evicts existing pods. | if deployment, the controller - recreate pods elsewhere &amp; then evict. | After drain, safe to reboot, shutdown, etc. | . | Cordon vs Drain . | cordon -&gt; only marking node as unschedulable. | drain -&gt; mark &amp; evict. Uncordon -&gt; unmark it as schedulable. | . | Daemonset Pods are generally ignored during drain in terminal command “kubectl drain worker-1 –ignore -daemonsets.” | . | . Cluster diagram . Developer/User machine |-- Developer laptop |-- kubectl |-- kubeconfig |-- Browser |-- CI/CD machine |-- kubectl |-- helm |-- ArgoCD CLI |-- Deployment Pipelines |-- Admin Machine |-- kubectl |-- kubeadm K8s cluster |-- Control Plane Nodes |-- kubelet |-- Static Pods | |-- kube-api-server Pod | |-- kube-scheduler Pod | |-- kube-controller-manager Pod | |-- etcd Pod |-- Container Runtime (containerd / CRI-O) |-- CNI components |-- CSI components |-- Worker Nodes |-- kubelet |-- kube-proxy |-- Container Runtime (containerd / CRI-O) |-- CNI Components |-- CSI Node components |-- Pods |-- Application Pod |-- CoreDNS Pod |-- Metrics Server Pod |-- Ingress Controller Pod |-- Prometheus Pod |-- Grafana Pod |-- K8s API objects (records stored in etcd) |-- Namespace |-- Node |-- Pod |-- ReplicationSet |-- Deployment |-- StatefulSet |-- DaemonSet |-- Job |-- CronJob |-- Ingress |-- Ingress Class |-- Gateway |-- HttpRoute |-- Config Map |-- Secret |-- Secure Account |-- Persistent Volume |-- Persistent Volume Claim |-- Storage Class |-- Service |-- Endpoints |-- EndpointSlice |-- Resource Quota |-- Limit Range |-- Resource Quota |-- Limit Range |-- Network Policy |-- Horizontal Pod Autoscaler |-- Pod Disruption Budget |-- Priority Class |-- Runtime Class |-- Custom Resource Definition |-- Custom Resources External Systems |-- Container Registry (Docker Hub, GHCR, ECR, GCR, Artifact Registry) |-- DNS provider |-- Storage System (NFS, Ceph, SAN, NAS) |-- Cloud load balancer |-- External users . ",
     "url": "/bits-and-bytes/kubernetes-04-k8s-structure-and-visualization#k8s-structure-and-visualization",
     
     "relUrl": "/kubernetes-04-k8s-structure-and-visualization#k8s-structure-and-visualization"
-  },"117": {
+  },"118": {
     "doc": "04. K8s Structure and visualization - Part 2",
     "title": "04. K8s Structure and visualization - Part 2",
     "content": " ",
     "url": "/bits-and-bytes/kubernetes-04-k8s-structure-and-visualization",
     
     "relUrl": "/kubernetes-04-k8s-structure-and-visualization"
-  },"118": {
+  },"119": {
     "doc": "06. K8s Points to Remember",
     "title": "K8s app (points to remember)",
     "content": ". | using kind locally | we create a control plane node from a docker container. | In kind we schedule pods &amp; system related pods both in control plane node. [No taint. In general deployment platforms like GKE, EKS, etc. taints control plane node as “noschedule” to avoid schedule of worker nodes] | Commands to apply yamls kubectl apply -f &lt;file-path&gt; | command to read applied yamls kubectl get all, kubectl get pods, kubectl get services, ..etc | Each time you update yaml, you need to kubectl apply -f filename &amp; then kubectl rollback restart deployment &lt;service-name&gt; | Everytime you change any code file we need to nx build &lt;service-name&gt;, docker build t &lt;tag-name&gt; -f &lt;dockerfile-path&gt;, kind load docker-image &lt;tag-name&gt; --name &lt;control-plane-cluster-name&gt; | Kustomize config:- . | Base files are template files. | Any config in overlay file overrides settings in base file (eg: overlay namespace overrides base namespace). | . | “kind” is local K8s setup. “kubectl” is cli client to communicate of either kind or GKE or cloud K8s. | “Kustomize” is part of kubectl cli | Steps to deploy a micro service to local K8s . | make sure all rotates mentioned in deployment.yaml readiness &amp; liveness probe exists. (Health api) | Create Dockerfile.tar is in the target microservice file. | Eg: From node:22-alpine WORKDIR /app copy package.json pnpm-lock.yaml RUN corepack enable RUN pnpm install --ignore-scripts copy apps/auth-service/dist CMD [\"node\", \"main.js\"]` . | . | Build image -&gt; docker build -t &lt;tag-name&gt; -f &lt;path-to-Dockerfile&gt; . --no-cache | Load into kind cluster kind load docker-image &lt;tag-name&gt; --name=&lt;cluster-name&gt; | Apply new yaml files or restart existing deployment. | apply -&gt; kubectl apply -k &lt;path-to-overlays&gt; (via Kustomize for all files) | restart -&gt; kubectl rollout restart deployment &lt;service-name&gt; -n &lt;name-space&gt; | . | Expose ingress port for calling apis:- . | “kubectl port-forward -n service/ingress-nginx-controller 8080:80\" To check logs: “kubectl logs deployment/media-service -n \" Verify images loaded in kind: \"docker exec crictl images\" . | . | . | . ",
     "url": "/bits-and-bytes/kubernetes-06-k8s-points-to-remember#k8s-app-points-to-remember",
     
     "relUrl": "/kubernetes-06-k8s-points-to-remember#k8s-app-points-to-remember"
-  },"119": {
+  },"120": {
     "doc": "06. K8s Points to Remember",
     "title": "06. K8s Points to Remember",
     "content": " ",
     "url": "/bits-and-bytes/kubernetes-06-k8s-points-to-remember",
     
     "relUrl": "/kubernetes-06-k8s-points-to-remember"
-  },"120": {
+  },"121": {
     "doc": "03. K8s Basics",
     "title": "K8s Basics",
     "content": "So we are back to continuing with k8s basics dropping media forge in between 🥲🙂 . Linux Basics . Back to understanding linux basics for k8s. They include processes, ports, networking, DNS, file systems, permissions, env variables, systemd, services, logs . | Processes: . | A combination of program instructions, memory used, CPU execution state, open files, network connections, security identity, env variables is called a process | Process handling in physical rack server . | CPU core execute process instruction | RAM store process data | Disk (HDD/SSD) store process file | NIC/network card process network traffic (send and receives network packets) | Linux kernel schedue CPU time between processes | . | Physical rack visualization . |-------------------------| CPU | RAM | SSD/HDD | NIC | |----------------| | Linux Kernel | |----------------| |-------------------------| . | NIC . | Network interface card | Hardware for network communication like via ethernet ports, fibre ports, wireless radio hardwood | . | VIsualization | . Nestjs app -----| |-----Application v | Socket API -----| v Linux Kernel Networking Stack | v NIC driver -----------------| | v | NIC hardware |------- Hardware to communicate via sockets | v | Ethernet cable/ network ----| . | . | Ports: . | Communication endpoint | Use ports to decide which process receives incoming n/w traffic | Kernel does forwarding of n/w from ports to its associated process | . | Networking . | Just basic concepts of who connects by what | Eg: Ethernet cables/fiber connects server, cables connect to switches, etc | . | DNS (Domain Name System) . | Converts domain names to IP address, via which servers communicate | . | File systems . | organize data on storage systems | eg: SSD, HDD, etc | . | Permissions . | Eg: -rwxr-x— | Rules followed in permissions: `- rwx r-x r--` |-|-|-| | | | v | | other permission | v | group permission | v | owner permission v Filetype . | filetype . | -: regular file | d: directory | l: symbolic link | . | permissions - r read, w write, x execute, - no permission | Numeric representation . | r - 4 | w - 2 | x - 1 | rwx - 7 | r-x - 5 | --- - 0 | - rwx r-x r-- - 750 | Can be used as \"chmod 750 filename\" | . | . | Env variable - As we know it | systemd / services . | systemd . | linux service manager | controls starting, stopping, restarting services, etc. | eg services -&gt; nginx, ssh, docker, etc. | command -&gt; \"systemctl status\" | . | . | Logs - As we know it | . Containers . Images, containers, layers, volumes, networks, entrypoints, env variables, multi stage builds. | Images . | packaged filesystem | metadata used to create container | contains application files, libraries, runtime binaries, default config, startup command. | readonly templates | when container starts . | mount image filesystem | add a writable layer . | copy files from readonly to writable files &amp; run from there | . | start process | . | . | Container Runtime . | eg: docker, containerd | creates containers (processes from image), configure namespaces/cgroup, mount filesystem, set networking, start process | . | Container . | Process made from image | Eg: running “docker run redis”.. | creates redis process | creates isolated filesystem | creates virtual n/w interface | creates writable container layer | . | . | Layers . | something with which images are built. | each Dockerfile instruction creates a build tor file/file/folder, that is a new filesystem layer. | Each tor file/folder created is immutable, and each of them is called a layer. | Container stacks them using OverlayFS (a linux filesystem tech that allows multiple directories/filesystems to be stacked together into one unified filesystem view). | . | Volumes . | Persistent storage for containers outside container lifecycle. | . | Networks . | Docker creates virtual networking using: . | linux bridges | Virtual Ethernet interfaces (Veth) | NAT rules | routing tables | . | Linux bridge: . | virtual software switch to which containers connect to; called “docker0” | created by docker. | Visualisation | . `container A` ---\\ `container B` ----&gt; `\"docker0\" bridge --&gt; `Host NIC` --&gt; `Internet` `container C` ---/ . | Part of virtual network interfaces | . | Virtual Ethernet interfaces (Veth pair) . | created by docker during container start | called as “virtual cable pair” (veth pair) | part of virtual network interfaces. | has one side inside container (eth0), one side outside container (veth7abc123) | visualisation: container eth0 &lt;--- virtual cable ---&gt; host veth xyz . | . | NAT rules (Network Address Translation) . | Networking Address Translation rules | Rules/Instructions to how packets (that travel through sys) must be rewritten. | This rewriting allows containers w/ private IPs to access host’s internet via host IP (translation). | Rules exist because not every packet must be translated. | Eg commands: SNAT, DNAT, MASQUERADE, REDIRECT. | This is not just of docker but of host system, linux in general, VPN, etc too. (used everywhere for rewriting packet addresses) | It is a subset rule among many other rules in linux iptables. | ip-table . | tool/sys/networking/firewall utility. | iptable defines what happens to packets. | used for managing packet rules. | eg: | . iptables |--- filter rules |--- forwarding rules |--- logging rules |--- NAT rules . | eg of iptable rules: . | Allow incoming SSH traffic | Rewrite packet source IP. | . etc | . | Answers questions like allow packet?, block packet?, rewrite IP?, forward IP?, log packet? | . | . | . | Routing Tables . | Answers questions like where to hop next, which network interface should transmit the packet, etc. | decides where the packets go to. | In terms of docker, this decides which packets go to that container related packets go to docker0 (linux bridge), while internet traffic go to router etc. | . | . | Entry Points . | main command started when container launches. | Eg: ENTRYPOINT [“node”, “server.js”] | When the process marked as entrypoint (here it is “node server.js”), it becomes PID 1 process. | . | Env Variables (same we know it) | Multi stage builds . | We can have multiple stages in dockerfile by writing like this - “FROM xyz as abc”. | Generally all commands in dockerfile creator makes one layer. | All layers all together makes one stage. | And this stage builds itself to create one image which is referenced by docker to run in the container. | With multistage builds, only the final stage is referenced as the image created by the dockerfile | During each stage in multistage builds, multiple stages (few stage images / temporary stages) are created (collection of layer files) and stored in disk. But only final stage image is exposed to docker &amp; becomes the o/p. | Benefit : smaller containers, faster deployments, reduced attack surface, lower memory/storage usage. | . | . Purpose of K8s . Problem and their solutions via k8s . | Container crashes —&gt; self healing . | w/o containers K8s, need to manually up stuff | K8s continuously watches containers | w/ containers K8s, RAM etc re-allocation, filesystem remounting, network interface recreation etc is taken care of. | . | multiple server -&gt; scheduling . | K8s simplifies scheduling pods into free servers w/o having to manually track it via scheduler | . | Traffic routing -&gt; services . | K8s services allow having stable traffic routing to healthy BE pods w/o manually having to handle it. | . | Scaling -&gt; Replica Set via Services . | Distribution of load across back servers automatically done by K8s w/o manual intervention under higher load via ReplicaSet | . | Config management -&gt; configmaps / Secrets . | Diff env config &amp; secrets injected into container memory w/o rebuilding using K8s. | . | Deployments -&gt; Rolling updates . | Updates applications w/o downtime via K8s. | Process: — start new pod, wait until healthy, stop old pod, repeat gradually. | . | Service discovery -&gt; DNS . | K8s provides internal DNS to communicate set of pods even when they move frequently b/w back servers. | Process: — Application attempts to DNS lookup, req sent through DNS Virtual n/w, cluster DNS responds, app server receives current service IP. | . | Resource Control -&gt; Requests / limits . | To avoid applns from competing for hardware resources, we can set request limits &amp; limits for cpu, memory, etc in k8s deployment manifest (or any other manifest that has deployment spec). This set hardware resource limits on containers (not on pod or node). | . | Receiving K8s Architecture First . | Cluster . | group of physical/virtual servers working together to run applications | Consists of control plne and worker nodes | . | Control plane . | management brain of K8s. | doesn’t normally run an appln container | Responsibilities :- accept requests, store cluster state, make decisions, monitor cluster status, command worker nodes. | . | API server . | front door of K8s (and through it) | Everything talks to it :- kubectl, scheduler, controller manager, kubelet - Responsibilities — validate req, authenticate user, authorize action, store resource obj. | . | etcd . | K8s db. Stores cluster state | Also writes to physical storage devices (CRI, CSI, etc) | . | scheduler . | decides which node the pod must go to. | a process running on control plane | . | Controller manager . | continuously check desired state vs actual state | a process on control plane that keeps doing - observe, compare, correct (called as reconciliation loop). | reason why K8s correct itself | . | kubelet . | agent running on every worker node. | receives instruction from control plane | ensures containers are running | . | Container runtime . | runtime that actually runs containers | eg: containerd, CRI-O | Process :- Pull required image, create filesystem, configure networking, start process | . | kube proxy . | manage n/w rules for services. | when traffic arrives at a service, kube proxy routes it to correct pod based on iptables / networking rules. | . | . | . Most important K8s concept (Desired state reconciliation) . | Desired state reconciliation . | We declare desired state (eg: replicas 3) and K8s try to match it to reality via reconciliation loops | . | Self healing . | basically reconciliation fixing failures | cluster repairing itself | . | Auto recreation . | K8s automatically recreates missing resources | Eg: Someone manually deletes a pod. But desired state says it needs 3 replicas, &amp; reality has only 2 pods, so controller immediately creates another pod. | . | Controllers . | software that perform reconciliation | Reconciliation loop :- controller continuously watching, comparing, acting &amp; repeating | A linux process running on control plane service | . | Deployments . | stores desired appln state (deployment is the instruction, controllers perform the instruction) | . | Scaling . | changing desired capacity | eg: from replica: 3 to replica: 10 | . | Rollback . | change desired state to prev version | . | . Learn Objects . | Phase 1 - Pods . | what: . | smallest deployable unit in K8s. | The thing that k8s schedules into worker nodes | contains &gt;= 1 containers | not a process itself. | a K8s object that run &amp; manages the process (aka :- container) | pod &amp; container :- . | pod = wrapper | container = isolated process env | . pod container A container B |-------------|-------------| process A | process B |-------------|-------------| . | a pod provides shared n/w, shared storage, shared lifecycle. | multi containers Pods - pods can have multiple containers | pod lifecycle Green . | Pending -&gt; Pod created, image downloading, waiting for node. | running -&gt; containers started, app “running” | Failed -&gt; container crashed - pod failed | . | logs — “kubectl logs my-pod” | Exec into pod : . | “kubectl exec -it my-pod – sh” | allows to start a command inside a running container. | . | . | . | . | Phase 2 — Deployment . | Replica set - ensure specific no. of pods exist | Scaling - Change no. of pod replicas | Rolling updates - update application version gradually | Rollback - revert back version | . | Phase 3 — Service . | Service - Provides a reliable n/w endpoint for pods | Cluster IP : . | IP for internal cluster communication. | So that traffic remains inside cluster networking &amp; no external traffic reaches it. | . | Nodeport — port used to expose a service through a worker node’s IP. — can be accessed from outside cluster cluster IP — common uses includes connecting external load balancers, for development &amp; testing quickly. | expose app “1010 DNS or load balancers, etc. | Eg for NodePort &amp; Node IP. “http://Node-IP:30050” | worker node listens to this TCP port. | . | Load balancer . | for exposing services externally. &amp; forward traffic to cluster nodes | . | Service discovery . | Service discovery is done via service names | It is done so that pods can move around w/o breaking communication | A service can point to multiple pods like redis-service can have multiple replicas of pods, but all can be accessed by same name. | . | kube-dns/coredns — DNS server K8S . | just another pod running on worker node CPU’s &amp; RAM | . | Label selectors — labels used for services to find pods . | Eg: Pod \"label: app: backend\" Service \"selector: app: backend\" . Now K8S matches them. | labels are metadata stored in it.cd | . | . | Phase 4 — Configmap &amp; Secrets . | Env variable injection . | Eg: Config map contain env variables, containers can access them inside process env.[var-name] | . | Mounted files . | Provide config as files instead of env variables | Eg: Config map has app.conf. It is mounted in containers as /etc/config/app.conf | to app “it looks like normal file on disk” | (means file contents become visible inside filesystem namespace, just like a normal file). | . | Separation of config from image — container image is kept independent from configuration — ie, when config changes per namespace like diff for prod &amp; dev, the image of container is unaffected. | Secrets . | store sensitive config | consumed as env variables or mounted files. | . | . | Phase 5 — Ingress . | Reverse proxy — receive req &amp; forward it to execution . | Ingress controller: is a process running on worker node CPUs. | Eg: user requests at https://example.com ingress receives it &amp; forwards it to frontend-service. | . | Routing — a thing that reverse proxy does. | deciding which service gets the incoming req. | . | Domain name — human readable names created from Service names instead of IP addresses. | DNS resolves the domain to the ingress endpoint | Traffic then flows through switches, routers, NICs, and into the cluster | . | TLS termination — handle HTTPS encryption — TLS = Transport layer security. — Ingress terminates TLS (stops encrypted traffic &amp; decrypts it by security) . | it decrypts &amp; forwards the req internally. | . | NGINX ingress controller . | perform the ingress functionality based on ingress obj stored in etcd. | . | . | Phase 6 — Storage . | Volumes — provide storage to pods — Volume ultimately resides on SSD, NVMe (solid state device), NVMe, &amp; HDD, n/w storage | Persistent Volume (PV) — declares/represents actual storage available to the cluster. | Persistent Volume Claim (PVC) . | Storage requested by pods | Eg: Pod requests “I need 50GB”. K8S find a matching PV &amp; binds Pod &amp; PV. Pod don’t care which disk provides the storage. | . | Stateful Workloads . | Apps / Pods which are not stateless | Eg: PostgreSQL, MySQL, MongoDB, redis | When these pods restart, the process change from old to new container, but same volume/storage is used. | . | . | Phase 6 — Networking Fundamentals . | Pod net networking . | Every pod gets its own IP &amp; each one communicates to other via these IPs. | Packets of data need to travel through these to reach from one pod to another via network :- Pod 1 - VETH (virtual n/w interface) - worker node NIC - switch - other worker node - destination pod. | . | Service virtual IPs . | Eg: “backend-service” | stable addresses for a group of pods. | . | kube-proxy — routing btw pods internally based on service names. | it also configures networking rules on every worker node. | . | CNI plugin . | Container Networking Interface | Create Pod networking. | Process of CNI working (what all CNI does) . | when a new pod starts . | CNI allocates an IP | create network interface | configure routing | connect pod to cluster N/W. | . | . | Points to note: . | CNI (container n/w interface) is a specification, by a set of plugins. | it creates/configures n/working for containers &amp; pods. | CNI plugin is a plugin that resides on every K8s node. It is an executable file. unlike API objects or controllers, which create/configure upon running the file. | It doesn’t generally come with K8s cluster when we create one. A ductii controllers and such. A administrator generally need to set it up. | Commonly installed CNI plugins :- Calico, Cilium, Flannel. Page 2(2) | But many providers provide auto installs, many things for developers thus it may feel like built in. | Providers that auto installs include :- minikube kind, EKS, GKE, AKS. DNS Resolution - convert name into IP addresses. | . | . | . | Phase 7 - Resource management . | Requests : . | to declare minimum resources required (pod-level) | eg: requests: cpu: 500m memory: 512Mi . | this means: pods node needs 0.5 CPU &amp; 512 MB RAM. | . | Limits : . | to declare maximum resources allowed. | eg: limits: cpu : 1 memory : 1Gi . | which means node needs max 1 CPU &amp; 1 GB RAM For nodes, resources are allocated via “capacity” and “allocatable resources” To decide placement of pods in nodes, scheduler adds the requests &amp; limits of pods/containers &amp; then compares with node allocatable capacity . | . | cpu throttling . | Prevent containers from exceeding CPU limits | Process : . | Developer sets CPU limit limits : cpu : 1\" . | kubelet reads pod spec. | Container runtime configures cgroups. | runtime creates linux cgroup setting for container | . | linux kernel tracks cpu usage by watching how much CPU time certain cgroup consumes. | Container reaches its quota C like if cpu is 1; but container consumes 100ms of cpu time (quota) every 100 ms window (period). | Kernel throttles. | kernel blocks further cpu execution. Container waits until the next period begins. (means process is either killed nor pod is contacted. Process sleeps.) | . | . | OOM killed . | out of memory killed | purpose is to protect node from memory exhaustion | When RAM usage exceeds by containers, kernel kills the containers process. Then the pod may be restarted Note cpu limit exceed -&gt; process only steps (Throttle) memory limit exceed -&gt; process killed (oom) . | . | scheduling . | K8s scheduler choosing which node will run the pod. | . | Node Pressure: . | Purpose is to detect overloaded nodes | Common pressure types: Memory pressure, disk pressure, PID pressure. | e.g. K8s servers have RAM = 128 GB, used RAM = 127 GB . | node enters memory pressure | K8s may evict nodes to protect the node. If no free nodes 10% full memory exists on the cluster, then the Page 5exists on the cluster, then the new pod goes into pending state (In case of fixed replicaset with stateless deployment pods) . | . | . | . | . | . ",
     "url": "/bits-and-bytes/kubernetes-03-k8s-basics#k8s-basics",
     
     "relUrl": "/kubernetes-03-k8s-basics#k8s-basics"
-  },"121": {
+  },"122": {
     "doc": "03. K8s Basics",
     "title": "03. K8s Basics",
     "content": " ",
     "url": "/bits-and-bytes/kubernetes-03-k8s-basics",
     
     "relUrl": "/kubernetes-03-k8s-basics"
-  },"122": {
+  },"123": {
     "doc": "05. K8s Cluster Diagram",
     "title": "K8s Cluster Diagram (For Reference)",
     "content": ". k8s clusters . Cluster 1 (ex: prod cluster) |---*Control Plane node A* |---kube-apiserver | ↳ Authentication | ↳ Authorization (RBAC) | ↳ Admission controllers | ↳ API endpoints | ↳ Validation | ↳ watches |---etcd | ↳ deployments | ↳ replicasets | ↳ pods | ↳ services | ↳ configmaps | ↳ secrets | ↳ namespaces | ↳ service accounts | ↳ roles | ↳ rolebindings | ↳ clusterroles | ↳ clusterrolebindings | ↳ jobs | ↳ cronjobs | ↳ daemonsets | ↳ statefulsets | ↳ persistent volumes | ↳ persistent volume claims | ↳ storage classes | ↳ nodes | ↳ events | ↳ leases | ↳ Custom Resources (CRD) |---Kubernetes Controller Manager | ↳ deployment controller (creates/manages replicasets) | ↳ replicaset controller (creates/deletes pods) | ↳ job controller | ↳ cronjob controller | ↳ statefulset controller | ↳ daemonset controller | ↳ namespace controller | ↳ node controller | ↳ service account controller | ↳ endpoint slice controller | ↳ persistent volume controller | ↳ replication controller | ↳ ... many other controllers. |--- kube-scheduler | ↳ watches pending pods | ↳ selects worker node | ↳ resource calculations | ↳ affinity rules | ↳ taints &amp; tolerations | ↳ writes node assignment |---Other controller managers (optional) | ↳ load balancer controller | ↳ route controller | ↳ volume controller | ↳ node-controller |---*Control Plane node B* | ↳ ... same as above ↳ Cluster 2 (ex: staging cluster) Developer machine / CI server ↳ kubectl ↳ kube-adm ↳ Helm ↳ Kustomize ↳ ArgoCD ↳ Terraform ↳ Custom clients Worker Nodes ↳ Node 1 | ↳ kubelet | ↳ talks to api server | ↳ watches Pod objects | ↳ starts containers | ↳ Container runtime | ↳ containerd | ↳ CRI-O | ↳(formerly docker) | ↳ kube-proxy | ↳ Service Networking | ↳ iptables | ↳ IPVS | ↳ Running Pods | ↳ Pod A | ↳ Pod B | ↳ Pod C ↳ Node B -&gt; Same structure ↳ Node C -&gt; Same structure . ",
     "url": "/bits-and-bytes/kubernetes-05-k8s-cluster-diagram#k8s-cluster-diagram-for-reference",
     
     "relUrl": "/kubernetes-05-k8s-cluster-diagram#k8s-cluster-diagram-for-reference"
-  },"123": {
+  },"124": {
     "doc": "05. K8s Cluster Diagram",
     "title": "05. K8s Cluster Diagram",
     "content": " ",
     "url": "/bits-and-bytes/kubernetes-05-k8s-cluster-diagram",
     
     "relUrl": "/kubernetes-05-k8s-cluster-diagram"
-  },"124": {
+  },"125": {
     "doc": "08. K8s Leanring Continuation",
     "title": "K8s learning (continuation)",
     "content": ". | Linux namespaces . | helps in isolation | types :- PID, NET, MNT, UTS, IPC, USER, CGROUP | . | cgroups (control groups) . | for resource control | tracks limits of resources | . | Containerd - container runtime | OCI (Open Container Initiative) . | Container standards | defines standards for container image &amp; container runtimes | Example :- . | When we build an image, docker creates an OCI-compliant image | When we push it, and someone else pulls it, because it is OCI compliant, everyone follows it. The same image works across (docker, containerd, Podman, CRI-O, K8s, etc.) | . | . | Istio vs port forwarding . | port forwarding :- . | Eg: kubectl port-forward svc/my-service 8080:80 | temporary funnel from my-laptop to pod/svc | used for development / debugging / testing | Limitations :- . | Only works while terminal session is running | not suitable for real cases | no public DNS, no production-grade traffic management, no SSL-TLS termination, no load balancing | . | Istio-ingress gateway :- | Expose app to internet permanently | Accepts traffic from users, browsers, mobile apps, APIs, etc. | Provides routing, TLS/HTTPS, traffic splitting, canary deployments, blue-green deployments, authentication/authorization, observability, rate limiting (w/ extensions) | Used when apps are deployed to a real environment like GKE, EKS, AKS, on-prem K8s, etc. Page 15(16) | . | . | . ",
     "url": "/bits-and-bytes/kubernetes-08-k8s-learning-continuation#k8s-learning-continuation",
     
     "relUrl": "/kubernetes-08-k8s-learning-continuation#k8s-learning-continuation"
-  },"125": {
+  },"126": {
     "doc": "08. K8s Leanring Continuation",
     "title": "K8s visualisers",
     "content": ". | K8s dashboard (legacy &amp; deprecated)(GUI) . | Steps . | make sure you have helm installed and a running kind cluster. “helm version”, “kubectl config current-context” | install K8s dashboard. | . \"helm repo add kubernetes-dashboard kubernetes-retired.github.io/dashboard/\" \"helm repo update\" \"helm install kubernetes-dashboard \\ kubernetes-dashboard/kubernetes-dashboard \\ --namespace kubernetes-dashboard \\ --create-namespace\" . | verify installation : “kubectl get pods -n kubernetes-dashboard” | create admin account :- | . # dashboard-admin.yaml apiVersion: v1 kind: ServiceAccount metadata: name: admin-user namespace: kubernetes-dashboard apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: name: admin-user roleRef: apiGroup: rbac.authorization.k8s.io kind: ClusterRole name: cluster-admin subjects: - kind: ServiceAccount name: admin-user namespace: kubernetes-dashboard . | Apply this file “kubectl apply -f dashboard-admin.yaml” | Generate login token “kubectl -n kubernetes-dashboard create token admin-user” | Verify services “kubectl get svc -n kubernetes-dashboard” | portforward kong proxy :- | . \"kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy 8443:443\" . | open https://localhost:8443 &amp; login using token. | Every cluster and its associated details will be visible w/o any commands. | . | . | Headlamp (GUI) . | install as an app &amp; open it ds. | clusters will already be there. | . | k9s (terminal GUI) . | most used (it seems) | . | lens (GUI) - didn’t try | . ",
     "url": "/bits-and-bytes/kubernetes-08-k8s-learning-continuation#k8s-visualisers",
     
     "relUrl": "/kubernetes-08-k8s-learning-continuation#k8s-visualisers"
-  },"126": {
+  },"127": {
     "doc": "08. K8s Leanring Continuation",
     "title": "08. K8s Leanring Continuation",
     "content": " ",
     "url": "/bits-and-bytes/kubernetes-08-k8s-learning-continuation",
     
     "relUrl": "/kubernetes-08-k8s-learning-continuation"
-  },"127": {
+  },"128": {
     "doc": "09. Advanced K8s",
     "title": "Advanced K8s (Story Based)",
     "content": "Devops |-- K8s |-- K8s Fundamentals |-- Application packaging |-- helm |-- charts |-- values.yaml |-- chart.yaml |-- helm repositories |-- Gitops |-- Argo CD |-- Applications |-- Application sets |-- SyncReconciliation |-- Drift detection |-- Git as source of truth |-- Continuous delivery (CD) |-- Progressive Delivery |-- Rollbacks |-- Automated deployments . | Without helm . | Suppose you have multiple services like frontend, backend, postgres, redis, ingress, etc. For each one will have to write deployment.yaml, service.yaml, ingress.yaml, configmap.yaml, secret.yaml, pvc.yaml, etc. | This results in 20, 30, 50 yamls… For deploying in different environments like dev &amp; prod we will have to copy that files multiple times. | Too much work, duplicate files. | . | With helm . | Reduced duplication via templates | Thus, it is most useful when used in combination w/ template expressions like `` But one can run “helm install myapp” without template expressions just with static data though it is same.(Running above mentioned command is called as installing a helm chart or installing a release.) | Template files (with template expressions) are called value files | . | Value files . | To deploy different kinds of values to different environments (Eg: values-dev.yaml) | Avoid duplicated manifests while still maintaining operationBinding to k8s env file, but w/o security. | . | Charts.yaml . | Addition of it to any folder makes that folder a valid “chart” &amp; makes helm recognise it as one installable package. | Running “helm install myrelease my-app” (Installing a helm chart / release) | In general, we don’t push charts (folder created w/ charts.yaml) into OCI registries (open w/ charts.yaml) into OCI registries (open w/ charts.yaml). It is just spun on the repos required nodes. | But in general, we push to OCI registries same as docker images (Eg: dockerhub, github container registry, Amazon ECR, Google artifact registry, Azure container registry). | . | Multiple charts . | by having multiple folders ref chart.yaml to install. | . | Third party charts . | to install, popular reusable packages/charts like prometheus, grafana, etc. redis, postgres, etc. | Installing multiple helm charts . | Helm file . | used for describing multiple helm releases in one place, or deploying them together &amp; volatile controlling, ordering &amp; shared configuration. | . | . | . | Gitops / ArgoCD . | Subset of DevOps. | Focuses on keeping DevOps in sync across teams in large organizations.Git as source of truth | A tool used for that is ArgoCD. | ArgoCD is a CRD so running in K8s. | Entire setup for argo CD as manifests. | ArgoCD watches for changes and sunsets them if necessary.Something like protecting dev/main branches in github/gitlab. | Argo Project consists of argocd, argo workflows, argo rollouts, argo events. | Named after mythological ship Argonauts - Logo of argo is an orange squid. | . | . | . | . ",
     "url": "/bits-and-bytes/kubernetes-09-advanced-k8s#advanced-k8s-story-based",
     
     "relUrl": "/kubernetes-09-advanced-k8s#advanced-k8s-story-based"
-  },"128": {
+  },"129": {
     "doc": "09. Advanced K8s",
     "title": "09. Advanced K8s",
     "content": " ",
     "url": "/bits-and-bytes/kubernetes-09-advanced-k8s",
     
     "relUrl": "/kubernetes-09-advanced-k8s"
-  },"129": {
+  },"130": {
     "doc": "02. Media Forge",
     "title": "Media Forge",
     "content": ". I attempted learning more about linux and k8s with help of a partly done mini project. Tech and their purposes: . | Docker: . | Run app in containers | Solve issue of “works on my machine” | Alternatives: . | Podman: docker compatible container engine | CXC/CXD: system containers | containerd | CRI-O | . | . | Docker compose . | Run multiple containers together (instead of running containers separately) | . | kube ctl (pronounced: koobcuttle) . | CLI to control k8 clusters | alternatives: Lens/Openlens UI, k9s, Rancher | . | Kind (Full form: kubernetes in docker) . | Runs local k8s cluster using docker containers | Lightweight alternatives to real k8 clusters | Alternative: Minikub, k3d, MicroK8s, Docker Desktop K8s | . | Helm . | Package manager for K8s | npm for K8s | When lots of k8s yaml comes, helm ackages them into reusable templates called chartsw | Alternatives: Kustomize, Jsonnet/Tnaks, CUEe | . | K9s . | Terminal UI for k8s | Alternative to kubectl commands in terminal | Alternatives: OpenLens, Rancher, Octant | . | OpenLens . | Desktop GUI for k8s cluster | Alternatives: Lens, Rancher, Octant | . | PNPM . | Fullform: performative npm | Faster + efficient npm | Used for nx monorepos running multiple services | Alternative: npm, yarn, Bun package manager | . | . ",
     "url": "/bits-and-bytes/kubernetes-02-media-forge#media-forge",
     
     "relUrl": "/kubernetes-02-media-forge#media-forge"
-  },"130": {
+  },"131": {
     "doc": "02. Media Forge",
     "title": "02. Media Forge",
     "content": " ",
     "url": "/bits-and-bytes/kubernetes-02-media-forge",
     
     "relUrl": "/kubernetes-02-media-forge"
-  },"131": {
+  },"132": {
     "doc": "01. Linux Basics",
     "title": "Linux Basics",
     "content": ". Now some linux basics first so that we understand the working of K8s in comparison to physical servers much easily. Data Center Rack |-- Server 1 |-- CPU, RAM, SSD/HDD, Network Card |--Linux Kernel |--Processes running |--nginx PID 101 |--postgers PID 220 |--node app PID 450 |-- Server 2 |-- Server 3 . Visualisation . Physical server |-------------------| CPU --------------|-----&gt; executes instructions | RAM --------------|-----&gt; process memory | SSD/HDD ----------|-----&gt; stores files/dbs/logs | NIC/Network Card -|-----&gt; sends and receives network packets | -------------- | |Linux Kernel| ---|-----&gt; schedules CPU time (sits between application | -------------- | and hardware) | * manages memory | Processes running:| * manages file systems | nginx PID 101 | * manages networking via NIC | postgres PID 220 | node app PID 450 |-------------------| . | Process = Program code + memory + CPU execution + kernel-managed resources | Linux Kernel . | Sits between application and hardware | When app needs something, it initiates kernel and kernel initates disk for data | Eg: | . node app | v Kernel sys call | v disk read | v SSD returns bytes . | App never touches hardware directly. Kernel controls everything | . | . Visualising Process in RAM . RAM |-----------------------| Process: nginx |-----------------------| Process: postgres |-----------------------| Process: node |-----------------------| Linux Kernel Reserved |-----------------------| . | Each process getsisolated memory | Kernel prevent process A from reading process B’s memory | . ",
     "url": "/bits-and-bytes/kubernetes-01-linux-basics#linux-basics",
     
     "relUrl": "/kubernetes-01-linux-basics#linux-basics"
-  },"132": {
+  },"133": {
     "doc": "01. Linux Basics",
     "title": "01. Linux Basics",
     "content": " ",
     "url": "/bits-and-bytes/kubernetes-01-linux-basics",
     
     "relUrl": "/kubernetes-01-linux-basics"
-  },"133": {
+  },"134": {
     "doc": "Kubernetes",
     "title": "Kubernetes",
     "content": " ",
     "url": "/bits-and-bytes/kubernetes",
     
     "relUrl": "/kubernetes"
-  },"134": {
+  },"135": {
     "doc": "Load Testing",
     "title": "Load Testing",
     "content": "| Testing tests | purpose | duration | typically load | . | Smoke test | verify system works | 1-5 min | very low | . | Load | verify expected traffic | 5-30 min | expected production load. | . | Stress | Find breaking point | 10-30 min | Beyond expected load! | . | Spike | Test sudden traffic surges | Few mins | Instant large jump | . | Soak | Find long term issues. | Hours | Normal load | . | Scalability | verify horizontal/vertical scaling | load. |   | . | Breakpoint | Find exact failure point |   |   | . | Failure | verify recovery from failures |   |   | . | Chaos | Intentionally inject failures |   |   | . | Capacity | Determine max sustainable throughput. |   |   | . | Resilience test |   |   |   | . | Performance regression test |   |   |   | . ",
     "url": "/bits-and-bytes/load-testing",
     
     "relUrl": "/load-testing"
-  },"135": {
+  },"136": {
     "doc": "Load Testing",
     "title": "Load Testing proper table (generally used ones)",
     "content": ". | Test type: Smoke test . | Purpose :- Verify test setup &amp; basic functionality | Typical load vs normal :- 1-5% (10-15 users) | Duration :- seconds to 5 min | . | Load Test (must have) . | Validate performance under expected load | load :- 100% (1000 users) | Duration :- 15 min to 1 hr | . | Avg. load test . | Simulate normal business day | load :- 50-80% (500-800 users) | duration :- 30 min to several hrs | . | Stress test (must have) . | Find breaking point | load :- 120-500% (1200-5000+ users) | duration :- minutes | . | Soak/endurance test (sustained test) (must have) . | Long period check to detect memory leak, connection leak, eta degradation, etc. | load :- 70-100% (700-1000 users sustained) | duration :- 4-72 hrs (3 days) | Capacity test (sometimes ) . | Find max load, while still meeting SLA. | SLA :- Service level agreement. | A document agreement | defines what level of service must be defined &amp; how it is measured. | typical metrics include uptime, response time, resolution time, availability. | If provide fails to meet targets, SLA may specify penalties, service credits or remedies. | eg: if an application’s SLA is | availability = 99.9% | P95 latency &lt; 300 ms | error rate &lt; 0.1% | then during load tests these must be maintained. | . | Related terms . | SLI (Service level indicator) . | The measurement values | Eg: availability, P95 latency, P95 etc | . | SLO (Service level objective) . | A target for an SLI / engineerng goal | Eg: P95 latency &lt; 300ms - over a rolling 30-day period | 99% successful requests over 30 days | . | SLA (Service level agreement) . | customer facing promise | involves business/legal consequences | P95 latency (Percentile 95 latency) | A method to display response times/latency | monitoring: | Eg: P95 = 300 ms means 95% of requests completed in 300ms or less - 5% faile. | . | . | load :- Gradually increase from 100% upward. | duration :- 30 min - 2 hr | Classically stress test but to find near point in compliance of SLA). | . | . | Scalability test . | verify scaling behaviour when adding resources. | load :- incrementally increasing load. | duration :- Hours | . | Volume test :- . | Test large data size (not user count) | load :- normal users, huge data volume. | duration :- series | . | Concurrency test :- . | Many users hitting same resource simultaneously. | load :- 100-300% on specific endpoint | durations :- minutes | . | Resilience test . | Behaviour during failure. | load :- normal load + injected failures. | duration :- 30 min to hours. | . | Recovery test (outage) . | Recovery after outage/crash. | load :- usually after stress/spike. | duration :- mins to hours. | . | Peak test (traffic) . | Validate operation during known peak traffic. | load :- 100-150% of highest expected peak. | duration :- 30 min to 2 hrs. | diff from concurrency testing in a way that enteric apps heavy load is tested. | Testing expected real life, high traffic like black friday sale. | . | . ",
     "url": "/bits-and-bytes/load-testing#load-testing-proper-table-generally-used-ones",
     
     "relUrl": "/load-testing#load-testing-proper-table-generally-used-ones"
-  },"136": {
+  },"137": {
     "doc": "Load Testing",
     "title": "Common load testing tools",
     "content": ". | From local m/c to deployed appk6, Apache JMeter (UI based testing - JSlocust (Python scripts based)artillery (yaml based ver &amp;) | k6 . | JS based | CLI/UI friendly | used heavily w/ nestJS + K8s | . | Artillery . | node native alternative | yaml or JS based | . | Apache JMeter . | GUI based. | Manual entry of endpoints. | used in banks / large enterprises. | legacy | . | locust . | python based. | distributed load testing support. | . | For backend HTTP tools (for quick checks only). | wrk, autocannon, hey | used for raw benchmarks &amp; not full scenarios. | . | . ",
     "url": "/bits-and-bytes/load-testing#common-load-testing-tools",
     
     "relUrl": "/load-testing#common-load-testing-tools"
-  },"137": {
+  },"138": {
     "doc": "Devops And Infrastructure",
     "title": "Devops And Infrastructure",
     "content": " ",
     "url": "/bits-and-bytes/devops-and-infrastructure",
     
     "relUrl": "/devops-and-infrastructure"
-  },"138": {
+  },"139": {
     "doc": "Mobile Dev",
     "title": "Mobile Dev",
     "content": " ",
     "url": "/bits-and-bytes/mobile-dev",
     
     "relUrl": "/mobile-dev"
-  },"139": {
+  },"140": {
     "doc": "Express vs Fastify vs NestJS",
     "title": "Express vs Fastify vs NestJS",
     "content": ". | Express - slow + unstructured. | Fastify - fast + unstructured. | NestJS - slow + structured. | NestJS + Fastify - moderately slow + structured, using fastify. For large projects w/ nestjs, using fastify along w/ it does no much performance improvement. | . ",
     "url": "/bits-and-bytes/express-vs-fastify-vs-nestjs",
     
     "relUrl": "/express-vs-fastify-vs-nestjs"
-  },"140": {
+  },"141": {
     "doc": "Web Dev",
     "title": "Web Dev",
-    "content": "Total Topics: 15 Newest → Oldest . | Express vs Fastify vs NestJS 11/11/2026 | Using Bootstrap Icons 04/03/2025 | Tailwind styling without inline 03/03/2025 | External Image Optimisation 03/03/2025 | Vercel .env extraction 27/02/2025 | Index 18/01/2025 | OAuth Config Setup in Different Apps 09/01/2025 | Guidelines to cleaner git commits 31/10/2024 | API Documentation Tools 31/10/2024 | Readme files writing guide 26/10/2024 | Git Commit Standards 26/10/2024 | Readme files formatting guide 23/10/2024 | Email Service Guide 22/10/2024 | React-Node App 19/08/2024 | Web development Css related 19/08/2024 | . ",
+    "content": " ",
     "url": "/bits-and-bytes/web-dev",
     
     "relUrl": "/web-dev"
-  },"141": {
+  },"142": {
     "doc": "Deployment Websites",
     "title": "Deployment Websites",
     "content": "netlify: . | using netlify-cli for cli, can do from portal too | only for static websites | can do for private gitlab instances (along with github, gitlab, etc) (so from crio cli for static websites) | can do for webservers too but require to do using serverless-http which didnt work right for me (methods exist in internet) | . render . | using cli is paid, portal is free | specially for webservers | cannot do for private gitlab instances (so not from crio cli) | . ",
     "url": "/bits-and-bytes/deployment",
     
     "relUrl": "/deployment"
-  },"142": {
+  },"143": {
     "doc": "Interview Questions",
     "title": "Table of Contents",
     "content": ". | Crio Interview Questions | HTML | Javascript | React | Redux | Tailwind, Webpack, CDN, Nextjs | Nodejs | SQL | HLD | . ",
     "url": "/bits-and-bytes/interview-questions#table-of-contents",
     
     "relUrl": "/interview-questions#table-of-contents"
-  },"143": {
+  },"144": {
     "doc": "Interview Questions",
     "title": "Interview Questions",
     "content": " ",
     "url": "/bits-and-bytes/interview-questions",
     
     "relUrl": "/interview-questions"
-  },"144": {
+  },"145": {
     "doc": "Libraries",
     "title": "Libraries",
     "content": " ",
     "url": "/bits-and-bytes/libraries",
     
     "relUrl": "/libraries"
-  },"145": {
+  },"146": {
     "doc": "Languages",
     "title": "Languages",
     "content": " ",
     "url": "/bits-and-bytes/languages",
     
     "relUrl": "/languages"
-  },"146": {
+  },"147": {
     "doc": "Import Modules",
     "title": "Import Modules",
     "content": " ",
     "url": "/bits-and-bytes/import-modules",
     
     "relUrl": "/import-modules"
-  },"147": {
+  },"148": {
     "doc": "SSE vs Websocket",
     "title": "SSE vs Websocket",
     "content": "(Rest api still always better than these open connections) . | SSE . | Server sent events. | way for server to continuously push updates to a client via HTTP. one-way | switch (notification, live dashboard, logs, tokens) | . | Web socket . | continuous message from both client and server. | . | both use an open connection (not polling). SSE uses HTTP connection. websocket starts as HTTP and then upgraded to websocket protocol where messages are exchanged as websocket frames. (chat apps, game, collab editing) | . ",
     "url": "/bits-and-bytes/sse-vs-websocket",
     
     "relUrl": "/sse-vs-websocket"
-  },"148": {
+  },"149": {
     "doc": "DNS and TLS/SSL",
     "title": "DNS and TLS/SSL",
     "content": ". | DNS . | Domain naming system | assigns registering a static IP of a website and buying a domain name. | . | TLS . | transport layer security. | encrypts data sent b/w client &amp; server. | modern version of ssl (secure sockets layer) | HTTP + TLS = HTTPS. | . | . ",
     "url": "/bits-and-bytes/dns-and-tls-ssl",
     
     "relUrl": "/dns-and-tls-ssl"
-  },"149": {
+  },"150": {
     "doc": "Networking And Protocols",
     "title": "Networking And Protocols",
     "content": " ",
     "url": "/bits-and-bytes/networking-and-protocols",
     
     "relUrl": "/networking-and-protocols"
-  },"150": {
+  },"151": {
     "doc": "Graphql vs Rest API",
     "title": "GraphQL vs Rest api",
     "content": ". | Rest is the default choice for most applications. | GraphQL is useful for frontend flexibility. | Frontend flexibility includes: . | multiple frontends - Web, mobile, admin portal, partner portal. | FE very frequently need diff combinations of existing data. user configurable dashboards &amp; reports. deeply connected data models. eg - Github, Shopify, Netflix, Facebook, Reddit. | . | . | Most GraphQL features are available in BFF (BE for FE) architecture. So GraphQL is mostly useless. | . ",
     "url": "/bits-and-bytes/graphql-vs-rest#graphql-vs-rest-api",
     
     "relUrl": "/graphql-vs-rest#graphql-vs-rest-api"
-  },"151": {
+  },"152": {
     "doc": "Graphql vs Rest API",
     "title": "SSE vs Websocket (Rest api still always better than these open connections)",
     "content": ". | SSE - Server sent events. | way for server to continuously push updates to a client via HTTP. one-way | switch (notification, live dashboard, logs, tokens) Web socket - continuous message from both client and server. both use an open connection (not polling). SSE uses HTTP connection. websocket starts as HTTP and then upgraded to websocket protocol where messages are exchanged as websocket frames. (chat apps, game, collab editing) DNS and TLS/SSLDNS - assigns registering a static IP of a website and buying a domain name. TLS - transport layer security. | encrypts data sent b/w client &amp; server. | modern version of ssl (secure sockets layer) | HTTP + TLS = HTTPS. Page 25Express vs Fastify vs NestJS - Express - slow + unstructured. | Fastify - fast + unstructured. | NestJS - slow + structured. | NestJS + Fastify - moderately slow + structured, using fastify. For large projects w/ nestjs, using fastify along w/ it does no much performance improvement. Istio-ingress- An alternative to nginx ingress. | Ingress fundamentals: K8s ingress (needs an ingress controller like nginx, traefik, HAProxy, etc.). Focused on layer 7 (HTTP) routing. | Nginx is said to be basic layer 7 routing. Istio is a advanced layer 7 routing b/c it provides much more than nginx through at layer 7, like traffic splitting, canary deployments, retry policies, circuit breakers, mTLS, observability, fault injection. | Layers (Comp. Sci network model term) 3 Network models :- OSI Model, TCP/IP Model, Hybrid TCP/IP model. OSI model - created by ISO. Page 26(32) - OSI (Open Systems Interconnection) ISO (Internal Organisation for Standardisation) | 7 layers conceptual model. Not used in real world. Used by k8s for theory purpose. | 7 model:- layer 7 - application layer 6 - presentation layer 5 - session layer 4 - transport layer 3 - network layer 2 - data link layer 1 - physical. | layer details:- Application - user facing (- HTTP, HTTPS, HTTP, HTTPS, DNS etc Presentation - data format, encryption encoding TLS/SSL, PNG/JPEG, UTF8, ASCII Session - connection, session management SMB Session, TLS session) Net BIOS Page 27transport - End to end communication | TCP, UDP, QUIC, network - routing - IP (v4/v6), ICMP, Data link - communication on same n/w | ethernet, wifi, VLAN, MAC address Physical - Actual signal transmission | copper cables, fibre optic, etc. TCP/IP model:- | only 4 layers. used in reality | layers include:- Application, transport, internet &amp; n/w access | hybrid:- how 5 layers application, transport, network, data link, physical other vendor specific layer models that are not commonly used by anyone: | Istio-ingress | Istio - service mesh platform. | Contains controlplane (istiod), side car proxies (envoy), traffic management, mTLS, authorization policies, observability. ingress gateway - egres gateway all w/o touching the app. | uses istio-ingress gateway which was envoy. (33) Page 28(34) - envoy, is a proxy that forwards requests, load balancer, TLS termination, metrics, collection, traffic splitting, etc. | Other ingress fundamentals north south traffic - traffic to and from outside the app east west traffic - traffic within services of the app internals edge proxy - Proxy located at boundary of cluster | Does TLS termination, routing, filtering | istio ingress gateway is edge proxy load balancer - distributes requests across ingress gateway pods. | provides stable public IP or DNS name cloud providers create it automatically Request flow:- user send req to public domain send - DNS resolve domain to public domain load balancer forward req to ingress gateway Gateway evaluate gateway resource Virtual service determine routing rules Request reach service and pods | Istio-ingress gateway architecture | Istio-ingress gateway deployment | K8s deployment has pods, and these pods | This deployment has pods, and these pods Page 29contain containers called as “envoy container”. | Purpose of istio-ingress gateway is to process incoming traffic. | deployed within “istio-system namespace. | can be scaled independently from main app. | Envoy Proxy Name of high performance proxy used by istio can be used anywhere as a proxy. that’s part of a software called “envoy” developed by “lyft” company. can be used anywhere as a proxy within istio - as sidecar proxy, as a container proxy within pods, etc. | Gateway pods - pods running envoy. | recieve requests from load balancer, apply gateway &amp;, virtual service rules. | can be horizontally scaled. | Gateway selectors - selectors specific to istio | enables multiple gateways in one cluster. | Can support multiple ingress gateways, pee app. | Also supports one dedicated gateway pee app. (35) Page 30(36)GatewayED - for deploying istioother gateway resources :-hosts on istio (allowed domains) - server (listener definition) open protocols (HTTP, HTTPS, TCP, etc.)wildcard host - to match multiple domains like *.example.com, multiple hosts listeners.Gateway binding (associating Virtual Services w/ gateways), Gateway lifecycle.Gateway binding references Gatewayvirtual services references Gatewayw/o binding routes don’t apply.- Gatewayend of it cause this is rest - X -Istio vs nginx- istio provides what nginx provides plus service mesh (secure to service communication), mTLS (mutual TLS protecting traffic from service to service), traffic splitting as we want, observability, w/o modifying app code. Page 31(37)load balancingRound robin - load distributed sequentially &amp; evenly across available servers. Weighted load balancing -Eg: upstream backend {server app1 : 3000;server app2 : 3000;}weighted load balancing - you weight servers. % wise upstream backend {server app1 : 3000 weight = 3;server app2 : 300 weight = 1;}- app 1 get 75% more traffic.least connections - traffic to least busy instance.upstream backend {least_conn;server app1 : 3000;server app2 : 3000;}Health check/failover - if app dies, traffic moves to app2.upstream backend {server app1 : 3000 max_fails = 3 fail_timeout = 30sserver app2 : 3000;}Page 32(38)sticky session load balancingupstream backend {ip_hashserver …}upstream backend {sticky cookie srv_id expires = 1d;server apps …}- can be based on IP or cookies etc.- not a load balancing algo, but rather a constraint that modifies load balancing behaviour.Realtime sys Vs Rest api- always rest api better of little latency &amp; is valuable in comparison to open connections like web socket or SSE.- real time sys don’t cook on serverless platforms, edge servers, etc.top Server sent to me (LOD)free -h - show availbee @ server-ip -p 2203 -free -h ouplays ram and swap, free &amp; occupied.Page 33 (39)# LxC (Linux containers)- factsOS-level virtualisation - Not hardware virtualisation.Runs in containers on a host linux kernel.Acts like a small linux m/c.system container (like how docker is application container)Every container has its own - PID namespace, n/w namespace, mount namespace, hostname, filesystem, users (optionally mapped).Containers are isolated using linux namespace and cgroups.linux cgroups enforces following limits on lxc container: RAM, CPU cores, CPU time, disk quota, w/o bandwidth, I/O limits.Has singe host ckernles the kernel. Cannot boot a diff kernel inside lxc like windows on FreeBSD.host ubuntu kernellxc 1 (ubuntu)lxc 2 (debian) Performance (Compared to VMs):Faster startup, lower RAM overhead, better density (more containers per host).Persistence:Stays stuff installed on exe container remains installed even after reboot (less compared to VMs, bcz host kernel is shared).Security:Less vulnerability can affect all containers.Limitation:Linux guests only, cannot use different kernel version, some kernel features/modules depend on host; certain workloads (eg: some K8s or nested containers scenarios) may require extra configuration as workloads in VMs in K8s.# Advanced K8sStay basedDevops -&gt; K8s -&gt; K8s FundamentalsApplication packaginghelmchartsvalues.yamlchart.yamlhelm repositoriesGitops:Argo CDApplicationsApplication setsSyncReconciliationDrift detectionGit as source of truthContinuous delivery (CD)Progressive DeliveryRollbacksAutomated deploymentsPage 2 (Image 2)Without helmSuppose you have multiple services like frontend, backend, postgres, redis, ingress, etc. For each one will have to write deployment.yaml, service.yaml, ingress.yaml, configmap.yaml, secret.yaml, pvc.yaml, etc.This results in 20, 30, 50 yamls…For deploying in different environments like dev &amp; prod we will have to copy that files multiple times.Too much work, duplicate files.With helmReduced duplication via templatesThus, it is most useful when used in combination w/ template expressions likePage 3 (Image 3)$values.xyz.yz But one can run “helm install myapp” without template expressions just with static data though it is same.(Running above mentioned command is called as installing a helm chart or installing a release.)Template files (with template expressions) are called value filesValue filesTo deploy different kinds of values to different environments (Eg: values-dev.yaml)Avoid duplicated manifests while still maintaining operationBinding to k8s env file, but w/o security.Charts.yamlAddition of it to any folder makes that folder a valid “chart” &amp; makes helm recognise it as one installable package.Running “helm install myrelease my-app” (Installing a helm chart / release)In general, we don’t push charts (folder created w/ charts.yaml) into OCI registries (open w/ charts.yaml) into OCI registries (open w/ charts.yaml). It is just spun on the repos required nodes.But in general, we push to OCI registries same as docker images (Eg: dockerhub, github container registry, Amazon ECR, Google artifact registry, Azure container registry).Page 4 (Image 4)Multiple charts by having multiple folders ref chart.yaml to install.Find patty charts to install, popular reusable packages/charts like prometheus, grafana, etc. redis, postgres, etc.Deploying / Installing multiple helm chartsHelm file used for describing multiple helm releases in one place, or deploying them together &amp; volatile controlling, ordering &amp; shared configuration.Gitops / ArgoCDSubset of DevOps.Focuses on keeping DevOps in sync across teams in large organizations.Git as source of truthA tool used for that is ArgoCD.ArgoCD is a CRD so running in K8s.Tantive setup for argo CD as manifests.ArgoCD watches for changes and sunsets them if necessary.Something like protecting dev/main branches in github/gitlab.Page 5 (Image 5)- Argo Project consists of argocd, argo workflows, argo rollouts, argo events.Named after mythological ship Argonauts - Logo of argo is an orange squid? | . ",
     "url": "/bits-and-bytes/graphql-vs-rest#sse-vs-websocket-rest-api-still-always-better-than-these-open-connections",
     
     "relUrl": "/graphql-vs-rest#sse-vs-websocket-rest-api-still-always-better-than-these-open-connections"
-  },"152": {
+  },"153": {
     "doc": "Graphql vs Rest API",
     "title": "Graphql vs Rest API",
     "content": " ",
     "url": "/bits-and-bytes/graphql-vs-rest",
     
     "relUrl": "/graphql-vs-rest"
-  },"153": {
+  },"154": {
     "doc": "Realtime sys vs Rest API",
     "title": "Realtime sys Vs Rest api",
     "content": ". | always rest api better of little latency &amp; is valuable in comparison to open connections like web socket or SSE. | real time sys don’t cook on serverless platforms, edge servers, etc.top | . ",
     "url": "/bits-and-bytes/realtime-vs-rest-api#realtime-sys-vs-rest-api",
     
     "relUrl": "/realtime-vs-rest-api#realtime-sys-vs-rest-api"
-  },"154": {
+  },"155": {
     "doc": "Realtime sys vs Rest API",
     "title": "Realtime sys vs Rest API",
     "content": " ",
     "url": "/bits-and-bytes/realtime-vs-rest-api",
     
     "relUrl": "/realtime-vs-rest-api"
-  },"155": {
+  },"156": {
     "doc": "API Architecture",
     "title": "API Architecture",
     "content": " ",
     "url": "/bits-and-bytes/api-architecture",
     
     "relUrl": "/api-architecture"
-  },"156": {
+  },"157": {
     "doc": "Load Balancing And Traffic Management",
     "title": "load balancing",
     "content": ". | Round robin . | load distributed sequentially &amp; evenly across available servers. | Eg: upstream backend { server app1 : 3000; server app2 : 3000; } . | . | weighted load balancing . | you weight servers. % wise | Eg: upstream backend { server app1 : 3000 weight = 3; server app2 : 300 weight = 1; } . | app 1 get 75% more traffic. | . | least connections . | traffic to least busy instance. | Eg: upstream backend { least_conn; server app1 : 3000; server app2 : 3000; } . | . | Health check/failover . | if app dies, traffic moves to app2. | Eg: upstream backend { server app1 : 3000 max_fails = 3 fail_timeout = 30s server app2 : 3000; } . | . | sticky session load balancing upstream backend { ip_hashserver ... } upstream backend { sticky cookie srv_id expires = 1h; server apps ... } . | can be based on IP or cookies etc. | not a load balancing algo, but rather a constraint that modifies load balancing behaviour. | . | . ",
     "url": "/bits-and-bytes/load-balancing#load-balancing",
     
     "relUrl": "/load-balancing#load-balancing"
-  },"157": {
+  },"158": {
     "doc": "Load Balancing And Traffic Management",
     "title": "Load Balancing And Traffic Management",
     "content": " ",
     "url": "/bits-and-bytes/load-balancing",
     
     "relUrl": "/load-balancing"
-  },"158": {
+  },"159": {
     "doc": "Istio Ingress",
     "title": "Istio-ingress",
     "content": ". | An alternative to nginx ingress. | Ingress fundamentals: . | K8s ingress (needs an ingress controller like nginx, traefik, HAProxy, etc.). | Focused on layer 7 (HTTP) routing. | Nginx is said to be basic layer 7 routing. Istio is a advanced layer 7 routing b/c it provides much more than nginx through at layer 7, like traffic splitting, canary deployments, retry policies, circuit breakers, mTLS, observability, fault injection. | Layers (Comp. Sci network model term) . | 3 Network models :- OSI Model, TCP/IP Model, Hybrid TCP/IP model. | OSI model . | created by ISO. | OSI (Open Systems Interconnection) | ISO (Internal Organisation for Standardisation) | . | . | 7 layers conceptual model. Not used in real world. Used by k8s for theory purpose. | 7 model: . | layer 7 - application | layer 6 - presentation | layer 5 - session | layer 4 - transport | layer 3 - network | layer 2 - data link | layer 1 - physical. | . | layer details: . | Application . | user facing | HTTP, HTTPS, DNS etc | . | Presentation . | data format, encryption encoding | TLS/SSL, PNG/JPEG, UTF8, ASCII | . | Session . | connection, session management | SMB Session, TLS session, Net BIOS | . | transport . | End to end communication | TCP, UDP, QUIC, | . | network - routing - IP (v4/v6), ICMP | Data link . | communication on same n/w | ethernet, wifi, VLAN, MAC address | . | Physical . | Actual signal transmission | copper cables, fibre optic, etc. | . | . | TCP/IP model:- . | only 4 layers. used in reality | layers include:- Application, transport, internet &amp; n/w access | hybrid: . | has 5 layers | application, transport, network, data link, physical | . | other vendor specific layer models that are not commonly used by anyone: | . | . | . | Istio-ingress . | Istio . | service mesh platform. | Contains controlplane (istiod), side car proxies (envoy), traffic management, mTLS, authorization policies, observability, ingress gateway, egres gateway all w/o touching the app. | uses istio-ingress gateway which was envoy. | envoy, is a proxy that forwards requests, load balancer, TLS termination, metrics, collection, traffic splitting, etc. | . | . | Other ingress fundamentals . | north south traffic - traffic to and from outside the app | east west traffic - traffic within services of the app internals | edge proxy . | Proxy located at boundary of cluster | Does TLS termination, routing, filtering | istio ingress gateway is edge proxy | . | load balancer . | distributes requests across ingress gateway pods. | provides stable public IP or DNS name | cloud providers create it automatically | . | Request flow: . | user send req to public domain send | DNS resolve domain to public domain | load balancer forward req to ingress gateway | Gateway evaluate gateway resource | Virtual service determine routing rules | Request reach service and pods | . | . | Istio-ingress gateway architecture . | Istio-ingress gateway deployment . | K8s deployment in k8s env | This deployment has pods, and these pods contain containers called as “envoy container”. | Purpose of istio-ingress gateway is to process incoming traffic. | deployed within “istio-system namespace. | can be scaled independently from main app. | . | Envoy Proxy . | Name of high performance proxy used by istio. a proxy that’s part of a software called “envoy” developed by “lyft” company. | can be used anywhere as a proxy within istio - as sidecar proxy, as a container proxy within pods, etc. | . | Gateway pods . | pods running envoy. | recieve requests from load balancer, apply gateway &amp;, virtual service rules. | can be horizontally scaled. | . | Gateway selectors . | selectors specific to istio | enables multiple gateways in one cluster. | . | Can support multiple ingress gateways, per app. | Also supports one dedicated gateway per app. | GatewayCRD - for deploying istio | other gateway resources : . | hosts on istio (allowed domains) - server (listener definition) open protocols (HTTP, HTTPS, TCP, etc.)wildcard host - to match multiple domains like *.example.com, multiple hosts listeners.Gateway binding (associating Virtual Services w/ gateways), Gateway lifecycle. | Gateway binding . | virtual services references Gateway | w/o binding routes don’t apply. ",
     "url": "/bits-and-bytes/istio-ingress#istio-ingress",
     
     "relUrl": "/istio-ingress#istio-ingress"
-  },"159": {
+  },"160": {
     "doc": "Istio Ingress",
     "title": "Istio vs nginx",
     "content": "| . | . | . | istio provides what nginx provides plus service mesh (secure to service communication), mTLS (mutual TLS protecting traffic from service to service), traffic splitting as we want, observability, w/o modifying app code. | . | . ",
     "url": "/bits-and-bytes/istio-ingress#istio-vs-nginx",
     
     "relUrl": "/istio-ingress#istio-vs-nginx"
-  },"160": {
+  },"161": {
     "doc": "Istio Ingress",
     "title": "Istio Ingress",
     "content": " ",
     "url": "/bits-and-bytes/istio-ingress",
     
     "relUrl": "/istio-ingress"
-  },"161": {
+  },"162": {
     "doc": "Load Balancing And Traffic Management",
     "title": "Load Balancing And Traffic Management",
     "content": " ",
     "url": "/bits-and-bytes/load-balancing-and-traffic-management",
     
     "relUrl": "/load-balancing-and-traffic-management"
-  },"162": {
+  },"163": {
     "doc": "Computer Science Concepts",
     "title": "Computer Science Concepts",
     "content": " ",
     "url": "/bits-and-bytes/computer-science-concepts",
     
     "relUrl": "/computer-science-concepts"
-  },"163": {
+  },"164": {
     "doc": "Takehome Guidelines",
     "title": "Take home coding challenge",
     "content": " ",
     "url": "/bits-and-bytes/takehome-guidelines#take-home-coding-challenge",
     
     "relUrl": "/takehome-guidelines#take-home-coding-challenge"
-  },"164": {
+  },"165": {
     "doc": "Takehome Guidelines",
     "title": "Readme",
     "content": "Write your README as if it was for a production service. Include the following items: . | Description of the problem and solution. | Whether the solution focuses on back-end, front-end or if it’s full stack. | Reasoning behind your technical choices, including architectural. | Trade-offs you might have made, anything you left out, or what you might do differently if you were to spend additional time on the project. | . ",
     "url": "/bits-and-bytes/takehome-guidelines#readme",
     
     "relUrl": "/takehome-guidelines#readme"
-  },"165": {
+  },"166": {
     "doc": "Takehome Guidelines",
     "title": "How we review",
     "content": "Your application will be reviewed by at least two of our engineers. We do take into consideration your experience level. We value quality over feature-completeness. It is fine to leave things aside provided you call them out in your project’s README. The goal of this code sample is to help us identify what you consider production-ready code. You should consider this code ready for final review with your colleague, i.e. this would be the last step before deploying to production. The aspects of your code we will assess include: . | Architecture: how clean is the separation between the front-end and the back-end? | Clarity: does the README clearly and concisely explains the problem and solution? Are technical tradeoffs explained? | Correctness: does the application do what was asked? If there is anything missing, does the README explain why it is missing? | Code quality: is the code simple, easy to understand, and maintainable? Are there any code smells or other red flags? Does object-oriented code follows principles such as the single responsibility principle? Is the coding style consistent with the language’s guidelines? Is it consistent throughout the codebase? | Security: are there any obvious vulnerability? | Technical choices: do choices of libraries, databases, architecture etc. seem appropriate for the chosen application? | . Bonus point (those items are optional): . | UX: is the web interface understandable and pleasing to use? Is the API intuitive? | Scalability: will technical choices scale well? If not, is there a discussion of those choices in the README? | Production-readiness: does the code include monitoring? logging? proper error handling? | . ",
     "url": "/bits-and-bytes/takehome-guidelines#how-we-review",
     
     "relUrl": "/takehome-guidelines#how-we-review"
-  },"166": {
+  },"167": {
     "doc": "Takehome Guidelines",
     "title": "My personal notes on this",
     "content": "Format . | Project Name . | Description . | Problem Description | Solution Description (backend, frontend, or full-stack) | . | Approach . | Technology Stack (and reasons for choosing them) | Architecture | Features Implemented | . | Trade-offs &amp; Improvements | Future Improvements | How to run | Demo image/gif/video | . | . Format in detail . | Project Name . | Description . | Problem Description: This project solves [problem description] by addressing [specific pain points], such as improving [performance, scalability, user experience, etc.]. | Solution Description: This is a [backend, frontend, or full-stack] solution using [technology stack] to tackle the identified problem. | . | Approach . | Technology Stack (and Reasons for Choosing Them) . | Front-end: [React, Vue, etc.] - Chosen for its scalability and reusable components. | Back-end: [Node.js, Python, etc.] - Selected for its asynchronous processing capabilities. | Database: [PostgreSQL, MongoDB, etc.] - Picked for [structured/unstructured] data handling. | Tools: [Docker, CI/CD tools, etc.] - Used for deployment and containerization to ensure consistency across environments. | . | Architecture . | The solution uses a [RESTful/Microservice] architecture with: . | API Layer: Routes requests to services. | Business Logic: Processes core operations like authentication, payments, etc. | Database Layer: Manages data storage and retrieval. | . | . | Features Implemented . | User Authentication: Secure sign-up, login, and session management. | Product Listings: Display dynamic product data from the database. | Shopping Cart: Add, remove, and view items in a cart with real-time updates. | Checkout Process: Integration with payment gateways to complete purchases. | . | . | Trade-offs &amp; Improvements . | Performance vs. Flexibility: Opted for flexibility at the expense of some performance optimization. | Initial Simplicity: Chose lightweight frameworks to facilitate rapid development, leaving room for future improvements. | Testing: Focused testing on core logic, with plans to implement more extensive end-to-end tests. | . | Future Improvements . | Expand test coverage to include UI and integration testing. | Transition to microservices for improved scalability and fault isolation. | Improve CI/CD pipeline with better monitoring and automation tools. | . | How to Run . | Clone the repo: git clone https://github.com/yourusername/project.git . | Install dependencies: npm install . | Run the server: npm run dev . | . | Demo Image/GIF/Video . | image | . | . | . Example . Long version . | ",
     "url": "/bits-and-bytes/takehome-guidelines#my-personal-notes-on-this",
     
     "relUrl": "/takehome-guidelines#my-personal-notes-on-this"
-  },"167": {
+  },"168": {
     "doc": "Takehome Guidelines",
     "title": "eCommerce Frontend",
     "content": ". | ",
     "url": "/bits-and-bytes/takehome-guidelines#ecommerce-frontend",
     
     "relUrl": "/takehome-guidelines#ecommerce-frontend"
-  },"168": {
+  },"169": {
     "doc": "Takehome Guidelines",
     "title": "Description",
     "content": ". | Problem Description: Many online stores lack modern, responsive, and performant user interfaces. This eCommerce application frontend aims to provide users with a seamless and intuitive shopping experience across devices. | Solution Description: This is a frontend solution built using React to create a dynamic and responsive user interface. The app improves user experience, enhances performance, and ensures scalability for future feature extensions. | . | ",
     "url": "/bits-and-bytes/takehome-guidelines#description",
     
     "relUrl": "/takehome-guidelines#description"
-  },"169": {
+  },"170": {
     "doc": "Takehome Guidelines",
     "title": "Approach",
     "content": ". | Technology Stack (and Reasons for Choosing Them) . | Front-end: React – Chosen for its component-based architecture and excellent support for dynamic, state-driven UIs. React also allows easy integration of third-party libraries for UI elements. | State Management: Redux – Used to manage global state across the application, such as the user’s shopping cart, to ensure consistency and performance. | Styling: Tailwind CSS – A utility-first CSS framework that speeds up development while maintaining design consistency. | Routing: React Router – Implemented for navigation between pages, enabling smooth transitions between product listings, cart, and checkout pages. | Tools: Webpack &amp; Babel – Used for bundling and transpiling the JavaScript code for optimized performance in production. | . | Architecture . | The frontend follows a component-based architecture where each page and UI element is encapsulated into reusable React components: | Product Listing Page: Dynamically fetches product data and displays it in a grid layout with filters and sorting options. | Product Detail Page: Provides detailed information about a selected product, including images, descriptions, and reviews. | Shopping Cart: Displays the selected items, allowing users to modify quantities or remove items in real-time using state management (Redux). | Checkout Page: Guides users through the purchase process, integrating payment gateway UI elements. | . | Features Implemented . | Product Browsing: Displays a catalog of products with filtering (by category, price) and sorting (by popularity, price). | Product Search: A search bar allows users to quickly find specific products. | Shopping Cart: Users can add items to their cart, update quantities, and view a live total of the purchase. | Responsive Design: The layout adapts seamlessly across desktop, tablet, and mobile devices. | User Authentication: Integrated login/logout functionality, with access to personalized features like saved shopping carts. | . | . | ",
     "url": "/bits-and-bytes/takehome-guidelines#approach",
     
     "relUrl": "/takehome-guidelines#approach"
-  },"170": {
+  },"171": {
     "doc": "Takehome Guidelines",
     "title": "Trade-offs &amp; Improvements",
     "content": ". | Performance vs. Features: Initial focus was on ensuring core eCommerce features like browsing and cart functionality, with performance optimizations to follow. | Custom Design vs. Framework: Opted for Tailwind CSS to speed up development and ensure design consistency, but custom styling may be introduced in future iterations. | Testing: Basic unit tests are implemented, but end-to-end testing for the entire user journey is a future goal. | . | Future Improvements . | Improve performance by lazy-loading components and implementing server-side rendering (SSR) with Next.js. | Add more comprehensive tests using tools like Cypress for end-to-end testing. | Integrate with more third-party APIs for recommendations, reviews, and payment processing. | Implement localization and internationalization (i18n) to support multiple languages and regions. | . | ",
     "url": "/bits-and-bytes/takehome-guidelines#trade-offs--improvements",
     
     "relUrl": "/takehome-guidelines#trade-offs--improvements"
-  },"171": {
+  },"172": {
     "doc": "Takehome Guidelines",
     "title": "How to Run",
     "content": ". | Clone the repo: git clone https://github.com/yourusername/ecommerce-frontend.git . | Install dependencies: npm install . | Run the server: npm start . The application will run on http://localhost:3000. | . | ",
     "url": "/bits-and-bytes/takehome-guidelines#how-to-run",
     
     "relUrl": "/takehome-guidelines#how-to-run"
-  },"172": {
+  },"173": {
     "doc": "Takehome Guidelines",
     "title": "Demo Image/GIF/Video",
     "content": ". | Here’s a preview of the eCommerce frontend in action: . | . | Or a demo of the user adding products to the cart: . | . | . | . | . Short version . | ",
     "url": "/bits-and-bytes/takehome-guidelines#demo-imagegifvideo",
     
     "relUrl": "/takehome-guidelines#demo-imagegifvideo"
-  },"173": {
+  },"174": {
     "doc": "Takehome Guidelines",
     "title": "eCommerce Frontend",
     "content": ". | ",
     "url": "/bits-and-bytes/takehome-guidelines#ecommerce-frontend-1",
     
     "relUrl": "/takehome-guidelines#ecommerce-frontend-1"
-  },"174": {
+  },"175": {
     "doc": "Takehome Guidelines",
     "title": "Description",
     "content": ". | Problem: Many online stores lack modern, responsive interfaces. | Solution: A React-based frontend that enhances user experience, performance, and scalability for a seamless shopping experience. | . | ",
     "url": "/bits-and-bytes/takehome-guidelines#description-1",
     
     "relUrl": "/takehome-guidelines#description-1"
-  },"175": {
+  },"176": {
     "doc": "Takehome Guidelines",
     "title": "Approach",
     "content": ". | Technology Stack . | Front-end: React for a dynamic UI. | State Management: Redux for managing the global state. | Styling: Tailwind CSS for rapid, consistent design. | Routing: React Router for smooth page transitions. | Build Tools: Webpack &amp; Babel for optimized performance. | . | Architecture . | Component-Based: Each UI element is a reusable component, including: . | Product Listing: Displays products with filters and sorting. | Product Detail: Detailed view of selected products. | Shopping Cart: Real-time updates on item quantities and totals. | Checkout Page: Guides users through the purchase process. | . | . | Features . | Product Browsing: Catalog with filtering and sorting. | Search Functionality: Quickly find products. | Responsive Design: Adapts to all devices. | User Authentication: Login/logout functionality. | . | . | ",
     "url": "/bits-and-bytes/takehome-guidelines#approach-1",
     
     "relUrl": "/takehome-guidelines#approach-1"
-  },"176": {
+  },"177": {
     "doc": "Takehome Guidelines",
     "title": "Trade-offs &amp; Improvements",
     "content": ". | Focused on core features over performance; optimizations will follow. | Basic testing is in place; end-to-end tests are planned. | . | Future Improvements . | Implement lazy loading and SSR with Next.js. | Enhance testing coverage. | Add localization support. | . | ",
     "url": "/bits-and-bytes/takehome-guidelines#trade-offs--improvements-1",
     
     "relUrl": "/takehome-guidelines#trade-offs--improvements-1"
-  },"177": {
+  },"178": {
     "doc": "Takehome Guidelines",
     "title": "How to Run",
     "content": ". | Clone the repo: git clone https://github.com/yourusername/ecommerce-frontend.git . | Install dependencies: npm install . | Run the server: npm start . Access the application at http://localhost:3000. | . | ",
     "url": "/bits-and-bytes/takehome-guidelines#how-to-run-1",
     
     "relUrl": "/takehome-guidelines#how-to-run-1"
-  },"178": {
+  },"179": {
     "doc": "Takehome Guidelines",
     "title": "Demo",
     "content": ". | | Or a demo of adding products to the cart: | | . | . | . [!NOTE] can take demo and deployemnt urls to the top instead of bottom, just below the title for quicker access . ",
     "url": "/bits-and-bytes/takehome-guidelines#demo",
     
     "relUrl": "/takehome-guidelines#demo"
-  },"179": {
+  },"180": {
     "doc": "Takehome Guidelines",
     "title": "Takehome Guidelines",
     "content": " ",
     "url": "/bits-and-bytes/takehome-guidelines",
     
     "relUrl": "/takehome-guidelines"
-  },"180": {
+  },"181": {
     "doc": "Databases",
     "title": "Databases",
     "content": " ",
     "url": "/bits-and-bytes/databases",
     
     "relUrl": "/databases"
-  },"181": {
+  },"182": {
     "doc": "SSL Commands",
     "title": "SSL Commands",
     "content": "Generate a CA certificate: . openssl genrsa -out ca.key 2048 openssl req -x509 -new -nodes -key ca.key -sha256 -days 365 -out ca.crt . Generate a server certificate: . openssl genrsa -out server.key 2048 openssl req -new -key server.key -out server.csr openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 365 -sha256 . Generate a client certificate: . openssl genrsa -out client.key 2048 openssl req -new -key client.key -out client.csr openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt . ",
     "url": "/bits-and-bytes/ssl-commands",
     
     "relUrl": "/ssl-commands"
-  },"182": {
-    "doc": "Table Of Contents",
-    "title": "Table Of Contents",
-    "content": "Total Posts: 62 . Sorted: Newest → Oldest Web Dev . 11/11/2026 Total Topics: 15 Newest → Oldest Express vs Fastify vs NestJS 11/11/2026 Using Bootstrap Icons 04/03/2025 Tailwind styling without inline... Mobile Dev . 11/11/2026 . Libraries . 11/11/2026 . Languages . 11/11/2026 . Import Modules . 11/11/2026 . Devops And Infrastructure . 11/11/2026 . Databases . 11/11/2026 . Computer Science Concepts . 11/11/2026 . Networking And Protocols . 11/11/2026 . API Architecture . 11/11/2026 . Express vs Fastify vs NestJS . 11/11/2026 Comparing Express vs Fastify vs NestJS . 09. Advanced K8s . 11/11/2026 Intro to kubernetes (Advanced K8s) . SSE vs Websocket . 11/11/2026 Understanding diff b/w SSE and Websocket . DNS and TLS/SSL . 11/11/2026 Understanding DNS and TSL/SSL . Load Balancing And Traffic Management . 11/11/2026 . Load Balancing And Traffic Management . 11/11/2026 Understanding Load Balancing . Istio Ingress . 11/11/2026 Understanding Istio Ingress . Realtime sys vs Rest API . 11/11/2026 Understanding diff b/w Reatime system and Rest API . Graphql vs Rest API . 11/11/2026 Understanding diff b/w Graphql and Rest API . Load Testing . 10/11/2026 Understanding load testing . LXC . 10/11/2026 Understanding Linux Containers (LXC) . 08. K8s Leanring Continuation . 10/11/2026 Intro to kubernetes (K8s learning continuation) . 07. K8s Next Topics . 10/11/2026 Intro to kubernetes (K8s next topics) . 06. K8s Points to Remember . 10/11/2026 Intro to kubernetes (K8s Points to Remember) . 05. K8s Cluster Diagram . 09/11/2026 Intro to kubernetes (K8s Cluster Diagram) . 04. K8s Structure and visualization - Part 2 . 09/11/2026 Intro to kubernetes (K8s Structure and visualization Part 2) . 03. K8s Basics . 09/11/2026 Intro to kubernetes (K8s Basics) . 02. Media Forge . 09/11/2026 Intro to kubernetes (Media Forge) . 01. Linux Basics . 09/11/2026 Intro to kubernetes (Linux Basics) . 00. Structure and Visualisation - Part 1 . 04/11/2026 Intro to kubernetes - 00. Structure and Visualisation . Kubernetes . 04/11/2026 Intro to kubernetes . OOP . 26/04/2026 Learning object oriented programming . TAGS: oop, software design, computer basics Flutter Setup Guide . 13/07/2025 Guide to setting up flutter in vs code . TAGS: flutter, dart, mobile, android, ios Flutter . 13/07/2025 . Basics of Dart . 13/07/2025 Some basic concepts of dart for flutter . TAGS: flutter, dart, mobile, android, ios Using Bootstrap Icons . 04/03/2025 How to use bootstrap icons in react or NextJS . Tailwind styling without inline . 03/03/2025 Methods to style using tailwind without inline . External Image Optimisation . 03/03/2025 Mehtods to optimise an image after it is imported from an external image source/cdn . Vercel .env extraction . 27/02/2025 Extracting environment variables from deployed vercel app . TAGS: vercel, env No SQL . 25/02/2025 . MongoDB Concepts Guide . 25/02/2025 To study basic and advanced MongoDB . TAGS: mongodb FE-101 HTML . 20/02/2025 HTML Crio Interview Questions for practise . TAGS: crio interview questions, html High Level Design Guide . 20/02/2025 To study basic and advanced High Level Design . TAGS: high-level-design Low Level Design Guide . 19/02/2025 To study basic and advanced Low Level Design . TAGS: low-level-design React Concepts Guide . 22/01/2025 To study basic and advanced React . TAGS: react Crio Interview Questions . 22/01/2025 Crio Interview Questions for practise . TAGS: crio interview questions Interview Questions . 22/01/2025 Interview Questions for practise . TAGS: interview questions Typescript learners guide . 18/01/2025 To study basic and advanced typescript . TAGS: typescript Index . 18/01/2025 This is my personal guide related to all about making github pages with and without jekyll. TAGS: jekyll, ruby, scss, markdown OAuth Config Setup in Different Apps . 09/01/2025 To study diff auth methods . TAGS: jwt, oauth2, typescript, nextjs, oidc, passwordless-authentication Guidelines to cleaner git commits . 31/10/2024 Guide to how to write cleaner git commits . API Documentation Tools . 31/10/2024 Following are the api documentation tools that helps you create api docs in pretty websites. Readme files writing guide . 26/10/2024 Comprehensive Guide to Writing README Files . Git Commit Standards . 26/10/2024 Git Commit Standards (Official) . Readme files formatting guide . 23/10/2024 Comprehensive Guide to Formatting README Files . Takehome Guidelines . 23/10/2024 Take home coding challenge template and guide . Email Service Guide . 22/10/2024 Guide to how to integrate email service with any project . Deployment Websites . 21/09/2024 Personal pros and cons of different deployment websites . Tests . 19/08/2024 Tests related documentation . React-Node App . 19/08/2024 Concepts related to React-Node Web App . Web development Css related . 19/08/2024 Css files and svgs to assist Css . Index . 19/08/2024 Passport JWT Documentation . ",
-    "url": "/bits-and-bytes/all-posts",
-    
-    "relUrl": "/all-posts"
   },"183": {
     "doc": "Tuples and how it differs from Arrays",
     "title": "Tuples and how it differs from Arrays",
