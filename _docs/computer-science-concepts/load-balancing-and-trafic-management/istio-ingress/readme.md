@@ -1,0 +1,109 @@
+---
+layout: default
+title: Istio Ingress
+permalink: istio-ingress
+date: Nov 11, 2026
+excerpt: Understanding Istio Ingress
+parent: Load Balancing And Traffic Management
+---
+
+# Istio-ingress
+
+- An alternative to nginx ingress.
+- Ingress fundamentals:
+  - K8s ingress (needs an ingress controller like nginx, traefik, HAProxy, etc.).
+  - Focused on layer 7 (HTTP) routing.
+    - Nginx is said to be basic layer 7 routing. Istio is a advanced layer 7 routing b/c it provides much more than nginx through at layer 7, like traffic splitting, canary deployments, retry policies, circuit breakers, mTLS, observability, fault injection.
+    - Layers (Comp. Sci network model term)
+      - 3 Network models :- OSI Model, TCP/IP Model, Hybrid TCP/IP model.
+      - OSI model
+        - created by ISO.
+        - OSI (Open Systems Interconnection)
+        - ISO (Internal Organisation for Standardisation)
+    - 7 layers conceptual model. Not used in real world. Used by k8s for theory purpose.
+    - 7 model:
+      - layer 7 - application
+      - layer 6 - presentation
+      - layer 5 - session
+      - layer 4 - transport
+      - layer 3 - network
+      - layer 2 - data link
+      - layer 1 - physical.
+    - layer details:
+      - Application
+        - user facing
+        - HTTP, HTTPS, DNS etc
+      - Presentation
+        - data format, encryption encoding
+        - TLS/SSL, PNG/JPEG, UTF8, ASCII
+      - Session
+        - connection, session management
+        - SMB Session, TLS session, Net BIOS
+      - transport
+        - End to end communication
+        - TCP, UDP, QUIC,
+      - network - routing - IP (v4/v6), ICMP
+      - Data link
+        - communication on same n/w
+        - ethernet, wifi, VLAN, MAC address
+      - Physical
+        - Actual signal transmission
+        - copper cables, fibre optic, etc.
+    - TCP/IP model:-
+      - only 4 layers. used in reality
+      - layers include:- Application, transport, internet & n/w access
+      - hybrid:
+        - has 5 layers
+        - application, transport, network, data link, physical
+      - other vendor specific layer models that are not commonly used by anyone:
+- Istio-ingress
+  - Istio
+    - service mesh platform.
+    - Contains controlplane (istiod), side car proxies (envoy), traffic management, mTLS, authorization policies, observability, ingress gateway, egres gateway all w/o touching the app.
+    - uses istio-ingress gateway which was envoy.
+    - envoy, is a proxy that forwards requests, load balancer, TLS termination, metrics, collection, traffic splitting, etc.
+- Other ingress fundamentals
+  - north south traffic - traffic to and from outside the app
+  - east west traffic - traffic within services of the app internals
+  - edge proxy
+    - Proxy located at boundary of cluster
+    - Does TLS termination, routing, filtering
+    - istio ingress gateway is edge proxy
+  - load balancer
+    - distributes requests across ingress gateway pods.
+    - provides stable public IP or DNS name
+    - cloud providers create it automatically
+  - Request flow:
+    - user send req to public domain send
+    - DNS resolve domain to public domain
+    - load balancer forward req to ingress gateway
+    - Gateway evaluate gateway resource
+    - Virtual service determine routing rules
+    - Request reach service and pods
+- Istio-ingress gateway architecture
+  - Istio-ingress gateway deployment
+    - K8s deployment in k8s env
+    - This deployment has pods, and these pods contain containers called as "envoy container".
+    - Purpose of istio-ingress gateway is to process incoming traffic.
+    - deployed within "istio-system namespace.
+    - can be scaled independently from main app.
+  - Envoy Proxy
+    - Name of high performance proxy used by istio. a proxy that's part of a software called "envoy" developed by "lyft" company.
+    - can be used anywhere as a proxy within istio - as sidecar proxy, as a container proxy within pods, etc.
+  - Gateway pods
+    - pods running envoy.
+    - recieve requests from load balancer, apply gateway &, virtual service rules.
+    - can be horizontally scaled.
+  - Gateway selectors
+    - selectors specific to istio
+    - enables multiple gateways in one cluster.
+  - Can support multiple ingress gateways, per app.
+  - Also supports one dedicated gateway per app.
+  - GatewayCRD - for deploying istio
+  - other gateway resources :
+    - hosts on istio (allowed domains) - server (listener definition) open protocols (HTTP, HTTPS, TCP, etc.)wildcard host - to match multiple domains like \*.example.com, multiple hosts listeners.Gateway binding (associating Virtual Services w/ gateways), Gateway lifecycle.
+      - Gateway binding
+        - virtual services references Gateway
+        - w/o binding routes don't apply.
+  # Istio vs nginx
+  - istio provides what nginx provides plus service mesh (secure to service communication), mTLS (mutual TLS protecting traffic from service to service), traffic splitting as we want, observability, w/o modifying app code.
