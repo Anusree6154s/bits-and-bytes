@@ -14,33 +14,33 @@
   <style id="jtd-nav-activation">
   
 
-    .site-nav > ul.nav-list:first-child > li > a,
-    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    .site-nav > ul:nth-of-type(1) > li > a,
+    .site-nav > ul:nth-of-type(1) > li > ul > li > a,
     
-    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(1)) > a,
-    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
+    .site-nav > ul:nth-of-type(1) > li > ul > li > ul > li:not(:nth-child(1)) > a,
+    .site-nav > ul:nth-of-type(1) > li > ul > li > ul > li > ul > li a {
       background-image: none;
     }
 
-    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav > ul:not(:nth-of-type(1)) a,
     .site-nav li.external a {
       background-image: none;
     }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(1) > ul > li:nth-child(1) > a {
+    .site-nav > ul:nth-of-type(1) > li:nth-child(3) > ul > li:nth-child(1) > ul > li:nth-child(1) > a {
       font-weight: 600;
       text-decoration: none;
     }
     .site-nav > ul.nav-category-list > li > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(1) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(1) > ul > li:nth-child(1) > button svg {
+    .site-nav > ul:nth-of-type(1) > li:nth-child(3) > button svg,
+    .site-nav > ul:nth-of-type(1) > li:nth-child(3) > ul > li:nth-child(1) > button svg,
+    .site-nav > ul:nth-of-type(1) > li:nth-child(3) > ul > li:nth-child(1) > ul > li:nth-child(1) > button svg {
       transform: rotate(-90deg);
     }
     .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+    .site-nav > ul:nth-of-type(1) > li.nav-list-item:nth-child(3) > ul.nav-list,
+    .site-nav > ul:nth-of-type(1) > li.nav-list-item:nth-child(3) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list,
+    .site-nav > ul:nth-of-type(1) > li.nav-list-item:nth-child(3) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
       display: block;
     }
   </style>
@@ -171,9 +171,11 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
       </button><a href="/bits-and-bytes/computer-science-concepts" class="nav-list-link">Computer Science Concepts</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="API Architecture submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
-      </button><a href="/bits-and-bytes/api-architecture" class="nav-list-link">API Architecture</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/graphql-vs-rest" class="nav-list-link">Graphql vs Rest API</a></li></ul></li><li class="nav-list-item"><a href="/bits-and-bytes/hld" class="nav-list-link">High Level Design Guide</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Load Balancing submenu" aria-expanded="false">
+      </button><a href="/bits-and-bytes/api-architecture" class="nav-list-link">API Architecture</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/graphql-vs-rest" class="nav-list-link">Graphql vs Rest API</a></li><li class="nav-list-item"><a href="/bits-and-bytes/realtime-vs-rest-api" class="nav-list-link">Realtime sys vs Rest API</a></li></ul></li><li class="nav-list-item"><a href="/bits-and-bytes/hld" class="nav-list-link">High Level Design Guide</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Load Balancing And Traffic Management submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
-      </button><a href="/bits-and-bytes/load-balancing" class="nav-list-link">Load Balancing</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/istio-ingress" class="nav-list-link">Istio Ingress</a></li></ul></li><li class="nav-list-item"><a href="/bits-and-bytes/lld" class="nav-list-link">Low Level Design Guide</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Networking And Protocols submenu" aria-expanded="false">
+      </button><a href="/bits-and-bytes/load-balancing-and-traffic-management" class="nav-list-link">Load Balancing And Traffic Management</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/istio-ingress" class="nav-list-link">Istio Ingress</a></li><li class="nav-list-item">
+      <a href="/bits-and-bytes/load-balancing" class="nav-list-link"> ∞ </a>
+    </li></ul></li><li class="nav-list-item"><a href="/bits-and-bytes/lld" class="nav-list-link">Low Level Design Guide</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Networking And Protocols submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
       </button><a href="/bits-and-bytes/networking-and-protocols" class="nav-list-link">Networking And Protocols</a><ul class="nav-list"><li class="nav-list-item"><a href="/bits-and-bytes/dns-and-tls-ssl" class="nav-list-link">DNS and TLS/SSL</a></li><li class="nav-list-item"><a href="/bits-and-bytes/sse-vs-websocket" class="nav-list-link">SSE vs Websocket</a></li></ul></li><li class="nav-list-item"><a href="/bits-and-bytes/oop" class="nav-list-link">OOP</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Databases submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
