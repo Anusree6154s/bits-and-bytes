@@ -60,3 +60,4 @@ sass:
 
 plugins:
   - jekyll-relative-links
+  - jekyll-feed
