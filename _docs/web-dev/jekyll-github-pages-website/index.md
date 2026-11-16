@@ -2,6 +2,7 @@
 parent: Web Dev
 layout: default
 date: 18 Jan 2025
+title: Creating Jekyll Github-Pages Websites
 permalink: jekyll-github-pages-website
 tags: [jekyll, ruby, scss, markdown]
 excerpt: This is my personal guide related to all about making github pages with and without jekyll.
