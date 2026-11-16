@@ -50,7 +50,6 @@ exclude:
 include:
   - _pages
   - _layouts
-  - _docs
 
 disqus:
   shortname: anusree-anilkumar-blog
