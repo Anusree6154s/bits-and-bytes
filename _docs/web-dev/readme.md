@@ -3,6 +3,7 @@ layout: default
 title: Web Dev
 permalink: web-dev
 has_children: true
+date: 20 Feb 2025
 ---
 
 <!-- {% assign child_pages = site.docs | where: "parent", page.title | where_exp: "item", "item.hidden != true" | sort: "date" | reverse %}
