@@ -61,6 +61,7 @@ sass:
 feed:
   collections:
     - docs
+  posts_limit: 1000
 
 plugins:
   - jekyll-relative-links
