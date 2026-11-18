@@ -1,120 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://anusree6154s.github.io/bits-and-bytes/feed/docs.xml" rel="self" type="application/atom+xml" /><link href="https://anusree6154s.github.io/bits-and-bytes/" rel="alternate" type="text/html" /><updated>2026-11-18T17:57:08+00:00</updated><id>https://anusree6154s.github.io/bits-and-bytes/feed/docs.xml</id><title type="html">Bits &amp;amp; Bytes | Docs</title><subtitle>Tech Blog</subtitle><author><name>Anusree Anilkumar</name></author><entry><title type="html">Web Dev</title><link href="https://anusree6154s.github.io/bits-and-bytes/web-dev" rel="alternate" type="text/html" title="Web Dev" /><published>2026-11-18T17:57:08+00:00</published><updated>2026-11-18T17:57:08+00:00</updated><id>https://anusree6154s.github.io/bits-and-bytes/readme</id><content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/web-dev"><![CDATA[<!-- 
-
-   
-  <p class="text-gamma text-grey-dk-000 mb-4" style="display:flex; justify-content:space-between;">
-    <span>Total Topics: 15</span> <span class="text-delta text-grey-dk-000">Newest → Oldest</span>
-  </p>
-  <br>
-
-  <ul>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/express-vs-fastify-vs-nestjs">Express vs Fastify vs NestJS</a>
-        
-          <span class="text-small text-grey-dk-000">11/11/2026</span>
-        
-      </li>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/bootstrap-icons-usage">Using Bootstrap Icons</a>
-        
-          <span class="text-small text-grey-dk-000">04/03/2025</span>
-        
-      </li>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/tailwing-styling-without-inline">Tailwind styling without inline</a>
-        
-          <span class="text-small text-grey-dk-000">03/03/2025</span>
-        
-      </li>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/optimise-img-external">External Image Optimisation</a>
-        
-          <span class="text-small text-grey-dk-000">03/03/2025</span>
-        
-      </li>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/vercel-env">Vercel .env extraction</a>
-        
-          <span class="text-small text-grey-dk-000">27/02/2025</span>
-        
-      </li>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/jekyll-github-pages-website">Creating Jekyll Github-Pages Websites</a>
-        
-          <span class="text-small text-grey-dk-000">18/01/2025</span>
-        
-      </li>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/oauth-config-setup">OAuth Config Setup in Different Apps</a>
-        
-          <span class="text-small text-grey-dk-000">09/01/2025</span>
-        
-      </li>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/git-commit-guidelines">Guidelines to cleaner git commits</a>
-        
-          <span class="text-small text-grey-dk-000">31/10/2024</span>
-        
-      </li>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/api-documentaion">API Documentation Tools</a>
-        
-          <span class="text-small text-grey-dk-000">31/10/2024</span>
-        
-      </li>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/readme-file-writing">Readme files writing guide</a>
-        
-          <span class="text-small text-grey-dk-000">26/10/2024</span>
-        
-      </li>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/git%20-commit-standards">Git Commit Standards</a>
-        
-          <span class="text-small text-grey-dk-000">26/10/2024</span>
-        
-      </li>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/readme-formatting-guidelines">Readme files formatting guide</a>
-        
-          <span class="text-small text-grey-dk-000">23/10/2024</span>
-        
-      </li>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/email-service">Email Service Guide</a>
-        
-          <span class="text-small text-grey-dk-000">22/10/2024</span>
-        
-      </li>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/react-node">React-Node App</a>
-        
-          <span class="text-small text-grey-dk-000">19/08/2024</span>
-        
-      </li>
-    
-      <li style="display:flex; justify-content:space-between;">
-        <a href="/bits-and-bytes/design-related-reference-websites">Web development Css related</a>
-        
-          <span class="text-small text-grey-dk-000">19/08/2024</span>
-        
-      </li>
-    
-  </ul>
- -->]]></content><author><name>Anusree Anilkumar</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Express vs Fastify vs NestJS</title><link href="https://anusree6154s.github.io/bits-and-bytes/express-vs-fastify-vs-nestjs" rel="alternate" type="text/html" title="Express vs Fastify vs NestJS" /><published>2026-11-11T00:00:00+00:00</published><updated>2026-11-11T00:00:00+00:00</updated><id>https://anusree6154s.github.io/bits-and-bytes/readme</id><content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/express-vs-fastify-vs-nestjs"><![CDATA[<h1 id="express-vs-fastify-vs-nestjs">Express vs Fastify vs NestJS</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://anusree6154s.github.io/bits-and-bytes/feed/docs.xml" rel="self" type="application/atom+xml" /><link href="https://anusree6154s.github.io/bits-and-bytes/" rel="alternate" type="text/html" /><updated>2026-11-18T18:11:14+00:00</updated><id>https://anusree6154s.github.io/bits-and-bytes/feed/docs.xml</id><title type="html">Bits &amp;amp; Bytes | Docs</title><subtitle>Tech Blog</subtitle><author><name>Anusree Anilkumar</name></author><entry><title type="html">Express vs Fastify vs NestJS</title><link href="https://anusree6154s.github.io/bits-and-bytes/express-vs-fastify-vs-nestjs" rel="alternate" type="text/html" title="Express vs Fastify vs NestJS" /><published>2026-11-11T00:00:00+00:00</published><updated>2026-11-11T00:00:00+00:00</updated><id>https://anusree6154s.github.io/bits-and-bytes/readme</id><content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/express-vs-fastify-vs-nestjs"><![CDATA[<h1 id="express-vs-fastify-vs-nestjs">Express vs Fastify vs NestJS</h1>
 
 <ul>
   <li>Express - slow + unstructured.</li>
@@ -596,4 +480,261 @@ in one cluster.</li>
 (35)<br />
 Page 30(36)GatewayED - for deploying istioother gateway resources :-hosts on istio (allowed domains) - server (listener definition) open protocols (HTTP, HTTPS, TCP, etc.)wildcard host - to match multiple domains like *.example.com, multiple hosts listeners.Gateway binding (associating Virtual Services w/ gateways), Gateway lifecycle.Gateway binding references Gatewayvirtual services references Gatewayw/o binding routes don’t apply.- Gatewayend of it cause this is rest - X -Istio vs nginx- istio provides what nginx provides plus service mesh (secure to service communication), mTLS (mutual TLS protecting traffic from service to service), traffic splitting as we want, observability, w/o modifying app code. Page 31(37)load balancingRound robin - load distributed sequentially &amp; evenly across available servers. Weighted load balancing -Eg: upstream backend {server app1 : 3000;server app2 : 3000;}weighted load balancing - you weight servers. % wise upstream backend {server app1 : 3000 weight = 3;server app2 : 300 weight = 1;}- app 1 get 75% more traffic.least connections - traffic to least busy instance.upstream backend {least_conn;server app1 : 3000;server app2 : 3000;}Health check/failover - if app dies, traffic moves to app2.upstream backend {server app1 : 3000 max_fails = 3 fail_timeout = 30sserver app2 : 3000;}Page 32(38)sticky session load balancingupstream backend {ip_hashserver …}upstream backend {sticky cookie srv_id expires = 1d;server apps …}- can be based on IP or cookies etc.- not a load balancing algo, but rather a constraint that modifies load balancing behaviour.Realtime sys Vs Rest api- always rest api better of little latency &amp; is valuable in comparison to open connections like web socket or SSE.- real time sys don’t cook on serverless platforms, edge servers, etc.top Server sent to me (LOD)free -h - show availbee @ server-ip -p 2203 -free -h ouplays ram and swap, free &amp; occupied.Page 33 (39)# LxC (Linux containers)- factsOS-level virtualisation - Not hardware virtualisation.Runs in containers on a host linux kernel.Acts like a small linux m/c.system container (like how docker is application container)Every container has its own - PID namespace, n/w namespace, mount namespace, hostname, filesystem, users (optionally mapped).Containers are isolated using linux namespace and cgroups.linux cgroups enforces following limits on lxc container: RAM, CPU cores, CPU time, disk quota, w/o bandwidth, I/O limits.Has singe host ckernles the kernel. Cannot boot a diff kernel inside lxc like windows on FreeBSD.host ubuntu kernellxc 1 (ubuntu)lxc 2 (debian)
 Performance (Compared to VMs):Faster startup, lower RAM overhead, better density (more containers per host).Persistence:Stays stuff installed on exe container remains installed even after reboot (less compared to VMs, bcz host kernel is shared).Security:Less vulnerability can affect all containers.Limitation:Linux guests only, cannot use different kernel version, some kernel features/modules depend on host; certain workloads (eg: some K8s or nested containers scenarios) may require extra configuration as workloads in VMs in K8s.# Advanced K8sStay basedDevops -&gt; K8s -&gt; K8s FundamentalsApplication packaginghelmchartsvalues.yamlchart.yamlhelm repositoriesGitops:Argo CDApplicationsApplication setsSyncReconciliationDrift detectionGit as source of truthContinuous delivery (CD)Progressive DeliveryRollbacksAutomated deploymentsPage 2 (Image 2)Without helmSuppose you have multiple services like frontend, backend, postgres, redis, ingress, etc. For each one will have to write deployment.yaml, service.yaml, ingress.yaml, configmap.yaml, secret.yaml, pvc.yaml, etc.This results in 20, 30, 50 yamls…For deploying in different environments like dev &amp; prod we will have to copy that files multiple times.Too much work, duplicate files.With helmReduced duplication via templatesThus, it is most useful when used in combination w/ template expressions likePage 3 (Image 3)$values.xyz.yz But one can run “helm install myapp” without template expressions just with static data though it is same.(Running above mentioned command is called as installing a helm chart or installing a release.)Template files (with template expressions) are called value filesValue filesTo deploy different kinds of values to different environments (Eg: values-dev.yaml)Avoid duplicated manifests while still maintaining operationBinding to k8s env file, but w/o security.Charts.yamlAddition of it to any folder makes that folder a valid “chart” &amp; makes helm recognise it as one installable package.Running “helm install myrelease my-app” (Installing a helm chart / release)In general, we don’t push charts (folder created w/ charts.yaml) into OCI registries (open w/ charts.yaml) into OCI registries (open w/ charts.yaml). It is just spun on the repos required nodes.But in general, we push to OCI registries same as docker images (Eg: dockerhub, github container registry, Amazon ECR, Google artifact registry, Azure container registry).Page 4 (Image 4)Multiple charts by having multiple folders ref chart.yaml to install.Find patty charts to install, popular reusable packages/charts like prometheus, grafana, etc. redis, postgres, etc.Deploying / Installing multiple helm chartsHelm file used for describing multiple helm releases in one place, or deploying them together &amp; volatile controlling, ordering &amp; shared configuration.Gitops / ArgoCDSubset of DevOps.Focuses on keeping DevOps in sync across teams in large organizations.Git as source of truthA tool used for that is ArgoCD.ArgoCD is a CRD so running in K8s.Tantive setup for argo CD as manifests.ArgoCD watches for changes and sunsets them if necessary.Something like protecting dev/main branches in github/gitlab.Page 5 (Image 5)- Argo Project consists of argocd, argo workflows, argo rollouts, argo events.Named after mythological ship Argonauts - Logo of argo is an orange squid?</li>
-</ul>]]></content><author><name>Anusree Anilkumar</name></author><summary type="html"><![CDATA[Understanding diff b/w Graphql and Rest API]]></summary></entry></feed>
+</ul>]]></content><author><name>Anusree Anilkumar</name></author><summary type="html"><![CDATA[Understanding diff b/w Graphql and Rest API]]></summary></entry><entry><title type="html">Load Testing</title><link href="https://anusree6154s.github.io/bits-and-bytes/load-testing" rel="alternate" type="text/html" title="Load Testing" /><published>2026-11-10T00:00:00+00:00</published><updated>2026-11-10T00:00:00+00:00</updated><id>https://anusree6154s.github.io/bits-and-bytes/readme</id><content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/load-testing"><![CDATA[<h1 id="load-testing">Load Testing</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Testing tests</th>
+      <th>purpose</th>
+      <th>duration</th>
+      <th>typically load</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Smoke test</td>
+      <td>verify system works</td>
+      <td>1-5 min</td>
+      <td>very low</td>
+    </tr>
+    <tr>
+      <td>Load</td>
+      <td>verify expected traffic</td>
+      <td>5-30 min</td>
+      <td>expected production load.</td>
+    </tr>
+    <tr>
+      <td>Stress</td>
+      <td>Find breaking point</td>
+      <td>10-30 min</td>
+      <td>Beyond expected load!</td>
+    </tr>
+    <tr>
+      <td>Spike</td>
+      <td>Test sudden traffic surges</td>
+      <td>Few mins</td>
+      <td>Instant large jump</td>
+    </tr>
+    <tr>
+      <td>Soak</td>
+      <td>Find long term issues.</td>
+      <td>Hours</td>
+      <td>Normal load</td>
+    </tr>
+    <tr>
+      <td>Scalability</td>
+      <td>verify horizontal/vertical scaling</td>
+      <td>load.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Breakpoint</td>
+      <td>Find exact failure point</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Failure</td>
+      <td>verify recovery from failures</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Chaos</td>
+      <td>Intentionally inject failures</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Capacity</td>
+      <td>Determine max sustainable throughput.</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Resilience test</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Performance regression test</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="load-testing-proper-table-generally-used-ones">Load Testing proper table (generally used ones)</h2>
+
+<ul>
+  <li>Test type: Smoke test
+    <ul>
+      <li>Purpose :- Verify test setup &amp; basic functionality</li>
+      <li>Typical load vs normal :- 1-5% (10-15 users)</li>
+      <li>Duration :- seconds to 5 min</li>
+    </ul>
+  </li>
+  <li>Load Test (must have)
+    <ul>
+      <li>Validate performance under expected load</li>
+      <li>load :- 100% (1000 users)</li>
+      <li>Duration :- 15 min to 1 hr</li>
+    </ul>
+  </li>
+  <li>Avg. load test
+    <ul>
+      <li>Simulate normal business day</li>
+      <li>load :- 50-80% (500-800 users)</li>
+      <li>duration :- 30 min to several hrs</li>
+    </ul>
+  </li>
+  <li>Stress test (must have)
+    <ul>
+      <li>Find breaking point</li>
+      <li>load :- 120-500% (1200-5000+ users)</li>
+      <li>duration :- minutes</li>
+    </ul>
+  </li>
+  <li>Soak/endurance test (sustained test) (must have)
+    <ul>
+      <li>Long period check to detect memory leak, connection leak, eta degradation, etc.</li>
+      <li>load :- 70-100% (700-1000 users sustained)</li>
+      <li>duration :- 4-72 hrs (3 days)</li>
+      <li>Capacity test (sometimes )
+        <ul>
+          <li>Find max load, while still meeting SLA.</li>
+          <li>SLA :- Service level agreement.
+            <ul>
+              <li>A document agreement</li>
+              <li>defines what level of service must be defined &amp; how it is measured.</li>
+              <li>typical metrics include uptime, response time, resolution time, availability.</li>
+              <li>If provide fails to meet targets, SLA may specify penalties, service credits or remedies.</li>
+              <li>eg: if an application’s SLA is</li>
+              <li>availability = 99.9%</li>
+              <li>P95 latency &lt; 300 ms</li>
+              <li>error rate &lt; 0.1%</li>
+              <li>then during load tests these must be maintained.</li>
+            </ul>
+          </li>
+          <li>
+            <h3 id="related-terms">Related terms</h3>
+            <ul>
+              <li>SLI (Service level indicator)
+                <ul>
+                  <li>The measurement values</li>
+                  <li>Eg: availability, P95 latency, P95 etc</li>
+                </ul>
+              </li>
+              <li>SLO (Service level objective)
+                <ul>
+                  <li>A target for an SLI / engineerng goal</li>
+                  <li>Eg: P95 latency &lt; 300ms - over a rolling 30-day period</li>
+                  <li>99% successful requests over 30 days</li>
+                </ul>
+              </li>
+              <li>SLA (Service level agreement)
+                <ul>
+                  <li>customer facing promise</li>
+                  <li>involves business/legal consequences</li>
+                  <li>P95 latency (Percentile 95 latency)</li>
+                  <li>A method to display response times/latency</li>
+                  <li>monitoring:</li>
+                  <li>Eg: P95 = 300 ms means 95% of requests completed in 300ms or less - 5% faile.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>load :- Gradually increase from 100% upward.</li>
+          <li>duration :- 30 min - 2 hr</li>
+          <li>Classically stress test but to find near point in compliance of SLA).</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Scalability test
+    <ul>
+      <li>verify scaling behaviour when adding resources.</li>
+      <li>load :- incrementally increasing load.</li>
+      <li>duration :- Hours</li>
+    </ul>
+  </li>
+  <li>Volume test :-
+    <ul>
+      <li>Test large data size (not user count)</li>
+      <li>load :- normal users, huge data volume.</li>
+      <li>duration :- series</li>
+    </ul>
+  </li>
+  <li>Concurrency test :-
+    <ul>
+      <li>Many users hitting same resource simultaneously.</li>
+      <li>load :- 100-300% on specific endpoint</li>
+      <li>durations :- minutes</li>
+    </ul>
+  </li>
+  <li>Resilience test
+    <ul>
+      <li>Behaviour during failure.</li>
+      <li>load :- normal load + injected failures.</li>
+      <li>duration :- 30 min to hours.</li>
+    </ul>
+  </li>
+  <li>Recovery test (outage)
+    <ul>
+      <li>Recovery after outage/crash.</li>
+      <li>load :- usually after stress/spike.</li>
+      <li>duration :- mins to hours.</li>
+    </ul>
+  </li>
+  <li>Peak test (traffic)
+    <ul>
+      <li>Validate operation during known peak traffic.</li>
+      <li>load :- 100-150% of highest expected peak.</li>
+      <li>duration :- 30 min to 2 hrs.</li>
+      <li>diff from concurrency testing in a way that enteric apps heavy load is tested.</li>
+      <li>Testing expected real life, high traffic like black friday sale.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="common-load-testing-tools">Common load testing tools</h2>
+
+<ul>
+  <li>From local m/c to deployed appk6, Apache JMeter (UI based testing - JSlocust (Python scripts based)artillery (yaml based ver &amp;)</li>
+  <li>k6
+    <ul>
+      <li>JS based</li>
+      <li>CLI/UI friendly</li>
+      <li>used heavily w/ nestJS + K8s</li>
+    </ul>
+  </li>
+  <li>Artillery
+    <ul>
+      <li>node native alternative</li>
+      <li>yaml or JS based</li>
+    </ul>
+  </li>
+  <li>Apache JMeter
+    <ul>
+      <li>GUI based.</li>
+      <li>Manual entry of endpoints.</li>
+      <li>used in banks / large enterprises.</li>
+      <li>legacy</li>
+    </ul>
+  </li>
+  <li>locust
+    <ul>
+      <li>python based.</li>
+      <li>distributed load testing support.</li>
+    </ul>
+  </li>
+  <li>For backend HTTP tools (for quick checks only).
+    <ul>
+      <li>wrk, autocannon, hey</li>
+      <li>used for raw benchmarks &amp; not full scenarios.</li>
+    </ul>
+  </li>
+</ul>]]></content><author><name>Anusree Anilkumar</name></author><summary type="html"><![CDATA[Understanding load testing]]></summary></entry></feed>
