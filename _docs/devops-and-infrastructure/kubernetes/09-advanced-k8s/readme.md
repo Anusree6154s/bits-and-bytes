@@ -4,6 +4,8 @@ title: 09. Advanced K8s
 date: Nov 11, 2026
 excerpt: Intro to kubernetes (Advanced K8s)
 parent: Kubernetes
+series: Kubernetes
+published: true
 permalink: kubernetes-09-advanced-k8s
 ---
 

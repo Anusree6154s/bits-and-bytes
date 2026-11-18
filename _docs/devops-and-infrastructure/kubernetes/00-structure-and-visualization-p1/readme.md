@@ -4,6 +4,8 @@ title: 00. Structure and Visualisation - Part 1
 date: Nov 04, 2026
 excerpt: Intro to kubernetes - 00. Structure and Visualisation
 parent: Kubernetes
+series: Kubernetes
+published: true
 permalink: kubernetes-00-structure-and-visualization
 ---
 # Kubernetes (K8s)
