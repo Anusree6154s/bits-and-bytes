@@ -50,12 +50,17 @@ exclude:
 include:
   - _pages
   - _layouts
+  - _docs
 
 disqus:
   shortname: anusree-anilkumar-blog
 
 sass:
   style: compressed
+
+feed:
+  collections:
+    - docs
 
 plugins:
   - jekyll-relative-links

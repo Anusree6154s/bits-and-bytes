@@ -3,7 +3,7 @@ parent: Typescript learners guide
 layout: default
 date: 19 jan 2025
 title: More about Type Manipulation
-permalink: type-manipulation
+permalink: more-about-type-manipulation
 tags: [typescript, type manipulation]
 parent_post: typescript-learners-guide
 hidden: true

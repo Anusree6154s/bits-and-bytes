@@ -3,6 +3,7 @@ layout: default
 title: Mobile Dev
 permalink: mobile-dev
 has_children: true
+date: 20 feb 2025
 ---
 
 <!-- {% assign child_pages = site.docs | where: "parent", page.title | where_exp: "item", "item.hidden != true" | sort: "date" | reverse %}
