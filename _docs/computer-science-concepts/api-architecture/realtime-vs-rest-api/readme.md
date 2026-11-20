@@ -5,6 +5,8 @@ permalink: realtime-vs-rest-api
 date: Nov 11, 2026
 excerpt: Understanding diff b/w Reatime system and Rest API
 parent: API Architecture
+series: API Architecture
+published: true
 ---
 
 # Realtime sys Vs Rest api

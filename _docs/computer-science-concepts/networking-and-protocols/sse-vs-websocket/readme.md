@@ -5,6 +5,8 @@ permalink: sse-vs-websocket
 date: Nov 11, 2026
 excerpt: Understanding diff b/w SSE and Websocket
 parent: Networking And Protocols
+series: Networking And Protocols
+published: true
 ---
 
 # SSE vs Websocket

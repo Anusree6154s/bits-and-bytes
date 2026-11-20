@@ -1,5 +1,7 @@
 ---
 parent: Web Dev
+series: Web Dev
+published: true
 layout: default
 title: Using Bootstrap Icons
 date:  4 march 2025

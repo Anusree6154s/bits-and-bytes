@@ -1,5 +1,7 @@
 ---
 parent: Web Dev
+series: Web Dev
+published: true
 layout: default
 title: Email Service Guide
 date: Oct 22, 2024

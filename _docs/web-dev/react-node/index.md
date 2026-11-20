@@ -1,5 +1,7 @@
 ---
 parent: Web Dev
+series: Web Dev
+published: true
 layout: default
 title: React-Node App
 date: Aug 19, 2024

@@ -5,6 +5,8 @@ permalink: express-vs-fastify-vs-nestjs
 date: Nov 11, 2026
 excerpt: Comparing Express vs Fastify vs NestJS
 parent: Web Dev
+series: Web Dev
+published: true
 ---
 
 # Express vs Fastify vs NestJS

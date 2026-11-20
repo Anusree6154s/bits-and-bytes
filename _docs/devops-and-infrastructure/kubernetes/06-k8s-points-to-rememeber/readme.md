@@ -4,6 +4,8 @@ title: 06. K8s Points to Remember
 date: Nov 10, 2026
 excerpt: Intro to kubernetes (K8s Points to Remember)
 parent: Kubernetes
+series: Kubernetes
+published: true
 permalink: kubernetes-06-k8s-points-to-remember
 ---
 

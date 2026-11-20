@@ -6,6 +6,8 @@ excerpt: To study basic and advanced typescript
 permalink: typescript-learners-guide
 tags: [typescript]
 parent: Languages
+series: Languages
+published: true
 has_children: true
 ---
 

@@ -4,6 +4,8 @@ title: LXC
 date: Nov 10, 2026
 excerpt: Understanding Linux Containers (LXC)
 parent: Devops And Infrastructure
+series: Devops And Infrastructure
+published: true
 permalink: lxc
 ---
 

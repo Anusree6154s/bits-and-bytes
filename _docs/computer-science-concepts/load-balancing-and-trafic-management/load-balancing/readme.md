@@ -5,6 +5,8 @@ permalink: load-balancing
 date: Nov 11, 2026
 excerpt: Understanding Load Balancing
 parent: Load Balancing And Traffic Management
+series: Load Balancing And Traffic Management
+published: true
 ---
 
 # load balancing

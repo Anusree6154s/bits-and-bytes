@@ -1,5 +1,7 @@
 ---
 parent: Web Dev
+series: Web Dev
+published: true
 layout: default
 title: Readme files writing guide
 date: Oct 26, 2024

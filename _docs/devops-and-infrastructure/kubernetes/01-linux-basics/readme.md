@@ -4,6 +4,8 @@ title: 01. Linux Basics
 date: Nov 09, 2026
 excerpt: Intro to kubernetes (Linux Basics)
 parent: Kubernetes
+series: Kubernetes
+published: true
 permalink: kubernetes-01-linux-basics
 ---
 

@@ -5,6 +5,8 @@ permalink: istio-ingress
 date: Nov 11, 2026
 excerpt: Understanding Istio Ingress
 parent: Load Balancing And Traffic Management
+series: Load Balancing And Traffic Management
+published: true
 ---
 
 # Istio-ingress

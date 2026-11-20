@@ -1,5 +1,7 @@
 ---
 parent: Web Dev
+series: Web Dev
+published: true
 layout: default
 title: Guidelines to cleaner git commits
 date: Oct 31, 2024

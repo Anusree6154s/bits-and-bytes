@@ -4,6 +4,8 @@ title: 04. K8s Structure and visualization - Part 2
 date: Nov 09, 2026
 excerpt: Intro to kubernetes (K8s Structure and visualization Part 2)
 parent: Kubernetes
+series: Kubernetes
+published: true
 permalink: kubernetes-04-k8s-structure-and-visualization
 ---
 

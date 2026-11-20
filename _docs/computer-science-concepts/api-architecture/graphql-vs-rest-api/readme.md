@@ -5,6 +5,8 @@ permalink: graphql-vs-rest
 date: Nov 11, 2026
 excerpt: Understanding diff b/w Graphql and Rest API
 parent: API Architecture
+series: API Architecture
+published: true
 ---
 
 # GraphQL vs Rest api

@@ -1,5 +1,7 @@
 ---
 parent: Web Dev
+series: Web Dev
+published: true
 layout: default
 date: 18 Jan 2025
 title: Creating Jekyll Github-Pages Websites

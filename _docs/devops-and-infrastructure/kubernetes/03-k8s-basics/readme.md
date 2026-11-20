@@ -4,6 +4,8 @@ title: 03. K8s Basics
 date: Nov 09, 2026
 excerpt: Intro to kubernetes (K8s Basics)
 parent: Kubernetes
+series: Kubernetes
+published: true
 permalink: kubernetes-03-k8s-basics
 ---
 

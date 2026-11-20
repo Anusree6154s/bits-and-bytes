@@ -6,6 +6,8 @@ excerpt: To study basic and advanced MongoDB
 permalink: mongodb
 tags: [mongodb]
 parent: No SQL
+series: No SQL
+published: true
 ---
 
 - **Topics Constituting Basic MongoDB**

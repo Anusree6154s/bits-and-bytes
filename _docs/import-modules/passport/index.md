@@ -4,6 +4,8 @@ date: 19 aug 2024
 excerpt: Passport JWT Documentation
 permalink: passport-jwt
 parent: Import Modules
+series: Import Modules
+published: true
 ---
 
 # Passport-jwt Documentaion

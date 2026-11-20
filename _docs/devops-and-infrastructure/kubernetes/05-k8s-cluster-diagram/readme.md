@@ -4,6 +4,8 @@ title: 05. K8s Cluster Diagram
 date: Nov 09, 2026
 excerpt: Intro to kubernetes (K8s Cluster Diagram)
 parent: Kubernetes
+series: Kubernetes
+published: true
 permalink: kubernetes-05-k8s-cluster-diagram
 ---
 

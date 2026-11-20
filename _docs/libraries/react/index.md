@@ -6,6 +6,8 @@ excerpt: To study basic and advanced React
 permalink: react
 tags: [react]
 parent: Libraries
+series: Libraries
+published: true
 ---
 
 ## Table of Concepts

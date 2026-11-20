@@ -4,6 +4,8 @@ title: Flutter
 permalink: flutter
 has_children: true
 parent: Mobile Dev
+series: Mobile Dev
+published: true
 date: Jul 13, 2025
 ---
 

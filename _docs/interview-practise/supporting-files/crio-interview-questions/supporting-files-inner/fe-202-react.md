@@ -1,5 +1,7 @@
 ---
 parent: Crio Interview Questions
+series: Crio Interview Questions
+published: true
 layout: default
 date: 20 feb 2025
 title: FE-101 HTML

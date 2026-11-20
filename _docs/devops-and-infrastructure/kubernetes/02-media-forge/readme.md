@@ -4,6 +4,8 @@ title: 02. Media Forge
 date: Nov 09, 2026
 excerpt: Intro to kubernetes (Media Forge)
 parent: Kubernetes
+series: Kubernetes
+published: true
 permalink: kubernetes-02-media-forge
 ---
 

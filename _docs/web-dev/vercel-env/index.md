@@ -1,5 +1,7 @@
 ---
 parent: Web Dev
+series: Web Dev
+published: true
 layout: default
 title: Vercel .env extraction
 excerpt: Extracting environment variables from deployed vercel app

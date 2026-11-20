@@ -1,5 +1,7 @@
 ---
 parent: Web Dev
+series: Web Dev
+published: true
 layout: default
 date: Oct 31, 2024
 title: API Documentation Tools

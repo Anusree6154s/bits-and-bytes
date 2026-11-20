@@ -1,5 +1,7 @@
 ---
 parent: Web Dev
+series: Web Dev
+published: true
 layout: default
 date: Jan 9, 2025
 permalink: oauth-config-setup

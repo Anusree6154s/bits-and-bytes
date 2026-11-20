@@ -1,5 +1,7 @@
 ---
 parent: Typescript learners guide
+series: Typescript learners guide
+published: true
 layout: default
 date: 19 jan 2025
 title: Typescript Interfaces Usecases

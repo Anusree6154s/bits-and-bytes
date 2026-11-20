@@ -4,6 +4,8 @@ title: 07. K8s Next Topics
 date: Nov 10, 2026
 excerpt: Intro to kubernetes (K8s next topics)
 parent: Kubernetes
+series: Kubernetes
+published: true
 permalink: kubernetes-07-k8s-next-topics
 ---
 

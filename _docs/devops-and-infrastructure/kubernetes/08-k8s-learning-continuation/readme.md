@@ -4,6 +4,8 @@ title: 08. K8s Leanring Continuation
 date: Nov 10, 2026
 excerpt: Intro to kubernetes (K8s learning continuation)
 parent: Kubernetes
+series: Kubernetes
+published: true
 permalink: kubernetes-08-k8s-learning-continuation
 ---
 

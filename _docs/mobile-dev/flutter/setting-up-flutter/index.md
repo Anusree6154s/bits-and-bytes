@@ -6,6 +6,8 @@ excerpt: Guide to setting up flutter in vs code
 permalink: setting-up-flutter
 tags: [flutter, dart, mobile, android, ios]
 parent: Flutter
+series: Flutter
+published: true
 ---
 
 I have been looking on how to create my own gujrati learning app and thought, well why not learn something that's used in my office. And so I chose flutter. <img src="{{ '/assets/imgs/setting-up-flutter.png' | relative_url }}" width=30 height=30/>
