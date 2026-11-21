@@ -1,7 +1,5 @@
 ---
 parent: Supporting Files
-series: Supporting Files
-published: true
 has_children: true
 layout: default
 date: 22 jan 2025
