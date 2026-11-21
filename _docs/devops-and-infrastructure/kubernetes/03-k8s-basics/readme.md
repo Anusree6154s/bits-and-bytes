@@ -14,7 +14,7 @@ permalink: kubernetes-03-k8s-basics
 So we are back to continuing with k8s basics dropping media forge in between 🥲🙂
 
 ### Linux Basics
-<p align='center'><img src='https://github.com/user-attachments/assets/5d427eea-59c2-4acb-a328-8c0f64f38729' width=100/></p>
+<p align='center'><img alt="image" src='https://github.com/user-attachments/assets/5d427eea-59c2-4acb-a328-8c0f64f38729' width=100/></p>
 
 Back to understanding linux basics for k8s. They include processes, ports, networking, DNS, file systems, permissions, env variables, systemd, services, logs
 
@@ -117,7 +117,7 @@ Back to understanding linux basics for k8s. They include processes, ports, netwo
 
 ### Containers
 
-<p align='center'><img src='https://github.com/user-attachments/assets/5b38a59f-359a-4887-b8ea-2436179994c9' width=100/></p>
+<p align='center'><img alt="image" src='https://github.com/user-attachments/assets/5b38a59f-359a-4887-b8ea-2436179994c9' width=100/></p>
 
 
 Images, containers, layers, volumes, networks, entrypoints, env variables, multi stage builds.
@@ -226,7 +226,7 @@ Images, containers, layers, volumes, networks, entrypoints, env variables, multi
 
 ### Purpose of K8s
 
-<p align='center'><img src='https://github.com/user-attachments/assets/37a2415d-14c5-42c5-b21d-0ada0eef8552' width=100/></p>
+<p align='center'><img alt="image" src='https://github.com/user-attachments/assets/37a2415d-14c5-42c5-b21d-0ada0eef8552' width=100/></p>
 
 #### Problem and their solutions via k8s
 

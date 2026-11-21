@@ -11,7 +11,7 @@ permalink: kubernetes-02-media-forge
 
 ## Media Forge
 
-<p align='center'><img src='https://github.com/user-attachments/assets/4bd96a77-da9d-4b95-af9e-c9ca15b142f9' width=100/></p>
+<p align='center'><img alt="image" src='https://github.com/user-attachments/assets/4bd96a77-da9d-4b95-af9e-c9ca15b142f9' width=100/></p>
 
 I attempted learning more about linux and k8s with help of a partly done mini project. Tech and their purposes:
 

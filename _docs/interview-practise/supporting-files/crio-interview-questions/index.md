@@ -1,6 +1,6 @@
 ---
-parent: Interview Questions
-series: Interview Questions
+parent: Supporting Files
+series: Supporting Files
 published: true
 has_children: true
 layout: default

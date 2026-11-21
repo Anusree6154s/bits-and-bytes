@@ -12,7 +12,7 @@ published: true
 
 Since I began learning flutter, dart was a new language for me. I came to know that dart is the most similar to java language which also I was just partially informed in.
 
-<div align=center><img src="{{'/assets/imgs/basics-of-dart.png'| relative_url}}"  width=100/><p style="font-size:12px">And there I was stuck</p></div>
+<div align=center><img src="{{'/assets/imgs/basics-of-dart.png'| relative_url}}" alt="image" width=100/><p style="font-size:12px">And there I was stuck</p></div>
 
 So here goes a small basics chart I made gpt give me that seems to be quite helpful in catching the basic flow of the code it generates futher for my dart project:
 

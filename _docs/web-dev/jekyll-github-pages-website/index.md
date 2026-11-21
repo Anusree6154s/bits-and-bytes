@@ -70,8 +70,8 @@ This is my personal guide related to all about making github pages with and with
     - For properties, visit [https://json.schemastore.org/jekyll.json](https://json.schemastore.org/jekyll.json). In that go to the key called properties and under it every key is a possible property that can be added to the config file.
     - For default properties specific to any particular theme or website template, visit that template and read its documentation or code base to identiy what variables are used in its code.
     - Finding variables :
-    - <img src='https://github.com/user-attachments/assets/04612ac5-0aba-45f2-8b2e-fdea9d482f74' width='400'/>
-    - <img src='https://github.com/user-attachments/assets/045f61eb-3b55-407a-9ace-a021514d1913' width='400'/>
+    - <img alt="image" src='https://github.com/user-attachments/assets/04612ac5-0aba-45f2-8b2e-fdea9d482f74' width='400'/>
+    - <img alt="image" src='https://github.com/user-attachments/assets/045f61eb-3b55-407a-9ace-a021514d1913' width='400'/>
     - We will be using architect theme from [https://github.com/pages-themes/architect](https://github.com/pages-themes/architect). I'll just go ahead and copy info from its `_config.yml`
   - **Create a file called `Gemfile`**
     - Its like package.json but for ruby. It contains gems (packages for installation)

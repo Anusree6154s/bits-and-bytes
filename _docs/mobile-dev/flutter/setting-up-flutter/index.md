@@ -10,7 +10,7 @@ series: Flutter
 published: true
 ---
 
-I have been looking on how to create my own gujrati learning app and thought, well why not learn something that's used in my office. And so I chose flutter. <img src="{{ '/assets/imgs/setting-up-flutter.png' | relative_url }}" width=30 height=30/>
+I have been looking on how to create my own gujrati learning app and thought, well why not learn something that's used in my office. And so I chose flutter. <img src="{{ '/assets/imgs/setting-up-flutter.png' | relative_url }}" alt="image" width=30 height=30/>
 
 Now I was used to using vs code. So went and prompted gpt to help me set up flutter in vs code, and this is its response that worked well for me:
 
