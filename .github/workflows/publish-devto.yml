@@ -1,0 +1,39 @@
+
+name: Publish DEV.to Drafts
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish the drafts now?"
+        required: true
+        type: boolean
+        default: false
+
+  schedule:
+    - cron: "0 0 1 * *"
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Run DEV publisher
+        env:
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+          PUBLISH: ${{ (github.event_name == 'workflow_dispatch' && inputs.publish) || (github.event_name == 'schedule' && vars.PUBLISH_ON_SCHEDULE == 'true') }}
+        run: python scripts/publish_devto.py
