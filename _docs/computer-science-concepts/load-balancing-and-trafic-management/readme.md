@@ -6,5 +6,5 @@ date: Nov 11, 2026
 parent: Computer Science Concepts
 series: Computer Science Concepts
 published: true
-has-children: true
+has_children: true
 ---

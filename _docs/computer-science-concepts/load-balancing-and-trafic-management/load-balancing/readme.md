@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Load Balancing And Traffic Management
+title: Load Balancing
 permalink: load-balancing
 date: Nov 11, 2026
 excerpt: Understanding Load Balancing

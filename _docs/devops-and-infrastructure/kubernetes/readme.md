@@ -7,4 +7,5 @@ parent: Devops And Infrastructure
 series: Devops And Infrastructure
 published: true
 permalink: kubernetes
+has_children: true
 ---
