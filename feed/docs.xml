@@ -1,3 +1,5 @@
+---
+---
 <?xml version="1.0" encoding="utf-8"?>
 <!-- CUSTOM FEED TEMPLATE LOADED -->
 {% if page.xsl %}
@@ -40,11 +42,7 @@
     </author>
   {% endif %}
 
-  {% if page.tags %}
-    {% assign posts = site.tags[page.tags] %}
-  {% else %}
-    {% assign posts = site[page.collection] %}
-  {% endif %}
+  {% assign posts = site.docs %}
   {% if page.category %}
     {% assign posts = posts | where: "categories", page.category %}
   {% endif %}
