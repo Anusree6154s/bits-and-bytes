@@ -298,7 +298,7 @@ let currentCategory = "dev";
   }
 </style>
 <div style="border-left: 1.5px solid #e0e0e0; margin-left: 10px; padding-left: 20px;">
-  {% for doc in sorted_docs limit:1000 %}
+  {% for doc in sorted_docs limit:10 %}
     <div style="margin-bottom: 2rem; position: relative;">
       <!-- Timeline Node Dot -->
       
