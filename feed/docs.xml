@@ -5,7 +5,7 @@
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
   <link href="https://anusree6154s.github.io/bits-and-bytes/feed/docs.xml" rel="self" type="application/atom+xml" />
   <link href="https://anusree6154s.github.io/bits-and-bytes/" rel="alternate" type="text/html" />
-  <updated>2026-11-25T11:36:22+00:00</updated>
+  <updated>2026-11-25T12:03:30+00:00</updated>
   <id>https://anusree6154s.github.io/bits-and-bytes/feed/docs.xml</id>
 
   
@@ -42,7 +42,7 @@
       <link href="https://anusree6154s.github.io/bits-and-bytes/express-vs-fastify-vs-nestjs" rel="alternate" type="text/html" title="Express vs Fastify vs NestJS" />
       <published>2026-11-11T00:00:00+00:00</published>
       <updated>2026-11-11T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/express-vs-fastify-vs-nestjs</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/express-vs-fastify-vs-nestjs"><![CDATA[<h1 id="express-vs-fastify-vs-nestjs">Express vs Fastify vs NestJS</h1>
@@ -93,7 +93,7 @@
       <link href="https://anusree6154s.github.io/bits-and-bytes/kubernetes-09-advanced-k8s" rel="alternate" type="text/html" title="09. Advanced K8s" />
       <published>2026-11-11T00:00:00+00:00</published>
       <updated>2026-11-11T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/kubernetes-09-advanced-k8s</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/kubernetes-09-advanced-k8s"><![CDATA[<h1 id="advanced-k8s-story-based">Advanced K8s (Story Based)</h1>
@@ -223,7 +223,7 @@
       <link href="https://anusree6154s.github.io/bits-and-bytes/sse-vs-websocket" rel="alternate" type="text/html" title="SSE vs Websocket" />
       <published>2026-11-11T00:00:00+00:00</published>
       <updated>2026-11-11T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/sse-vs-websocket</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/sse-vs-websocket"><![CDATA[<h1 id="sse-vs-websocket">SSE vs Websocket</h1>
@@ -284,7 +284,7 @@
       <link href="https://anusree6154s.github.io/bits-and-bytes/dns-and-tls-ssl" rel="alternate" type="text/html" title="DNS and TLS/SSL" />
       <published>2026-11-11T00:00:00+00:00</published>
       <updated>2026-11-11T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/dns-and-tls-ssl</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/dns-and-tls-ssl"><![CDATA[<h1 id="dns-and-tlsssl">DNS and TLS/SSL</h1>
@@ -341,7 +341,7 @@
       <link href="https://anusree6154s.github.io/bits-and-bytes/load-balancing" rel="alternate" type="text/html" title="Load Balancing" />
       <published>2026-11-11T00:00:00+00:00</published>
       <updated>2026-11-11T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/load-balancing</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/load-balancing"><![CDATA[<h1 id="load-balancing">load balancing</h1>
@@ -453,7 +453,7 @@ upstream backend {
       <link href="https://anusree6154s.github.io/bits-and-bytes/istio-ingress" rel="alternate" type="text/html" title="Istio Ingress" />
       <published>2026-11-11T00:00:00+00:00</published>
       <updated>2026-11-11T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/istio-ingress</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/istio-ingress"><![CDATA[<h1 id="istio-ingress">Istio-ingress</h1>
@@ -679,7 +679,7 @@ upstream backend {
       <link href="https://anusree6154s.github.io/bits-and-bytes/realtime-vs-rest-api" rel="alternate" type="text/html" title="Realtime sys vs Rest API" />
       <published>2026-11-11T00:00:00+00:00</published>
       <updated>2026-11-11T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/realtime-vs-rest-api</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/realtime-vs-rest-api"><![CDATA[<h1 id="realtime-sys-vs-rest-api">Realtime sys Vs Rest api</h1>
@@ -724,7 +724,7 @@ upstream backend {
       <link href="https://anusree6154s.github.io/bits-and-bytes/graphql-vs-rest" rel="alternate" type="text/html" title="Graphql vs Rest API" />
       <published>2026-11-11T00:00:00+00:00</published>
       <updated>2026-11-11T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/graphql-vs-rest</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/graphql-vs-rest"><![CDATA[<h1 id="graphql-vs-rest-api">GraphQL vs Rest api</h1>
@@ -844,7 +844,7 @@ Performance (Compared to VMs):Faster startup, lower RAM overhead, better density
       <link href="https://anusree6154s.github.io/bits-and-bytes/load-testing" rel="alternate" type="text/html" title="Load Testing" />
       <published>2026-11-10T00:00:00+00:00</published>
       <updated>2026-11-10T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/load-testing</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/load-testing"><![CDATA[<h1 id="load-testing">Load Testing</h1>
@@ -1141,7 +1141,7 @@ Performance (Compared to VMs):Faster startup, lower RAM overhead, better density
       <link href="https://anusree6154s.github.io/bits-and-bytes/lxc" rel="alternate" type="text/html" title="LXC" />
       <published>2026-11-10T00:00:00+00:00</published>
       <updated>2026-11-10T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/lxc</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/lxc"><![CDATA[<h1 id="lxc-linux-containers">LXC (Linux containers)</h1>
@@ -1221,7 +1221,7 @@ lxc 1          lxc 2
       <link href="https://anusree6154s.github.io/bits-and-bytes/kubernetes-08-k8s-learning-continuation" rel="alternate" type="text/html" title="08. K8s Leanring Continuation" />
       <published>2026-11-10T00:00:00+00:00</published>
       <updated>2026-11-10T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/kubernetes-08-k8s-learning-continuation</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/kubernetes-08-k8s-learning-continuation"><![CDATA[<h1 id="k8s-learning-continuation">K8s learning (continuation)</h1>
@@ -1393,7 +1393,7 @@ svc/kubernetes-dashboard-kong-proxy
       <link href="https://anusree6154s.github.io/bits-and-bytes/kubernetes-07-k8s-next-topics" rel="alternate" type="text/html" title="07. K8s Next Topics" />
       <published>2026-11-10T00:00:00+00:00</published>
       <updated>2026-11-10T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/kubernetes-07-k8s-next-topics</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/kubernetes-07-k8s-next-topics"><![CDATA[<h2 id="next-topics-in-k8s">Next topics in k8s</h2>
@@ -1489,7 +1489,7 @@ nodes:
       <link href="https://anusree6154s.github.io/bits-and-bytes/kubernetes-06-k8s-points-to-remember" rel="alternate" type="text/html" title="06. K8s Points to Remember" />
       <published>2026-11-10T00:00:00+00:00</published>
       <updated>2026-11-10T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/kubernetes-06-k8s-points-to-remember</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/kubernetes-06-k8s-points-to-remember"><![CDATA[<h2 id="k8s-app-points-to-remember">K8s app (points to remember)</h2>
@@ -1584,7 +1584,7 @@ Verify images loaded in kind:  "docker exec <control-plane-node-name> crictl ima
       <link href="https://anusree6154s.github.io/bits-and-bytes/kubernetes-05-k8s-cluster-diagram" rel="alternate" type="text/html" title="05. K8s Cluster Diagram" />
       <published>2026-11-09T00:00:00+00:00</published>
       <updated>2026-11-09T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/kubernetes-05-k8s-cluster-diagram</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/kubernetes-05-k8s-cluster-diagram"><![CDATA[<h2 id="k8s-cluster-diagram-for-reference">K8s Cluster Diagram (For Reference)</h2>
@@ -1724,7 +1724,7 @@ Worker Nodes
       <link href="https://anusree6154s.github.io/bits-and-bytes/kubernetes-04-k8s-structure-and-visualization" rel="alternate" type="text/html" title="04. K8s Structure and visualization - Part 2" />
       <published>2026-11-09T00:00:00+00:00</published>
       <updated>2026-11-09T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/kubernetes-04-k8s-structure-and-visualization</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/kubernetes-04-k8s-structure-and-visualization"><![CDATA[<h2 id="k8s-structure-and-visualization">K8s Structure and Visualization</h2>
@@ -2749,7 +2749,7 @@ External Systems
       <link href="https://anusree6154s.github.io/bits-and-bytes/kubernetes-03-k8s-basics" rel="alternate" type="text/html" title="03. K8s Basics" />
       <published>2026-11-09T00:00:00+00:00</published>
       <updated>2026-11-09T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/kubernetes-03-k8s-basics</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/kubernetes-03-k8s-basics"><![CDATA[<h2 id="k8s-basics">K8s Basics</h2>
@@ -3602,7 +3602,7 @@ memory limit exceed -&gt; process killed (oom)</p>
       <link href="https://anusree6154s.github.io/bits-and-bytes/kubernetes-02-media-forge" rel="alternate" type="text/html" title="02. Media Forge" />
       <published>2026-11-09T00:00:00+00:00</published>
       <updated>2026-11-09T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/kubernetes-02-media-forge</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/kubernetes-02-media-forge"><![CDATA[<h2 id="media-forge">Media Forge</h2>
@@ -3710,7 +3710,7 @@ memory limit exceed -&gt; process killed (oom)</p>
       <link href="https://anusree6154s.github.io/bits-and-bytes/kubernetes-01-linux-basics" rel="alternate" type="text/html" title="01. Linux Basics" />
       <published>2026-11-09T00:00:00+00:00</published>
       <updated>2026-11-09T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/kubernetes-01-linux-basics</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/kubernetes-01-linux-basics"><![CDATA[<h2 id="linux-basics">Linux Basics</h2>
@@ -3835,7 +3835,7 @@ SSD returns bytes
       <link href="https://anusree6154s.github.io/bits-and-bytes/kubernetes-00-structure-and-visualization" rel="alternate" type="text/html" title="00. Structure and Visualisation - Part 1" />
       <published>2026-11-04T00:00:00+00:00</published>
       <updated>2026-11-04T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/kubernetes-00-structure-and-visualization</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/kubernetes-00-structure-and-visualization"><![CDATA[<h1 id="kubernetes-k8s">Kubernetes (K8s)</h1>
@@ -3920,7 +3920,7 @@ SSD returns bytes
       <link href="https://anusree6154s.github.io/bits-and-bytes/oop" rel="alternate" type="text/html" title="OOP" />
       <published>2026-04-26T00:00:00+00:00</published>
       <updated>2026-04-26T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/oop</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/oop"><![CDATA[<ul>
@@ -4053,7 +4053,7 @@ SSD returns bytes
       <link href="https://anusree6154s.github.io/bits-and-bytes/setting-up-flutter" rel="alternate" type="text/html" title="Flutter Setup Guide" />
       <published>2025-07-13T00:00:00+00:00</published>
       <updated>2025-07-13T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/setting-up-flutter</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/setting-up-flutter"><![CDATA[<p>I have been looking on how to create my own gujrati learning app and thought, well why not learn something that’s used in my office. And so I chose flutter. <img src="/bits-and-bytes/assets/imgs/setting-up-flutter.png" alt="image" width="30" height="30" /></p>
@@ -4256,7 +4256,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/basics-of-dart" rel="alternate" type="text/html" title="Basics of Dart" />
       <published>2025-07-13T00:00:00+00:00</published>
       <updated>2025-07-13T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/basics-of-dart</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/basics-of-dart"><![CDATA[<p>Since I began learning flutter, dart was a new language for me. I came to know that dart is the most similar to java language which also I was just partially informed in.</p>
@@ -4570,7 +4570,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/bootstrap-icons-usage" rel="alternate" type="text/html" title="Using Bootstrap Icons" />
       <published>2025-03-04T00:00:00+00:00</published>
       <updated>2025-03-04T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/bootstrap-icons-usage</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/bootstrap-icons-usage"><![CDATA[<h3 id="1-install-bootstrap-icons-recommended---i-use-this"><strong>1. Install Bootstrap Icons (Recommended - I use this)</strong></h3>
@@ -4645,7 +4645,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/tailwing-styling-without-inline" rel="alternate" type="text/html" title="Tailwind styling without inline" />
       <published>2025-03-03T00:00:00+00:00</published>
       <updated>2025-03-03T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/tailwing-styling-without-inline</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/tailwing-styling-without-inline"><![CDATA[<h3 id="1️⃣-use-apply-in-a-global-css-file"><strong>1️⃣ Use <code class="language-plaintext highlighter-rouge">@apply</code> in a Global CSS File</strong></h3>
@@ -4758,7 +4758,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/optimise-img-external" rel="alternate" type="text/html" title="External Image Optimisation" />
       <published>2025-03-03T00:00:00+00:00</published>
       <updated>2025-03-03T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/optimise-img-external</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/optimise-img-external"><![CDATA[<h2 id="optimising-image-imported-from-external-source">Optimising image imported from external source</h2>
@@ -4856,7 +4856,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/vercel-env" rel="alternate" type="text/html" title="Vercel .env extraction" />
       <published>2025-02-27T00:00:00+00:00</published>
       <updated>2025-02-27T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/vercel-env</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/vercel-env"><![CDATA[<h2 id="vercel-env-variable-extraction">Vercel Env Variable Extraction</h2>
@@ -4909,7 +4909,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/mongodb" rel="alternate" type="text/html" title="MongoDB Concepts Guide" />
       <published>2025-02-25T00:00:00+00:00</published>
       <updated>2025-02-25T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/mongodb</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/mongodb"><![CDATA[<ul>
@@ -4994,7 +4994,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-node-202" rel="alternate" type="text/html" title="FE-101 HTML" />
       <published>2025-02-20T00:00:00+00:00</published>
       <updated>2025-02-20T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/node-202-nodejs</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-node-202</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-node-202"><![CDATA[]]></content>
@@ -5038,7 +5038,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-node-201" rel="alternate" type="text/html" title="FE-101 HTML" />
       <published>2025-02-20T00:00:00+00:00</published>
       <updated>2025-02-20T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/node-201-nodejs</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-node-201</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-node-201"><![CDATA[]]></content>
@@ -5082,7 +5082,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-mern-2" rel="alternate" type="text/html" title="FE-101 HTML" />
       <published>2025-02-20T00:00:00+00:00</published>
       <updated>2025-02-20T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/mern-2-nodejs</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-mern-2</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-mern-2"><![CDATA[]]></content>
@@ -5126,7 +5126,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-hld-1" rel="alternate" type="text/html" title="FE-101 HTML" />
       <published>2025-02-20T00:00:00+00:00</published>
       <updated>2025-02-20T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/hld-1-hld</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-hld-1</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-hld-1"><![CDATA[]]></content>
@@ -5170,7 +5170,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-intv-1" rel="alternate" type="text/html" title="FE-101 HTML" />
       <published>2025-02-20T00:00:00+00:00</published>
       <updated>2025-02-20T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/fe-intv-1-takehome-assessments</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-intv-1</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-intv-1"><![CDATA[]]></content>
@@ -5214,7 +5214,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-302" rel="alternate" type="text/html" title="FE-101 HTML" />
       <published>2025-02-20T00:00:00+00:00</published>
       <updated>2025-02-20T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/fe-302-tailwind-webpack-cdn-nextjs</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-302</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-302"><![CDATA[]]></content>
@@ -5258,7 +5258,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-301" rel="alternate" type="text/html" title="FE-101 HTML" />
       <published>2025-02-20T00:00:00+00:00</published>
       <updated>2025-02-20T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/fe-301-redux</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-301</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-301"><![CDATA[]]></content>
@@ -5302,7 +5302,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-202" rel="alternate" type="text/html" title="FE-101 HTML" />
       <published>2025-02-20T00:00:00+00:00</published>
       <updated>2025-02-20T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/fe-202-react</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-202</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-202"><![CDATA[]]></content>
@@ -5346,7 +5346,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-201" rel="alternate" type="text/html" title="FE-101 HTML" />
       <published>2025-02-20T00:00:00+00:00</published>
       <updated>2025-02-20T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/fe-201-react</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-201</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-201"><![CDATA[]]></content>
@@ -5390,7 +5390,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-103" rel="alternate" type="text/html" title="FE-101 HTML" />
       <published>2025-02-20T00:00:00+00:00</published>
       <updated>2025-02-20T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/fe-103-javascript</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-103</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-103"><![CDATA[]]></content>
@@ -5434,7 +5434,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-102" rel="alternate" type="text/html" title="FE-101 HTML" />
       <published>2025-02-20T00:00:00+00:00</published>
       <updated>2025-02-20T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/fe-102-javascript</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-102</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-102"><![CDATA[]]></content>
@@ -5478,7 +5478,7 @@ code <span class="nb">.</span>    <span class="c">## opens the project in VS Cod
       <link href="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-101" rel="alternate" type="text/html" title="FE-101 HTML" />
       <published>2025-02-20T00:00:00+00:00</published>
       <updated>2025-02-20T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/fe-101-html</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-101</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/crio-interview-questions-fe-101"><![CDATA[<h2 id="crio-questions"><strong>Crio Questions</strong></h2>
@@ -5906,7 +5906,7 @@ Examples: <code class="language-plaintext highlighter-rouge">%</code>, <code cla
       <link href="https://anusree6154s.github.io/bits-and-bytes/hld" rel="alternate" type="text/html" title="High Level Design Guide" />
       <published>2025-02-20T00:00:00+00:00</published>
       <updated>2025-02-20T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/hld</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/hld"><![CDATA[<h2 id="table-of-contents"><u>Table of Contents</u></h2>
@@ -5977,7 +5977,7 @@ Examples: <code class="language-plaintext highlighter-rouge">%</code>, <code cla
       <link href="https://anusree6154s.github.io/bits-and-bytes/lld" rel="alternate" type="text/html" title="Low Level Design Guide" />
       <published>2025-02-19T00:00:00+00:00</published>
       <updated>2025-02-19T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/lld</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/lld"><![CDATA[<h2 id="table-of-contents"><u>Table of Contents</u></h2>
@@ -7180,7 +7180,7 @@ Examples: <code class="language-plaintext highlighter-rouge">%</code>, <code cla
       <link href="https://anusree6154s.github.io/bits-and-bytes/react" rel="alternate" type="text/html" title="React Concepts Guide" />
       <published>2025-01-22T00:00:00+00:00</published>
       <updated>2025-01-22T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/react</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/react"><![CDATA[<h2 id="table-of-concepts">Table of Concepts</h2>
@@ -7524,7 +7524,7 @@ Examples: <code class="language-plaintext highlighter-rouge">%</code>, <code cla
       <link href="https://anusree6154s.github.io/bits-and-bytes/more-about-type-manipulation" rel="alternate" type="text/html" title="More about Type Manipulation" />
       <published>2025-01-19T00:00:00+00:00</published>
       <updated>2025-01-19T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/type-manipulation</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/more-about-type-manipulation</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/more-about-type-manipulation"><![CDATA[<h3 id="type-manipulation-in-typescript"><strong>Type Manipulation in TypeScript</strong></h3>
@@ -10759,7 +10759,7 @@ Examples: <code class="language-plaintext highlighter-rouge">%</code>, <code cla
       <link href="https://anusree6154s.github.io/bits-and-bytes/jekyll-github-pages-website" rel="alternate" type="text/html" title="Creating Jekyll Github-Pages Websites" />
       <published>2025-01-18T00:00:00+00:00</published>
       <updated>2025-01-18T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/jekyll-github-pages-website</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/jekyll-github-pages-website"><![CDATA[<p>This is my personal guide related to all about making github pages with and without jekyll.</p>
@@ -11232,7 +11232,7 @@ openssl x509 <span class="nt">-req</span> <span class="nt">-in</span> client.csr
       <link href="https://anusree6154s.github.io/bits-and-bytes/oauth-config-setup" rel="alternate" type="text/html" title="OAuth Config Setup in Different Apps" />
       <published>2025-01-09T00:00:00+00:00</published>
       <updated>2025-01-09T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/oauth-config-setup</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/oauth-config-setup"><![CDATA[<h1 id="auth-app">Auth App</h1>
@@ -11721,7 +11721,7 @@ secrets/
       <link href="https://anusree6154s.github.io/bits-and-bytes/git-commit-guidelines" rel="alternate" type="text/html" title="Guidelines to cleaner git commits" />
       <published>2024-10-31T00:00:00+00:00</published>
       <updated>2024-10-31T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/git-commit-guidelines</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/git-commit-guidelines"><![CDATA[<h2 id="guidelines-to-cleaner-git-commits">Guidelines to cleaner git commits</h2>
@@ -11795,7 +11795,7 @@ secrets/
       <link href="https://anusree6154s.github.io/bits-and-bytes/api-documentaion" rel="alternate" type="text/html" title="API Documentation Tools" />
       <published>2024-10-31T00:00:00+00:00</published>
       <updated>2024-10-31T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/api-documentaion</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/api-documentaion"><![CDATA[<h2 id="api-documentaion-tools">Api Documentaion Tools</h2>
@@ -12157,7 +12157,7 @@ refer my own docs for eg: https://github.com/Anusree6154s/qkart-backend-2<br /><
       <link href="https://anusree6154s.github.io/bits-and-bytes/readme-file-writing" rel="alternate" type="text/html" title="Readme files writing guide" />
       <published>2024-10-26T00:00:00+00:00</published>
       <updated>2024-10-26T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/readme-file-writing</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/readme-file-writing"><![CDATA[<h2 id="comprehensive-guide-to-writing-readme-files">Comprehensive Guide to Writing README Files</h2>
@@ -12486,7 +12486,7 @@ A brief description of what the project does and its purpose.
       <link href="https://anusree6154s.github.io/bits-and-bytes/git%20-commit-standards" rel="alternate" type="text/html" title="Git Commit Standards" />
       <published>2024-10-26T00:00:00+00:00</published>
       <updated>2024-10-26T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/git%20-commit-standards</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/git%20-commit-standards"><![CDATA[<p>git cheat sheet: https://media.licdn.com/dms/image/v2/D4D22AQFWkWeD6D4ksA/feedshare-shrink_1280/feedshare-shrink_1280/0/1729225766763?e=1732147200&amp;v=beta&amp;t=lRJJDZeffcMU0rbvRJi0oSef2p3xGOG9BQWXG9dhrTQ</p>
@@ -12599,7 +12599,7 @@ Update project dependencies to their latest versions to improve security and per
       <link href="https://anusree6154s.github.io/bits-and-bytes/readme-formatting-guidelines" rel="alternate" type="text/html" title="Readme files formatting guide" />
       <published>2024-10-23T00:00:00+00:00</published>
       <updated>2024-10-23T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/readme-formatting-guidelines</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/readme-formatting-guidelines"><![CDATA[<h2 id="readme-formatting-guidelinesrules">Readme Formatting Guidelines/Rules</h2>
@@ -12646,7 +12646,7 @@ Update project dependencies to their latest versions to improve security and per
       <link href="https://anusree6154s.github.io/bits-and-bytes/email-service" rel="alternate" type="text/html" title="Email Service Guide" />
       <published>2024-10-22T00:00:00+00:00</published>
       <updated>2024-10-22T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/email-service</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/email-service"><![CDATA[<h3 id="from-frontend">From Frontend</h3>
@@ -12695,7 +12695,7 @@ Update project dependencies to their latest versions to improve security and per
       <link href="https://anusree6154s.github.io/bits-and-bytes/deployment" rel="alternate" type="text/html" title="Deployment Websites" />
       <published>2024-09-21T00:00:00+00:00</published>
       <updated>2024-09-21T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/readme</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/deployment</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/deployment"><![CDATA[<h3 id="netlify">netlify:</h3>
@@ -12750,7 +12750,7 @@ Update project dependencies to their latest versions to improve security and per
       <link href="https://anusree6154s.github.io/bits-and-bytes/react-node" rel="alternate" type="text/html" title="React-Node App" />
       <published>2024-08-19T00:00:00+00:00</published>
       <updated>2024-08-19T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/react-node</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/react-node"><![CDATA[<h1 id="concepts-related-to-react-node-web-app">Concepts related to React-Node Web App</h1>
@@ -13502,7 +13502,7 @@ Update project dependencies to their latest versions to improve security and per
       <link href="https://anusree6154s.github.io/bits-and-bytes/design-related-reference-websites" rel="alternate" type="text/html" title="Web development Css related" />
       <published>2024-08-19T00:00:00+00:00</published>
       <updated>2024-08-19T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/design-related-reference-websites</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/design-related-reference-websites"><![CDATA[<h2 id="css">Css</h2>
@@ -13602,7 +13602,7 @@ Update project dependencies to their latest versions to improve security and per
       <link href="https://anusree6154s.github.io/bits-and-bytes/tests" rel="alternate" type="text/html" title="Tests" />
       <published>2024-08-19T00:00:00+00:00</published>
       <updated>2024-08-19T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/tests</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/tests"><![CDATA[<h1 id="tests">Tests</h1>
@@ -14222,7 +14222,7 @@ Testing server-side code is crucial for ensuring that your application behaves a
       <link href="https://anusree6154s.github.io/bits-and-bytes/passport-jwt" rel="alternate" type="text/html" title="Index" />
       <published>2024-08-19T00:00:00+00:00</published>
       <updated>2024-08-19T00:00:00+00:00</updated>
-      <id>https://anusree6154s.github.io/bits-and-bytes/index</id>
+      <id>https://anusree6154s.github.io/bits-and-bytes/passport-jwt</id>
       
       
         <content type="html" xml:base="https://anusree6154s.github.io/bits-and-bytes/passport-jwt"><![CDATA[<h1 id="passport-jwt-documentaion">Passport-jwt Documentaion</h1>
